@@ -12,6 +12,9 @@
     categories: [],
     catById: {},
     active: {}, // Kategorie -> sichtbar
+    tags: {}, // Tag -> aktiv (Themenfilter, UND-verknüpft)
+    favs: {}, // id -> gemerkt
+    favOnly: false,
     query: "",
     openOnly: false,
     sort: "empfohlen",
@@ -83,6 +86,8 @@
   }
 
   function isGastro(p) {
+    // Cafés bewusst ausgenommen: dort ist eine Online-Speisekarte die Ausnahme,
+    // ein Hinweis „keine Karte online“ wäre bei 12 Betrieben nur Rauschen.
     return p.cat === "restaurant" || p.cat === "fastfood" || p.cat === "breakfast";
   }
   function hoursStatus(p) {
@@ -121,18 +126,149 @@
         if (state.active[id] && activeCount === 1) return;
         state.active[id] = !state.active[id];
         renderChips();
+        renderTags(); // Themenliste hängt an den aktiven Kategorien
         renderList();
         syncMarkers();
       });
     });
   }
 
+  /**
+   * Tags als Filter nutzbar machen: nur Tags, die in den gerade aktiven
+   * Kategorien mindestens zweimal vorkommen (ein Einzelfall lohnt keinen Chip).
+   * Höchstens 12, absteigend nach Häufigkeit.
+   */
+  function availableTags() {
+    var counts = {};
+    state.places.forEach(function (p) {
+      if (!state.active[p.cat]) return;
+      (p.tags || []).forEach(function (t) { counts[t] = (counts[t] || 0) + 1; });
+    });
+    return Object.keys(counts)
+      .filter(function (t) { return counts[t] >= 2; })
+      .sort(function (a, b) {
+        return counts[b] - counts[a] || a.localeCompare(b, "de");
+      })
+      .slice(0, 12)
+      .map(function (t) { return { tag: t, count: counts[t] }; });
+  }
+
+  function renderTags() {
+    var avail = availableTags();
+    var names = avail.map(function (a) { return a.tag; });
+
+    // Aktive Tags, die durch einen Kategoriewechsel weggefallen sind, lösen –
+    // sonst filtert ein unsichtbarer Tag die Liste auf null Treffer.
+    Object.keys(state.tags).forEach(function (t) {
+      if (state.tags[t] && names.indexOf(t) === -1) delete state.tags[t];
+    });
+
+    var anyOn = Object.keys(state.tags).some(function (t) { return state.tags[t]; });
+    if (!avail.length) {
+      els.tagbar.hidden = true;
+      els.tagbar.innerHTML = "";
+      return;
+    }
+    els.tagbar.hidden = false;
+    els.tagbar.innerHTML =
+      avail
+        .map(function (a) {
+          var on = !!state.tags[a.tag];
+          return (
+            "<button type='button' class='tag" + (on ? " is-on" : "") + "' data-tag='" + esc(a.tag) + "' " +
+            "aria-pressed='" + (on ? "true" : "false") + "'>" +
+            esc(a.tag) + "<span class='tag-count'>" + a.count + "</span></button>"
+          );
+        })
+        .join("") +
+      (anyOn ? "<button type='button' class='tag-clear'>Themen zurücksetzen</button>" : "");
+
+    els.tagbar.querySelectorAll(".tag").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var t = btn.dataset.tag;
+        state.tags[t] = !state.tags[t];
+        renderTags();
+        renderList();
+        syncMarkers();
+      });
+    });
+    var clear = els.tagbar.querySelector(".tag-clear");
+    if (clear) {
+      clear.addEventListener("click", function () {
+        state.tags = {};
+        renderTags();
+        renderList();
+        syncMarkers();
+      });
+    }
+  }
+
+  // ------------------------------------------------------------- Favoriten
+  // Rein lokal im Browser (localStorage). Kein Konto, kein Server, keine Tracker.
+  var FAV_KEY = "cph-favs";
+
+  function loadFavs() {
+    try {
+      var raw = localStorage.getItem(FAV_KEY);
+      var arr = raw ? JSON.parse(raw) : [];
+      state.favs = {};
+      if (Array.isArray(arr)) arr.forEach(function (id) { state.favs[id] = true; });
+    } catch (e) {
+      state.favs = {}; // privater Modus / kaputter Wert -> einfach ohne Favoriten
+    }
+  }
+
+  function saveFavs() {
+    try {
+      localStorage.setItem(FAV_KEY, JSON.stringify(Object.keys(state.favs).filter(function (k) { return state.favs[k]; })));
+    } catch (e) { /* Speicher voll oder gesperrt – Favoriten gelten dann nur für diese Sitzung */ }
+  }
+
+  function favCount() {
+    return Object.keys(state.favs).filter(function (k) { return state.favs[k]; }).length;
+  }
+
+  function syncFavButton() {
+    var n = favCount();
+    var btn = $("favBtn");
+    if (!btn) return;
+    $("favCount").textContent = n;
+    btn.setAttribute("aria-pressed", state.favOnly ? "true" : "false");
+    btn.disabled = n === 0 && !state.favOnly;
+    btn.title = n ? "Nur gemerkte Orte (" + n + ")" : "Noch nichts gemerkt";
+  }
+
+  function toggleFav(id) {
+    if (state.favs[id]) delete state.favs[id];
+    else state.favs[id] = true;
+    saveFavs();
+    syncFavButton();
+    renderList();
+    syncMarkers();
+    var d = els.drawer.querySelector(".fav-toggle");
+    if (d) syncDrawerFav(d, id);
+  }
+
+  function syncDrawerFav(btn, id) {
+    var on = !!state.favs[id];
+    btn.classList.toggle("is-on", on);
+    btn.setAttribute("aria-pressed", on ? "true" : "false");
+    btn.textContent = on ? "★ Gemerkt" : "☆ Merken";
+  }
+
   function visiblePlaces() {
     var q = state.query.trim().toLowerCase();
-    var now = window.CPHHours.nowInCopenhagen();
+    var activeTags = Object.keys(state.tags).filter(function (t) { return state.tags[t]; });
 
     var list = state.places.filter(function (p) {
       if (!state.active[p.cat]) return false;
+      if (state.favOnly && !state.favs[p.id]) return false;
+      if (activeTags.length) {
+        var own = p.tags || [];
+        for (var i = 0; i < activeTags.length; i++) {
+          if (own.indexOf(activeTags[i]) === -1) return false;
+        }
+      }
       if (state.openOnly) {
         if (!p.hours) return false;
         if (hoursStatus(p).open !== true) return false;
@@ -196,29 +332,36 @@
       var dist = state.userPos ? distanceLabel(haversine(state.userPos, p)) : "";
 
       html +=
-        "<li class='card' data-id='" + p.id + "' tabindex='0' role='button' style='--c:" + state.catById[p.cat].color + "'>" +
-        "<div class='card-head'>" +
-        "<h3>" + esc(p.name) + "</h3>" +
+        "<li class='card' data-id='" + p.id + "' style='--c:" + state.catById[p.cat].color + "'>" +
+        "<button class='card-btn' type='button' data-id='" + p.id + "'>" +
+        "<span class='card-head'>" +
+        "<span class='card-title'>" + esc(p.name) + "</span>" +
         "<span class='card-badge'>" + esc(p.sub) + "</span>" +
-        "</div>" +
-        "<div class='card-meta'>" +
+        "</span>" +
+        "<span class='card-meta'>" +
         (p.priceLevel ? priceDots(p.priceLevel) : "") +
         (showsRating(p) ? (p.rating ? ratingHtml(p) : noRatingHtml(p)) : "") +
         (dist ? "<span class='dist'>" + dist + "</span>" : "") +
-        "</div>" +
-        "<div class='card-hours'><span class='status-dot " + dotClass + "'></span>" +
-        "<span>" + esc(st.known ? st.text : "Zeiten unbekannt") + "</span></div>" +
+        "</span>" +
+        "<span class='card-hours'><span class='status-dot " + dotClass + "'></span>" +
+        "<span>" + esc(st.known ? st.text : "Zeiten unbekannt") + "</span></span>" +
+        "</button>" +
+        "<button class='card-fav" + (state.favs[p.id] ? " is-on" : "") + "' type='button' " +
+        "data-fav='" + p.id + "' aria-pressed='" + (state.favs[p.id] ? "true" : "false") + "' " +
+        "aria-label='" + esc(p.name) + (state.favs[p.id] ? " nicht mehr merken" : " merken") + "' " +
+        "title='" + (state.favs[p.id] ? "Gemerkt" : "Merken") + "'>★</button>" +
         "</li>";
     });
     els.list.innerHTML = html;
 
-    els.list.querySelectorAll(".card").forEach(function (card) {
-      card.addEventListener("click", function () { openDetail(card.dataset.id, true); });
-      card.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          openDetail(card.dataset.id, true);
-        }
+    els.list.querySelectorAll(".card-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () { openDetail(btn.dataset.id, true); });
+    });
+    els.list.querySelectorAll(".card-fav").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        // Verhindert, dass der Klick zusätzlich die Detailansicht öffnet
+        e.stopPropagation();
+        toggleFav(btn.dataset.fav);
       });
     });
   }
@@ -392,6 +535,20 @@
       "<a class='btn btn-ghost' href='https://www.google.com/maps/dir/?api=1&destination=" +
       p.lat + "," + p.lon + "' target='_blank' rel='noopener noreferrer'>Route</a>";
 
+    // Foto aus Wikipedia/Commons – mit Namensnennung und Lizenz, wie es die
+    // freien Lizenzen verlangen. Ohne Foto entfällt der Block vollständig.
+    var photoHtml = "";
+    if (p.photo && p.photo.url) {
+      photoHtml =
+        "<figure class='drawer-photo'>" +
+        "<img src='" + esc(p.photo.url) + "' alt='" + esc(p.name) + "' loading='lazy' decoding='async'>" +
+        "<figcaption>Bild: " +
+        "<a href='" + esc(p.photo.page) + "' target='_blank' rel='noopener noreferrer'>" +
+        esc(p.photo.author) + "</a> · " + esc(p.photo.license) + " · via Wikimedia Commons" +
+        "</figcaption>" +
+        "</figure>";
+    }
+
     // Gastro ohne Online-Karte: explizit benennen statt den Button einfach wegzulassen
     var menuMissing =
       isGastro(p) && !p.menu
@@ -405,6 +562,7 @@
       "<button class='icon-btn' id='drawerClose' aria-label='Schließen'>✕</button>" +
       "</div>" +
       "<div class='drawer-body'>" +
+      photoHtml +
       "<h2>" + esc(p.name) + "</h2>" +
       "<p class='drawer-sub'>" + esc(p.sub) + " · " + esc(p.area) + (dist ? " · " + dist : "") + "</p>" +
 
@@ -437,7 +595,11 @@
         : "") +
       (p.hoursNote ? "<p class='note'>" + esc(p.hoursNote) + "</p>" : "") +
 
-      "<div class='drawer-actions'>" + links + "</div>" +
+      "<div class='drawer-actions'>" +
+      "<button type='button' class='btn btn-soft fav-toggle' aria-pressed='false'></button>" +
+      "<button type='button' class='btn btn-ghost share-btn'>🔗 Link kopieren</button>" +
+      links +
+      "</div>" +
       menuMissing +
 
       "<p class='drawer-src'>Quelle: " + esc(p.src || "OpenStreetMap") + " · Angaben ohne Gewähr</p>" +
@@ -449,6 +611,15 @@
     document.body.classList.add("drawer-open");
     setSheet(false);
     $("drawerClose").addEventListener("click", closeDetail);
+
+    var favBtn = els.drawer.querySelector(".fav-toggle");
+    if (favBtn) {
+      syncDrawerFav(favBtn, p.id);
+      favBtn.addEventListener("click", function () { toggleFav(p.id); });
+    }
+    var shareBtn = els.drawer.querySelector(".share-btn");
+    if (shareBtn) shareBtn.addEventListener("click", function () { sharePlace(p, shareBtn); });
+
     els.drawer.querySelector(".drawer-body").scrollTop = 0;
 
     if (fly) {
@@ -477,6 +648,55 @@
     els.list.querySelectorAll(".card").forEach(function (c) {
       c.classList.toggle("is-selected", c.dataset.id === id);
     });
+  }
+
+  // ------------------------------------------------------------------ Teilen
+
+  /**
+   * Kopiert den Deep-Link des Ortes. `navigator.clipboard` gibt es nur in
+   * sicheren Kontexten (https/localhost) – lokal per http oder in älteren
+   * Browsern fällt es auf einen temporären <textarea> zurück.
+   */
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function (resolve, reject) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.top = "-1000px";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(ta);
+      if (ok) resolve();
+      else reject(new Error("Kopieren nicht möglich"));
+    });
+  }
+
+  function sharePlace(p, btn) {
+    var url = location.origin + location.pathname + "#" + p.id;
+    var original = btn.textContent;
+
+    function done(msg) {
+      btn.textContent = msg;
+      setTimeout(function () { btn.textContent = original; }, 1800);
+    }
+
+    copyText(url)
+      .then(function () { done("✓ Kopiert"); })
+      .catch(function () {
+        // Letzter Ausweg: Link sichtbar machen, damit er manuell kopiert werden kann
+        window.prompt("Link zum Kopieren:", url);
+        done(original);
+      });
   }
 
   // ---------------------------------------------------------- Preisvergleich
@@ -663,6 +883,16 @@
       syncMarkers();
     });
 
+    var favBtn = $("favBtn");
+    if (favBtn) {
+      favBtn.addEventListener("click", function () {
+        state.favOnly = !state.favOnly;
+        syncFavButton();
+        renderList();
+        syncMarkers();
+      });
+    }
+
     els.compare.addEventListener("click", openPrices);
     els.locate.addEventListener("click", locate);
     $("locateFloat").addEventListener("click", locate);
@@ -727,6 +957,7 @@
     els.drawer = $("drawer");
     els.modal = $("modal");
     els.modalBody = $("modalBody");
+    els.tagbar = $("tagbar");
 
     var savedTheme = null;
     try { savedTheme = localStorage.getItem("cph-theme"); } catch (e) {}
@@ -758,7 +989,10 @@
 
         initMap(data.meta || {});
         buildMarkers();
+        loadFavs();
         renderChips();
+        renderTags();
+        syncFavButton();
         renderList();
         wire();
 

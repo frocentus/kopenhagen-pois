@@ -9,7 +9,7 @@
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#0f6b66">
 <meta property="og:title" content="Kopenhagen Stadtplan">
-<meta property="og:description" content="84 Orte im Stadtzentrum: Sehenswürdigkeiten, Frühstück, Restaurants, Fast Food, Supermärkte, Malls – mit Öffnungszeiten und Preisen.">
+<meta property="og:description" content="Interaktive Karte mit Sehenswürdigkeiten, Frühstück, Restaurants, Kaffee &amp; Bäckereien, Fast Food, Supermärkten und praktischen Orten – mit Öffnungszeiten, Preisen und Fotos.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
 
@@ -49,6 +49,7 @@
 
     <div class="controls">
       <div class="chips" id="chips" role="group" aria-label="Kategorien"></div>
+      <div class="tagbar" id="tagbar" role="group" aria-label="Themenfilter" hidden></div>
 
       <div class="control-row">
         <label class="switch">
@@ -71,6 +72,7 @@
 
       <div class="control-row">
         <button id="locateBtn" class="btn btn-ghost btn-sm" type="button">📍 In meiner Nähe</button>
+        <button id="favBtn" class="btn btn-ghost btn-sm" type="button" aria-pressed="false" title="Nur gemerkte Orte">★ Gemerkt <span id="favCount" class="fav-count">0</span></button>
         <span class="hint" id="count"></span>
       </div>
     </div>

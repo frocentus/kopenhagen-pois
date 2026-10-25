@@ -86,26 +86,68 @@ function check(name, cond, extra = "") {
   if (!cond) fails++;
 }
 
+// Erwartungswerte aus den Daten ableiten statt hart zu kodieren – sonst bricht
+// der Test bei jeder Datenpflege, ohne etwas über einen echten Fehler zu sagen.
+const TOTAL = data.places.length;
+const CATS = data.categories.length;
+const RATED = data.places.filter((p) => p.cat !== "supermarket" && p.rating).length;
+const UNRATED = data.places.filter((p) => p.cat !== "supermarket" && !p.rating).length;
+const cards = () => doc.querySelectorAll(".card").length;
+const openCard = (id) => {
+  const el = doc.querySelector(".card[data-id='" + id + "'] .card-btn");
+  el.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+  return el;
+};
+
 console.log("== Initiales Rendern ==");
-check("6 Kategorie-Chips", doc.querySelectorAll(".chip").length === 6, String(doc.querySelectorAll(".chip").length));
-check("84 Karten in der Liste", doc.querySelectorAll(".card").length === 84, String(doc.querySelectorAll(".card").length));
-check("Gruppen-Header vorhanden", doc.querySelectorAll(".list .group").length >= 6);
-check("Zähler gesetzt", /84 von 84/.test($("count").textContent), $("count").textContent);
+check(CATS + " Kategorie-Chips", doc.querySelectorAll(".chip").length === CATS, String(doc.querySelectorAll(".chip").length));
+check(TOTAL + " Karten in der Liste", cards() === TOTAL, String(cards()));
+check("Gruppen-Header vorhanden", doc.querySelectorAll(".list .group").length >= CATS);
+check("Zähler gesetzt", new RegExp(TOTAL + " von " + TOTAL).test($("count").textContent), $("count").textContent);
 check("Datenstand gesetzt", /25\.10\.2026/.test($("dataStamp").textContent), $("dataStamp").textContent);
 check("Öffnungszeiten-Status gerendert", doc.querySelectorAll(".status-dot").length > 50);
 check("keine JS-Fehler", errors.length === 0, errors.join(" / "));
 
+console.log("\n== Themenfilter (Tags) ==");
+const tagBtns = doc.querySelectorAll("#tagbar .tag");
+check("Themenfilter sichtbar", !$("tagbar").hidden && tagBtns.length > 0, tagBtns.length + " Tags");
+const firstTag = tagBtns[0];
+const tagName = firstTag.dataset.tag;
+firstTag.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+const taggedCount = cards();
+check("Tag filtert die Liste", taggedCount > 0 && taggedCount < TOTAL, tagName + " → " + taggedCount);
+check("Tag ist als aktiv markiert", doc.querySelector("#tagbar .tag[data-tag='" + tagName + "']").getAttribute("aria-pressed") === "true");
+const expectTag = data.places.filter((p) => (p.tags || []).includes(tagName)).length;
+check("Tag-Trefferzahl stimmt mit den Daten überein", taggedCount === expectTag, taggedCount + " vs " + expectTag);
+doc.querySelector("#tagbar .tag-clear").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+check("Themen zurücksetzen stellt alles wieder her", cards() === TOTAL, String(cards()));
+
+console.log("\n== Favoriten ==");
+const favCard = doc.querySelector(".card-fav");
+check("Favoriten-Stern an jeder Karte", doc.querySelectorAll(".card-fav").length === TOTAL, String(doc.querySelectorAll(".card-fav").length));
+favCard.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+check("Stern setzt den Favoriten", doc.querySelectorAll(".card-fav.is-on").length === 1);
+check("Zähler im Filter-Button", $("favCount").textContent === "1", $("favCount").textContent);
+$("favBtn").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+check("'Nur gemerkte' filtert auf einen Ort", cards() === 1, String(cards()));
+$("favBtn").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+check("Filter wieder aus", cards() === TOTAL, String(cards()));
+doc.querySelector(".card-fav.is-on").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+check("Stern entfernt den Favoriten", doc.querySelectorAll(".card-fav.is-on").length === 0);
+check("Zähler zurück auf 0", $("favCount").textContent === "0", $("favCount").textContent);
+
 console.log("\n== Filter ==");
 const restChip = doc.querySelector(".chip[data-cat='restaurant']");
+const restCount = data.places.filter((p) => p.cat === "restaurant").length;
 restChip.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
-check("Restaurants abschaltbar", doc.querySelectorAll(".card").length < 84, String(doc.querySelectorAll(".card").length));
+check("Restaurants abschaltbar", cards() === TOTAL - restCount, String(cards()));
 restChip.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
-check("wieder 84 Karten", doc.querySelectorAll(".card").length === 84);
+check("wieder alle Karten", cards() === TOTAL, String(cards()));
 
 const search = $("search");
 search.value = "smørrebrød";
 search.dispatchEvent(new window.Event("input", { bubbles: true }));
-const n = doc.querySelectorAll(".card").length;
+const n = cards();
 check("Suche 'smørrebrød' filtert", n > 0 && n < 20, String(n));
 search.value = "";
 search.dispatchEvent(new window.Event("input", { bubbles: true }));
@@ -113,23 +155,46 @@ search.dispatchEvent(new window.Event("input", { bubbles: true }));
 const openOnly = $("openOnly");
 openOnly.checked = true;
 openOnly.dispatchEvent(new window.Event("change", { bubbles: true }));
-const openCount = doc.querySelectorAll(".card").length;
-check("'Nur jetzt geöffnet' filtert", openCount > 0 && openCount < 81, String(openCount));
+const openCount = cards();
+check("'Nur jetzt geöffnet' filtert", openCount > 0 && openCount < TOTAL, String(openCount));
 openOnly.checked = false;
 openOnly.dispatchEvent(new window.Event("change", { bubbles: true }));
 
 console.log("\n== Detailansicht ==");
-const card = doc.querySelector(".card[data-id='gasoline-grill']") || doc.querySelector(".card");
-card.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+openCard("gasoline-grill");
 await new Promise((r) => setTimeout(r, 60));
 check("Drawer sichtbar", !$("drawer").hidden);
 check("Drawer hat Inhalt", $("drawer").innerHTML.includes("Tipps"));
 check("Öffnungszeiten-Tabelle", $("drawer").querySelectorAll(".hours-table tr").length > 0);
 check("Menü-Link vorhanden", !!$("drawer").querySelector("a[href*='menu']"));
 check("Google-Maps-Route", !!$("drawer").querySelector("a[href*='google.com/maps']"));
+check("Favoriten-Knopf im Drawer", !!$("drawer").querySelector(".fav-toggle"));
+check("Teilen-Knopf im Drawer", !!$("drawer").querySelector(".share-btn"));
 const closeBtn = $("drawerClose");
 closeBtn.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
 check("Drawer schließt", $("drawer").hidden);
+
+console.log("\n== Foto ==");
+// Nur Orte mit verifiziertem Wikipedia-Bild haben eine Galerie – und dann
+// immer mit Namensnennung, sonst ist die Lizenz nicht erfüllt.
+const withPhoto = data.places.filter((p) => p.photo && p.photo.url);
+check("mindestens ein Ort mit Foto", withPhoto.length > 0, withPhoto.length + " Orte");
+openCard(withPhoto[0].id);
+await new Promise((r) => setTimeout(r, 60));
+const figure = $("drawer").querySelector(".drawer-photo");
+check("Foto wird angezeigt", !!figure && !!figure.querySelector("img"));
+check("Foto hat Alt-Text", !!figure && !!figure.querySelector("img").getAttribute("alt"));
+check("Foto nennt Autor und Lizenz", !!figure && /Bild:/.test(figure.textContent) && /CC|Public domain|siehe Dateiseite/.test(figure.textContent), figure ? figure.querySelector("figcaption").textContent.trim().slice(0, 60) : "-");
+$("drawerClose").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+
+// Ort ohne Bild: kein Platzhalter, kein leerer Rahmen
+const noPhoto = data.places.find((p) => !p.photo);
+if (noPhoto) {
+  openCard(noPhoto.id);
+  await new Promise((r) => setTimeout(r, 40));
+  check("Ort ohne Bild zeigt keinen leeren Bildrahmen", !$("drawer").querySelector(".drawer-photo"), noPhoto.id);
+  $("drawerClose").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+}
 
 console.log("\n== Preisvergleich ==");
 $("compare").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
@@ -152,7 +217,7 @@ console.log("\n== Sortierung ==");
 const sort = $("sort");
 sort.value = "price";
 sort.dispatchEvent(new window.Event("change", { bubbles: true }));
-check("Sortierung nach Preis läuft", doc.querySelectorAll(".card").length === 84);
+check("Sortierung nach Preis läuft", cards() === TOTAL, String(cards()));
 check("keine Gruppen-Header bei Preissortierung", doc.querySelectorAll(".list .group").length === 0);
 
 console.log("\n== Mobile Liste (Bottom-Sheet) ==");
@@ -192,12 +257,12 @@ check("Escape schließt Sheet", !doc.body.classList.contains("sidebar-open"));
 
 console.log("\n== Transparenz: fehlende Bewertung / Speisekarte ==");
 const unratedCards = doc.querySelectorAll(".card .no-rating").length;
-check("Karten ohne Bewertung sind markiert", unratedCards === 11, unratedCards + " Karten (ohne Supermärkte)");
+check("Karten ohne Bewertung sind markiert", unratedCards === UNRATED, unratedCards + " von " + UNRATED + " (ohne Supermärkte)");
 const ratedCards = doc.querySelectorAll(".card .rating").length;
-check("bewertete Orte zeigen Sterne", ratedCards === 57, ratedCards + " Karten");
+check("bewertete Orte zeigen Sterne", ratedCards === RATED, ratedCards + " von " + RATED + " Karten");
 
 // Supermärkte: weder Sterne noch Platzhalter
-doc.querySelector(".card[data-id='netto-noerre-voldgade']").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+doc.querySelector(".card[data-id='netto-noerre-voldgade'] .card-btn").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
 await new Promise((r) => setTimeout(r, 50));
 const drawerHtml = () => $("drawer").innerHTML;
 check("Supermarkt-Drawer ohne Bewertungszeile", !drawerHtml().includes("Bewertung</span>"));
@@ -208,21 +273,21 @@ check("Supermarkt behält Öffnungszeiten", drawerHtml().includes("hours-table")
 $("drawerClose").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
 
 // Ort ohne Bewertung (Nicht-Supermarkt): Atelier September hat widersprüchliche Quellen
-doc.querySelector(".card[data-id='atelier-september']").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+doc.querySelector(".card[data-id='atelier-september'] .card-btn").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
 await new Promise((r) => setTimeout(r, 50));
 check("Drawer sagt 'Keine Bewertung verfügbar'", drawerHtml().includes("Keine Bewertung verfügbar"));
 check("Drawer nennt den Grund", /Quellen weichen ab/.test(drawerHtml()));
 $("drawerClose").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
 
 // Gastro ohne Menü: Figaro hat weder Website noch Karte
-doc.querySelector(".card[data-id='figaro']").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+doc.querySelector(".card[data-id='figaro'] .card-btn").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
 await new Promise((r) => setTimeout(r, 50));
 check("Drawer sagt 'Keine Speisekarte online'", drawerHtml().includes("Keine Speisekarte online"));
 check("Drawer begründet fehlende Karte", drawerHtml().includes("Keine Website und keine Speisekarte"));
 $("drawerClose").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
 
 // Bewerteter Ort mit Quelle: Kong Hans (Tripadvisor)
-doc.querySelector(".card[data-id='konghans']").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+doc.querySelector(".card[data-id='konghans'] .card-btn").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
 await new Promise((r) => setTimeout(r, 50));
 check("Bewertungsquelle wird ausgewiesen", drawerHtml().includes("Tripadvisor"));
 check("Speisekarten-Button vorhanden", !!$("drawer").querySelector("a[href*='konghans.dk']"));

@@ -98,6 +98,14 @@ Alle Inhalte stehen in `data/places.json`. Ein Eintrag:
   "website": "https://…",           // optional
   "menu": "https://…/menu",         // optional
   "menuNote": null,                 // Begründung wenn Gastro ohne Karte (wird angezeigt)
+  "photo": {                        // optional, von tools/fetch-photos.mjs erzeugt
+    "url": "https://upload.wikimedia.org/…/960px-….jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:…",
+    "author": "…",
+    "license": "CC BY-SA 4.0",
+    "credit": "Wikipedia · Nyhavn"
+  },
+  "wiki": "Nyhavn",                 // optional: exakter Wikipedia-Artikeltitel
   "tags": ["Burger", "Kult"],
   "src": "Quelle · Okt 2026"
 }
@@ -125,6 +133,7 @@ Die Skripte in `tools/` sind reine Node-Skripte ohne Abhängigkeiten (Ausnahme: 
 ```bash
 node tools/fetch-osm.mjs      # Koordinaten/Öffnungszeiten/Websites aus Overpass ziehen
 node tools/fetch-shops.mjs    # alle Supermärkte/Malls im Zentrum
+node tools/fetch-photos.mjs   # Fotos aus Wikipedia/Commons holen und Credits setzen
 node tools/linkcheck.mjs      # Website- und Menü-Links auf HTTP-Status prüfen
 node tools/test-hours.mjs     # Parser gegen alle Datensätze prüfen
 node tools/smoke.mjs          # UI-Smoke-Test ohne Browser (npm i jsdom)
@@ -162,6 +171,14 @@ abdunkelt. Ein reiner DOM-Test hätte den z-index-Bug unten nicht gefunden.
 - **Öffnungszeiten**: Wo OSM leer war, wurden die Betreiber-Websites ausgewertet (Marmorkirche, Lille Fugl,
   Palægade, Krebsegaarden, Skipperkroen, Mangia). Öffentlich zugängliche Orte (Nyhavn, Kleine Meerjungfrau,
   Strøget, Kastellet) stehen als `24/7`. Die vier verbleibenden Lücken sind im Datensatz begründet.
+- **Fotos**: `tools/fetch-photos.mjs` übernimmt das Lead-Bild des Wikipedia-Artikels – aber nur, wenn der
+  Artikel eine Koordinate besitzt, die innerhalb von 500 m zum Ort liegt. Genau dieser Test wirft die
+  mehrdeutigen Artikelnamen aus („Geranium“ = Storchschnabel, „Pluto“ = Zwergplanet, „Alchemist“ = Alchemie,
+  „Jagger“ = Katzenrasse) und alle Ketten-Artikel (Føtex, Lidl, 7-Eleven, SuperBrugsen), die keinen konkreten
+  Standort beschreiben. Ergebnis: 31 von 106 Orten haben ein Bild, die übrigen bewusst keines – kein Raten,
+  kein Platzhalter, kein Bild eines anderen Standorts. Autor und Lizenz stehen unter jedem Foto, die
+  Dateiseite ist verlinkt. Das Skript schreibt die Liste der Orte ohne Bild nach
+  `data/photo-review.json` (Zwischenergebnis, nicht eingecheckt).
 
 Preise, Öffnungszeiten und Bewertungen ändern sich. Die Seite zeigt bewusst die Quelle pro Eintrag an;
 vor dem Besuch lohnt ein Blick auf die offizielle Website (im Detail-Panel verlinkt).
