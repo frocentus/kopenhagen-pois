@@ -1,0 +1,226 @@
+[
+ {
+  "id": "mangia",
+  "home": 200,
+  "probes": [
+   {
+    "url": "https://mangia.dk/",
+    "status": 200,
+    "bytes": 27088
+   },
+   {
+    "url": "https://mangia.dk/menu/",
+    "status": 200,
+    "bytes": 33868
+   },
+   {
+    "url": "https://mangia.dk/menu/",
+    "status": 200,
+    "bytes": 33868
+   }
+  ],
+  "hours": null
+ },
+ {
+  "id": "marchal",
+  "home": 200,
+  "probes": [
+   {
+    "url": "https://www.marchal.dk/",
+    "status": 200,
+    "bytes": 81368
+   },
+   {
+    "url": "https://www.marchal.dk/menu",
+    "status": 404,
+    "bytes": 0
+   },
+   {
+    "url": "https://www.marchal.dk/en/restaurant/menu",
+    "status": 404,
+    "bytes": 0
+   }
+  ],
+  "hours": null
+ },
+ {
+  "id": "fiskebar",
+  "home": 200,
+  "probes": [
+   {
+    "url": "https://fiskebaren.dk/en/",
+    "status": 200,
+    "bytes": 57230
+   },
+   {
+    "url": "https://fiskebaren.dk/en/menu",
+    "status": 404,
+    "bytes": 0
+   },
+   {
+    "url": "https://fiskebaren.dk/menu",
+    "status": 404,
+    "bytes": 0
+   }
+  ],
+  "hours": null
+ },
+ {
+  "id": "burgerking",
+  "home": 200,
+  "probes": [
+   {
+    "url": "https://burgerking.dk/menu",
+    "status": 200,
+    "bytes": 8857
+   },
+   {
+    "url": "https://burgerking.dk/vaelg-restaurant",
+    "status": 200,
+    "bytes": 8857
+   }
+  ],
+  "hours": null
+ },
+ {
+  "id": "mcdonalds",
+  "home": 200,
+  "probes": [
+   {
+    "url": "https://www.mcdonalds.com/dk/da-dk/menu.html",
+    "status": 404,
+    "bytes": 0
+   },
+   {
+    "url": "https://www.mcdonalds.com/dk/da-dk/menu/populaert.html",
+    "status": 404,
+    "bytes": 0
+   },
+   {
+    "url": "https://www.mcdonalds.com/dk/da-dk/menu/burgere.html",
+    "status": 404,
+    "bytes": 0
+   }
+  ],
+  "hours": null
+ },
+ {
+  "id": "lagkagehuset",
+  "home": 200,
+  "probes": [
+   {
+    "url": "https://lagkagehuset.dk/",
+    "status": 200,
+    "bytes": 108879
+   },
+   {
+    "url": "https://lagkagehuset.dk/shop",
+    "status": 200,
+    "bytes": 69448
+   }
+  ],
+  "hours": null
+ },
+ {
+  "id": "emmerys",
+  "home": 200,
+  "probes": [
+   {
+    "url": "https://emmerys.dk/",
+    "status": 200,
+    "bytes": 225793
+   },
+   {
+    "url": "https://emmerys.dk/shop/",
+    "status": 404,
+    "bytes": 0
+   }
+  ],
+  "hours": null
+ },
+ {
+  "id": "hoest",
+  "home": 200,
+  "probes": [
+   {
+    "url": "https://cofoco.dk/en/restaurant/hoest",
+    "status": 200,
+    "bytes": 897111
+   },
+   {
+    "url": "https://cofoco.dk/en/restaurant/hoest/menu",
+    "status": 200,
+    "bytes": 897219
+   }
+  ],
+  "hours": "Opening Hours Monday – Sunday 17.30 – 00.00 Latest arrival time: 21.15 Our Address Nørre Farimagsgade 41 1364 Copenhagen K Tel +45 89 93 84 09 Email hoest@cofoc"
+ },
+ {
+  "id": "vaekst",
+  "home": 200,
+  "probes": [
+   {
+    "url": "https://cofoco.dk/en/restaurant/vaekst",
+    "status": 200,
+    "bytes": 1098052
+   }
+  ],
+  "hours": "Opening Hours Lunch Monday – Sunday 12.00 – 14.15 Dinner Monday – Sunday 17.30 – 00.00 Latest arrival time: 21.00 Our Address Sankt Peders Stræde 34 1453 Copenh"
+ },
+ {
+  "id": "norrlyst",
+  "home": 200,
+  "probes": [
+   {
+    "url": "https://norrlyst.dk/tamashii/menu/",
+    "status": 200,
+    "bytes": 355785
+   },
+   {
+    "url": "https://norrlyst.dk/vaeksthuset/aften/menu/",
+    "status": 200,
+    "bytes": 363408
+   },
+   {
+    "url": "https://norrlyst.dk/restaurantlillemoelle/menu/",
+    "status": 200,
+    "bytes": 319343
+   }
+  ],
+  "hours": null
+ },
+ {
+  "id": "palaegade",
+  "home": 200,
+  "probes": [
+   {
+    "url": "https://formelbgroup.dk/palaegade/menu/",
+    "status": 404,
+    "bytes": 0
+   },
+   {
+    "url": "https://formelbgroup.dk/palaegade/frokost/",
+    "status": 200,
+    "bytes": 47790
+   }
+  ],
+  "hours": null
+ },
+ {
+  "id": "democratic",
+  "home": 0,
+  "probes": [
+   {
+    "url": "https://democraticcoffee.dk/",
+    "status": 0,
+    "bytes": 0
+   },
+   {
+    "url": "https://www.democraticcoffee.com/",
+    "status": 0,
+    "bytes": 0
+   }
+  ],
+  "hours": null
+ }
+]

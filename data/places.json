@@ -3,12 +3,13 @@
     "city": "Kopenhagen",
     "scope": "Stadtzentrum: Indre By, Nyhavn, Christianshavn, Vesterbro, südl. Nørrebro/Østerbro",
     "generated": "2026-10-25",
-    "note": "Öffnungszeiten aus OpenStreetMap (ODbL), Preise/Bewertungen aus öffentlichen Quellen (VisitCopenhagen, kopenhagen.info, Anbieterseiten, Google-Rezensionen über Exa Places). Preise und Zeiten ändern sich – vor dem Besuch prüfen.",
+    "note": "Öffnungszeiten aus OpenStreetMap (ODbL) und – wo dort leer – von den Betreiber-Websites (Okt 2026). Preise und Bewertungen aus öffentlichen Quellen (VisitCopenhagen, kopenhagen.info, Betreiber-Websites, Google/Tripadvisor via Exa Places). Bewertungen ohne belastbare Quelle sind explizit als solche gekennzeichnet.",
     "center": [
       55.679,
       12.575
     ],
-    "zoom": 15
+    "zoom": 15,
+    "reviewed": "2026-10-25"
   },
   "categories": [
     {
@@ -96,8 +97,8 @@
       "reviews": "—",
       "priceLevel": 0,
       "priceText": "Eintritt frei · Kanalrundfahrt ca. 125–175 DKK",
-      "hours": null,
-      "hoursNote": "Öffentlicher Hafen – jederzeit zugänglich. Restaurants öffnen ab ca. 10–11 Uhr.",
+      "hours": "24/7",
+      "hoursNote": "Hafen und Kais sind rund um die Uhr frei zugänglich; die Restaurants öffnen ab ca. 10–11 Uhr.",
       "desc": "1673 als Frachthafen angelegt, heute die Postkarte Kopenhagens: farbige Giebelhäuser, alte Segler im Kanal und Hans Christian Andersens drei Wohnadressen (Nr. 18, 20, 67).",
       "tips": [
         "Vor 9 Uhr morgens ist es leer und das Licht weich – das klassische Foto ohne Menschenmassen.",
@@ -125,8 +126,8 @@
       "reviews": "37.700",
       "priceLevel": 0,
       "priceText": "Eintritt frei",
-      "hours": null,
-      "hoursNote": "Jederzeit zugänglich.",
+      "hours": "24/7",
+      "hoursNote": "Jederzeit frei zugänglich an der Langelinie-Promenade.",
       "desc": "Edvard Eriksens Bronzestatue von 1913 nach Hans Christian Andersens Märchen – nur 1,25 m groß und deutlich kleiner, als die meisten erwarten.",
       "tips": [
         "Nicht nur die Statue ansehen: der Weg über Kastellet und Langelinie ist das eigentliche Highlight.",
@@ -438,8 +439,8 @@
       "reviews": "—",
       "priceLevel": 1,
       "priceText": "Kirche frei · Kuppelaufstieg 50 DKK",
-      "hours": null,
-      "hoursNote": "Kirche meist Mo–Do 10–17, Fr ab 12, Sa/So nach Gottesdienst. Kuppel nur Sa/So 13:30 mit max. 15 Personen, Tickets nur vor Ort.",
+      "hours": "Mo-Th 10:00-17:00; Fr 12:00-17:00; Sa 10:00-17:00; Su 13:00-17:00",
+      "hoursNote": "Von marmorkirken.dk (Okt 2026). Kuppelaufstieg nur Sa/So 13:30, max. 15 Personen, Tickets ausschließlich vor Ort.",
       "desc": "Die größte Kuppel Skandinaviens (31 m), 1894 fertiggestellt – innen grün-golden ausgemalt und deutlich leerer als der Rest des Viertels.",
       "tips": [
         "Kuppelaufstieg: samstags oder sonntags 13:30, Tickets gibt es nur an der Tür – früh da sein.",
@@ -523,8 +524,8 @@
       "reviews": "—",
       "priceLevel": 0,
       "priceText": "Eintritt frei",
-      "hours": null,
-      "hoursNote": "Täglich zugänglich; Teile sind militärisches Sperrgebiet.",
+      "hours": "24/7",
+      "hoursNote": "Park und Wälle täglich frei zugänglich; einzelne Bereiche sind militärisches Sperrgebiet.",
       "desc": "Die sternförmige Festung von 1662 ist heute ein ruhiger Park mit Wallanlagen, Graben, Windmühle und Blick auf den Hafen – der Weg zur Kleinen Meerjungfrau führt mitten durch.",
       "tips": [
         "Perfekter Umweg zwischen Innenstadt und Den lille Havfrue – statt Straße durch den Park.",
@@ -581,8 +582,8 @@
       "reviews": "—",
       "priceLevel": 0,
       "priceText": "Eintritt frei",
-      "hours": null,
-      "hoursNote": "Geschäfte meist Mo–Sa 10–19/20, So 10–18.",
+      "hours": "24/7",
+      "hoursNote": "Fußgängerzone jederzeit begehbar; die Geschäfte öffnen meist Mo–Sa 10–19/20, So 10–18 Uhr.",
       "desc": "Einer der längsten Fußgängerzonen Europas, von der Rådhuspladsen bis zum Kongens Nytorv – 1,1 km mit Flagship-Stores, Straßenmusik und Abzweigungen in die schöneren Nebenstraßen.",
       "tips": [
         "Die Nebenstraßen (Købmagergade, Kronprinsensgade, Jægersborggade-Ecke) sind interessanter als die Hauptachse.",
@@ -702,13 +703,14 @@
         "Der Joghurt mit Granola ist das Gericht, für das die Leute kommen."
       ],
       "website": "https://cafeatelierseptember.com/",
-      "menu": null,
+      "menu": "https://cafeatelierseptember.com/pages/menu",
       "tags": [
         "Frühstück",
         "Vegetarisch",
         "Hip"
       ],
-      "src": "thenordicnomad · tablejourney (Okt 2026)"
+      "src": "thenordicnomad · tablejourney (Okt 2026)",
+      "ratingNote": "Quellen weichen ab (3,8–4,1) – keine eindeutige Zuordnung zur Filiale Kronprinsessegade."
     },
     {
       "id": "sonny",
@@ -731,7 +733,7 @@
         "Sonny hat weitere Filialen (Frederiksberg, Østerbro), falls die Stadtmitte voll ist."
       ],
       "website": "https://www.sonnycph.dk/",
-      "menu": null,
+      "menu": "https://www.sonnycph.dk/menu-3",
       "tags": [
         "Frühstück",
         "Kaffee"
@@ -746,8 +748,8 @@
       "lat": 55.68084,
       "lon": 12.57342,
       "area": "Indre By / Krystalgade",
-      "rating": null,
-      "reviews": "—",
+      "rating": 4.4,
+      "reviews": "973",
       "priceLevel": 1,
       "priceText": "Kaffee 35–50 DKK · Croissant 30 DKK",
       "hours": "Mo-Fr 07:30-17:00; Sa,Su 09:00-16:00",
@@ -765,7 +767,9 @@
         "Kaffee",
         "Regenwetter"
       ],
-      "src": "trippersterminal · OpenStreetMap (Okt 2026)"
+      "src": "trippersterminal · OpenStreetMap (Okt 2026)",
+      "ratingSource": "Google",
+      "menuNote": "Keine eigene Speisekarte online – Karte hängt im Café."
     },
     {
       "id": "kafbar",
@@ -793,7 +797,8 @@
         "Frühstück",
         "Brunch"
       ],
-      "src": "Google-Rezensionen via Exa Places (Okt 2026)"
+      "src": "Google-Rezensionen via Exa Places (Okt 2026)",
+      "menuNote": "Keine Speisekarte online – Karte vor Ort."
     },
     {
       "id": "dyrehaven",
@@ -803,8 +808,8 @@
       "lat": 55.66563,
       "lon": 12.54959,
       "area": "Vesterbro / Sønder Boulevard",
-      "rating": null,
-      "reviews": "—",
+      "rating": 4.1,
+      "reviews": "844",
       "priceLevel": 2,
       "priceText": "Frühstück ca. 70–120 DKK",
       "hours": "Mo 07:30-18:00; Tu-We 07:30-24:00; Th 07:30-01:00; Fr 07:30-02:00; Sa 10:00-02:00; Su 10:00-24:00",
@@ -821,7 +826,9 @@
         "Frühstück",
         "Vesterbro"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingSource": "Google",
+      "menuNote": "Nur die Weinkarte ist als PDF verfügbar; die Speisenkarte gibt es vor Ort."
     },
     {
       "id": "mad-og-kaffe",
@@ -831,8 +838,8 @@
       "lat": 55.66592,
       "lon": 12.55038,
       "area": "Vesterbro / Sønder Boulevard",
-      "rating": null,
-      "reviews": "—",
+      "rating": 4.5,
+      "reviews": "2.973",
       "priceLevel": 2,
       "priceText": "Brunch-Brett ca. 145–195 DKK",
       "hours": "08:30-20:00",
@@ -850,7 +857,8 @@
         "Brunch",
         "Familie"
       ],
-      "src": "tablejourney · OpenStreetMap (Okt 2026)"
+      "src": "tablejourney · OpenStreetMap (Okt 2026)",
+      "ratingSource": "Google"
     },
     {
       "id": "lagkagehuset",
@@ -873,13 +881,14 @@
         "Viele Filialen haben bis 19:30 offen – gut für einen späten Snack."
       ],
       "website": "https://lagkagehuset.dk/",
-      "menu": null,
+      "menu": "https://lagkagehuset.dk/shop",
       "tags": [
         "Frühstück",
         "Günstig",
         "Schnell"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung je Filiale unterschiedlich."
     },
     {
       "id": "sankt-peders",
@@ -889,7 +898,7 @@
       "lat": 55.67913,
       "lon": 12.56914,
       "area": "Indre By / Sankt Peders Stræde",
-      "rating": null,
+      "rating": 4.7,
       "reviews": "—",
       "priceLevel": 1,
       "priceText": "Zimtschnecke ca. 35 DKK",
@@ -908,7 +917,9 @@
         "Günstig",
         "Tradition"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingSource": "Google",
+      "menuNote": "Keine Website – Auslage im Laden."
     },
     {
       "id": "lille-fugl",
@@ -918,12 +929,12 @@
       "lat": 55.67756,
       "lon": 12.57766,
       "area": "Indre By / Gammel Strand",
-      "rating": null,
+      "rating": 4.3,
       "reviews": "—",
       "priceLevel": 2,
       "priceText": "Frühstück ca. 60–110 DKK",
-      "hours": null,
-      "hoursNote": "Öffnungszeiten richten sich nach den Ausstellungen im Kunstverein – vorher auf der Website prüfen.",
+      "hours": "Mo-We 07:30-18:00; Th 07:30-20:00; Fr 07:30-19:00; Sa-Su 09:00-18:00",
+      "hoursNote": "Von flerefugle.dk (Okt 2026); richtet sich nach den Ausstellungen im Kunstverein Gammel Strand.",
       "desc": "Kleines Café im Kunstverein Gammel Strand mit Blick auf den Kanal: saisonale Kleinigkeiten zum Frühstück, La-Cabra-Kaffee und preisgekröntes Gebäck.",
       "tips": [
         "Der Balkon über dem Kanal ist der eigentliche Grund für einen Besuch.",
@@ -931,12 +942,13 @@
         "Mit dem Christiansborg-Rundgang kombinieren – 3 Minuten zu Fuß."
       ],
       "website": "https://www.flerefugle.dk/en/lille-fugl",
-      "menu": null,
+      "menu": "https://cdn.sanity.io/files/uov2y1es/production/0a91527adf8cbf1526caf8241c497098e7098c07.pdf",
       "tags": [
         "Frühstück",
         "Aussicht"
       ],
-      "src": "flerefugle.dk (Okt 2026)"
+      "src": "flerefugle.dk (Okt 2026)",
+      "ratingSource": "Google"
     },
     {
       "id": "emmerys",
@@ -965,7 +977,9 @@
         "Bio",
         "Günstig"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung je Filiale zwischen 3,8 und 4,1.",
+      "menuNote": "Bäckerei: Produkte im Laden, keine Speisekarte online."
     },
     {
       "id": "frenchy",
@@ -993,7 +1007,8 @@
         "Frühstück",
         "Französisch"
       ],
-      "src": "Google-Rezensionen via Exa Places (Okt 2026)"
+      "src": "Google-Rezensionen via Exa Places (Okt 2026)",
+      "menuNote": "Website blockiert automatisierte Abrufe – Speisekarte über die Website."
     },
     {
       "id": "hoest",
@@ -1017,7 +1032,7 @@
         "Für ein günstigeres Cofoco-Erlebnis: Vækst (gleiche Gruppe, ähnliches Konzept)."
       ],
       "website": "https://cofoco.dk/en/restaurant/hoest",
-      "menu": null,
+      "menu": "https://cofoco.dk/en/restaurant/hoest/menu",
       "tags": [
         "Nordisch",
         "Menü",
@@ -1047,7 +1062,7 @@
         "Sehr zentral – 5 Minuten von Tivoli und Rådhuspladsen."
       ],
       "website": "https://cofoco.dk/en/restaurant/vaekst",
-      "menu": null,
+      "menu": "https://cofoco.dk/en/restaurant/vaekst/menu",
       "tags": [
         "Nordisch",
         "Menü",
@@ -1128,8 +1143,8 @@
       "priceLevel": 2,
       "mainDKK": 135,
       "priceText": "Smørrebrød 85–175 DKK · Mittag ca. 250–400 DKK",
-      "hours": null,
-      "hoursNote": "Mittags- und Abendservice; Zeiten auf der Website prüfen (Gruppe Formel B).",
+      "hours": "Mo-Su 11:30-17:00; Mo-Sa 18:00-24:00",
+      "hoursNote": "Mittag täglich, Abend Mo–Sa. Letzter Einlass 14:45 bzw. 20:30 (formelbgroup.dk, Okt 2026).",
       "desc": "Moderne, sehr präzise gemachte Smørrebrød-Variante nahe Nyhavn – optisch elegant, geschmacklich klassisch, mit guter Weinbegleitung.",
       "tips": [
         "Die schönere Alternative zu den Nyhavn-Restaurants mit Touristenmenüs.",
@@ -1137,7 +1152,7 @@
         "Fußweg zum Nyhavn: 4 Minuten."
       ],
       "website": "https://formelbgroup.dk/palaegade/",
-      "menu": null,
+      "menu": "https://formelbgroup.dk/palaegade/frokost/",
       "tags": [
         "Smørrebrød",
         "Gehoben"
@@ -1212,7 +1227,7 @@
       "lat": 55.67759,
       "lon": 12.57626,
       "area": "Indre By / Kompagnistræde",
-      "rating": null,
+      "rating": 4.5,
       "reviews": "—",
       "priceLevel": 3,
       "mainDKK": 280,
@@ -1232,7 +1247,9 @@
         "Bib Gourmand",
         "Menü"
       ],
-      "src": "earlybird.dk · Michelin Guide 2026 (Okt 2026)"
+      "src": "earlybird.dk · Michelin Guide 2026 (Okt 2026)",
+      "ratingSource": "Google",
+      "menuNote": "Menüs liegen unter den einzelnen Konzepten auf norrlyst.dk."
     },
     {
       "id": "bistro-boheme",
@@ -1268,18 +1285,18 @@
       "id": "marchal",
       "name": "Marchal",
       "cat": "restaurant",
-      "sub": "Fine Dining (Hotel d'Angleterre)",
+      "sub": "Fine Dining, 1 Michelin-Stern",
       "lat": 55.68038,
       "lon": 12.58473,
       "area": "Kongens Nytorv",
-      "rating": null,
+      "rating": 4.5,
       "reviews": "—",
       "priceLevel": 4,
       "mainDKK": 375,
       "priceText": "Hauptgerichte 295–495 DKK · Menü ab ca. 900 DKK",
       "hours": "Mo-Th 07:30-10:00,12:00-16:30,18:00-22:00; Fr-Sa 07:30-10:00,12:00-16:30,18:00-23:00; Su 07:30-10:00,12:00-16:30,18:00-22:00",
       "hoursNote": "Frühstück nur für Hotelgäste.",
-      "desc": "Das Restaurant im Hotel d'Angleterre am Kongens Nytorv: klassische französisch-nordische Küche, sehr formeller Service, Michelin-Erwähnung – der Ort für einen besonderen Abend.",
+      "desc": "Das Restaurant im Hotel d'Angleterre am Kongens Nytorv: klassische französisch-nordische Küche, sehr formeller Service, ein Michelin-Stern (2026) – der Ort für einen besonderen Abend.",
       "tips": [
         "Dresscode: smart casual, keine Shorts.",
         "Das Mittagsangebot ist deutlich günstiger als das Abendmenü.",
@@ -1291,7 +1308,9 @@
         "Fine Dining",
         "Besonderer Abend"
       ],
-      "src": "OpenStreetMap · marchal.dk (Okt 2026)"
+      "src": "OpenStreetMap · marchal.dk (Okt 2026)",
+      "ratingSource": "Google",
+      "menuNote": "Speisekarte über die Hotel-Website (Menüführung dort)."
     },
     {
       "id": "aoc",
@@ -1321,24 +1340,25 @@
         "Fine Dining",
         "Luxus"
       ],
-      "src": "restaurantaoc.dk · Michelin Guide (Okt 2026)"
+      "src": "restaurantaoc.dk · Michelin Guide (Okt 2026)",
+      "ratingNote": "2 Michelin-Sterne (2026); keine belastbare Publikumsbewertung für diese Adresse gefunden."
     },
     {
       "id": "konghans",
       "name": "Kong Hans Kælder",
       "cat": "restaurant",
-      "sub": "Michelin, mittelalterliches Gewölbe",
+      "sub": "2 Michelin-Sterne, mittelalterliches Gewölbe",
       "lat": 55.67876,
       "lon": 12.58404,
       "area": "Indre By / Vingårdstræde",
-      "rating": null,
-      "reviews": "—",
+      "rating": 4.6,
+      "reviews": "344",
       "priceLevel": 4,
       "mainDKK": 700,
       "priceText": "Menü ab ca. 1.400 DKK · Mittagsmenü günstiger",
       "hours": "Tu-Sa 18:00-24:00",
       "hoursNote": "Nur abends; Mittagsangebot saisonal.",
-      "desc": "Das älteste Gourmetrestaurant Dänemarks (1976), in einem mittelalterlichen Kellergewölbe – französische Klassik mit dänischen Zutaten, ein Michelin-Stern.",
+      "desc": "Das älteste Gourmetrestaurant Dänemarks (1976) in einem mittelalterlichen Kellergewölbe – französische Klassik mit dänischen Zutaten, seit 2021 mit zwei Michelin-Sternen (2026 bestätigt).",
       "tips": [
         "Das Mittagsangebot ist der günstigste Weg in ein Sternerestaurant der Stadt.",
         "Der Raum ist historisch – auch für Nicht-Weintrinker beeindruckend.",
@@ -1350,7 +1370,8 @@
         "Michelin",
         "Fine Dining"
       ],
-      "src": "konghans.dk (Okt 2026)"
+      "src": "konghans.dk (Okt 2026)",
+      "ratingSource": "Tripadvisor"
     },
     {
       "id": "krebsegaarden",
@@ -1365,16 +1386,16 @@
       "priceLevel": 4,
       "mainDKK": 330,
       "priceText": "Menü ca. 500–700 DKK",
-      "hours": null,
-      "hoursNote": "Meist abends, Mo–Sa – Zeiten vorab prüfen.",
+      "hours": "Tu-Sa 18:00-23:30",
+      "hoursNote": "Montag und Sonntag geschlossen (krebsegaarden.dk, Okt 2026).",
       "desc": "Winziges Restaurant in der Studiestræde mit einer der höchsten Bewertungen der Innenstadt: saisonale Gerichte, Weinbegleitung, der Chef kocht und erklärt selbst.",
       "tips": [
         "Unbedingt reservieren – nur wenige Tische.",
         "Die Weinbegleitung wird von Gästen fast immer gelobt.",
         "Als „besondere Nacht“ einplanen, nicht als schnelles Abendessen."
       ],
-      "website": null,
-      "menu": null,
+      "website": "https://krebsegaarden.dk/",
+      "menu": "https://krebsegaarden.dk/menu",
       "tags": [
         "Klein",
         "Reservieren",
@@ -1390,8 +1411,8 @@
       "lat": 55.66785,
       "lon": 12.55927,
       "area": "Vesterbro / Kødbyen",
-      "rating": null,
-      "reviews": "—",
+      "rating": 4.3,
+      "reviews": "4.394",
       "priceLevel": 3,
       "mainDKK": 275,
       "priceText": "Hauptgerichte 195–350 DKK · Austern ab 45 DKK",
@@ -1410,7 +1431,9 @@
         "Vesterbro",
         "Abends"
       ],
-      "src": "OpenStreetMap · fiskebaren.dk (Okt 2026)"
+      "src": "OpenStreetMap · fiskebaren.dk (Okt 2026)",
+      "ratingSource": "Google",
+      "menuNote": "Speisekarte auf der Website im Abschnitt „Menu“."
     },
     {
       "id": "baest",
@@ -1420,7 +1443,7 @@
       "lat": 55.69222,
       "lon": 12.55591,
       "area": "Nørrebro / Guldbergsgade",
-      "rating": null,
+      "rating": 4.2,
       "reviews": "—",
       "priceLevel": 2,
       "mainDKK": 165,
@@ -1440,7 +1463,8 @@
         "Bio",
         "Nørrebro"
       ],
-      "src": "OpenStreetMap · baest.dk (Okt 2026)"
+      "src": "OpenStreetMap · baest.dk (Okt 2026)",
+      "ratingSource": "Google"
     },
     {
       "id": "mangia",
@@ -1450,13 +1474,13 @@
       "lat": 55.67326,
       "lon": 12.5544,
       "area": "Vesterbro",
-      "rating": null,
-      "reviews": "—",
+      "rating": 4.2,
+      "reviews": "486",
       "priceLevel": 2,
       "mainDKK": 175,
       "priceText": "Pasta/Hauptgerichte 150–220 DKK",
-      "hours": null,
-      "hoursNote": "Zeiten auf der Website prüfen.",
+      "hours": "Tu-Th 17:30-24:00; Fr-Sa 17:30-02:00",
+      "hoursNote": "Montag und Sonntag geschlossen (Website/Google, Okt 2026).",
       "desc": "Unkompliziertes italienisches Restaurant in Vesterbro mit Pasta, Antipasti und solider Weinauswahl – eine der günstigeren guten Optionen im Viertel.",
       "tips": [
         "Pasta statt Hauptgerichte bestellen: günstiger und meist besser.",
@@ -1469,7 +1493,8 @@
         "Italienisch",
         "Günstig"
       ],
-      "src": "OpenStreetMap · mangia.dk (Okt 2026)"
+      "src": "OpenStreetMap · mangia.dk (Okt 2026)",
+      "ratingSource": "Google"
     },
     {
       "id": "cap-horn",
@@ -1479,7 +1504,7 @@
       "lat": 55.68041,
       "lon": 12.58952,
       "area": "Nyhavn",
-      "rating": null,
+      "rating": 4.1,
       "reviews": "—",
       "priceLevel": 3,
       "mainDKK": 200,
@@ -1499,7 +1524,9 @@
         "Terrasse",
         "Dänisch"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingSource": "Google",
+      "menuNote": "Speisekarte direkt auf der Website im Abschnitt „Menu“."
     },
     {
       "id": "nyhavn17",
@@ -1509,7 +1536,7 @@
       "lat": 55.68052,
       "lon": 12.58913,
       "area": "Nyhavn",
-      "rating": null,
+      "rating": 3.7,
       "reviews": "—",
       "priceLevel": 3,
       "mainDKK": 230,
@@ -1529,7 +1556,8 @@
         "Dänisch",
         "Aussicht"
       ],
-      "src": "OpenStreetMap · nyhavn17.dk (Okt 2026)"
+      "src": "OpenStreetMap · nyhavn17.dk (Okt 2026)",
+      "ratingSource": "Google"
     },
     {
       "id": "kanalen",
@@ -1539,8 +1567,8 @@
       "lat": 55.67556,
       "lon": 12.59314,
       "area": "Christianshavn",
-      "rating": null,
-      "reviews": "—",
+      "rating": 4.3,
+      "reviews": "504",
       "priceLevel": 3,
       "mainDKK": 230,
       "priceText": "Hauptgerichte 195–295 DKK · Mittag günstiger",
@@ -1559,7 +1587,8 @@
         "Kanal",
         "Mittag"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingSource": "Tripadvisor"
     },
     {
       "id": "skipperkroen",
@@ -1569,27 +1598,28 @@
       "lat": 55.68031,
       "lon": 12.58989,
       "area": "Nyhavn",
-      "rating": null,
-      "reviews": "—",
+      "rating": 3.6,
+      "reviews": "1.056",
       "priceLevel": 2,
       "mainDKK": 130,
       "priceText": "Smørrebrød 80–165 DKK",
-      "hours": null,
-      "hoursNote": "Meist täglich ab ca. 11 Uhr – Zeiten vor Ort prüfen.",
+      "hours": "Mo-Th 11:30-22:30; Fr-Sa 11:30-23:15; Su 11:30-22:30",
+      "hoursNote": "Aus dem aktuellen Menükort (09/2026).",
       "desc": "Kleine, alte Smørrebrød-Kneipe am Nyhavn mit maritimer Einrichtung – deutlich authentischer als die großen Terrassen daneben.",
       "tips": [
         "Für klassisches Smørrebrød zum Mittag, nicht für ein Abendessen.",
         "Wenige Plätze – außerhalb der Stoßzeit kommen.",
         "Die Hering-Varianten sind die richtige Wahl."
       ],
-      "website": null,
-      "menu": null,
+      "website": "https://streckers.dk/skipperkroen/",
+      "menu": "https://streckers.dk/wp-content/uploads/2026/09/sk-menukort-frokost_0926_dk.pdf",
       "tags": [
         "Smørrebrød",
         "Nyhavn",
         "Mittag"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingSource": "Google"
     },
     {
       "id": "figaro",
@@ -1605,7 +1635,7 @@
       "mainDKK": 180,
       "priceText": "Hauptgerichte 160–240 DKK",
       "hours": null,
-      "hoursNote": "Zeiten auf der Website prüfen.",
+      "hoursNote": "Keine verifizierten Öffnungszeiten gefunden – bitte telefonisch prüfen.",
       "desc": "Italienisches Bistro mit Weinbar-Charakter nahe Tivoli – Antipasti, Pasta und eine Auswahl an offenen Weinen, entspannt und ohne Dresscode.",
       "tips": [
         "Gute Option vor oder nach einem Tivoli-Besuch.",
@@ -1619,7 +1649,9 @@
         "Wein",
         "Zentral"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kein Online-Profil mit belastbarer Bewertung gefunden.",
+      "menuNote": "Keine Website und keine Speisekarte online gefunden."
     },
     {
       "id": "les-trois-cochons",
@@ -1629,13 +1661,13 @@
       "lat": 55.67272,
       "lon": 12.55086,
       "area": "Vesterbro / Værnedamsvej",
-      "rating": null,
-      "reviews": "—",
+      "rating": 3.8,
+      "reviews": "553",
       "priceLevel": 3,
       "mainDKK": 240,
       "priceText": "Hauptgerichte 195–320 DKK",
       "hours": null,
-      "hoursNote": "Meist ab 17:30, Sa/So auch mittags – Zeiten prüfen.",
+      "hoursNote": "Drittquellen nennen 08:00–15:00 und 17:30–24:00; offiziell nicht bestätigt. Bitte vor dem Besuch prüfen.",
       "desc": "Französisches Bistro auf der Værnedamsvej, der kleinen „Pariser Straße“ Vesterbros: Ente, Steak frites, Zwiebelsuppe – klassisch und beliebt.",
       "tips": [
         "Værnedamsvej selbst ist einen Bummel wert (Feinkost, Blumen, Cafés).",
@@ -1649,7 +1681,9 @@
         "Bistro",
         "Vesterbro"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingSource": "Tripadvisor",
+      "menuNote": "Keine Website und keine Speisekarte online gefunden."
     },
     {
       "id": "gasoline-grill",
@@ -1708,7 +1742,8 @@
         "Burger",
         "Gehoben"
       ],
-      "src": "Google-Rezensionen via Exa Places · Berlingske (Okt 2026)"
+      "src": "Google-Rezensionen via Exa Places · Berlingske (Okt 2026)",
+      "menuNote": "Karte auf der Startseite der Website (keine eigene Menü-URL)."
     },
     {
       "id": "tommijs",
@@ -1718,8 +1753,8 @@
       "lat": 55.66823,
       "lon": 12.55808,
       "area": "Vesterbro / Kødbyen",
-      "rating": null,
-      "reviews": "—",
+      "rating": 4.3,
+      "reviews": "2.876",
       "priceLevel": 1,
       "mainDKK": 85,
       "priceText": "Burger ca. 85 DKK · Menü ca. 120 DKK",
@@ -1737,7 +1772,8 @@
         "Burger",
         "Schnell"
       ],
-      "src": "OpenStreetMap · burgerjoint.dk (Okt 2026)"
+      "src": "OpenStreetMap · burgerjoint.dk (Okt 2026)",
+      "ratingSource": "Google"
     },
     {
       "id": "jagger",
@@ -1767,7 +1803,8 @@
         "Günstig",
         "Schnell"
       ],
-      "src": "OpenStreetMap · jagger.dk (Okt 2026)"
+      "src": "OpenStreetMap · jagger.dk (Okt 2026)",
+      "ratingNote": "Kette – Filialbewertungen liegen je Standort bei ca. 4,0–4,3."
     },
     {
       "id": "sunset-boulevard",
@@ -1797,7 +1834,8 @@
         "Fritten",
         "Spät"
       ],
-      "src": "OpenStreetMap · sunset-boulevard.dk (Okt 2026)"
+      "src": "OpenStreetMap · sunset-boulevard.dk (Okt 2026)",
+      "ratingNote": "Kette – Filialbewertungen schwanken stark je Standort."
     },
     {
       "id": "mcdonalds-nyhavn",
@@ -1827,7 +1865,9 @@
         "24h",
         "Günstig"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale.",
+      "menuNote": "Speisekarte nur in der McDonald's-App bzw. auf mcdonalds.dk."
     },
     {
       "id": "burger-king-stroget",
@@ -1851,13 +1891,14 @@
         "2 Minuten vom Tivoli-Eingang."
       ],
       "website": "https://www.burgerking.dk/",
-      "menu": null,
+      "menu": "https://burgerking.dk/menu",
       "tags": [
         "Burger",
         "24h",
         "Günstig"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale."
     },
     {
       "id": "broens-gadekoekken",
@@ -1873,7 +1914,7 @@
       "mainDKK": 85,
       "priceText": "Gerichte ca. 75–120 DKK",
       "hours": null,
-      "hoursNote": "Saisonal, meist April–September/Oktober; Winterpause möglich.",
+      "hoursNote": "Streetfood-Saison endet im Oktober: ab 30.10.2026 Winterbetrieb als Eisbahn (Broens Skøjtebane). Zeiten auf broensstreetfood.dk.",
       "desc": "Streetfood-Markt direkt an der Inderhavnsbrücke – Stände mit Burger, Tacos, Fisch und dänischen Klassikern, dazu Bierbänke mit Blick auf den Hafen.",
       "tips": [
         "Gut für gemischte Gruppen: jeder sucht sich einen Stand.",
@@ -1887,7 +1928,9 @@
         "Draußen",
         "Gruppen"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Saisonbetrieb mit wechselnden Ständen – keine stabile Bewertung.",
+      "menuNote": "Saisonbetrieb mit wechselnden Ständen – keine feste Karte."
     },
     {
       "id": "dominos-christianshavn",
@@ -1911,13 +1954,14 @@
         "Alternativ: die Pizzerien am Christianshavns Torv sind authentischer."
       ],
       "website": "https://www.dominos.dk/",
-      "menu": null,
+      "menu": "https://www.dominos.dk/menu/pizza",
       "tags": [
         "Pizza",
         "Lieferung",
         "Günstig"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale."
     },
     {
       "id": "netto-noerre-voldgade",
@@ -1945,7 +1989,8 @@
         "Günstig",
         "Picknick"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale."
     },
     {
       "id": "netto-kongens-nytorv",
@@ -1973,7 +2018,8 @@
         "Günstig",
         "Zentral"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale."
     },
     {
       "id": "netto-vesterbro",
@@ -2001,7 +2047,8 @@
         "Günstig",
         "Spät"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale."
     },
     {
       "id": "foetex-city",
@@ -2029,7 +2076,8 @@
         "Sortiment",
         "Zentral"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale."
     },
     {
       "id": "foetex-st-kongensgade",
@@ -2039,8 +2087,8 @@
       "lat": 55.68355,
       "lon": 12.58685,
       "area": "Frederiksstaden",
-      "rating": null,
-      "reviews": "—",
+      "rating": 4.1,
+      "reviews": "150",
       "priceLevel": 2,
       "priceText": "Mittleres Preisniveau",
       "hours": "07:00-24:00",
@@ -2057,7 +2105,8 @@
         "Spät",
         "Zentral"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingSource": "Google"
     },
     {
       "id": "rema-gothersgade",
@@ -2085,7 +2134,8 @@
         "Günstig",
         "Zentral"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale."
     },
     {
       "id": "rema-vesterport",
@@ -2113,7 +2163,8 @@
         "Günstig",
         "Verkehr"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale."
     },
     {
       "id": "discount-365-noerre",
@@ -2141,7 +2192,8 @@
         "Günstig",
         "Picknick"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale."
     },
     {
       "id": "superbrugsen-nyhavn",
@@ -2169,7 +2221,8 @@
         "Sortiment",
         "Zentral"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale."
     },
     {
       "id": "superbrugsen-farimags",
@@ -2197,7 +2250,8 @@
         "Sortiment",
         "Zentral"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale."
     },
     {
       "id": "meny-illum",
@@ -2225,7 +2279,8 @@
         "Feinkost",
         "Mitbringsel"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale."
     },
     {
       "id": "lidl-vesterbro",
@@ -2252,7 +2307,8 @@
       "tags": [
         "Günstig"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale."
     },
     {
       "id": "seven-eleven-raadhuspladsen",
@@ -2281,7 +2337,8 @@
         "Kiosk",
         "Zentral"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale."
     },
     {
       "id": "seven-eleven-noerreport",
@@ -2310,7 +2367,8 @@
         "Verkehr",
         "Zentral"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale."
     },
     {
       "id": "seven-eleven-store-kongensgade",
@@ -2339,7 +2397,8 @@
         "Kiosk",
         "Nyhavn"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale."
     },
     {
       "id": "seven-eleven-christianshavn",
@@ -2368,7 +2427,8 @@
         "Kiosk",
         "Christianshavn"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale."
     },
     {
       "id": "illum",
@@ -2378,8 +2438,8 @@
       "lat": 55.67957,
       "lon": 12.58024,
       "area": "Indre By / Amagertorv",
-      "rating": null,
-      "reviews": "—",
+      "rating": 4.2,
+      "reviews": "6.584",
       "priceLevel": 3,
       "priceText": "Gehobenes Kaufhaus",
       "hours": "Mo-Su 10:00-20:00",
@@ -2397,7 +2457,8 @@
         "Design",
         "Aussicht"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingSource": "Google"
     },
     {
       "id": "magasin",
@@ -2407,8 +2468,8 @@
       "lat": 55.6792,
       "lon": 12.58389,
       "area": "Kongens Nytorv",
-      "rating": null,
-      "reviews": "—",
+      "rating": 4.2,
+      "reviews": "16.952",
       "priceLevel": 3,
       "priceText": "Gehobenes Kaufhaus",
       "hours": "10:00-20:00",
@@ -2425,7 +2486,8 @@
         "Shopping",
         "Zentral"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingSource": "Google"
     },
     {
       "id": "fisketorvet",
@@ -2435,8 +2497,8 @@
       "lat": 55.66198,
       "lon": 12.56134,
       "area": "Vesterbro / Havneholmen",
-      "rating": null,
-      "reviews": "—",
+      "rating": 4.2,
+      "reviews": "18.153",
       "priceLevel": 2,
       "priceText": "Mittleres Preisniveau",
       "hours": "Mo-Su 10:00-20:00",
@@ -2454,7 +2516,8 @@
         "Regenwetter",
         "Familie"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingSource": "Google"
     },
     {
       "id": "frederiksberg-centret",
@@ -2464,8 +2527,8 @@
       "lat": 55.68174,
       "lon": 12.53261,
       "area": "Frederiksberg",
-      "rating": null,
-      "reviews": "—",
+      "rating": 4.2,
+      "reviews": "9.065",
       "priceLevel": 2,
       "priceText": "Mittleres Preisniveau",
       "hours": "Mo-Fr 10:00-19:00; Sa-Su 10:00-17:00",
@@ -2482,7 +2545,8 @@
         "Shopping",
         "Regenwetter"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "ratingSource": "Google"
     }
   ]
 }

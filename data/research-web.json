@@ -1,0 +1,307 @@
+[
+ {
+  "id": "democratic-coffee",
+  "pageStatus": 0,
+  "finalUrl": "https://www.democraticcoffee.dk/",
+  "menu": [],
+  "hours": null
+ },
+ {
+  "id": "kafbar",
+  "pageStatus": 200,
+  "finalUrl": "https://kaf-bar.dk/",
+  "menu": [],
+  "hours": "Opening Hours MONDAY - FRIDAY: 08:00-17:00 SATURDAY: 10:00-17:00 SUNDAYS: CLOSED (Public holidays, opening hours may vary) Visit us: Antonigade 9, 1106 Copenhagen K Call us: 33 31 99 99 E-mail us: hello@kaf-bar.dk (Pleas"
+ },
+ {
+  "id": "lagkagehuset",
+  "pageStatus": 200,
+  "finalUrl": "https://lagkagehuset.dk/",
+  "menu": [],
+  "hours": null
+ },
+ {
+  "id": "sonny",
+  "pageStatus": 200,
+  "finalUrl": "https://www.sonnycph.dk/",
+  "menu": [
+   {
+    "url": "https://www.sonnycph.dk/menu-3-1",
+    "label": "Menu Frederiksberg Allé",
+    "status": 200
+   },
+   {
+    "url": "https://www.sonnycph.dk/menu-3",
+    "label": "Menu Rådhusstræde",
+    "status": 200
+   },
+   {
+    "url": "https://www.sonnycph.dk/menu-3-2",
+    "label": "Menu Østerbrogade",
+    "status": 200
+   }
+  ],
+  "hours": "opening hours except Fridays Friday evenings we are open until 22 Coffee in collaboration with La Cabra All our coffees are supplied by Danish well-announced roastery La Cabra with who we share knowledge on brew processi"
+ },
+ {
+  "id": "emmerys",
+  "pageStatus": 200,
+  "finalUrl": "https://emmerys.dk/",
+  "menu": [
+   {
+    "url": "https://emmerys.dk/find-din-emmerys/",
+    "label": "Find din butik på kort",
+    "status": 200
+   }
+  ],
+  "hours": null
+ },
+ {
+  "id": "atelier-september",
+  "pageStatus": 200,
+  "finalUrl": "https://cafeatelierseptember.com/",
+  "menu": [
+   {
+    "url": "https://cafeatelierseptember.com/pages/menu",
+    "label": "MENU",
+    "status": 200
+   },
+   {
+    "url": "https://gifts.shopbox.com/",
+    "label": "GIFTCARD",
+    "status": 200
+   }
+  ],
+  "hours": "Opening Hours KRONPRINSESSEGADE Kronprinsessegade 62 1306 København K Opening hours Mon - Fri 7.30 - 18 Sat - Sun 8 - 17 Kitchen closes at 15 NORDHAVN Århusgade 128 2150 København Ø Opening hours Mon - Fri 7.30 - 18 Sat"
+ },
+ {
+  "id": "frenchy",
+  "pageStatus": 423,
+  "finalUrl": "https://www.frenchy.dk/",
+  "menu": [],
+  "hours": null
+ },
+ {
+  "id": "lille-fugl",
+  "pageStatus": 200,
+  "finalUrl": "https://www.flerefugle.dk/en/lille-fugl",
+  "menu": [
+   {
+    "url": "https://shop.fresto.io/en/lille-fugl/menu/products",
+    "label": "Order bread and pastries with pickup at Lille Fugl",
+    "status": 200
+   },
+   {
+    "url": "https://cdn.sanity.io/files/uov2y1es/production/0a91527adf8cbf1526caf8241c497098e7098c07.pdf",
+    "label": "Lille Fugl menu",
+    "status": 200
+   },
+   {
+    "url": "https://www.flerefugle.dk/en/gift-cards",
+    "label": "Gift cards",
+    "status": 200
+   }
+  ],
+  "hours": "Opening hours Monday 07:30 - 18:00 Tuesday 07:30 - 18:00 Wednesday 07:30 - 18:00 Thursday 07:30 - 20:00 Friday 07:30 - 19:00 Saturday 09:00 - 18:00 Sunday 09:00 - 18:00 Lille Fugl Gammel Strand 48 1202, København Maps +4"
+ },
+ {
+  "id": "dyrehaven",
+  "pageStatus": 200,
+  "finalUrl": "https://www.dyrehavenkbh.dk/",
+  "menu": [
+   {
+    "url": "https://82c7c99b-ad21-40b9-a078-8df7a7bb1f62.filesusr.com/ugd/c88c54_60d41ac24df54c008843914c32b7ffd0.pdf",
+    "label": "VINKORT",
+    "status": 200
+   }
+  ],
+  "hours": "Åbningstider ÅBNINGS TIDER BAR ​ Manda g 07:30-18:00 ​ Tirsdag-Onsdag 07:3 0-00: 00 Torsdag 07:30-01:00 ​ Fredag 07:30-02:00 ​ L&oslash;rdag 10:00-02:00 S&oslash;ndag 10:00-18:00 K&Oslash;KKEN ​ ​ Mandag Morgenmad 07:30-"
+ },
+ {
+  "id": "marchal",
+  "pageStatus": 200,
+  "finalUrl": "https://www.marchal.dk/",
+  "menu": [],
+  "hours": null
+ },
+ {
+  "id": "fiskebar",
+  "pageStatus": 200,
+  "finalUrl": "https://fiskebaren.dk/en/",
+  "menu": [],
+  "hours": null
+ },
+ {
+  "id": "palaegade",
+  "pageStatus": 200,
+  "finalUrl": "https://formelbgroup.dk/palaegade/",
+  "menu": [
+   {
+    "url": "https://order.lifepeaks.dk/palaegade",
+    "label": "Gavekort",
+    "status": 200
+   },
+   {
+    "url": "https://formelbgroup.dk/palaegade/frokost-koebenhavn/",
+    "label": "frokostrestaurant i København",
+    "status": 200
+   },
+   {
+    "url": "https://formelbgroup.dk/palaegade/frokost/",
+    "label": "smørrebrødstradition",
+    "status": 200
+   }
+  ],
+  "hours": null
+ },
+ {
+  "id": "cap-horn",
+  "pageStatus": 200,
+  "finalUrl": "https://tholstrup.dk/cap-horn/",
+  "menu": [
+   {
+    "url": "https://tholstrup.dk/cap-horn/",
+    "label": "Menu",
+    "status": 200
+   },
+   {
+    "url": "https://book.easytable.com/book/?id=ed058&amp;lang=da",
+    "label": "Book teatermenu",
+    "status": 200
+   },
+   {
+    "url": "https://book.easytable.com/book/?id=ed058&",
+    "label": "Teatermenu – Cap Horn i Nyhavn",
+    "status": 200
+   }
+  ],
+  "hours": "Åbningstider Restaurant Alle dage: 10.00 &#8211; 22.00 Køkken Alle dage: 11.00 &#8211; 21.00 Åbent alle ugens dage året rundt – undtagen 24. og 25. december. Fødevarestyrelsens kontrolrapport Virksomheder Møder, events o"
+ },
+ {
+  "id": "dandelion-burger",
+  "pageStatus": 200,
+  "finalUrl": "https://www.dandelionburger.com/",
+  "menu": [],
+  "hours": "Åbningstider Mandag Tirsdag Onsdag Torsdag Fredag Lørdag Søndag Lukket 11:00 - 22:00 11:00 - 22:00 11:00 - 22:00 11:00 - 22:00 11:00 - 22:00 11:00 - 22:00"
+ },
+ {
+  "id": "broens-gadekoekken",
+  "pageStatus": 200,
+  "finalUrl": "https://broensstreetfood.dk/",
+  "menu": [],
+  "hours": "Åbningstider VI SES PÅ SKØJTEBANEN DEN 30/10 Mad Drikke Events Info Om Broens Selskaber Ansøg om madbod Broens Skøjtebane Åbningstider English BESØG SKØJTEBANEN FRA DEN 30. OKTOBER SKØJTEBANEN ÅBNER DEN 30/10 BROENS MADB"
+ },
+ {
+  "id": "marmorkirken",
+  "pageStatus": 200,
+  "finalUrl": "https://www.marmorkirken.dk/",
+  "menu": [],
+  "hours": "OPENING HOURS ​ MANDAG - torsdag 10 - 17 FREDAG 12 -17 L&Oslash;RDAG: 10 - 17 S&Oslash;NDAG: 13 - 17 ​ OBS: ​ ​ ​ 31/10: 13-17 14/11: 13-17 21/11: Lukket 28/11: Lukket 29/11: Lukket ​ Vi g&oslash;r opm&aelig;rksom p&arin"
+ },
+ {
+  "id": "mcdonalds-nyhavn",
+  "pageStatus": 404,
+  "finalUrl": "https://www.mcdonalds.com/dk/da-dk/menu.html",
+  "menu": [],
+  "hours": null
+ },
+ {
+  "id": "burger-king-stroget",
+  "pageStatus": 200,
+  "finalUrl": "https://burgerking.dk/",
+  "menu": [],
+  "hours": null
+ },
+ {
+  "id": "vaekst",
+  "pageStatus": 200,
+  "finalUrl": "https://cofoco.dk/en/restaurant/vaekst",
+  "menu": [
+   {
+    "url": "https://cofoco.dk/en/pages/giftcard",
+    "label": "Giftcard",
+    "status": 200
+   },
+   {
+    "url": "https://order.lifepeaks.dk/en/vaekst",
+    "label": "Buy gift card",
+    "status": 200
+   },
+   {
+    "url": "https://order.lifepeaks.dk/en/cofoco?lang=eng",
+    "label": "Buy a Gift Card",
+    "status": 200
+   }
+  ],
+  "hours": "Opening Hours Lunch Monday – Sunday 12.00 – 14.15 Dinner Monday – Sunday 17.30 – 00.00 Latest arrival time: 21.00 Our Address Sankt Peders Stræde 34 1453 Copenhagen K Tel +45 3841 2727 Email vaekst@cofoco.dk Groups In be"
+ },
+ {
+  "id": "hoest",
+  "pageStatus": 200,
+  "finalUrl": "https://cofoco.dk/en/restaurant/hoest",
+  "menu": [
+   {
+    "url": "https://cofoco.dk/en/pages/giftcard",
+    "label": "Giftcard",
+    "status": 200
+   },
+   {
+    "url": "https://order.lifepeaks.dk/en/host",
+    "label": "Buy Gift card",
+    "status": 200
+   },
+   {
+    "url": "https://order.lifepeaks.dk/en/cofoco?lang=eng",
+    "label": "Buy a Gift Card",
+    "status": 200
+   }
+  ],
+  "hours": "Opening Hours Monday – Sunday 17.30 – 00.00 Latest arrival time: 21.15 Our Address Nørre Farimagsgade 41 1364 Copenhagen K Tel +45 89 93 84 09 Email hoest@cofoco.dk Groups There are great possibilities for groups of all"
+ },
+ {
+  "id": "dominos-christianshavn",
+  "pageStatus": 200,
+  "finalUrl": "https://www.dominos.dk/",
+  "menu": [
+   {
+    "url": "https://www.dominos.dk/menu/pizza",
+    "label": "Menu",
+    "status": 200
+   },
+   {
+    "url": "https://www.dominos.dk/menu/tilbud",
+    "label": "Tilbud",
+    "status": 200
+   },
+   {
+    "url": "https://www.dominos.dk/menu/tilbehoer",
+    "label": "Tilbehør",
+    "status": 200
+   }
+  ],
+  "hours": null
+ },
+ {
+  "id": "norrlyst",
+  "pageStatus": 200,
+  "finalUrl": "https://norrlyst.dk/",
+  "menu": [
+   {
+    "url": "https://norrlyst.dk/restaurantlillemoelle/menu/",
+    "label": "Menu",
+    "status": 200
+   },
+   {
+    "url": "https://norrlyst.dk/tamashii/menu/",
+    "label": "Menu Tamashii",
+    "status": 200
+   },
+   {
+    "url": "https://norrlyst.dk/oasis/menu/",
+    "label": "Oasis menu",
+    "status": 200
+   }
+  ],
+  "hours": null
+ }
+]

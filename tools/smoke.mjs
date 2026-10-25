@@ -190,6 +190,34 @@ check("Öffnen ein drittes Mal", doc.body.classList.contains("sidebar-open"));
 doc.dispatchEvent(new window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
 check("Escape schließt Sheet", !doc.body.classList.contains("sidebar-open"));
 
+console.log("\n== Transparenz: fehlende Bewertung / Speisekarte ==");
+const unratedCards = doc.querySelectorAll(".card .no-rating").length;
+check("Karten ohne Bewertung sind markiert", unratedCards >= 26, unratedCards + " Karten");
+const ratedCards = doc.querySelectorAll(".card .rating").length;
+check("bewertete Orte zeigen Sterne", ratedCards >= 55, ratedCards + " Karten");
+
+// Ort ohne Bewertung öffnen (Netto Nørre Voldgade hat nur ratingNote)
+doc.querySelector(".card[data-id='netto-noerre-voldgade']").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+await new Promise((r) => setTimeout(r, 50));
+const drawerHtml = () => $("drawer").innerHTML;
+check("Drawer sagt 'Keine Bewertung verfügbar'", drawerHtml().includes("Keine Bewertung verfügbar"));
+check("Drawer nennt den Grund", /Kette – Bewertung/.test(drawerHtml()));
+$("drawerClose").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+
+// Gastro ohne Menü: Figaro hat weder Website noch Karte
+doc.querySelector(".card[data-id='figaro']").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+await new Promise((r) => setTimeout(r, 50));
+check("Drawer sagt 'Keine Speisekarte online'", drawerHtml().includes("Keine Speisekarte online"));
+check("Drawer begründet fehlende Karte", drawerHtml().includes("Keine Website und keine Speisekarte"));
+$("drawerClose").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+
+// Bewerteter Ort mit Quelle: Kong Hans (Tripadvisor)
+doc.querySelector(".card[data-id='konghans']").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+await new Promise((r) => setTimeout(r, 50));
+check("Bewertungsquelle wird ausgewiesen", drawerHtml().includes("Tripadvisor"));
+check("Speisekarten-Button vorhanden", !!$("drawer").querySelector("a[href*='konghans.dk']"));
+$("drawerClose").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+
 console.log("\n== Kartenkacheln ==");
 check("zwei Kachel-Layer registriert", window.__tileLayers.length === 2, String(window.__tileLayers.length));
 const tileLayer = window.__tileLayers[0];

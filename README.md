@@ -20,6 +20,7 @@ Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **84 kuratierte
 - **„Nur jetzt geöffnet"** – berechnet aus den OSM-Öffnungszeiten in Zeitzone `Europe/Copenhagen`, inkl. Saisonregeln, Nachtöffnung und Feiertagsausnahmen
 - Detailansicht mit Beschreibung, Tipps, Wochen-Öffnungszeiten, Preisen, Bewertung, Website/Speisekarte und Google-Maps-Route
 - **Preisvergleich** als sortierbare Tabelle (Restaurants + Fast Food, Hauptgericht in DKK)
+- **Transparente Datenlücken**: Orte ohne Bewertung sind sichtbar als „— keine Bewertung" markiert (mit Begründung im Detail, z. B. Kette, abweichende Quellen, kein Profil); Gastro-Orte ohne Online-Karte zeigen „Keine Speisekarte online" samt Erklärung
 - **Mobil**: Bottom-Sheet mit Backdrop, Schließen-Kreuz, 48-px-Touch-Ziel und `env(safe-area-inset-bottom)` (nicht in der iOS-Home-Indicator-Zone)
 - Deep-Links pro Ort (`#gasoline-grill`), Dark Mode
 
@@ -82,7 +83,9 @@ Alle Inhalte stehen in `data/places.json`. Ein Eintrag:
   "sub": "Burger in alter Tankstelle",
   "lat": 55.68324, "lon": 12.58517,
   "area": "Indre By / Landgreven", // Viertel, wird in Liste und Detail angezeigt
-  "rating": 4.5,                   // optional (Google-Bewertung)
+  "rating": 4.5,                   // optional; null = keine belastbare Bewertung
+  "ratingSource": "Google",        // "Google" oder "Tripadvisor"
+  "ratingNote": null,              // Begründung wenn rating fehlt (wird angezeigt)
   "reviews": "—",
   "priceLevel": 1,                 // 0–4, steuert die Preis-Punkte
   "mainDKK": 85,                   // optional: typischer Hauptgerichts-Preis (Preisvergleich)
@@ -93,6 +96,7 @@ Alle Inhalte stehen in `data/places.json`. Ein Eintrag:
   "tips": ["…", "…"],
   "website": "https://…",           // optional
   "menu": "https://…/menu",         // optional
+  "menuNote": null,                 // Begründung wenn Gastro ohne Karte (wird angezeigt)
   "tags": ["Burger", "Kult"],
   "src": "Quelle · Okt 2026"
 }
@@ -150,6 +154,13 @@ abdunkelt. Ein reiner DOM-Test hätte den z-index-Bug unten nicht gefunden.
 - **Eintrittspreise, Bewertungen, Beschreibungen**: VisitCopenhagen, kopenhagen.info, Anbieterseiten
   sowie Google-Rezensionen (über Exa Places). Stand: Oktober 2026.
 - **Preisniveau (`mainDKK`)**: Schätzung anhand der Speisekarten – im Preisvergleich als „ca." gekennzeichnet.
+- **Bewertungen**: Google-Werte (über Exa Places) bzw. Tripadvisor, wo nur dort eine belastbare Zahl existiert
+  (`ratingSource`). Wo keine eindeutige Zuordnung zur konkreten Filiale möglich ist – Ketten wie Netto,
+  7-Eleven, Lagkagehuset, McDonald's oder widersprüchliche Quellen – bleibt `rating` leer und `ratingNote`
+  nennt den Grund. Die Oberfläche zeigt das explizit an, statt eine Zahl zu erfinden.
+- **Öffnungszeiten**: Wo OSM leer war, wurden die Betreiber-Websites ausgewertet (Marmorkirche, Lille Fugl,
+  Palægade, Krebsegaarden, Skipperkroen, Mangia). Öffentlich zugängliche Orte (Nyhavn, Kleine Meerjungfrau,
+  Strøget, Kastellet) stehen als `24/7`. Die vier verbleibenden Lücken sind im Datensatz begründet.
 
 Preise, Öffnungszeiten und Bewertungen ändern sich. Die Seite zeigt bewusst die Quelle pro Eintrag an;
 vor dem Besuch lohnt ein Blick auf die offizielle Website (im Detail-Panel verlinkt).

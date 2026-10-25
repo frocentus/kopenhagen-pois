@@ -56,15 +56,28 @@
   }
   function ratingHtml(p) {
     if (!p.rating) return "";
+    var src = p.ratingSource || "Google";
     return (
-      "<span class='rating' title='Google-Bewertung, Stand Okt 2026'>★ " +
+      "<span class='rating' title='" + esc(src) + "-Bewertung, Stand Okt 2026'>★ " +
       p.rating.toFixed(1).replace(".", ",") +
       (p.reviews && p.reviews !== "—" ? " <small>(" + esc(p.reviews) + ")</small>" : "") +
       "</span>"
     );
   }
+
+  /** Expliziter Hinweis, wenn keine Bewertung vorliegt (statt sie einfach wegzulassen). */
+  function noRatingHtml(p) {
+    return (
+      "<span class='no-rating' title='" + esc(p.ratingNote || "Keine Bewertung verfügbar") + "'>" +
+      "— keine Bewertung</span>"
+    );
+  }
+
+  function isGastro(p) {
+    return p.cat === "restaurant" || p.cat === "fastfood" || p.cat === "breakfast";
+  }
   function hoursStatus(p) {
-    if (!p.hours) return { known: false, open: null, text: "Öffnungszeiten unbekannt" };
+    if (!p.hours) return { known: false, open: null, text: "Öffnungszeiten nicht verfügbar" };
     var parsed = window.CPHHours.parse(p.hours, refDate());
     return window.CPHHours.status(parsed);
   }
@@ -181,7 +194,7 @@
         "</div>" +
         "<div class='card-meta'>" +
         (p.priceLevel ? priceDots(p.priceLevel) : "") +
-        ratingHtml(p) +
+        (p.rating ? ratingHtml(p) : noRatingHtml(p)) +
         (dist ? "<span class='dist'>" + dist + "</span>" : "") +
         "</div>" +
         "<div class='card-hours'><span class='status-dot " + dotClass + "'></span>" +
@@ -280,7 +293,7 @@
       "<div class='popup'>" +
       "<div class='popup-cat'>" + esc(state.catById[p.cat].label) + " · " + esc(p.sub) + "</div>" +
       "<h4>" + esc(p.name) + "</h4>" +
-      "<div class='popup-meta'>" + priceDots(p.priceLevel) + ratingHtml(p) + "</div>" +
+      "<div class='popup-meta'>" + priceDots(p.priceLevel) + (p.rating ? ratingHtml(p) : noRatingHtml(p)) + "</div>" +
       "<div class='card-hours'><span class='status-dot " + dot + "'></span>" +
       "<span>" + esc(st.known ? st.text : "Zeiten unbekannt") + "</span></div>" +
       "<button type='button' class='popup-more' data-id='" + p.id + "'>Details ansehen →</button>" +
@@ -359,7 +372,7 @@
     if (p.website) {
       links +=
         "<a class='btn btn-primary' href='" + esc(p.website) + "' target='_blank' rel='noopener noreferrer'>" +
-        (p.cat === "restaurant" || p.cat === "fastfood" || p.cat === "breakfast" ? "Website & Karte" : "Website") +
+        (isGastro(p) ? "Website & Karte" : "Website") +
         "</a>";
     }
     if (p.menu) {
@@ -369,6 +382,13 @@
     links +=
       "<a class='btn btn-ghost' href='https://www.google.com/maps/dir/?api=1&destination=" +
       p.lat + "," + p.lon + "' target='_blank' rel='noopener noreferrer'>Route</a>";
+
+    // Gastro ohne Online-Karte: explizit benennen statt den Button einfach wegzulassen
+    var menuMissing =
+      isGastro(p) && !p.menu
+        ? "<p class='note note-quiet'><strong>Keine Speisekarte online.</strong> " +
+          esc(p.menuNote || "Für diesen Ort ist keine Speisekarte im Netz verfügbar.") + "</p>"
+        : "";
 
     els.drawer.innerHTML =
       "<div class='drawer-head' style='--c:" + c.color + "'>" +
@@ -381,10 +401,14 @@
 
       "<div class='drawer-facts'>" +
       (p.priceText ? "<div class='fact'><span class='fact-k'>" + (p.cat === "attraction" ? "Eintritt" : p.cat === "supermarket" || p.cat === "mall" ? "Preisniveau" : "Preis") + "</span><span class='fact-v'>" + esc(p.priceText) + "</span></div>" : "") +
-      (p.rating ? "<div class='fact'><span class='fact-k'>Bewertung</span><span class='fact-v'>" + ratingHtml(p) + "</span></div>" : "") +
+      (p.rating
+        ? "<div class='fact'><span class='fact-k'>Bewertung</span><span class='fact-v'>" +
+          ratingHtml(p) + " <small class='src-tag'>" + esc(p.ratingSource || "Google") + "</small></span></div>"
+        : "<div class='fact'><span class='fact-k'>Bewertung</span><span class='fact-v muted'>Keine Bewertung verfügbar</span></div>") +
       "<div class='fact'><span class='fact-k'>Status</span><span class='fact-v'><span class='status-dot " + dot + "'></span> " + esc(st.text) + "</span></div>" +
       "</div>" +
 
+      (p.rating ? "" : (p.ratingNote ? "<p class='note note-quiet'>" + esc(p.ratingNote) + "</p>" : "")) +
       "<p class='drawer-desc'>" + esc(p.desc) + "</p>" +
 
       (p.tips && p.tips.length
@@ -403,6 +427,7 @@
       (p.hoursNote ? "<p class='note'>" + esc(p.hoursNote) + "</p>" : "") +
 
       "<div class='drawer-actions'>" + links + "</div>" +
+      menuMissing +
 
       "<p class='drawer-src'>Quelle: " + esc(p.src || "OpenStreetMap") + " · Angaben ohne Gewähr</p>" +
       "</div>";
