@@ -85,7 +85,7 @@
    *   Dutzenden Karten nur Rauschen.
    */
   function showsRating(p) {
-    return p.cat !== "supermarket" && p.cat !== "hoho" && p.cat !== "transit" && p.cat !== "swim";
+    return ["supermarket", "hoho", "transit", "swim", "water"].indexOf(p.cat) === -1;
   }
 
   function isGastro(p) {
@@ -109,6 +109,8 @@
     if (p.cat === "tour") return "Abfahrtszeiten laut Anbieter";
     // Badezonen haben keine Öffnungszeiten, sondern eine Saison.
     if (p.cat === "swim") return "Badesaison beachten";
+    // Trinkwasserbrunnen stehen offen, sind im Winter aber oft abgestellt.
+    if (p.cat === "water") return "Öffentlich zugänglich";
     return "Zeiten unbekannt";
   }
   function refDate() { return new Date(); }

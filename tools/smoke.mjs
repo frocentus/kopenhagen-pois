@@ -137,7 +137,7 @@ const DEFAULT_VISIBLE = data.places.filter((p) => {
 }).length;
 // Spiegelt showsRating() in assets/app.js: Supermärkte und Haltestellen werden
 // ohne Bewertung geführt und zeigen deshalb auch keinen Platzhalter.
-const RATING_CATS = (p) => !["supermarket", "hoho", "transit", "swim"].includes(p.cat);
+const RATING_CATS = (p) => !["supermarket", "hoho", "transit", "swim", "water"].includes(p.cat);
 const RATED = data.places.filter((p) => RATING_CATS(p) && p.rating).length;
 const UNRATED = data.places.filter((p) => RATING_CATS(p) && !p.rating).length;
 const cards = () => doc.querySelectorAll(".card").length;
@@ -433,6 +433,38 @@ check("GPX ist wohlgeformt", /<gpx[^>]*version="1\.1"/.test(gpxText) && /<\/gpx>
 check("GPX enthält genau einen Wegpunkt", (gpxText.match(/<wpt /g) || []).length === 1, String((gpxText.match(/<wpt /g) || []).length));
 check("Wegpunkt hat Koordinaten und Namen", /<wpt lat="55\.\d+" lon="12\.\d+">/.test(gpxText) && /<name>[^<]+<\/name>/.test(gpxText));
 
+console.log("\n== Trinkwasser ==");
+const water = data.places.filter((p) => p.cat === "water");
+const waterCat = data.categories.find((c) => c.id === "water");
+check("Kategorie Trinkwasser existiert", !!waterCat && water.length > 0, water.length + " Brunnen");
+check("Kategorie startet ausgeschaltet", waterCat.defaultOff === true);
+check("alle Brunnen haben einen abgeleiteten Namen", water.every((w) => w.name && w.name !== "Trinkwasserbrunnen"), water.filter((w) => w.name === "Trinkwasserbrunnen").length + " ohne");
+check("Namen sind eindeutig", water.length === new Set(water.map((w) => w.name)).size, water.length + " Namen");
+check("Koordinaten sind eindeutig", water.length === new Set(water.map((w) => w.lat + "," + w.lon)).size);
+check("alle kostenlos", water.every((w) => /Kostenlos/.test(w.priceText || "")));
+check("keine Bewertungs-Platzhalter", water.every((w) => w.rating == null));
+
+// Radius wie bei den Stationen begrenzt (3,2 km um das Zentrum)
+function distKm(a) {
+  const R = 6371000, rad = Math.PI / 180, C = { lat: 55.6761, lon: 12.5683 };
+  const dLat = (a.lat - C.lat) * rad, dLon = (a.lon - C.lon) * rad;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(C.lat * rad) * Math.cos(a.lat * rad) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+check("Brunnen liegen im 3,2-km-Radius", water.every((w) => distKm(w) <= 3200), Math.round(Math.max(...water.map(distKm))) + " m max");
+
+// Zeitlabel: Brunnen sind offen, haben aber keine Öffnungszeiten
+const waterLabel = doc.querySelector(".card[data-id='" + water[0].id + "'] .card-hours span:last-child")?.textContent;
+check("Brunnen zeigt 'Öffentlich zugänglich'", waterLabel === "Öffentlich zugänglich", waterLabel);
+
+// Zuschalten über den Chip
+setCat("water", false);
+await new Promise((r) => setTimeout(r, 40));
+const withoutWater = cards();
+setCat("water", true);
+await new Promise((r) => setTimeout(r, 40));
+check("Zuschalten erhöht die Trefferzahl um die Brunnen", cards() === withoutWater + water.length, withoutWater + " → " + cards());
+
 console.log("\n== Preisvergleich ==");
 $("compare").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
 await new Promise((r) => setTimeout(r, 40));
@@ -496,7 +528,7 @@ check("Escape schließt Sheet", !doc.body.classList.contains("sidebar-open"));
 
 console.log("\n== Transparenz: fehlende Bewertung / Speisekarte ==");
 const unratedCards = doc.querySelectorAll(".card .no-rating").length;
-check("Karten ohne Bewertung sind markiert", unratedCards === UNRATED, unratedCards + " von " + UNRATED + " (ohne Supermärkte/Haltestellen/Stationen)");
+check("Karten ohne Bewertung sind markiert", unratedCards === UNRATED, unratedCards + " von " + UNRATED + " (ohne Supermärkte/Haltestellen/Stationen/Badestellen/Brunnen)");
 const ratedCards = doc.querySelectorAll(".card .rating").length;
 check("bewertete Orte zeigen Sterne", ratedCards === RATED, ratedCards + " von " + RATED + " Karten");
 

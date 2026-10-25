@@ -91,6 +91,14 @@
       "defaultOff": true
     },
     {
+      "id": "water",
+      "label": "Trinkwasser",
+      "short": "Trinkwasser",
+      "color": "#0284c7",
+      "icon": "🚰",
+      "defaultOff": true
+    },
+    {
       "id": "services",
       "label": "Praktisches",
       "short": "Praktisches",
@@ -4887,6 +4895,1326 @@
       "src": "OpenStreetMap (Fährrelationen 991/992, Movia) (Okt 2026)",
       "hours": null,
       "hoursNote": "Hafenbus 991/992 (Movia): tagsüber ca. alle 20–30 Min., abends seltener. Ein normales ÖPNV-Ticket gilt – Fahrplan und Abfahrten: rejseplanen.dk."
+    },
+    {
+      "id": "water-enghaveparken-875940019",
+      "name": "Enghaveparken",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6677368,
+      "lon": 12.5411878,
+      "area": "Enghaveparken",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Enghaveparken. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-soendermarken-roskildevej-1364845296",
+      "name": "Søndermarken · Roskildevej",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6707564,
+      "lon": 12.5221744,
+      "area": "Søndermarken",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Søndermarken. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-soendermarken-1778048303",
+      "name": "Søndermarken",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6698599,
+      "lon": 12.525272,
+      "area": "Søndermarken",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Søndermarken. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen. Flaschenabfüllung ist ausgewiesen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-paradeplads-2430937762",
+      "name": "Paradeplads",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6924113,
+      "lon": 12.5951193,
+      "area": "Paradeplads",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Paradeplads. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen. Flaschenabfüllung ist ausgewiesen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-oerestads-boulevard-2700695230",
+      "name": "Ørestads Boulevard",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6626038,
+      "lon": 12.5830478,
+      "area": "Ørestads Boulevard",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Ørestads Boulevard. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-churchillparken-2953976981",
+      "name": "Churchillparken",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6890557,
+      "lon": 12.5977292,
+      "area": "Churchillparken",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Churchillparken. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen. Flaschenabfüllung ist ausgewiesen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-faelledparken-klosterfaelleden-3567018857",
+      "name": "Fælledparken · Klosterfælleden",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.7043065,
+      "lon": 12.5713306,
+      "area": "Fælledparken",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Fælledparken. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-noerrebroparken-stefansgade-3639451701",
+      "name": "Nørrebroparken · Stefansgade",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6949668,
+      "lon": 12.5429077,
+      "area": "Nørrebroparken",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Nørrebroparken. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-christianshavns-enveloppe-4947154265",
+      "name": "Christianshavns Enveloppe",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6694504,
+      "lon": 12.5959208,
+      "area": "Christianshavns Enveloppe",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Christianshavns Enveloppe. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-litauens-plads-4985388763",
+      "name": "Litauens Plads",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6676838,
+      "lon": 12.5517925,
+      "area": "Litauens Plads",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Litauens Plads. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-havnegade-5000257422",
+      "name": "Havnegade",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6763391,
+      "lon": 12.5885065,
+      "area": "Havnegade",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Havnegade. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-faelledparken-blegdamsfaelleden-5001271188",
+      "name": "Fælledparken · Blegdamsfælleden",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.7001524,
+      "lon": 12.5724646,
+      "area": "Fælledparken",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Fælledparken. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen. Flaschenabfüllung ist ausgewiesen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-skydebanehaven-5035554000",
+      "name": "Skydebanehaven",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6706456,
+      "lon": 12.5540011,
+      "area": "Skydebanehaven",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Skydebanehaven. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-poppelalleen-5309884321",
+      "name": "Poppelalléen",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6899216,
+      "lon": 12.5509216,
+      "area": "Poppelalléen",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Poppelalléen. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-hans-tavsens-stien-5309884322",
+      "name": "Hans Tavsens Stien",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6906083,
+      "lon": 12.5492381,
+      "area": "Hans Tavsens Stien",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Hans Tavsens Stien. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-hans-tavsens-park-poppelalleen-5309889721",
+      "name": "Hans Tavsens Park · Poppelalléen",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6910797,
+      "lon": 12.5470273,
+      "area": "Hans Tavsens Park",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Hans Tavsens Park. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-havneparken-weidekampsgade-5786309158",
+      "name": "Havneparken · Weidekampsgade",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6684124,
+      "lon": 12.5784371,
+      "area": "Havneparken",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Havneparken. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen. Flaschenabfüllung ist ausgewiesen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-halvtolv-5916903580",
+      "name": "Halvtolv",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.677403,
+      "lon": 12.6065674,
+      "area": "Halvtolv",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Halvtolv. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-faelledparken-blegdamsfaelleden-2-6522616585",
+      "name": "Fælledparken · Blegdamsfælleden (2)",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6974575,
+      "lon": 12.5696807,
+      "area": "Fælledparken",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Fælledparken. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen. Flaschenabfüllung ist ausgewiesen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-fyns-ravelin-7309402594",
+      "name": "Fyns Ravelin",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6901484,
+      "lon": 12.5919284,
+      "area": "Fyns Ravelin",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Fyns Ravelin. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-oestre-anlaeg-stockholmsgade-7425621285",
+      "name": "Østre Anlæg · Stockholmsgade",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6906592,
+      "lon": 12.5791425,
+      "area": "Østre Anlæg",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Østre Anlæg. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen. Flaschenabfüllung ist ausgewiesen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-haveselskabets-have-7438753092",
+      "name": "Haveselskabets Have",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6729372,
+      "lon": 12.5304273,
+      "area": "Haveselskabets Have",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Haveselskabets Have. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-noerrebroparken-palaestinas-plads-7482843508",
+      "name": "Nørrebroparken · Palæstinas Plads",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6968613,
+      "lon": 12.5416749,
+      "area": "Nørrebroparken",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Nørrebroparken. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-israels-plads-7674410125",
+      "name": "Israels Plads",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6826894,
+      "lon": 12.5688916,
+      "area": "Israels Plads",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Israels Plads. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen. Flaschenabfüllung ist ausgewiesen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-gammel-strand-7769649950",
+      "name": "Gammel Strand",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6773986,
+      "lon": 12.5781561,
+      "area": "Gammel Strand",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Gammel Strand. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-sifs-plads-8307701346",
+      "name": "Sifs Plads",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.703544,
+      "lon": 12.5574017,
+      "area": "Sifs Plads",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Sifs Plads. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-hans-tavsens-park-hoersholmparken-8307715364",
+      "name": "Hans Tavsens Park · Hørsholmparken",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6892153,
+      "lon": 12.5445432,
+      "area": "Hans Tavsens Park",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Hans Tavsens Park. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-peblinge-dossering-aboulevard-8668638326",
+      "name": "Peblinge Dossering · Åboulevard",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6825049,
+      "lon": 12.5580003,
+      "area": "Peblinge Dossering",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Peblinge Dossering. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen. Flaschenabfüllung ist ausgewiesen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-havneparken-islands-brygge-8987807186",
+      "name": "Havneparken · Islands Brygge",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6657068,
+      "lon": 12.5743615,
+      "area": "Havneparken",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Havneparken. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-amagerfaelledvej-8989905820",
+      "name": "Amagerfælledvej",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6569531,
+      "lon": 12.5920507,
+      "area": "Amagerfælledvej",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Amagerfælledvej. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-enghave-plads-9001878299",
+      "name": "Enghave Plads",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6669633,
+      "lon": 12.5462985,
+      "area": "Enghave Plads",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Enghave Plads. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-sortedam-dossering-helgesensgade-9761843807",
+      "name": "Sortedam Dossering · Helgesensgade",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6946531,
+      "lon": 12.5728375,
+      "area": "Sortedam Dossering",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Sortedam Dossering. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen. Flaschenabfüllung ist ausgewiesen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-oestre-anlaeg-georg-brandes-plads-9887214817",
+      "name": "Østre Anlæg · Georg Brandes Plads",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6880275,
+      "lon": 12.578271,
+      "area": "Østre Anlæg",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Østre Anlæg. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen. Flaschenabfüllung ist ausgewiesen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-ingrid-jespersens-plads-9924430819",
+      "name": "Ingrid Jespersens Plads",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6990597,
+      "lon": 12.5757911,
+      "area": "Ingrid Jespersens Plads",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Ingrid Jespersens Plads. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen. Flaschenabfüllung ist ausgewiesen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-faelledparken-blegdamsfaelleden-3-9931636481",
+      "name": "Fælledparken · Blegdamsfælleden (3)",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.7004425,
+      "lon": 12.5641815,
+      "area": "Fælledparken",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Fælledparken. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-sortedam-dossering-oesterbrogade-9952443760",
+      "name": "Sortedam Dossering · Østerbrogade",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6976462,
+      "lon": 12.5783308,
+      "area": "Sortedam Dossering",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Sortedam Dossering. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen. Flaschenabfüllung ist ausgewiesen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-halmtorvet-hoekerboderne-9953289913",
+      "name": "Halmtorvet · Høkerboderne",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6686323,
+      "lon": 12.5568761,
+      "area": "Halmtorvet",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Halmtorvet. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-botanisk-have-9958833129",
+      "name": "Botanisk Have",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6838968,
+      "lon": 12.5730295,
+      "area": "Botanisk Have",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Botanisk Have. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen. Flaschenabfüllung ist ausgewiesen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-faelledparken-blegdamsfaelleden-4-10114105984",
+      "name": "Fælledparken · Blegdamsfælleden (4)",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6989184,
+      "lon": 12.5663299,
+      "area": "Fælledparken",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Fælledparken. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen. Flaschenabfüllung ist ausgewiesen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-kongens-nytorv-10829551805",
+      "name": "Kongens Nytorv",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6804467,
+      "lon": 12.5876712,
+      "area": "Kongens Nytorv",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Kongens Nytorv. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-halmtorvet-lille-colbjoernsensgade-10917923413",
+      "name": "Halmtorvet · Lille Colbjørnsensgade",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6708904,
+      "lon": 12.5622607,
+      "area": "Halmtorvet",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Halmtorvet. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen. Flaschenabfüllung ist ausgewiesen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-aeggetorvet-10959130064",
+      "name": "Æggetorvet",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6828712,
+      "lon": 12.5715483,
+      "area": "Æggetorvet",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Æggetorvet. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-jagtvej-10959142341",
+      "name": "Jagtvej",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6919689,
+      "lon": 12.5483276,
+      "area": "Jagtvej",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Jagtvej. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-oerstedsparken-jarmers-plads-11028440808",
+      "name": "Ørstedsparken · Jarmers Plads",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6801977,
+      "lon": 12.5644708,
+      "area": "Ørstedsparken",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Ørstedsparken. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-peblinge-dossering-baggesensgade-12069224018",
+      "name": "Peblinge Dossering · Baggesensgade",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6865594,
+      "lon": 12.5618832,
+      "area": "Peblinge Dossering",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Peblinge Dossering. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-guldbergs-plads-12084906770",
+      "name": "Guldbergs Plads",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6971066,
+      "lon": 12.5543011,
+      "area": "Guldbergs Plads",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Guldbergs Plads. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-nuuks-plads-12104529407",
+      "name": "Nuuks Plads",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6885808,
+      "lon": 12.542938,
+      "area": "Nuuks Plads",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Nuuks Plads. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-orlogsvaerftvej-12144212235",
+      "name": "Orlogsværftvej",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6806336,
+      "lon": 12.5990266,
+      "area": "Orlogsværftvej",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Orlogsværftvej. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen. Flaschenabfüllung ist ausgewiesen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-trianglen-12231040720",
+      "name": "Trianglen",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6993855,
+      "lon": 12.5774092,
+      "area": "Trianglen",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Trianglen. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen. Flaschenabfüllung ist ausgewiesen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-oerstedsparken-jarmers-plads-2-12617907439",
+      "name": "Ørstedsparken · Jarmers Plads (2)",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6804839,
+      "lon": 12.5645975,
+      "area": "Ørstedsparken",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Ørstedsparken. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-nathalie-linds-plads-12791382290",
+      "name": "Nathalie Linds Plads",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.680616,
+      "lon": 12.5227447,
+      "area": "Nathalie Linds Plads",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Nathalie Linds Plads. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-trinitatis-kirkeplads-koebmagergade-13076578831",
+      "name": "Trinitatis Kirkeplads · Købmagergade",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6814345,
+      "lon": 12.5756764,
+      "area": "Trinitatis Kirkeplads",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Trinitatis Kirkeplads. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-jubilaeumshaven-13120239318",
+      "name": "Jubilæumshaven",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6741008,
+      "lon": 12.5660184,
+      "area": "Jubilæumshaven",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Jubilæumshaven. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-trinitatis-kirkeplads-landemaerket-13128649990",
+      "name": "Trinitatis Kirkeplads · Landemærket",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6814858,
+      "lon": 12.5755481,
+      "area": "Trinitatis Kirkeplads",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Trinitatis Kirkeplads. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
+    },
+    {
+      "id": "water-havneholmen-13872519374",
+      "name": "Havneholmen",
+      "cat": "water",
+      "sub": "Trinkwasserbrunnen",
+      "lat": 55.6608829,
+      "lon": 12.5595857,
+      "area": "Havneholmen",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Öffentlicher Trinkwasserbrunnen der Kommune. Viele Brunnen werden im Winter abgestellt und erst im Frühjahr wieder angeschlossen.",
+      "desc": "Öffentlicher Trinkwasserbrunnen an Havneholmen. Leitungswasser in Kopenhagen ist bedenkenlos trinkbar – Flasche auffüllen statt kaufen.",
+      "tips": [
+        "Leitungswasser ist in Dänemark streng kontrolliert und überall trinkbar.",
+        "Im Winter sind viele Brunnen abgestellt – dann in Cafés nach Leitungswasser fragen (üblich und kostenlos)."
+      ],
+      "tags": [
+        "Trinkwasser",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (amenity=drinking_water), Bezeichnung aus der nächsten Straße/Platz (Okt 2026)"
     }
   ]
 }

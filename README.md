@@ -2,7 +2,7 @@
 
 **Live:** https://frocentus.github.io/kopenhagen-pois/  ·  **Repo:** https://github.com/frocentus/kopenhagen-pois
 
-Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **166 kuratierten Orten**:
+Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **221 kuratierten Orten**:
 
 | Kategorie | Anzahl | Inhalte |
 |---|---|---|
@@ -17,6 +17,7 @@ Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **166 kuratiert
 | 🛒 Supermärkte | 16 | inkl. 4× 7-Eleven, echte Öffnungszeiten |
 | 🛍 Einkaufszentren | 4 | Kaufhäuser & Malls |
 | 🚇 Metro, S-Bahn & Hafenbus | 34 | Stationen und Anleger mit Linien (startet ausgeschaltet) |
+| 🚰 Trinkwasser | 55 | öffentliche Brunnen, benannt nach Straße/Platz (startet ausgeschaltet) |
 | ℹ️ Praktisches | 5 | Toiletten, Apotheken |
 
 **Features**
@@ -26,6 +27,7 @@ Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **166 kuratiert
 - **Favoriten**: Orte per Stern merken, „Nur gemerkte“-Filter; rein lokal im `localStorage`, kein Konto, kein Server
 - **GPX-Export**: die gemerkte Liste als `.gpx`-Datei – direkt im Browser erzeugt, ohne Server. Öffnet in Komoot, Garmin, OsmAnd und auf vielen Smartwatches; der Knopf ist ohne Favoriten deaktiviert
 - **Außenplätze**: 20 Gastro-Orte sind mit dem Tag „Außenplätze“ markiert, wo OSM `outdoor_seating=yes` für genau diesen Betrieb kennt – als Themenfilter „Außenplätze“ nutzbar. Namensabgleich statt Umkreis, sonst landet man beim Nachbarn
+- **Trinkwasser**: 55 öffentliche Brunnen im 3,2-km-Radius. Die Brunnen in OSM haben keine Namen – und brauchen auch keinen, auf der Karte genügt der Marker. Für die Liste wird die Bezeichnung aus der **nächsten benannten Straße, dem Platz oder dem Park** abgeleitet (Punkt-zu-Linien-Abstand). Bei mehreren Brunnen am selben Ort wird um das nächste *andere* benannte Objekt ergänzt, nie um eine laufende Nummer allein. Startet ausgeschaltet wie der Nahverkehr
 - **Hafenbäder & Baden**: 10 kostenlose Hafenbäder und Badezonen mit Saison- und Flaggenhinweis, ohne geratene Wassertemperatur (es gibt dafür keine offene API)
 - **Teilen**: ein Klick kopiert den Deep-Link des Ortes (mit Fallback für unsichere Kontexte)
 - **„Nur jetzt geöffnet"** – berechnet aus den OSM-Öffnungszeiten in Zeitzone `Europe/Copenhagen`, inkl. Saisonregeln, Nachtöffnung und Feiertagsausnahmen
@@ -99,7 +101,7 @@ Alle Inhalte stehen in `data/places.json`. Ein Eintrag:
 {
   "id": "gasoline-grill",          // eindeutig, wird zum Deep-Link
   "name": "Gasoline Grill",
-  "cat": "fastfood",               // attraction | swim | tour | hoho | transit | breakfast | cafe | restaurant | fastfood | supermarket | mall | services
+  "cat": "fastfood",               // attraction | swim | tour | hoho | transit | water | breakfast | cafe | restaurant | fastfood | supermarket | mall | services
   "sub": "Burger in alter Tankstelle",
   "lat": 55.68324, "lon": 12.58517,
   "area": "Indre By / Landgreven", // Viertel, wird in Liste und Detail angezeigt
@@ -168,6 +170,7 @@ node tools/add-transit.mjs    # einmalig: Kategorie Metro & S-Bahn (idempotent)
 node tools/add-swim.mjs       # einmalig: Kategorie Hafenbäder & Baden (idempotent)
 node tools/add-harbourbus.mjs # einmalig: Hafenbus-Anleger in "Nahverkehr" (idempotent)
 node tools/add-outdoor.mjs    # Tag "Außenplätze" aus OSM outdoor_seating (Netz nötig)
+node tools/add-water.mjs      # Trinkwasserbrunnen, Bezeichnung aus Straße/Platz (Netz nötig)
 node tools/linkcheck.mjs      # Website- und Menü-Links auf HTTP-Status prüfen
 node tools/test-hours.mjs     # Parser gegen alle Datensätze prüfen
 node tools/smoke.mjs          # UI-Smoke-Test ohne Browser (npm i jsdom)
@@ -256,6 +259,13 @@ abdunkelt. Ein reiner DOM-Test hätte den z-index-Bug unten nicht gefunden.
   den **Namen** zu, nicht über die Entfernung. Eine reine Umkreissuche liefert plausible Falschtreffer –
   „Gasoline Grill“ liegt 26 m von „Pluto“, „Democratic Coffee“ 26 m von „Sanku Mini Hot Pot“. Ergebnis: 20
   von 56 Gastro-Orten; alle übrigen bekommen den Tag bewusst nicht.
+- **Trinkwasserbrunnen**: `tools/add-water.mjs` holt `amenity=drinking_water` (74 im Gebiet, 55 im
+  3,2-km-Radius) und dazu benannte Straßen, Plätze und Parks **mit Geometrie**. Der Abstand wird als
+  Punkt-zu-Strecke gerechnet, nicht zum Mittelpunkt – eine Straße ist lang, ihr Mittelpunkt liegt oft weit
+  weg. Plätze und Parks haben Vorrang vor Wirtschaftswegen und cycleways, damit nicht „Motionsplads“ als
+  Brunnenname steht; Hundeausläufe (`leisure=dog_park`) sind ausgeschlossen. Bei Namensgleichheit wird um
+  das nächste *andere* benannte Objekt ergänzt („Fælledparken · Klosterfælleden“). Reine Ableitung aus OSM,
+  keine erfundenen Bezeichnungen.
 
 Preise, Öffnungszeiten und Bewertungen ändern sich. Die Seite zeigt bewusst die Quelle pro Eintrag an;
 vor dem Besuch lohnt ein Blick auf die offizielle Website (im Detail-Panel verlinkt).
@@ -283,9 +293,6 @@ Backend, keine Secrets im Public Repo). Damit sie nicht immer wieder auftauchen,
   `bicycle_rental` – das sind aber fast ausschließlich **Fahrradläden**, keine öffentlichen Pumpen. Als
   POI-Liste wäre das ein Branchenverzeichnis, nicht das, was der Wunsch meinte. Die zwei bekannten
   Radbrücken (Cykelslangen, Inderhavnsbroen) sind sehenswert, rechtfertigen aber keine eigene Kategorie.
-- **Trinkwasserbrunnen als Kategorie**: 74 Treffer in OSM, davon praktisch alle **ohne Namen**. Eine Liste
-  aus „Trinkwasserbrunnen, Trinkwasserbrunnen, …“ hilft niemandem; als Layer mit 74 namenlosen Punkten
-  wäre er nur Rauschen. Sobald OSM-Namen oder Adressen dranhängen, ist das eine lohnende Ergänzung.
 - **PWA/Offline-Modus**: technisch machbar (Manifest + Service Worker), aber der Kartenteil bleibt ohne
   Netz grau: Die OSM-Kachelserver untersagen Offline- und Massenabruf, Kacheln dürfen also nicht
   vorgehalten werden. Eine „Offline-App“, die nur Liste und Details zeigt, aber keine Karte, verspricht
