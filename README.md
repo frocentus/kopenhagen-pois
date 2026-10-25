@@ -2,7 +2,7 @@
 
 **Live:** https://frocentus.github.io/kopenhagen-pois/  ·  **Repo:** https://github.com/frocentus/kopenhagen-pois
 
-Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **125 kuratierten Orten**:
+Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **148 kuratierten Orten**:
 
 | Kategorie | Anzahl | Inhalte |
 |---|---|---|
@@ -15,7 +15,8 @@ Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **125 kuratiert
 | 🍔 Fast Food | 10 | Burger, Fritten, Pizza, Streetfood |
 | 🛒 Supermärkte | 16 | inkl. 4× 7-Eleven, echte Öffnungszeiten |
 | 🛍 Einkaufszentren | 4 | Kaufhäuser & Malls |
-| ℹ️ Praktisches | 8 | Toiletten, Apotheken, Bahnhöfe, Metro |
+| 🚇 Metro & S-Bahn | 26 | Stationen mit Linien und Umstiegsinfo (startet ausgeschaltet) |
+| ℹ️ Praktisches | 5 | Toiletten, Apotheken |
 
 **Features**
 
@@ -29,6 +30,7 @@ Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **125 kuratiert
 - **Preisvergleich** als sortierbare Tabelle (Restaurants + Fast Food, Hauptgericht in DKK)
 - **Touren & Rundfahrten**: Hop-On-Hop-Off-Busse, Kanaltouren (vom 80-DKK-Nettobåd bis zur privaten Bootstour), Stadtführung und Radtour – mit Preisen und allgemeinen Betriebszeiten. Wo keine belastbaren Zeiten vorliegen, steht statt „Zeiten unbekannt“ „Abfahrtszeiten laut Anbieter“ plus der konkrete Hinweis im Detail
 - **Hop-On-Hop-Off-Haltestellen**: 11 Einstiegspunkte als eigene, abschaltbare Kategorie – jeweils mit der Stoppnummer des Anbieters (Stromma bzw. Red Sightseeing) und dem nächsten Ziel. So ist sichtbar, wo man tatsächlich einsteigen kann, statt nur einen Marker am Rathausplatz
+- **Metro & S-Bahn**: 26 Stationen im Innenstadtbereich mit den Linien (M1–M4 bzw. A–H), Umstiegsmöglichkeiten und allgemeinen Betriebszeiten. Diese Kategorie ist **standardmäßig ausgeschaltet** (`defaultOff`) – sonst würden 26 Stationsmarker die Sehenswürdigkeiten überdecken; der Chip steht sichtbar daneben und schaltet sie mit einem Klick dazu
 - **Supermärkte ohne Bewertung**: Filialen von Ketten (Netto, Føtex, Rema 1000, 7-Eleven …) werden bewusst ohne Bewertung geführt – dort erscheint weder eine Zahl noch ein Platzhalter
 - **Transparente Datenlücken**: Orte ohne Bewertung sind sichtbar als „— keine Bewertung" markiert (mit Begründung im Detail, z. B. Kette, abweichende Quellen, kein Profil); Gastro-Orte ohne Online-Karte zeigen „Keine Speisekarte online" samt Erklärung
 - **Mobil**: Bottom-Sheet mit Backdrop, Schließen-Kreuz, 48-px-Touch-Ziel und `env(safe-area-inset-bottom)` (nicht in der iOS-Home-Indicator-Zone)
@@ -93,7 +95,7 @@ Alle Inhalte stehen in `data/places.json`. Ein Eintrag:
 {
   "id": "gasoline-grill",          // eindeutig, wird zum Deep-Link
   "name": "Gasoline Grill",
-  "cat": "fastfood",               // attraction | tour | hoho | breakfast | cafe | restaurant | fastfood | supermarket | mall | services
+  "cat": "fastfood",               // attraction | tour | hoho | transit | breakfast | cafe | restaurant | fastfood | supermarket | mall | services
   "sub": "Burger in alter Tankstelle",
   "lat": 55.68324, "lon": 12.58517,
   "area": "Indre By / Landgreven", // Viertel, wird in Liste und Detail angezeigt
@@ -158,6 +160,7 @@ node tools/fetch-photos.mjs   # Fotos aus Wikipedia/Commons holen und Credits se
 node tools/fetch-extracts.mjs # Wikipedia-Einleitungen (koordinatenverifiziert) setzen
 node tools/add-places.mjs     # einmalig: Kategorien/Orte ergänzen (idempotent)
 node tools/add-tours.mjs      # einmalig: Kategorie Touren + Touren-Einträge (idempotent)
+node tools/add-transit.mjs    # einmalig: Kategorie Metro & S-Bahn (idempotent)
 node tools/linkcheck.mjs      # Website- und Menü-Links auf HTTP-Status prüfen
 node tools/test-hours.mjs     # Parser gegen alle Datensätze prüfen
 node tools/smoke.mjs          # UI-Smoke-Test ohne Browser (npm i jsdom)
@@ -228,6 +231,12 @@ abdunkelt. Ein reiner DOM-Test hätte den z-index-Bug unten nicht gefunden.
 - **Wetter**: Open-Meteo (`api.open-meteo.com`), kein API-Key, CORS bestätigt. Abgefragt wird nur der
   aktuelle Niederschlag; das Ergebnis liegt 10 Minuten im `sessionStorage`. Bei Fehlern wird der Hinweis
   stillschweigend weggelassen – eine kaputte Wetterabfrage darf die Karte nicht stören.
+- **Metro & S-Bahn**: Die Metro-Linien je Station stammen aus den OSM-Routenrelationen M1–M4 (Mitglieder
+  mit Rolle `stop`/`platform`), die S-tog-Linien aus der Wikipedia-Tabelle „List of Copenhagen S-train
+  stations“ (aus DSB-Daten gespeist), die Koordinaten aus OSM-Knoten. Beides ist maschinell geprüft, nicht
+  aus dem Gedächtnis geschrieben: Nørreport und København H führen Metro **und** S-tog, Kongens Nytorv ist
+  die einzige Station mit M1–M4. **Keine Ticketpreise** – die Preisliste von DOT war nicht abrufbar, und
+  eine geratene Zahl wäre schlechter als keine.
   (Red 09:00–16:00, Stromma 09:30–16:00 bzw. 10:00–16:00 ab Ved Stranden), nicht als Fahrplan.
 
 Preise, Öffnungszeiten und Bewertungen ändern sich. Die Seite zeigt bewusst die Quelle pro Eintrag an;
@@ -243,9 +252,10 @@ Backend, keine Secrets im Public Repo). Damit sie nicht immer wieder auftauchen,
   schlechter als keiner. Nächstliegende ehrliche Näherung: die vorhandenen Rezensionszahlen als
   „beliebt“-Signal – das ist aber Popularität, nicht Aktualität.
 - **Rejseplanen-Echtzeit im Popup**: Die API verlangt einen `accessId` (ohne Token: HTTP 400), der in
-  einem öffentlichen Repo offenläge. Außerdem sind die 11 „Haltestellen“ Tourbus-Halte, keine
-  ÖPNV-Steige – dort gibt es keine Fahrplandaten. Sinnvoll wäre das nur mit echten Metro-/S-Bahn-Stationen
-  plus vorgerechneten Zeiten zur Build-Zeit.
+  einem öffentlichen Repo offenläge. Die Metro-/S-Bahn-Stationen sind jetzt erfasst, aber bewusst nur
+  mit allgemeinen Betriebszeiten und Verweis auf m.dk/dsb.dk/rejseplanen.dk – ein statisch eingefrorener
+  Fahrplan wäre nach Minuten falsch. Für echte Echtzeit bräuchte es einen kleinen Proxy mit hinterlegtem
+  Token.
 - **Isochronen (5/10 Gehminuten)**: OpenRouteService und Valhalla brauchen einen Key bzw. eigenen Server.
   Luftlinien-Ringe wären in einer Kanalstadt schlicht falsch (die halbe Innenstadt ist Wasser).
 - **Leaflet Routing Machine**: Braucht einen OSRM-Server; der öffentliche Demo-Server ist gedrosselt und

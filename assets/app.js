@@ -80,11 +80,12 @@
    * Nicht jeder Ort ist bewertbar.
    * - Supermärkte: Bewertungen von Filialen einer Kette sind kaum aussagekräftig
    *   und unterscheiden sich je Standort.
-   * - Hop-On-Hop-Off-Haltestellen: Infrastruktur, kein Gastronomiebetrieb – ein
-   *   Platzhalter „keine Bewertung“ wäre an 11 Karten nur Rauschen.
+   * - Hop-On-Hop-Off-Haltestellen und Metro-/S-Bahn-Stationen: Infrastruktur,
+   *   kein Gastronomiebetrieb – ein Platzhalter „keine Bewertung“ wäre an
+   *   Dutzenden Karten nur Rauschen.
    */
   function showsRating(p) {
-    return p.cat !== "supermarket" && p.cat !== "hoho";
+    return p.cat !== "supermarket" && p.cat !== "hoho" && p.cat !== "transit";
   }
 
   function isGastro(p) {
@@ -1089,7 +1090,10 @@
         state.categories = data.categories;
         state.categories.forEach(function (c) {
           state.catById[c.id] = c;
-          state.active[c.id] = true;
+          // `defaultOff` hält sehr große Kategorien (26 Stationen) beim Start aus
+          // der Karte, damit die Sehenswürdigkeiten sichtbar bleiben. Der Chip
+          // steht sichtbar daneben und lässt sich jederzeit einschalten.
+          state.active[c.id] = !c.defaultOff;
         });
 
         if (!window.L) {

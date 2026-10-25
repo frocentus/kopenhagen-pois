@@ -126,9 +126,18 @@ function check(name, cond, extra = "") {
 // der Test bei jeder Datenpflege, ohne etwas über einen echten Fehler zu sagen.
 const TOTAL = data.places.length;
 const CATS = data.categories.length;
+// Kategorien mit defaultOff (z. B. die 26 Metro-/S-Bahn-Stationen) sind beim
+// Start ausgeschaltet. Die Erwartungswerte für die erste Bildschirmansicht
+// müssen das spiegeln, sonst prüft der Test gegen einen Zustand, den die
+// Oberfläche absichtlich nicht herstellt.
+const DEFAULT_CATS = data.categories.filter((c) => !c.defaultOff).length;
+const DEFAULT_VISIBLE = data.places.filter((p) => {
+  const c = data.categories.find((x) => x.id === p.cat);
+  return c && !c.defaultOff;
+}).length;
 // Spiegelt showsRating() in assets/app.js: Supermärkte und Haltestellen werden
 // ohne Bewertung geführt und zeigen deshalb auch keinen Platzhalter.
-const RATING_CATS = (p) => p.cat !== "supermarket" && p.cat !== "hoho";
+const RATING_CATS = (p) => !["supermarket", "hoho", "transit"].includes(p.cat);
 const RATED = data.places.filter((p) => RATING_CATS(p) && p.rating).length;
 const UNRATED = data.places.filter((p) => RATING_CATS(p) && !p.rating).length;
 const cards = () => doc.querySelectorAll(".card").length;
@@ -161,12 +170,18 @@ function dist(a, b) {
 
 console.log("== Initiales Rendern ==");
 check(CATS + " Kategorie-Chips", doc.querySelectorAll(".chip").length === CATS, String(doc.querySelectorAll(".chip").length));
-check(TOTAL + " Karten in der Liste", cards() === TOTAL, String(cards()));
-check("Gruppen-Header vorhanden", doc.querySelectorAll(".list .group").length >= CATS);
-check("Zähler gesetzt", new RegExp(TOTAL + " von " + TOTAL).test($("count").textContent), $("count").textContent);
+check("Default-Kategorien sichtbar", cards() === DEFAULT_VISIBLE, cards() + " von " + DEFAULT_VISIBLE);
+check("Gruppen-Header vorhanden", doc.querySelectorAll(".list .group").length >= DEFAULT_CATS, String(doc.querySelectorAll(".list .group").length));
+check("Zähler gesetzt", new RegExp(DEFAULT_VISIBLE + " von " + TOTAL).test($("count").textContent), $("count").textContent);
 check("Datenstand gesetzt", /25\.10\.2026/.test($("dataStamp").textContent), $("dataStamp").textContent);
 check("Öffnungszeiten-Status gerendert", doc.querySelectorAll(".status-dot").length > 50);
 check("keine JS-Fehler", errors.length === 0, errors.join(" / "));
+
+// Ab hier mit allen Kategorien arbeiten (die restlichen Prüfungen beziehen sich
+// auf TOTAL).
+allCats();
+await new Promise((r) => setTimeout(r, 60));
+check("alle Kategorien einschalten zeigt alles", cards() === TOTAL, String(cards()));
 
 console.log("\n== Themenfilter (Tags) ==");
 const tagBtns = doc.querySelectorAll("#tagbar .tag");
@@ -335,6 +350,36 @@ allCats();
 await new Promise((r) => setTimeout(r, 40));
 check("alle Kategorien wieder aktiv (nach Haltestellen)", cards() === TOTAL, String(cards()));
 
+console.log("\n== Metro & S-Bahn ==");
+const stations = data.places.filter((p) => p.cat === "transit");
+const transitCat = data.categories.find((c) => c.id === "transit");
+check("Kategorie Metro & S-Bahn existiert", !!transitCat && stations.length > 0, stations.length + " Stationen");
+check("Kategorie startet ausgeschaltet", transitCat.defaultOff === true);
+check("Stationen nennen ihre Linien", stations.every((s) => /Metro|S-tog/.test(s.sub)), stations[0].sub);
+check("Stationen haben Betriebszeiten", stations.every((s) => !!s.hours), stations.filter((s) => !s.hours).length + " ohne");
+check("Stationen ohne Bewertungs-Platzhalter", stations.every((s) => s.rating == null));
+
+// Beide Netze am selben Ort: Nørreport und København H müssen Metro UND S-tog zeigen
+for (const id of ["tx-norreport", "tx-kobenhavn-h", "tx-osterport"]) {
+  const s = stations.find((x) => x.id === id);
+  check(`${id}: Metro + S-tog`, !!s && /Metro/.test(s.sub) && /S-tog/.test(s.sub), s ? s.sub : "fehlt");
+}
+
+// Kongens Nytorv ist die einzige Station mit allen vier Metrolinien
+const kng = stations.find((s) => s.id === "tx-kongens-nytorv");
+check("Kongens Nytorv hat M1–M4", !!kng && ["M1", "M2", "M3", "M4"].every((l) => kng.sub.includes(l)), kng ? kng.sub : "fehlt");
+
+// Die alten services-Einträge dürfen nicht doppelt existieren
+check("keine doppelten Stations-Einträge", !data.places.some((p) => ["norreport-station", "kongens-nytorv-station", "hovedbanegaarden"].includes(p.id)));
+
+// Einschalten über den Chip muss die Stationen auf die Karte bringen
+setCat("transit", false);
+await new Promise((r) => setTimeout(r, 40));
+const withoutTransit = cards();
+setCat("transit", true);
+await new Promise((r) => setTimeout(r, 40));
+check("Zuschalten erhöht die Trefferzahl um die Stationen", cards() === withoutTransit + stations.length, withoutTransit + " → " + cards());
+
 console.log("\n== Preisvergleich ==");
 $("compare").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
 await new Promise((r) => setTimeout(r, 40));
@@ -398,7 +443,7 @@ check("Escape schließt Sheet", !doc.body.classList.contains("sidebar-open"));
 
 console.log("\n== Transparenz: fehlende Bewertung / Speisekarte ==");
 const unratedCards = doc.querySelectorAll(".card .no-rating").length;
-check("Karten ohne Bewertung sind markiert", unratedCards === UNRATED, unratedCards + " von " + UNRATED + " (ohne Supermärkte/Haltestellen)");
+check("Karten ohne Bewertung sind markiert", unratedCards === UNRATED, unratedCards + " von " + UNRATED + " (ohne Supermärkte/Haltestellen/Stationen)");
 const ratedCards = doc.querySelectorAll(".card .rating").length;
 check("bewertete Orte zeigen Sterne", ratedCards === RATED, ratedCards + " von " + RATED + " Karten");
 
