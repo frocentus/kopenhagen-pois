@@ -1,7 +1,7 @@
 {
   "meta": {
     "city": "Kopenhagen",
-    "scope": "Stadtzentrum: Indre By, Nyhavn, Christianshavn, Vesterbro, südl. Nørrebro/Østerbro",
+    "scope": "Stadtzentrum: Indre By, Nyhavn, Christianshavn, Vesterbro, Nørrebro, Østerbro, Frederiksberg & Refshaleøen",
     "generated": "2026-10-25",
     "note": "Öffnungszeiten aus OpenStreetMap (ODbL) und – wo dort leer – von den Betreiber-Websites (Okt 2026). Preise und Bewertungen aus öffentlichen Quellen (VisitCopenhagen, kopenhagen.info, Betreiber-Websites, Google/Tripadvisor via Exa Places). Bewertungen ohne belastbare Quelle sind explizit als solche gekennzeichnet.",
     "center": [
@@ -25,6 +25,13 @@
       "short": "Frühstück",
       "color": "#e07a00",
       "icon": "🥐"
+    },
+    {
+      "id": "cafe",
+      "label": "Kaffee & Bäckerei",
+      "short": "Kaffee & Bäckerei",
+      "color": "#9a5b21",
+      "icon": "☕"
     },
     {
       "id": "restaurant",
@@ -53,6 +60,13 @@
       "short": "Shopping",
       "color": "#7b5ea7",
       "icon": "🛍"
+    },
+    {
+      "id": "services",
+      "label": "Praktisches",
+      "short": "Praktisches",
+      "color": "#64748b",
+      "icon": "ℹ️"
     }
   ],
   "places": [
@@ -83,7 +97,14 @@
         "Familie",
         "Abends"
       ],
-      "src": "kopenhagen.info · tivoli.dk (Okt 2026)"
+      "src": "kopenhagen.info · tivoli.dk (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Tivoli_Gardens_4.jpg/960px-Tivoli_Gardens_4.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Tivoli_Gardens_4.jpg",
+        "author": "European Commission",
+        "license": "CC BY 4.0",
+        "credit": "Wikipedia · Tivoli"
+      }
     },
     {
       "id": "nyhavn",
@@ -112,7 +133,14 @@
         "Gratis",
         "Fotos"
       ],
-      "src": "VisitCopenhagen (Okt 2026)"
+      "src": "VisitCopenhagen (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Nyhavn_5-15%2C_Kbh_2020.jpg/960px-Nyhavn_5-15%2C_Kbh_2020.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Nyhavn_5-15,_Kbh_2020.jpg",
+        "author": "Vincents productions",
+        "license": "CC BY-SA 4.0",
+        "credit": "Wikipedia · Nyhavn"
+      }
     },
     {
       "id": "havfrue",
@@ -140,7 +168,14 @@
         "Gratis",
         "Kinder"
       ],
-      "src": "Google-Rezensionen via Exa Places (Okt 2026)"
+      "src": "Google-Rezensionen via Exa Places (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Petite_sir%C3%A8ne_de_Copenhague_%28conforme_%C3%A0_la_loi_danoise%29.JPG/960px-Petite_sir%C3%A8ne_de_Copenhague_%28conforme_%C3%A0_la_loi_danoise%29.JPG",
+        "page": "https://commons.wikimedia.org/wiki/File:Petite_sir%C3%A8ne_de_Copenhague_(conforme_%C3%A0_la_loi_danoise).JPG",
+        "author": "Benoît Prieur",
+        "license": "CC0",
+        "credit": "Wikipedia · Den lille Havfrue"
+      }
     },
     {
       "id": "amalienborg",
@@ -168,7 +203,14 @@
         "Highlight",
         "Königlich"
       ],
-      "src": "kopenhagen.info · denkongeligesamling.dk (Okt 2026)"
+      "src": "kopenhagen.info · denkongeligesamling.dk (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Amalienborg_Palace_%28cropped%29.jpg/960px-Amalienborg_Palace_%28cropped%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Amalienborg_Palace_(cropped).jpg",
+        "author": "European Commission / Joshua Andrew Gross",
+        "license": "CC BY 4.0",
+        "credit": "Wikipedia · Amalienborg"
+      }
     },
     {
       "id": "rosenborg",
@@ -196,7 +238,14 @@
         "Highlight",
         "Museum"
       ],
-      "src": "kopenhagen.info · denkongeligesamling.dk (Okt 2026)"
+      "src": "kopenhagen.info · denkongeligesamling.dk (Okt 2026)",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Rosenborg_cph.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Rosenborg_cph.jpg",
+        "author": "Elgaard",
+        "license": "CC BY-SA 3.0",
+        "credit": "Wikipedia · Rosenborg Slot"
+      }
     },
     {
       "id": "rundetaarn",
@@ -224,7 +273,14 @@
         "Aussicht",
         "Regenwetter"
       ],
-      "src": "rundetaarn.dk · kopenhagen.info (Okt 2026)"
+      "src": "rundetaarn.dk · kopenhagen.info (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Copenhagen.1.Rundet%C3%A5rn.jpg/960px-Copenhagen.1.Rundet%C3%A5rn.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Copenhagen.1.Rundet%C3%A5rn.jpg",
+        "author": "Erik Christensen",
+        "license": "CC BY-SA 3.0",
+        "credit": "Wikipedia · Rundetårn"
+      }
     },
     {
       "id": "christiansborg",
@@ -253,7 +309,14 @@
         "Gratis-Teil",
         "Museum"
       ],
-      "src": "kopenhagen.info · denkongeligesamling.dk (Okt 2026)"
+      "src": "kopenhagen.info · denkongeligesamling.dk (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Christiansborg_Slot.jpg/960px-Christiansborg_Slot.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Christiansborg_Slot.jpg",
+        "author": "eimoberg from Changwon, South Korea",
+        "license": "CC BY 2.0",
+        "credit": "Wikipedia · Christiansborg"
+      }
     },
     {
       "id": "nationalmuseet",
@@ -282,7 +345,14 @@
         "Regenwetter",
         "Familie"
       ],
-      "src": "kopenhagen.info · nationalmuseet.dk (Okt 2026)"
+      "src": "kopenhagen.info · nationalmuseet.dk (Okt 2026)",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Nationalmuseet_kbh.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Nationalmuseet_kbh.jpg",
+        "author": "No machine-readable author provided. Nico-dk assumed (based on copyright claims).",
+        "license": "CC BY-SA 3.0",
+        "credit": "Wikipedia · Nationalmuseet"
+      }
     },
     {
       "id": "glyptoteket",
@@ -311,7 +381,14 @@
         "Regenwetter",
         "Highlight"
       ],
-      "src": "kopenhagen.info · glyptoteket.dk (Okt 2026)"
+      "src": "kopenhagen.info · glyptoteket.dk (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Kopenhagen_%28DK%29%2C_Ny-Carlsberg-Glyptotek_--_2017_--_1466.jpg/960px-Kopenhagen_%28DK%29%2C_Ny-Carlsberg-Glyptotek_--_2017_--_1466.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Kopenhagen_(DK),_Ny-Carlsberg-Glyptotek_--_2017_--_1466.jpg",
+        "author": "Dietmar Rabich",
+        "license": "CC BY-SA 4.0",
+        "credit": "Wikipedia · Ny Carlsberg Glyptotek"
+      }
     },
     {
       "id": "smk",
@@ -339,7 +416,14 @@
         "Museum",
         "Regenwetter"
       ],
-      "src": "kopenhagen.info (Okt 2026)"
+      "src": "kopenhagen.info (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/SMK_Entrance.jpg/960px-SMK_Entrance.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:SMK_Entrance.jpg",
+        "author": "Ida Tietgen Høyrup",
+        "license": "CC BY 2.0",
+        "credit": "Wikipedia · Statens Museum for Kunst"
+      }
     },
     {
       "id": "designmuseum",
@@ -367,7 +451,14 @@
         "Museum",
         "Design"
       ],
-      "src": "kopenhagen.info · designmuseum.dk (Okt 2026)"
+      "src": "kopenhagen.info · designmuseum.dk (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Kunstindustrimuseet_copenhagen.jpg/960px-Kunstindustrimuseet_copenhagen.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Kunstindustrimuseet_copenhagen.jpg",
+        "author": "Blunts",
+        "license": "CC BY-SA 3.0",
+        "credit": "Wikipedia · Designmuseum Danmark"
+      }
     },
     {
       "id": "kongenshave",
@@ -396,7 +487,14 @@
         "Pause",
         "Familie"
       ],
-      "src": "OpenStreetMap · parkmuseerne.dk (Okt 2026)"
+      "src": "OpenStreetMap · parkmuseerne.dk (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Kongens_Have_Rosenborg_Slot.jpg/960px-Kongens_Have_Rosenborg_Slot.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Kongens_Have_Rosenborg_Slot.jpg",
+        "author": "Jonas Smith",
+        "license": "CC BY 2.0",
+        "credit": "Wikipedia · Kongens Have"
+      }
     },
     {
       "id": "botanisk",
@@ -425,7 +523,15 @@
         "Natur",
         "Regenwetter"
       ],
-      "src": "kopenhagen.info · snm.dk (Okt 2026)"
+      "src": "kopenhagen.info · snm.dk (Okt 2026)",
+      "wiki": "Botanisk Have (København)",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Botanisk-Have-Kbh-190807.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Botanisk-Have-Kbh-190807.jpg",
+        "author": "Henrik Jessen",
+        "license": "CC BY 2.5",
+        "credit": "Wikipedia · Botanisk Have (København)"
+      }
     },
     {
       "id": "marmorkirken",
@@ -453,7 +559,15 @@
         "Aussicht",
         "Gratis-Teil"
       ],
-      "src": "kopenhagen.info · marmorkirken.dk (Okt 2026)"
+      "src": "kopenhagen.info · marmorkirken.dk (Okt 2026)",
+      "wiki": "Marmorkirken",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Marmor_kirken%2C_K%C3%B6penhamn_juli_2003.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Marmor_kirken,_K%C3%B6penhamn_juli_2003.jpg",
+        "author": "Lars Mongs, Arxfoto",
+        "license": "CC BY 4.0",
+        "credit": "Wikipedia · Marmorkirken"
+      }
     },
     {
       "id": "vorfrue",
@@ -481,7 +595,15 @@
         "Gratis",
         "Kunst"
       ],
-      "src": "kopenhagen.info (Okt 2026)"
+      "src": "kopenhagen.info (Okt 2026)",
+      "wiki": "Vor Frue Kirke (København)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Rundet%C3%A5rn_view_2_new_version.jpg/960px-Rundet%C3%A5rn_view_2_new_version.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Rundet%C3%A5rn_view_2_new_version.jpg",
+        "author": "Thue",
+        "license": "Public domain",
+        "credit": "Wikipedia · Vor Frue Kirke (København)"
+      }
     },
     {
       "id": "vorfrelser",
@@ -510,7 +632,14 @@
         "Highlight",
         "Abenteuer"
       ],
-      "src": "kopenhagen.info (Okt 2026)"
+      "src": "kopenhagen.info (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Copenhagen_-_Church_of_Our_Saviour_-_2013.jpg/960px-Copenhagen_-_Church_of_Our_Saviour_-_2013.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Copenhagen_-_Church_of_Our_Saviour_-_2013.jpg",
+        "author": "Avda",
+        "license": "CC BY-SA 3.0",
+        "credit": "Wikipedia · Church of Our Saviour, Copenhagen"
+      }
     },
     {
       "id": "kastellet",
@@ -539,7 +668,14 @@
         "Natur",
         "Spaziergang"
       ],
-      "src": "kopenhagen.info (Okt 2026)"
+      "src": "kopenhagen.info (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Kastellet%2C_Copenhagen_%28aerial_view%29.jpg/960px-Kastellet%2C_Copenhagen_%28aerial_view%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Kastellet,_Copenhagen_(aerial_view).jpg",
+        "author": "Bob Collowan",
+        "license": "CC BY-SA 4.0",
+        "credit": "Wikipedia · Kastellet"
+      }
     },
     {
       "id": "torvehallerne",
@@ -596,7 +732,14 @@
         "Shopping",
         "Gratis"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Str%C3%B8get%2C_Copenhagen.jpg/960px-Str%C3%B8get%2C_Copenhagen.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Str%C3%B8get,_Copenhagen.jpg",
+        "author": "Olga Itenberg",
+        "license": "CC BY 2.0",
+        "credit": "Wikipedia · Strøget"
+      }
     },
     {
       "id": "diamant",
@@ -624,7 +767,14 @@
         "Gratis",
         "Architektur"
       ],
-      "src": "kopenhagen.info (Okt 2026)"
+      "src": "kopenhagen.info (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Det_Kongelige_Bibliotek_Copenhagen.jpg/960px-Det_Kongelige_Bibliotek_Copenhagen.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Det_Kongelige_Bibliotek_Copenhagen.jpg",
+        "author": "kallerna",
+        "license": "CC BY-SA 4.0",
+        "credit": "Wikipedia · Den Sorte Diamant"
+      }
     },
     {
       "id": "raadhus",
@@ -652,7 +802,14 @@
         "Architektur",
         "Zentral"
       ],
-      "src": "OpenStreetMap (Okt 2026)"
+      "src": "OpenStreetMap (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/K%C3%B8benhavns_R%C3%A5dhus_2013_%28cropped%29.jpg/960px-K%C3%B8benhavns_R%C3%A5dhus_2013_%28cropped%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:K%C3%B8benhavns_R%C3%A5dhus_2013_(cropped).jpg",
+        "author": "Jenny Andersson / News Oresund",
+        "license": "CC BY 2.0",
+        "credit": "Wikipedia · Københavns Rådhus"
+      }
     },
     {
       "id": "boersen",
@@ -680,7 +837,14 @@
         "Gratis",
         "Geschichte"
       ],
-      "src": "OpenStreetMap · Presseberichte (Okt 2026)"
+      "src": "OpenStreetMap · Presseberichte (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/B%C3%B8rsen_Copenhagen_Denmark.jpg/960px-B%C3%B8rsen_Copenhagen_Denmark.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:B%C3%B8rsen_Copenhagen_Denmark.jpg",
+        "author": "Jebulon",
+        "license": "CC0",
+        "credit": "Wikipedia · Børsen"
+      }
     },
     {
       "id": "atelier-september",
@@ -863,7 +1027,7 @@
     {
       "id": "lagkagehuset",
       "name": "Lagkagehuset",
-      "cat": "breakfast",
+      "cat": "cafe",
       "sub": "Bäckerei-Kette",
       "lat": 55.68296,
       "lon": 12.57353,
@@ -893,7 +1057,7 @@
     {
       "id": "sankt-peders",
       "name": "Sankt Peders Bageri",
-      "cat": "breakfast",
+      "cat": "cafe",
       "sub": "Traditionsbäckerei",
       "lat": 55.67913,
       "lon": 12.56914,
@@ -953,7 +1117,7 @@
     {
       "id": "emmerys",
       "name": "Emmerys",
-      "cat": "breakfast",
+      "cat": "cafe",
       "sub": "Bio-Bäckerei",
       "lat": 55.68688,
       "lon": 12.58973,
@@ -1310,7 +1474,14 @@
       ],
       "src": "OpenStreetMap · marchal.dk (Okt 2026)",
       "ratingSource": "Google",
-      "menuNote": "Speisekarte über die Hotel-Website (Menüführung dort)."
+      "menuNote": "Speisekarte über die Hotel-Website (Menüführung dort).",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Hotel-d-angleterre-2004.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Hotel-d-angleterre-2004.jpg",
+        "author": "Wikimedia Commons",
+        "license": "CC BY-SA 3.0",
+        "credit": "Wikipedia · Marchal"
+      }
     },
     {
       "id": "aoc",
@@ -1371,7 +1542,14 @@
         "Fine Dining"
       ],
       "src": "konghans.dk (Okt 2026)",
-      "ratingSource": "Tripadvisor"
+      "ratingSource": "Tripadvisor",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Kong_Hans_K%C3%A6lder_IMG_2611_%2823693053072%29.jpg/960px-Kong_Hans_K%C3%A6lder_IMG_2611_%2823693053072%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Kong_Hans_K%C3%A6lder_IMG_2611_(23693053072).jpg",
+        "author": "City Foodsters",
+        "license": "CC BY 2.0",
+        "credit": "Wikipedia · Kong Hans Kælder"
+      }
     },
     {
       "id": "krebsegaarden",
@@ -1557,7 +1735,14 @@
         "Aussicht"
       ],
       "src": "OpenStreetMap · nyhavn17.dk (Okt 2026)",
-      "ratingSource": "Google"
+      "ratingSource": "Google",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Nyhavn_17_%28Copenhagen%29_01.jpg/960px-Nyhavn_17_%28Copenhagen%29_01.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Nyhavn_17_(Copenhagen)_01.jpg",
+        "author": "Ramblersen2",
+        "license": "CC BY-SA 4.0",
+        "credit": "Wikipedia · Nyhavn 17"
+      }
     },
     {
       "id": "kanalen",
@@ -2439,7 +2624,14 @@
         "Zentral"
       ],
       "src": "OpenStreetMap (Okt 2026)",
-      "ratingSource": "Google"
+      "ratingSource": "Google",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Magasin_du_Nord%2C_2019_%2801%29.jpg/960px-Magasin_du_Nord%2C_2019_%2801%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Magasin_du_Nord,_2019_(01).jpg",
+        "author": "Bahnfrend",
+        "license": "CC BY-SA 4.0",
+        "credit": "Wikipedia · Magasin du Nord"
+      }
     },
     {
       "id": "fisketorvet",
@@ -2469,7 +2661,14 @@
         "Familie"
       ],
       "src": "OpenStreetMap (Okt 2026)",
-      "ratingSource": "Google"
+      "ratingSource": "Google",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Fisketorvet_Copenhagen.jpg/960px-Fisketorvet_Copenhagen.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Fisketorvet_Copenhagen.jpg",
+        "author": "kallerna",
+        "license": "CC BY-SA 4.0",
+        "credit": "Wikipedia · Fisketorvet"
+      }
     },
     {
       "id": "frederiksberg-centret",
@@ -2498,7 +2697,584 @@
         "Regenwetter"
       ],
       "src": "OpenStreetMap (Okt 2026)",
-      "ratingSource": "Google"
+      "ratingSource": "Google",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Frederiksberg_Centret.jpg/960px-Frederiksberg_Centret.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Frederiksberg_Centret.jpg",
+        "author": "Ramblersen",
+        "license": "CC BY-SA 4.0",
+        "credit": "Wikipedia · Frederiksberg Centret"
+      }
+    },
+    {
+      "id": "coffee-collective",
+      "name": "Coffee Collective",
+      "cat": "cafe",
+      "sub": "Specialty Coffee & Rösterei",
+      "lat": 55.69372,
+      "lon": 12.54228,
+      "area": "Nørrebro / Jægersborggade",
+      "rating": 4.6,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Flat White ca. 48 DKK · Filterkaffee ca. 45 DKK",
+      "hours": "Mo-Fr 07:00-19:00; Sa,Su 08:00-19:00",
+      "desc": "Die Rösterei, die Kopenhagens Kaffeekultur mitbegründet hat: direkter Handel mit Farmen, helle Röstungen und penible Brühqualität. Der Laden in der Jægersborggade ist das Original.",
+      "tips": [
+        "Den Filterkaffee des Tages probieren – die Sorte wechselt regelmäßig.",
+        "Die Jægersborggade ist voller kleiner Designläden – ideal für einen Bummel davor oder danach.",
+        "Bohnen als Mitbringsel direkt mitnehmen."
+      ],
+      "website": "https://coffeecollective.dk/",
+      "tags": [
+        "Kaffee",
+        "Highlight",
+        "Frühstück",
+        "Mitbringsel"
+      ],
+      "src": "coffeecollective.dk · OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "prolog",
+      "name": "Prolog Coffee Bar",
+      "cat": "cafe",
+      "sub": "Specialty Coffee im Kødbyen",
+      "lat": 55.66827,
+      "lon": 12.55755,
+      "area": "Vesterbro / Kødbyen",
+      "rating": 4.6,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Flat White ca. 48 DKK",
+      "hours": "Mo-Fr 07:00-18:00; Sa-Su 09:00-18:00",
+      "desc": "Kleine, minimalistische Bar mitten im ehemaligen Schlachthofgelände Kødbyen – exzellenter Espresso und einer der besten Flat Whites der Stadt.",
+      "tips": [
+        "Kombiniert sich gut mit einem Abend in der Fleischpackerei (Bæst, Warpigs gleich um die Ecke).",
+        "Am Wochenende später offen, aber deutlich ruhiger als in der Woche."
+      ],
+      "website": "https://prologcoffee.com/",
+      "tags": [
+        "Kaffee",
+        "Vesterbro",
+        "Hip"
+      ],
+      "src": "prologcoffee.com · OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "april-coffee",
+      "name": "April Coffee Store & Showroom",
+      "cat": "cafe",
+      "sub": "Rösterei & Showroom",
+      "lat": 55.6961,
+      "lon": 12.57331,
+      "area": "Østerbro / Ryesgade",
+      "rating": 4.7,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Filterkaffee ca. 45–55 DKK",
+      "hours": "Mo-Fr 07:30-17:00; Sa 09:00-16:00",
+      "hoursNote": "Showroom einer Rösterei, kein klassisches Café – Öffnungszeiten können abweichen, vorher kurz prüfen.",
+      "desc": "Der Showroom von Patrik Rolf Karlssons Rösterei: skandinavisch-minimaler Raum, wo man Kaffee probiert, Bohnen kauft und der Röstung bei der Arbeit zusieht.",
+      "tips": [
+        "Hier eher Kaffee trinken und Bohnen kaufen als lange sitzen – es ist ein Showroom.",
+        "Die Rösterei liegt im hinteren Bereich sichtbar – nach einem Probierbecher fragen."
+      ],
+      "website": "https://www.aprilcoffeeroasters.com/",
+      "tags": [
+        "Kaffee",
+        "Design",
+        "Mitbringsel"
+      ],
+      "src": "aprilcoffeeroasters.com · OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "roast",
+      "name": "ROAST Coffee",
+      "cat": "cafe",
+      "sub": "Specialty Coffee",
+      "lat": 55.67873,
+      "lon": 12.56964,
+      "area": "Indre By / Studiestræde",
+      "rating": 4.5,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Espresso ca. 40 DKK · Flat White ca. 48 DKK",
+      "hours": "Mo-Fr 07:30-18:00; Sa 10:00-18:00; Su 10:00-17:00",
+      "desc": "Zentral gelegene Kaffeebar mit eigener Röstung, direkt hinter der Strøget-Einkaufsmeile – perfekt für einen Kaffee-Stopp zwischen Shopping und Sehenswürdigkeiten.",
+      "tips": [
+        "Kleine Fläche, wenige Sitzplätze – to-go mitnehmen und im nahen Grønnegade oder Kongens Have trinken."
+      ],
+      "website": "https://www.instagram.com/roastcoffee/",
+      "tags": [
+        "Kaffee",
+        "Zentral",
+        "Schnell"
+      ],
+      "src": "OpenStreetMap · instagram.com/roastcoffee (Okt 2026)"
+    },
+    {
+      "id": "la-cabra",
+      "name": "La Cabra",
+      "cat": "cafe",
+      "sub": "Specialty Coffee & Bakery",
+      "lat": 55.68156,
+      "lon": 12.579,
+      "area": "Indre By / Møntergade",
+      "rating": 4.6,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Flat White ca. 48 DKK · Croissant ca. 35 DKK",
+      "hours": "Mo-Fr 08:00-18:00; Sa-Su 09:00-17:00",
+      "desc": "Aarhuser Rösterei mit Kopenhagener Flagship: helle, fruchtige Kaffees plus eines der besten Sauerteig-Croissants der Stadt.",
+      "tips": [
+        "Das Croissant ist berühmt – vor dem Mittag kommen, sonst oft ausverkauft."
+      ],
+      "website": "https://www.lacabra.dk/",
+      "tags": [
+        "Kaffee",
+        "Frühstück",
+        "Highlight"
+      ],
+      "src": "lacabra.dk · OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "hart-bageri",
+      "name": "Hart Bageri",
+      "cat": "cafe",
+      "sub": "Sauerteig-Bäckerei",
+      "lat": 55.67538,
+      "lon": 12.5455,
+      "area": "Frederiksberg",
+      "rating": 4.5,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Kardamom-Schnecke ca. 38 DKK · Brot ab ca. 45 DKK",
+      "hours": "Mo-Fr 07:30-18:00; Sa,Su 07:30-17:00",
+      "desc": "Der frühere Noma-Konditor Richard Hart bäckt hier Sauerteigbrot und skandinavisches Gebäck mit Bio-Mehl – von Food-Magazinen mehrfach als eine der besten Bäckereien der Welt gelistet.",
+      "tips": [
+        "Die Kardamom-Schnecke ist der Klassiker.",
+        "Brot am besten vorbestellen oder früh kommen – nachmittags ist vieles ausverkauft."
+      ],
+      "website": "https://hartbageri.dk/",
+      "tags": [
+        "Frühstück",
+        "Highlight",
+        "Bio"
+      ],
+      "src": "hartbageri.com · OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "juno",
+      "name": "Juno the Bakery",
+      "cat": "cafe",
+      "sub": "Bäckerei (Kardamom-Schnecken)",
+      "lat": 55.70616,
+      "lon": 12.5818,
+      "area": "Østerbro / Århusgade",
+      "rating": 4.8,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Kardamom-Schnecke ca. 40 DKK",
+      "hours": "Tu-Sa 07:30-18:00; Su 07:30-16:00; Mo off",
+      "desc": "Winzige Bäckerei, die für ihre buttrigen Kardamom-Schnecken Kultstatus hat – montags geschlossen, ansonsten oft mit Schlange vor der Tür.",
+      "tips": [
+        "Morgens kommen – die besten Stücke sind schnell weg.",
+        "Montag geschlossen – nicht umsonst hinfahren."
+      ],
+      "website": "https://www.junothebakery.com/",
+      "tags": [
+        "Frühstück",
+        "Kult",
+        "Highlight"
+      ],
+      "src": "junothebakery.com · OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "buka",
+      "name": "Buka",
+      "cat": "cafe",
+      "sub": "Bäckerei & Café",
+      "lat": 55.68195,
+      "lon": 12.58589,
+      "area": "Indre By / Kongens Nytorv",
+      "rating": 4.4,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Croissant ca. 35 DKK · Kaffee ca. 45 DKK",
+      "hours": "Mo-Su 07:00-18:00",
+      "desc": "Unaufgeregte Bäckerei mit feinem französisch-dänischem Gebäck, mitten im Zentrum – gut für ein schnelles Frühstück zwischen Nyhavn und Strøget.",
+      "tips": [
+        "Perfekt für ein Frühstück to-go auf dem Weg zum Nyhavn."
+      ],
+      "website": "https://www.buka-bakery.com/",
+      "tags": [
+        "Frühstück",
+        "Zentral"
+      ],
+      "src": "buka-bakery.com · OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "andersen-maillard",
+      "name": "Andersen & Maillard",
+      "cat": "cafe",
+      "sub": "Bäckerei & Kaffeerösterei",
+      "lat": 55.66723,
+      "lon": 12.57848,
+      "area": "Indre By / Vesterport",
+      "rating": 4.4,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Croissant ca. 35 DKK · Espresso ca. 40 DKK",
+      "hours": "Mo-Su 06:30-19:00",
+      "desc": "Beliebte Bäckerei für gutes Gebäck und eigenen Kaffee, direkt am Tivoli – öffnet früh und ist ideal vor dem Parkbesuch oder der Bahnfahrt.",
+      "tips": [
+        "Der Espresso wird mit eigenen Bohnen gebrüht – einer der besseren Ketten-Kaffees der Stadt."
+      ],
+      "website": "https://www.andersen-bakery-eu.dk/",
+      "tags": [
+        "Frühstück",
+        "Zentral",
+        "Kaffee"
+      ],
+      "src": "andersen-bakery-eu.dk · OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "noma",
+      "name": "Noma",
+      "cat": "restaurant",
+      "sub": "Fine Dining · 3 Michelin-Sterne",
+      "lat": 55.68251,
+      "lon": 12.61079,
+      "area": "Christianshavn / Refshaleøen",
+      "rating": 4.5,
+      "reviews": "—",
+      "priceLevel": 4,
+      "priceText": "Menü ca. 2.950 DKK (ohne Getränke)",
+      "hours": "Tu-Th 17:00-23:00; Fr 12:30-17:30,18:00-23:30; Sa-Mo off",
+      "hoursNote": "Reservierungen nur online, Monate im Voraus; eine Sitzung ist ein mehrstündiges Menü.",
+      "desc": "Mehrfach zum besten Restaurant der Welt gekürt: René Redzepis Küche der neuen nordischen Bewegung, saisonal in drei Jahreskarten (Meeresfrüchte, Gemüse, Wild & Wald).",
+      "tips": [
+        "Reservierungen öffnen in Tranchen und sind meist in Minuten weg – Newsletter/Instagram beobachten.",
+        "Wer keinen Tisch bekommt: das Schwesterrestaurant Barr (gleiche Adresse) ist deutlich einfacher buchbar."
+      ],
+      "website": "https://noma.dk/",
+      "tags": [
+        "Michelin",
+        "Fine Dining",
+        "Nordisch",
+        "Reservieren",
+        "Besonderer Abend"
+      ],
+      "src": "noma.dk · OpenStreetMap (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Noma_AV4A6178_%2841800440401%29.jpg/960px-Noma_AV4A6178_%2841800440401%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Noma_AV4A6178_(41800440401).jpg",
+        "author": "City Foodsters",
+        "license": "CC BY 2.0",
+        "credit": "Wikipedia · Noma"
+      }
+    },
+    {
+      "id": "geranium",
+      "name": "Geranium",
+      "cat": "restaurant",
+      "sub": "Fine Dining · 3 Michelin-Sterne",
+      "lat": 55.70371,
+      "lon": 12.57204,
+      "area": "Østerbro / Parken",
+      "rating": 4.6,
+      "reviews": "—",
+      "priceLevel": 4,
+      "priceText": "Menü ca. 3.300 DKK (ohne Getränke)",
+      "hours": "We 18:30-24:00; Th-Sa 12:00-15:30,18:30-24:00",
+      "hoursNote": "Letzte Reservierung ca. 13:30 (Mittag) bzw. 21:00 (Abend).",
+      "desc": "Im 8. Stock des Nationalstadions Parken, mit Blick über die Stadt: vegetarisches Menü auf höchstem Niveau, das als einziges in Dänemark dreimal die Höchstwertung erreichte.",
+      "tips": [
+        "Der Panoramablick über Kopenhagen ist Teil des Erlebnisses – Tisch am Fenster wünschen."
+      ],
+      "website": "https://www.geranium.dk/",
+      "tags": [
+        "Michelin",
+        "Fine Dining",
+        "Aussicht",
+        "Vegetarisch",
+        "Reservieren"
+      ],
+      "src": "geranium.dk · OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "alchemist",
+      "name": "Alchemist",
+      "cat": "restaurant",
+      "sub": "Fine Dining · 2 Michelin-Sterne",
+      "lat": 55.69396,
+      "lon": 12.61391,
+      "area": "Refshaleøen",
+      "rating": 4.5,
+      "reviews": "—",
+      "priceLevel": 4,
+      "priceText": "Menü ca. 4.900 DKK (ohne Getränke)",
+      "hours": "Tu-Su 18:00-24:00; Mo off",
+      "hoursNote": "Ein „holistisches Menü“ mit 40+ Gängen über mehrere Stunden – Abendprogramm, kein klassisches Dinner.",
+      "desc": "Rasmus Munks spektakuläres Erlebnis in einer Kuppel auf Refshaleøen: Theater, Licht, Video und Gerichte mit sozialen Botschaften – eher Inszenierung als Restaurantbesuch.",
+      "tips": [
+        "Nichts über die Gänge googeln – der Überraschungseffekt ist Teil des Konzepts.",
+        "Festes Abendformat: erst ab 18 Uhr, mehrere Stunden einplanen."
+      ],
+      "website": "https://alchemist.dk/",
+      "tags": [
+        "Michelin",
+        "Fine Dining",
+        "Besonderer Abend",
+        "Reservieren"
+      ],
+      "src": "restaurant-alchemist.dk · OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "kadeau",
+      "name": "Kadeau København",
+      "cat": "restaurant",
+      "sub": "Fine Dining · 2 Michelin-Sterne",
+      "lat": 55.67225,
+      "lon": 12.58886,
+      "area": "Christianshavn / Wildersgade",
+      "rating": 4.6,
+      "reviews": "—",
+      "priceLevel": 4,
+      "priceText": "Menü ca. 2.500 DKK (ohne Getränke)",
+      "hours": "Tu-We 18:00-24:00; Th-Sa 12:00-13:30,18:00-24:00",
+      "desc": "Kopenhagener Ableger des Bornholmer Restaurants Kadeau: nordische Zutaten, viel eigenes Fermentieren, Garen über Feuer – warmherzig und weniger steif als manche Sterneküche.",
+      "tips": [
+        "Viele Zutaten kommen von Bornholm – nach der Herkunft der Gänge zu fragen lohnt."
+      ],
+      "website": "https://www.kadeau.dk/",
+      "tags": [
+        "Michelin",
+        "Nordisch",
+        "Fine Dining",
+        "Reservieren"
+      ],
+      "src": "kadeau.dk · OpenStreetMap (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/07KadeauKbh_Kadeau.jpg/960px-07KadeauKbh_Kadeau.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:07KadeauKbh_Kadeau.jpg",
+        "author": "Laurachabal",
+        "license": "CC BY-SA 4.0",
+        "credit": "Wikipedia · Kadeau København"
+      }
+    },
+    {
+      "id": "reffen",
+      "name": "Reffen",
+      "cat": "fastfood",
+      "sub": "Streetfood-Markt",
+      "lat": 55.69317,
+      "lon": 12.60978,
+      "area": "Refshaleøen",
+      "rating": 4.4,
+      "reviews": "—",
+      "priceLevel": 2,
+      "mainDKK": 100,
+      "priceText": "Streetfood-Gerichte ca. 90–130 DKK",
+      "hours": "Mo-Su 11:00-22:00",
+      "hoursNote": "Saisonal (ca. April–Oktober); im Winter eingeschränkt oder geschlossen. Am Wochenende oft länger und mit Musik.",
+      "desc": "Der größte Streetfood-Markt Skandinaviens auf Refshaleøen: über 50 Stände aus aller Welt, lange Tische direkt am Wasser, Sonnenuntergang über dem Hafen.",
+      "tips": [
+        "Mit dem Fahrrad oder der Hafenbus-Linie 991/992 am schönsten zu erreichen.",
+        "Der Sonnenuntergang am Wasser ist hier spektakulär – früh genug kommen.",
+        "Eigene Getränke sind nicht erlaubt, es gibt Bars vor Ort."
+      ],
+      "website": "https://reffen.dk/",
+      "tags": [
+        "Streetfood",
+        "Draußen",
+        "Familie",
+        "Lebhaft",
+        "Aussicht"
+      ],
+      "src": "reffen.dk · OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "toilette-radhuspladsen",
+      "name": "Öffentliche Toilette Rådhuspladsen",
+      "cat": "services",
+      "sub": "Kostenlose Stadttoilette",
+      "lat": 55.67635,
+      "lon": 12.56839,
+      "area": "Indre By / Rådhuspladsen",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": "Mo-Su 09:00-22:30",
+      "desc": "Öffentliche, kostenlose Toilette der Stadt Kopenhagen direkt am Rathausplatz – automatisch gereinigt.",
+      "tips": [
+        "Eine der zentralsten kostenlosen Toiletten – bei Stadtbummel und Tivoli-Besuch praktisch."
+      ],
+      "website": null,
+      "tags": [
+        "Gratis",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap · Københavns Kommune (Okt 2026)"
+    },
+    {
+      "id": "toilette-nyhavn",
+      "name": "Öffentliche Toilette Nyhavn",
+      "cat": "services",
+      "sub": "Kostenlose Stadttoilette",
+      "lat": 55.68065,
+      "lon": 12.58786,
+      "area": "Nyhavn",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": "Mo-Su 09:00-22:30",
+      "desc": "Kostenlose öffentliche Toilette direkt am Nyhavn, nahe der Kanalrundfahrten.",
+      "website": null,
+      "tags": [
+        "Gratis",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "toilette-gammel-strand",
+      "name": "Öffentliche Toilette Gammel Strand",
+      "cat": "services",
+      "sub": "Kostenlose Stadttoilette (24h)",
+      "lat": 55.67763,
+      "lon": 12.58087,
+      "area": "Indre By / Gammel Strand",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": "24/7",
+      "desc": "Rund um die Uhr geöffnete, kostenlose Stadttoilette am Gammel Strand, nahe Strøget und Christiansborg.",
+      "website": null,
+      "tags": [
+        "Gratis",
+        "24h",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "steno-apotek",
+      "name": "Steno Apotek",
+      "cat": "services",
+      "sub": "24-Stunden-Apotheke",
+      "lat": 55.67453,
+      "lon": 12.56331,
+      "area": "Vesterbro / København H",
+      "priceLevel": 0,
+      "priceText": null,
+      "hours": "24/7",
+      "desc": "Die rund um die Uhr geöffnete Apotheke nahe dem Hauptbahnhof – die zentrale Anlaufstelle für Medikamente außerhalb der normalen Öffnungszeiten.",
+      "tips": [
+        "Nachts ist der Zugang teils über einen Nachtschalter – klingeln, falls die Tür verschlossen wirkt."
+      ],
+      "website": null,
+      "tags": [
+        "24h",
+        "Gesundheit"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "kongelig-hof-apotek",
+      "name": "Kongelig Hof-apotek",
+      "cat": "services",
+      "sub": "Apotheke",
+      "lat": 55.68315,
+      "lon": 12.58654,
+      "area": "Indre By / Kongens Nytorv",
+      "priceLevel": 0,
+      "priceText": null,
+      "hours": "Mo-Fr 09:00-17:30; Sa 09:30-14:00; Su off",
+      "desc": "Traditionsapotheke am Kongens Nytorv für Medikamente und Reisebedarf mitten im Zentrum.",
+      "website": null,
+      "tags": [
+        "Gesundheit",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "norreport-station",
+      "name": "Nørreport Station",
+      "cat": "services",
+      "sub": "Metro & S-Bahn",
+      "lat": 55.68376,
+      "lon": 12.57204,
+      "area": "Indre By / Nørreport",
+      "priceLevel": 0,
+      "priceText": "Einzelticket ca. 24 DKK (2 Zonen)",
+      "hours": "Mo-Su 05:00-24:00",
+      "hoursNote": "Fr/Sa fährt die Metro die ganze Nacht; S-Bahn nachts nur eingeschränkt.",
+      "desc": "Der wichtigste Verkehrsknoten der Innenstadt: Metro (M1/M2/M3), S-Bahn und Regionalzüge treffen hier aufeinander – von hier aus ist alles erreichbar.",
+      "tips": [
+        "Der Bahnhof liegt unterirdisch unter dem Platz – Eingänge von allen Seiten."
+      ],
+      "website": "https://www.dsb.dk/",
+      "tags": [
+        "Verkehr",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap · dsb.dk (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/N%C3%B8rreport_%28en_bleu%29.jpg/960px-N%C3%B8rreport_%28en_bleu%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:N%C3%B8rreport_(en_bleu).jpg",
+        "author": "Orf3us",
+        "license": "CC BY 3.0",
+        "credit": "Wikipedia · Nørreport Station"
+      }
+    },
+    {
+      "id": "kongens-nytorv-station",
+      "name": "Kongens Nytorv Station",
+      "cat": "services",
+      "sub": "Metro (M1–M4)",
+      "lat": 55.67894,
+      "lon": 12.58551,
+      "area": "Indre By / Kongens Nytorv",
+      "priceLevel": 0,
+      "priceText": "Einzelticket ca. 24 DKK (2 Zonen)",
+      "hours": "Mo-Su 05:00-24:00",
+      "hoursNote": "Fr/Sa fährt die Metro die ganze Nacht.",
+      "desc": "Zentrale Metrostation am Kongens Nytorv mit allen vier Metrolinien – ideal für den Sprung nach Christianshavn, Amager oder zum Flughafen (M2).",
+      "website": "https://m.dk/",
+      "tags": [
+        "Verkehr",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap (Okt 2026)",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Kongens_Nytorv_Station_under_jorden.JPG/960px-Kongens_Nytorv_Station_under_jorden.JPG",
+        "page": "https://commons.wikimedia.org/wiki/File:Kongens_Nytorv_Station_under_jorden.JPG",
+        "author": "Froztbyte",
+        "license": "CC BY-SA 3.0",
+        "credit": "Wikipedia · Kongens Nytorv Station"
+      }
+    },
+    {
+      "id": "hovedbanegaarden",
+      "name": "København H (Hauptbahnhof)",
+      "cat": "services",
+      "sub": "Bahnhof, Metro & Gepäck",
+      "lat": 55.67245,
+      "lon": 12.56537,
+      "area": "Vesterbro / København H",
+      "priceLevel": 0,
+      "priceText": "Schließfach ca. 50–70 DKK/Tag",
+      "hours": "Mo-Su 05:00-24:00",
+      "hoursNote": "Bahnhofshalle rund um die Uhr zugänglich; Schließfächer und Gepäckaufbewahrung ca. 06:00–22:00.",
+      "desc": "Der Hauptbahnhof: Ankunft aus Schweden, vom Flughafen oder per S-Bahn – mit Gepäckschließfächern, Wechselstuben und direkter Metro-Anbindung.",
+      "tips": [
+        "Gepäckschließfächer liegen Richtung Istedgade/Reventlowsgade-Eingang – Münzen oder Karte bereithalten."
+      ],
+      "website": "https://www.dsb.dk/",
+      "tags": [
+        "Verkehr",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap · dsb.dk (Okt 2026)"
     }
   ]
 }
