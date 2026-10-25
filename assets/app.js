@@ -461,29 +461,69 @@
       maxBoundsViscosity: 0.6,
     });
 
+    // Kachel-Anbieter ohne API-Key. CARTO-Basemaps verlangen inzwischen einen Key
+    // und liefern sonst nur eine Platzhaltergrafik – deshalb nicht mehr verwendet.
     var osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>-Mitwirkende',
     });
-    var voyager = L.tileLayer(
-      "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
-      {
-        maxZoom: 20,
-        subdomains: "abcd",
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>-Mitwirkende &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>',
-      },
-    );
+    var cyclosm = L.tileLayer("https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png", {
+      maxZoom: 20,
+      subdomains: "abc",
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>-Mitwirkende · Stil: <a href="https://www.cyclosm.org/" target="_blank" rel="noopener">CyclOSM</a>',
+    });
 
-    voyager.addTo(map);
-    L.control.layers({ "Karte (Voyager)": voyager, "OpenStreetMap": osm }, null, { position: "topright" }).addTo(map);
+    osm.addTo(map);
+    L.control
+      .layers({ "Karte": osm, "Rad & Wandern": cyclosm }, null, { position: "topright" })
+      .addTo(map);
     L.control.zoom({ position: "topleft" }).addTo(map);
     L.control.scale({ position: "bottomright", imperial: false }).addTo(map);
+    watchTiles([osm, cyclosm]);
 
     map.on("popupclose", function () { setSelectedCard(null); });
     map.on("click", function () {
       document.body.classList.remove("sidebar-open");
+    });
+  }
+
+  /**
+   * Warnt, wenn Kartenkacheln nicht laden (Netzwerk, Werbeblocker, Anbieter down).
+   * Ohne diesen Hinweis sieht der Nutzer nur eine leere/graue Karte.
+   */
+  function watchTiles(layers) {
+    var wrap = document.querySelector(".map-wrap");
+    var warning = null;
+
+    function show() {
+      if (warning) return;
+      warning = document.createElement("div");
+      warning.className = "tile-warning";
+      warning.innerHTML =
+        "Kartenkacheln laden nicht. Bitte Verbindung, Werbeblocker oder DNS-Filter prüfen." +
+        "<button type=\"button\">Hinweis schließen</button>";
+      warning.querySelector("button").addEventListener("click", function () {
+        warning.remove();
+        warning = null;
+      });
+      wrap.appendChild(warning);
+    }
+
+    layers.forEach(function (layer) {
+      var errors = 0;
+      layer.on("tileerror", function () {
+        errors++;
+        if (errors >= 6) show();
+      });
+      layer.on("tileload", function () {
+        errors = 0;
+        if (warning) {
+          warning.remove();
+          warning = null;
+        }
+      });
     });
   }
 

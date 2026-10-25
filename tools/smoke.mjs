@@ -24,6 +24,7 @@ function fakeLayerGroup() {
     _count() { return set.size; },
   };
 }
+window.__tileLayers = [];
 window.L = {
   latLngBounds: () => ({ pad: () => ({}) }),
   map: () => {
@@ -40,7 +41,16 @@ window.L = {
     };
     return m;
   },
-  tileLayer: () => ({ addTo() {} }),
+  tileLayer: () => {
+    const handlers = {};
+    const layer = {
+      addTo() { return layer; },
+      on(ev, fn) { (handlers[ev] = handlers[ev] || []).push(fn); return layer; },
+      emit(ev) { (handlers[ev] || []).forEach((fn) => fn({})); },
+    };
+    window.__tileLayers.push(layer);
+    return layer;
+  },
   control: { layers: () => ({ addTo() {} }), zoom: () => ({ addTo() {} }), scale: () => ({ addTo() {} }) },
   divIcon: (o) => o,
   layerGroup: fakeLayerGroup,
@@ -144,6 +154,18 @@ sort.value = "price";
 sort.dispatchEvent(new window.Event("change", { bubbles: true }));
 check("Sortierung nach Preis läuft", doc.querySelectorAll(".card").length === 81);
 check("keine Gruppen-Header bei Preissortierung", doc.querySelectorAll(".list .group").length === 0);
+
+console.log("\n== Kartenkacheln ==");
+check("zwei Kachel-Layer registriert", window.__tileLayers.length === 2, String(window.__tileLayers.length));
+const tileLayer = window.__tileLayers[0];
+for (let i = 0; i < 6; i++) tileLayer.emit("tileerror");
+check("Warnung nach 6 Kachelfehlern", !!doc.querySelector(".tile-warning"));
+tileLayer.emit("tileload");
+check("Warnung verschwindet bei Erfolg", !doc.querySelector(".tile-warning"));
+
+const appSrc = fs.readFileSync("assets/app.js", "utf8");
+check("keine CARTO-Kacheln mehr", !/cartocdn|basemaps\.carto/.test(appSrc));
+check("OSM-Kacheln als Standard", /tile\.openstreetmap\.org/.test(appSrc));
 
 console.log("\n" + (fails === 0 ? "ALLE CHECKS BESTANDEN" : fails + " CHECK(S) FEHLGESCHLAGEN"));
 process.exit(fails === 0 ? 0 : 1);

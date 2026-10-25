@@ -15,7 +15,7 @@ Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **81 kuratierte
 
 **Features**
 
-- Leaflet-Karte mit OpenStreetMap-Kacheln, Marker-Clustering und Karten-Layer-Umschalter (Voyager / OSM)
+- Leaflet-Karte mit OpenStreetMap-Kacheln (ohne API-Key), Marker-Clustering und Layer-Umschalter (Karte / Rad & Wandern)
 - Filter nach Kategorie, Volltextsuche, Sortierung (Empfehlung, Name, Bewertung, Preis, Entfernung)
 - **„Nur jetzt geöffnet"** – berechnet aus den OSM-Öffnungszeiten in Zeitzone `Europe/Copenhagen`, inkl. Saisonregeln, Nachtöffnung und Feiertagsausnahmen
 - Detailansicht mit Beschreibung, Tipps, Wochen-Öffnungszeiten, Preisen, Bewertung, Website/Speisekarte und Google-Maps-Route
@@ -136,5 +136,5 @@ vor dem Besuch lohnt ein Blick auf die offizielle Website (im Detail-Panel verli
 
 ## Lizenz
 
-Code: frei verwendbar (MIT). Kartendaten: © OpenStreetMap-Mitwirkende (ODbL), Kacheln © CARTO.
+Code: frei verwendbar (MIT). Kartendaten und Kacheln: © OpenStreetMap-Mitwirkende (ODbL) – Standard-Kacheln von tile.openstreetmap.org, alternativ CyclOSM. Kein API-Key nötig.
 Texte und Zusammenstellung: eigene Arbeit – Angaben ohne Gewähr.
