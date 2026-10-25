@@ -598,6 +598,20 @@
           "</ul>"
         : "") +
 
+      // Wikipedia-Einleitung als Zusatzebene, nicht als Ersatz für `desc`.
+      // CC BY-SA verlangt Namensnennung und Link – beides steht im Block.
+      (p.wikiExcerpt
+        ? "<details class='wiki-block'>" +
+          "<summary>Aus der Wikipedia</summary>" +
+          "<p class='wiki-text'>" + esc(p.wikiExcerpt.text) + "</p>" +
+          "<p class='wiki-src'>" +
+          "<a href='" + esc(p.wikiExcerpt.url) + "' target='_blank' rel='noopener noreferrer'>" +
+          esc(p.wikiExcerpt.title) + "</a> · " + esc(p.wikiExcerpt.license) +
+          " · Text aus Wikipedia" +
+          "</p>" +
+          "</details>"
+        : "") +
+
       (week.length
         ? "<h3 class='drawer-h'>Öffnungszeiten</h3><table class='hours-table'>" +
           week.map(function (r) {
@@ -767,7 +781,47 @@
     document.body.classList.remove("modal-open");
   }
 
-  // --------------------------------------------------------------------- Map
+  /**
+   * Wetterseite: Ist es in Kopenhagen gerade nass, bietet die Seite den
+   * „Regenwetter“-Filter als Ein-Klick-Aktion an. Bewusst keine automatische
+   * Filteränderung – wer die App öffnet, will nicht ungefragt eine gefilterte
+   * Liste sehen. Fällt die Abfrage aus, passiert schlicht nichts.
+   */
+  function initWeather() {
+    if (!window.CPHWeather) return;
+    var btn = $("rainBtn");
+    if (!btn) return;
+
+    window.CPHWeather.fetch().then(function (w) {
+      if (!w || !w.wet) return;
+      btn.hidden = false;
+      var temp = w.tempC == null ? "" : " · " + w.tempC + " °C";
+      btn.title = "Aktuell " + w.text + " in Kopenhagen" + temp + " – regenfeste Orte anzeigen";
+      btn.setAttribute("aria-label", btn.title);
+      btn.addEventListener("click", function () { showRainPlaces(btn); });
+    });
+  }
+
+  function showRainPlaces(btn) {
+    // Der Tag muss in der aktuellen Themenauswahl verfügbar sein; wenn nicht,
+    // alle Kategorien aktivieren, damit er auftaucht.
+    var avail = availableTags().map(function (a) { return a.tag; });
+    if (avail.indexOf("Regenwetter") === -1) {
+      state.categories.forEach(function (c) { state.active[c.id] = true; });
+      renderChips();
+    }
+    state.tags = { Regenwetter: true };
+    renderTags();
+    renderList();
+    syncMarkers();
+    btn.classList.add("is-active");
+    // Nur mobil aufklappen: am Desktop ist die Liste ohnehin sichtbar, und der
+    // Backdrop würde dort die ganze Seite abdunkeln.
+    if (mqMobile && mqMobile.matches) setSheet(true);
+    els.list.scrollTop = 0;
+  }
+
+  // ------------------------------------------------------------------- Map
 
   function initMap(meta) {
     CPH_BOUNDS = L.latLngBounds([55.640, 12.510], [55.720, 12.630]);
@@ -804,6 +858,52 @@
 
     map.on("popupclose", function () { setSelectedCard(null); });
     map.on("click", function () { setSheet(false); });
+
+    addStyleToggle();
+  }
+
+  /**
+   * Kartenstil-Umschalter: OSM-Kacheln sind sehr detailreich und konkurrieren
+   * mit den farbigen Markern. Ohne API-Key gibt es keinen fertigen Minimal-Stil
+   * (CARTO/MapTiler liefern ohne Key nur einen Platzhalter, geprüft), deshalb
+   * wird die Kachel-Ebene per CSS entsättigt – gleiche Daten, ruhigeres Bild.
+   */
+  function addStyleToggle() {
+    var Ctl = L.Control.extend({
+      options: { position: "topright" },
+      onAdd: function () {
+        var div = L.DomUtil.create("div", "leaflet-bar style-toggle");
+        var btn = L.DomUtil.create("button", "", div);
+        btn.type = "button";
+        btn.id = "styleBtn";
+        btn.textContent = "◍";
+        L.DomEvent.disableClickPropagation(div);
+        return div;
+      },
+    });
+    map.addControl(new Ctl());
+
+    var btn = $("styleBtn");
+    if (!btn) return;
+
+    var saved = null;
+    try { saved = localStorage.getItem("cph-mapstyle"); } catch (e) {}
+
+    function apply(muted) {
+      document.querySelector(".map-wrap").classList.toggle("is-muted", muted);
+      btn.textContent = muted ? "◉" : "◍";
+      btn.setAttribute("aria-pressed", muted ? "true" : "false");
+      btn.title = muted ? "Ruhiger Kartenstil aktiv – zurück zur Detailsicht" : "Ruhiger Kartenstil (Karte entsättigen)";
+      btn.setAttribute("aria-label", btn.title);
+    }
+
+    apply(saved === "muted");
+
+    btn.addEventListener("click", function () {
+      var next = !document.querySelector(".map-wrap").classList.contains("is-muted");
+      apply(next);
+      try { localStorage.setItem("cph-mapstyle", next ? "muted" : "normal"); } catch (e) {}
+    });
   }
 
   /**
@@ -1007,6 +1107,7 @@
         syncFavButton();
         renderList();
         wire();
+        initWeather();
 
         $("dataStamp").textContent = "Datenstand: " + (data.meta && data.meta.generated ? data.meta.generated.split("-").reverse().join(".") : "—");
       })

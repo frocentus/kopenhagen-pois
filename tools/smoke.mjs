@@ -5,7 +5,7 @@ import { JSDOM } from "jsdom";
 const html = fs.readFileSync("index.html", "utf8");
 const stripped = html
   .replace(/<script src="https:\/\/[^"]+"><\/script>/g, "")
-  .replace(/<script src="assets\/(hours|app)\.js"><\/script>/g, "");
+  .replace(/<script src="assets\/(hours|app|weather)\.js"><\/script>/g, "");
 
 const dom = new JSDOM(stripped, { runScripts: "outside-only", pretendToBeVisual: true, url: "https://example.github.io/kopenhagen/" });
 const { window } = dom;
@@ -37,7 +37,12 @@ window.L = {
       getZoom: () => 15,
       on() { return m; },
       closePopup() { return m; },
-      removeLayer() { return m; },
+      // Controls landen wie bei Leaflet im DOM, damit $("styleBtn") sie findet.
+      addControl(ctl) {
+        const el = ctl && ctl.onAdd ? ctl.onAdd(m) : null;
+        if (el) window.document.body.appendChild(el);
+        return m;
+      },
     };
     return m;
   },
@@ -62,14 +67,45 @@ window.L = {
     return g;
   },
   circleMarker: () => ({ addTo() { return this; }, bindPopup() { return this; } }),
+  // Leaflet-Control-API: von addStyleToggle() genutzt.
+  Control: {
+    extend(proto) {
+      function C() {}
+      C.prototype = Object.assign({}, proto);
+      return C;
+    },
+  },
+  DomUtil: {
+    create(tag, cls, parent) {
+      const el = window.document.createElement(tag);
+      if (cls) el.className = cls;
+      if (parent) parent.appendChild(el);
+      return el;
+    },
+  },
+  DomEvent: { disableClickPropagation() {}, disableScrollPropagation() {} },
 };
 
 const data = JSON.parse(fs.readFileSync("data/places.json", "utf8"));
-window.fetch = () => Promise.resolve({ ok: true, json: () => Promise.resolve(data) });
+window.fetch = (url) => {
+  // Wetterabfrage (Open-Meteo) getrennt beantworten, alles andere liefert die Orte.
+  if (String(url).includes("open-meteo")) {
+    return Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve({ current: { ...window.__weatherCurrent } }),
+    });
+  }
+  return Promise.resolve({ ok: true, json: () => Promise.resolve(data) });
+};
+
+// Voreinstellung: es regnet (2,4 mm). Einzelne Tests ändern das vor dem Laden.
+window.__weatherCurrent = { time: "2026-10-25T21:00", precipitation: 2.4, rain: 2.4, weather_code: 61, temperature_2m: 9.4 };
+
 window.alert = (m) => console.log("  [alert]", m);
 
 // ---- Skripte laden ----------------------------------------------------------
 window.eval(fs.readFileSync("assets/hours.js", "utf8"));
+window.eval(fs.readFileSync("assets/weather.js", "utf8"));
 window.eval(fs.readFileSync("assets/app.js", "utf8"));
 
 const errors = [];
@@ -397,6 +433,56 @@ await new Promise((r) => setTimeout(r, 50));
 check("Bewertungsquelle wird ausgewiesen", drawerHtml().includes("Tripadvisor"));
 check("Speisekarten-Button vorhanden", !!$("drawer").querySelector("a[href*='konghans.dk']"));
 $("drawerClose").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+
+console.log("\n== Wetter (Open-Meteo) ==");
+const rainBtn = $("rainBtn");
+check("Regen-Hinweis erscheint bei Regen", !!rainBtn && rainBtn.hidden === false);
+check("Hinweis nennt die Wetterlage", /regen/i.test(rainBtn.getAttribute("title") || ""), rainBtn.getAttribute("title"));
+check("Hinweis nennt die Temperatur", /9 °C/.test(rainBtn.getAttribute("title") || ""), rainBtn.getAttribute("title"));
+
+rainBtn.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+await new Promise((r) => setTimeout(r, 60));
+const rainCount = data.places.filter((p) => (p.tags || []).includes("Regenwetter")).length;
+check("Klick filtert auf Regenwetter", cards() === rainCount, cards() + " von " + rainCount);
+check("Regenwetter-Tag ist aktiv", doc.querySelector("#tagbar .tag[data-tag='Regenwetter']")?.getAttribute("aria-pressed") === "true");
+doc.querySelector("#tagbar .tag-clear").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+await new Promise((r) => setTimeout(r, 40));
+check("zurücksetzen stellt alles wieder her", cards() === TOTAL, String(cards()));
+
+console.log("\n== Wikipedia-Auszug ==");
+const withExtract = data.places.filter((p) => p.wikiExcerpt);
+check("Exzerpte vorhanden", withExtract.length > 0, withExtract.length + " Orte");
+check("kein Exzerpt für Haltestellen", !data.places.some((p) => p.cat === "hoho" && p.wikiExcerpt));
+
+const exPlace = withExtract.find((p) => p.cat === "attraction") || withExtract[0];
+openCard(exPlace.id);
+await new Promise((r) => setTimeout(r, 50));
+const wiki = $("drawer").querySelector(".wiki-block");
+check("Wikipedia-Block im Drawer", !!wiki, exPlace.id);
+check("Block ist standardmäßig zugeklappt", !!wiki && wiki.open === false);
+check("Exzerpt-Text wird gezeigt", !!wiki && wiki.querySelector(".wiki-text").textContent.trim().length > 60);
+check("Lizenz CC BY-SA genannt", !!wiki && /CC BY-SA/.test(wiki.textContent));
+check("Artikel verlinkt", !!wiki && /de\.wikipedia\.org/.test(wiki.querySelector("a")?.getAttribute("href") || ""));
+$("drawerClose").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+
+const noEx = data.places.find((p) => !p.wikiExcerpt && p.cat === "cafe");
+if (noEx) {
+  openCard(noEx.id);
+  await new Promise((r) => setTimeout(r, 40));
+  check("ohne Exzerpt kein leerer Block", !$("drawer").querySelector(".wiki-block"), noEx.id);
+  $("drawerClose").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+}
+
+console.log("\n== Kartenstil-Umschalter ==");
+const styleBtn = $("styleBtn");
+check("Umschalter existiert", !!styleBtn);
+const wrap = doc.querySelector(".map-wrap");
+check("startet im Normalstil", !wrap.classList.contains("is-muted"));
+styleBtn.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+check("Klick aktiviert den ruhigen Stil", wrap.classList.contains("is-muted"));
+check("aria-pressed gesetzt", styleBtn.getAttribute("aria-pressed") === "true");
+styleBtn.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+check("zweiter Klick schaltet zurück", !wrap.classList.contains("is-muted"));
 
 console.log("\n== Kartenkacheln ==");
 check("zwei Kachel-Layer registriert", window.__tileLayers.length === 2, String(window.__tileLayers.length));

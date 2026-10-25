@@ -32,6 +32,9 @@ Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **125 kuratiert
 - **Supermärkte ohne Bewertung**: Filialen von Ketten (Netto, Føtex, Rema 1000, 7-Eleven …) werden bewusst ohne Bewertung geführt – dort erscheint weder eine Zahl noch ein Platzhalter
 - **Transparente Datenlücken**: Orte ohne Bewertung sind sichtbar als „— keine Bewertung" markiert (mit Begründung im Detail, z. B. Kette, abweichende Quellen, kein Profil); Gastro-Orte ohne Online-Karte zeigen „Keine Speisekarte online" samt Erklärung
 - **Mobil**: Bottom-Sheet mit Backdrop, Schließen-Kreuz, 48-px-Touch-Ziel und `env(safe-area-inset-bottom)` (nicht in der iOS-Home-Indicator-Zone)
+- **Regen-Hinweis**: Open-Meteo meldet Niederschlag für Kopenhagen (kein Key, CORS). Dann erscheint oben ein „🌧 Regen“-Knopf mit Temperatur; ein Klick aktiviert den Regenwetter-Filter. Bewusst nur ein Angebot – die Liste wird nie ungefragt gefiltert. Fällt die Abfrage aus, passiert nichts
+- **Wikipedia-Auszug**: 23 Orte mit deutscher Artikel-Einleitung in der Detailansicht, zugeklappt unter den Tipps, mit Artikel-Link und CC-BY-SA-Nennung. Die redaktionellen `desc`-Texte bleiben führend – der Auszug ist Zusatz, kein Ersatz
+- **Ruhiger Kartenstil**: ein Knopf unter dem Ebenen-Schalter entsättigt die Kacheln per CSS, damit die farbigen Marker hervortreten (ohne API-Key gibt es keinen fertigen Minimal-Layer, siehe unten)
 - Deep-Links pro Ort (`#gasoline-grill`), Dark Mode
 
 ## Struktur
@@ -41,6 +44,7 @@ index.html                 Seite (Layout + CDN-Einbindung von Leaflet)
 assets/style.css           Design, Light/Dark, responsive
 assets/app.js              Karte, Filter, Liste, Detailansicht, Preisvergleich
 assets/hours.js            Parser für OSM-Öffnungszeiten + "jetzt geöffnet"
+assets/weather.js          Open-Meteo-Abfrage (Regen-Hinweis)
 data/places.json           Der kuratierte Datensatz (alle Inhalte)
 tools/                     Hilfsskripte zum Auffrischen der Daten und Testen (nicht für die Seite nötig)
 .github/workflows/pages.yml Deploy-Workflow
@@ -115,6 +119,14 @@ Alle Inhalte stehen in `data/places.json`. Ein Eintrag:
     "credit": "Wikipedia · Nyhavn"
   },
   "wiki": "Nyhavn",                 // optional: exakter Wikipedia-Artikeltitel
+  "noWiki": true,                  // optional: kein Wikipedia-Auszug für diesen Ort
+  "wikiExcerpt": {                 // optional, von tools/fetch-extracts.mjs erzeugt
+    "text": "…",
+    "title": "Nyhavn",
+    "url": "https://de.wikipedia.org/wiki/Nyhavn",
+    "license": "CC BY-SA 4.0",
+    "lang": "de"
+  },
   "tags": ["Burger", "Kult"],
   "src": "Quelle · Okt 2026"
 }
@@ -143,6 +155,7 @@ Die Skripte in `tools/` sind reine Node-Skripte ohne Abhängigkeiten (Ausnahme: 
 node tools/fetch-osm.mjs      # Koordinaten/Öffnungszeiten/Websites aus Overpass ziehen
 node tools/fetch-shops.mjs    # alle Supermärkte/Malls im Zentrum
 node tools/fetch-photos.mjs   # Fotos aus Wikipedia/Commons holen und Credits setzen
+node tools/fetch-extracts.mjs # Wikipedia-Einleitungen (koordinatenverifiziert) setzen
 node tools/add-places.mjs     # einmalig: Kategorien/Orte ergänzen (idempotent)
 node tools/add-tours.mjs      # einmalig: Kategorie Touren + Touren-Einträge (idempotent)
 node tools/linkcheck.mjs      # Website- und Menü-Links auf HTTP-Status prüfen
@@ -205,10 +218,39 @@ abdunkelt. Ein reiner DOM-Test hätte den z-index-Bug unten nicht gefunden.
   Meter neben einem bereits erfassten. Die Marker stehen auf der jeweiligen Sehenswürdigkeit – die
   Haltestelle liegt an der Straße daneben; das steht in jedem Eintrag, damit der Marker keine
   Präzision vortäuscht, die er nicht hat. Betriebszeiten sind bewusst als Spanne hinterlegt
+- **Wikipedia-Auszüge**: `tools/fetch-extracts.mjs` übernimmt die Einleitung des deutschen Artikels –
+  aber nur nach demselben Koordinatentest wie bei den Fotos. Zusätzlich muss bei Suchtreffern ein
+  Namensbestandteil im Artikeltitel stecken, sonst gewinnt die Umgebung: „Rundetårn“ liegt direkt an
+  „Trinitatis Kirke“, „Torvehallerne“ auf dem „Israel-Platz“, „Illum“ an der „Strøget“ – alle unter
+  500 m, alle das falsche Thema. Ergebnis: 23 von 112 Orten (19 der 22 Sehenswürdigkeiten), bewusst
+  lückenhaft bei Cafés und Läden, weil es dort meist keinen deutschen Artikel gibt. Texte stehen unter
+  CC BY-SA 4.0; Artikel-Link und Lizenz stehen im Block, Haltestellen sind ausgenommen.
+- **Wetter**: Open-Meteo (`api.open-meteo.com`), kein API-Key, CORS bestätigt. Abgefragt wird nur der
+  aktuelle Niederschlag; das Ergebnis liegt 10 Minuten im `sessionStorage`. Bei Fehlern wird der Hinweis
+  stillschweigend weggelassen – eine kaputte Wetterabfrage darf die Karte nicht stören.
   (Red 09:00–16:00, Stromma 09:30–16:00 bzw. 10:00–16:00 ab Ved Stranden), nicht als Fahrplan.
 
 Preise, Öffnungszeiten und Bewertungen ändern sich. Die Seite zeigt bewusst die Quelle pro Eintrag an;
 vor dem Besuch lohnt ein Blick auf die offizielle Website (im Detail-Panel verlinkt).
+
+## Bewusst nicht umgesetzt
+
+Vier Ideen aus der Wunschliste scheitern an harten Randbedingungen dieser Seite (statisch, kein
+Backend, keine Secrets im Public Repo). Damit sie nicht immer wieder auftauchen, hier die Begründung:
+
+- **Instagram-/TikTok-Trendscore**: Es gibt keine offene API für Hashtag-Zählungen; Scraping verstößt
+  gegen die Nutzungsbedingungen und wird technisch blockiert. Ein erfundener „Trendig“-Wert wäre
+  schlechter als keiner. Nächstliegende ehrliche Näherung: die vorhandenen Rezensionszahlen als
+  „beliebt“-Signal – das ist aber Popularität, nicht Aktualität.
+- **Rejseplanen-Echtzeit im Popup**: Die API verlangt einen `accessId` (ohne Token: HTTP 400), der in
+  einem öffentlichen Repo offenläge. Außerdem sind die 11 „Haltestellen“ Tourbus-Halte, keine
+  ÖPNV-Steige – dort gibt es keine Fahrplandaten. Sinnvoll wäre das nur mit echten Metro-/S-Bahn-Stationen
+  plus vorgerechneten Zeiten zur Build-Zeit.
+- **Isochronen (5/10 Gehminuten)**: OpenRouteService und Valhalla brauchen einen Key bzw. eigenen Server.
+  Luftlinien-Ringe wären in einer Kanalstadt schlicht falsch (die halbe Innenstadt ist Wasser).
+- **Leaflet Routing Machine**: Braucht einen OSRM-Server; der öffentliche Demo-Server ist gedrosselt und
+  nicht für Produktion gedacht. Zusätzlich fehlt die Routengeometrie – ich habe Stopplisten, keine
+  Straßenverläufe. Eine Linie quer über die Dächer wäre eine Lüge.
 
 ## Lizenz
 
