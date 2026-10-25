@@ -1,5 +1,7 @@
 # Kopenhagen Stadtplan 🧭
 
+**Live:** https://frocentus.github.io/kopenhagen-pois/  ·  **Repo:** https://github.com/frocentus/kopenhagen-pois
+
 Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **81 kuratierten Orten**:
 
 | Kategorie | Anzahl | Inhalte |
