@@ -20,7 +20,8 @@ Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **84 kuratierte
 - **„Nur jetzt geöffnet"** – berechnet aus den OSM-Öffnungszeiten in Zeitzone `Europe/Copenhagen`, inkl. Saisonregeln, Nachtöffnung und Feiertagsausnahmen
 - Detailansicht mit Beschreibung, Tipps, Wochen-Öffnungszeiten, Preisen, Bewertung, Website/Speisekarte und Google-Maps-Route
 - **Preisvergleich** als sortierbare Tabelle (Restaurants + Fast Food, Hauptgericht in DKK)
-- Deep-Links pro Ort (`#gasoline-grill`), Dark Mode, mobiltaugliches Bottom-Sheet
+- **Mobil**: Bottom-Sheet mit Backdrop, Schließen-Kreuz, 48-px-Touch-Ziel und `env(safe-area-inset-bottom)` (nicht in der iOS-Home-Indicator-Zone)
+- Deep-Links pro Ort (`#gasoline-grill`), Dark Mode
 
 ## Struktur
 
@@ -30,7 +31,7 @@ assets/style.css           Design, Light/Dark, responsive
 assets/app.js              Karte, Filter, Liste, Detailansicht, Preisvergleich
 assets/hours.js            Parser für OSM-Öffnungszeiten + "jetzt geöffnet"
 data/places.json           Der kuratierte Datensatz (alle Inhalte)
-tools/                     Hilfsskripte zum Auffrischen der Daten (nicht für die Seite nötig)
+tools/                     Hilfsskripte zum Auffrischen der Daten und Testen (nicht für die Seite nötig)
 .github/workflows/pages.yml Deploy-Workflow
 ```
 
@@ -122,7 +123,26 @@ node tools/fetch-shops.mjs    # alle Supermärkte/Malls im Zentrum
 node tools/linkcheck.mjs      # Website- und Menü-Links auf HTTP-Status prüfen
 node tools/test-hours.mjs     # Parser gegen alle Datensätze prüfen
 node tools/smoke.mjs          # UI-Smoke-Test ohne Browser (npm i jsdom)
+node tools/mobile-check.mjs 390 844              # echte Touch-/Mal-Prüfung (Edge/Chrome)
+node tools/mobile-check.mjs 390 844 https://frocentus.github.io/kopenhagen-pois/
 ```
+
+`mobile-check.mjs` steuert ein headless Chromium per DevTools-Protokoll (ohne npm-Pakete),
+emuliert iPhone-Größen, tippt per echtem Touch-Event auf den „Liste"-Button und prüft **per
+Pixelmessung**, ob das Bottom-Sheet tatsächlich gezeichnet wird und der Backdrop die Karte
+abdunkelt. Ein reiner DOM-Test hätte den z-index-Bug unten nicht gefunden.
+
+## Bekannte Fallstricke (schon gelöst)
+
+- **Kartenkacheln mit API-Key**: CARTO-Basemaps liefern ohne Key nur eine 2-KB-Platzhaltergrafik.
+  Deshalb `tile.openstreetmap.org` (Standard) + CyclOSM, beide ohne Key.
+- **z-index-Kollision mit Leaflet**: `.leaflet-map-pane` hat `z-index: 400`. Da `.map-wrap`
+  `z-index: 0` + `isolation: isolate` bekommt, bleiben Leaflets Panes in ihrem eigenen
+  Stacking-Context – sonst überdeckt die Karte das mobile Bottom-Sheet (Button schaltet um,
+  aber nichts wird sichtbar).
+- **iOS-Safe-Area**: Bedienelemente am unteren Rand brauchen
+  `bottom: calc(... + env(safe-area-inset-bottom))` und ≥ 44 px Höhe, sonst liegen sie in der
+  Home-Indicator-/Safari-Toolbar-Zone und Taps gehen verloren.
 
 ## Quellen & Genauigkeit
 

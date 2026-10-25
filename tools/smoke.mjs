@@ -155,6 +155,41 @@ sort.dispatchEvent(new window.Event("change", { bubbles: true }));
 check("Sortierung nach Preis läuft", doc.querySelectorAll(".card").length === 84);
 check("keine Gruppen-Header bei Preissortierung", doc.querySelectorAll(".list .group").length === 0);
 
+console.log("\n== Mobile Liste (Bottom-Sheet) ==");
+const toggleBtn = doc.getElementById("sidebarToggle");
+const backdrop = doc.getElementById("sheetBackdrop");
+const sheet = doc.querySelector(".sidebar");
+check("Toggle existiert", !!toggleBtn);
+check("Backdrop existiert und ist versteckt", !!backdrop && backdrop.hidden);
+check("Sheet anfangs geschlossen", !doc.body.classList.contains("sidebar-open"));
+
+toggleBtn.dispatchEvent(new window.MouseEvent("click", { bubbles: true, cancelable: true }));
+check("Tap öffnet Sheet", doc.body.classList.contains("sidebar-open"));
+check("Backdrop wird sichtbar", !backdrop.hidden);
+check("aria-expanded = true", toggleBtn.getAttribute("aria-expanded") === "true");
+
+// Doppel-Feuer-Schutz: direkt zweiter Klick (iOS feuert pointerup + click)
+toggleBtn.dispatchEvent(new window.MouseEvent("click", { bubbles: true, cancelable: true }));
+check("Doppelklick schließt nicht sofort wieder", doc.body.classList.contains("sidebar-open"));
+
+doc.getElementById("sheetClose").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+check("Schließen-Kreuz schließt Sheet", !doc.body.classList.contains("sidebar-open"));
+check("Backdrop wieder versteckt", backdrop.hidden);
+check("aria-expanded = false nach Schließen", toggleBtn.getAttribute("aria-expanded") === "false");
+
+await new Promise((r) => setTimeout(r, 450));
+toggleBtn.dispatchEvent(new window.MouseEvent("click", { bubbles: true, cancelable: true }));
+check("nach Guard-Pause wieder öffnbar", doc.body.classList.contains("sidebar-open"));
+await new Promise((r) => setTimeout(r, 420));
+backdrop.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+check("Tap auf Backdrop schließt", !doc.body.classList.contains("sidebar-open"));
+
+await new Promise((r) => setTimeout(r, 450));
+toggleBtn.dispatchEvent(new window.MouseEvent("click", { bubbles: true, cancelable: true }));
+check("Öffnen ein drittes Mal", doc.body.classList.contains("sidebar-open"));
+doc.dispatchEvent(new window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+check("Escape schließt Sheet", !doc.body.classList.contains("sidebar-open"));
+
 console.log("\n== Kartenkacheln ==");
 check("zwei Kachel-Layer registriert", window.__tileLayers.length === 2, String(window.__tileLayers.length));
 const tileLayer = window.__tileLayers[0];

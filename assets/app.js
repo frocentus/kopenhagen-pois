@@ -288,6 +288,58 @@
     );
   }
 
+  // -------------------------------------------------- Mobile Liste (Bottom-Sheet)
+  // Zentrale Steuerung, damit Button, Backdrop, Schließen-Kreuz, Escape und
+  // Detailansicht denselben Zustand setzen und nie gegeneinander arbeiten.
+  var lastSheetTap = 0;
+  var sheetOpenedAt = 0;
+  var mqMobile = window.matchMedia ? window.matchMedia("(max-width: 760px)") : null;
+
+  function sheetOpen() {
+    return document.body.classList.contains("sidebar-open");
+  }
+
+  /**
+   * aria-hidden nur im Mobilmodus setzen: am Desktop ist die Liste dauerhaft
+   * sichtbar und muss für Screenreader erreichbar bleiben.
+   */
+  function syncSheetA11y() {
+    var sheet = document.querySelector(".sidebar");
+    if (!sheet) return;
+    if (mqMobile && mqMobile.matches && !sheetOpen()) sheet.setAttribute("aria-hidden", "true");
+    else sheet.removeAttribute("aria-hidden");
+  }
+
+  function setSheet(open) {
+    if (open === sheetOpen()) return;
+    document.body.classList.toggle("sidebar-open", open);
+    var toggle = $("sidebarToggle");
+    if (toggle) toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    var bd = $("sheetBackdrop");
+    if (bd) bd.hidden = !open;
+    if (open) sheetOpenedAt = Date.now();
+    syncSheetA11y();
+  }
+
+  /**
+   * Schließen aus der Oberfläche. Ignoriert Events der ersten ~350 ms nach dem
+   * Öffnen: iOS/Chromium liefern nach einem Tap auf den Button einen nachlaufenden
+   * click, der dann schon auf dem eingeblendeten Backdrop landet und das Sheet
+   * sofort wieder zumachen würde.
+   */
+  function closeSheetFromUi() {
+    if (Date.now() - sheetOpenedAt < 350) return;
+    setSheet(false);
+  }
+
+  /** Tap/Click mit Doppel-Feuer-Schutz (Safari kann Events doppelt zustellen). */
+  function toggleSheet() {
+    var now = Date.now();
+    if (now - lastSheetTap < 400) return;
+    lastSheetTap = now;
+    setSheet(!sheetOpen());
+  }
+
   // ------------------------------------------------------------------- Detail
 
   function openDetail(id, fly) {
@@ -359,8 +411,7 @@
     void els.drawer.offsetWidth; // Reflow erzwingen, damit die Einblend-Animation läuft
     els.drawer.classList.add("is-open");
     document.body.classList.add("drawer-open");
-    document.body.classList.remove("sidebar-open");
-    $("sidebarToggle").setAttribute("aria-expanded", "false");
+    setSheet(false);
     $("drawerClose").addEventListener("click", closeDetail);
     els.drawer.querySelector(".drawer-body").scrollTop = 0;
 
@@ -484,9 +535,7 @@
     watchTiles([osm, cyclosm]);
 
     map.on("popupclose", function () { setSelectedCard(null); });
-    map.on("click", function () {
-      document.body.classList.remove("sidebar-open");
-    });
+    map.on("click", function () { setSheet(false); });
   }
 
   /**
@@ -590,14 +639,30 @@
       if (e.key === "Escape") {
         if (!els.modal.hidden) closeModal();
         else if (!els.drawer.hidden) closeDetail();
+        else setSheet(false);
       }
     });
 
     var toggle = $("sidebarToggle");
-    toggle.addEventListener("click", function () {
-      document.body.classList.toggle("sidebar-open");
-      toggle.setAttribute("aria-expanded", document.body.classList.contains("sidebar-open") ? "true" : "false");
+    // Bewusst nur "click": ein zusätzlicher pointerup-Handler feuert vor dem click
+    // und führt dazu, dass der nachlaufende click auf dem dann schon sichtbaren
+    // Backdrop landet und das Sheet sofort wieder schließt.
+    toggle.addEventListener("click", toggleSheet);
+    toggle.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleSheet(); }
     });
+
+    var bd = $("sheetBackdrop");
+    if (bd) bd.addEventListener("click", closeSheetFromUi);
+    var sheetClose = $("sheetClose");
+    if (sheetClose) sheetClose.addEventListener("click", function () { setSheet(false); });
+
+    if (mqMobile) {
+      var onMq = function () { syncSheetA11y(); };
+      if (mqMobile.addEventListener) mqMobile.addEventListener("change", onMq);
+      else if (mqMobile.addListener) mqMobile.addListener(onMq);
+    }
+    syncSheetA11y();
 
     var themeBtn = $("themeBtn");
     themeBtn.addEventListener("click", function () {

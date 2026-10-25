@@ -437,7 +437,14 @@ code {
 
 /* -------------------------------------------------------------------- Map -- */
 
-.map-wrap { position: relative; flex: 1 1 auto; min-width: 0; }
+.map-wrap { position: relative; flex: 1 1 auto; min-width: 0; isolation: isolate; z-index: 0; }
+/*
+ * z-index:0 + isolation geben der Karte einen eigenen Stacking-Context.
+ * Ohne das konkurrieren Leaflets interne Panes (.leaflet-map-pane z-index:400)
+ * direkt mit .sidebar/.sheet-backdrop – und da die Karte im DOM nach der
+ * Sidebar steht, hat sie das mobile Bottom-Sheet komplett überdeckt
+ * (Button schaltete um, aber sichtbar passierte nichts).
+ */
 #map { position: absolute; inset: 0; background: #dfe7ec; }
 
 .leaflet-container { font-family: var(--font); }
@@ -504,22 +511,51 @@ code {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
 }
 
+/*
+ * Mobile Steuerung: der Button liegt bewusst als body-Kind mit position:fixed
+ * außerhalb der Karte. 16 px Abstand zum unteren Rand reichen auf iOS nicht –
+ * dort liegen Home-Indicator und Safari-Toolbar, die Taps schlucken.
+ * Deshalb: safe-area-Abstand, >= 48 px Höhe, eigene Ebene über den Leaflet-Controls.
+ */
 .sidebar-toggle {
   display: none;
-  position: absolute;
-  left: 12px; bottom: 16px;
-  z-index: 460;
+  position: fixed;
+  left: max(12px, env(safe-area-inset-left, 0px));
+  bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  z-index: 950;
+  align-items: center;
+  gap: 7px;
+  min-height: 48px;
+  min-width: 108px;
+  padding: 0 20px;
   font: inherit;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
-  padding: 10px 14px;
   border-radius: 999px;
   border: 0;
   background: var(--accent);
   color: var(--accent-ink);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28), 0 1px 3px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
+.sidebar-toggle:active { filter: brightness(1.1); }
+
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 390;
+  background: rgba(12, 18, 24, 0.42);
+  -webkit-tap-highlight-color: transparent;
+}
+.sheet-backdrop[hidden] { display: none; }
+
+.sheet-head { display: none; }
 
 .locate-float {
   position: absolute;
@@ -772,28 +808,83 @@ code {
     position: fixed;
     left: 0; right: 0; bottom: 0;
     width: 100%;
+    height: 72vh;
+    height: 72dvh;
     max-height: 72vh;
+    max-height: 72dvh;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
     border-right: 0;
     border-top: 1px solid var(--line);
     border-radius: 16px 16px 0 0;
     box-shadow: var(--shadow-lg);
-    transform: translateY(102%);
-    transition: transform 0.24s ease;
+    /*
+     * Bewusst display-basiert statt transform-basiert: iOS Safari zeichnet
+     * position:fixed-Elemente, die dauerhaft per translateY aus dem Viewport
+     * geschoben werden, nach dem Umschalten gelegentlich nicht neu.
+     */
+    display: none;
   }
-  body.sidebar-open .sidebar { transform: translateY(0); }
-  .sidebar-toggle { display: block; }
+  body.sidebar-open .sidebar {
+    display: flex;
+    animation: sheet-in 0.22s ease-out;
+  }
+  @keyframes sheet-in {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    body.sidebar-open .sidebar { animation: none; }
+  }
+
+  .sidebar-toggle { display: inline-flex; }
+  body.sidebar-open .sidebar-toggle { display: none; }
+  body.drawer-open .sidebar-toggle,
+  body.modal-open .sidebar-toggle { display: none; }
+
+  .sheet-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px 6px;
+    border-bottom: 1px solid var(--line);
+    flex: 0 0 auto;
+  }
+  .sheet-head .sheet-grip {
+    position: absolute;
+    left: 50%;
+    top: 4px;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 4px;
+    border-radius: 99px;
+    background: var(--line-strong);
+  }
+  .sheet-head strong { font-size: 13px; letter-spacing: 0.01em; }
+  .sheet-head .icon-btn {
+    margin-left: auto;
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+  }
+
+  .list { -webkit-overflow-scrolling: touch; }
 
   .drawer {
     top: auto;
     left: 0; right: 0;
     width: 100%;
     max-height: 86vh;
+    max-height: 86dvh;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
     border-left: 0;
     border-top: 1px solid var(--line);
     border-radius: 16px 16px 0 0;
-    transform: translateY(102%);
+    transform: translateY(100%);
   }
-  .drawer.is-open { transform: translateY(0); }
+  .drawer.is-open { animation: sheet-in 0.22s ease-out; }
+  @media (prefers-reduced-motion: reduce) {
+    .drawer.is-open { animation: none; }
+  }
 
   .modal { padding: 0; place-items: end stretch; }
   .modal-box { border-radius: 16px 16px 0 0; max-height: 92vh; }
@@ -805,13 +896,14 @@ code {
 
 @media (max-width: 420px) {
   .brand-text strong { font-size: 14px; }
-  .chip-label { display: none; }
+  /* Chips behalten ihre Beschriftung: im Bottom-Sheet ist genug Platz und
+     reine Icon-Chips sind nicht selbsterklärend. Nur der Zähler entfällt. */
   .chip { padding: 6px 9px; }
   .chip-count { display: none; }
 }
 
 @media print {
-  .topbar, .sidebar, .drawer, .modal, .sidebar-toggle, .locate-float { display: none !important; }
+  .topbar, .sidebar, .drawer, .modal, .sidebar-toggle, .locate-float, .sheet-backdrop { display: none !important; }
   .map-wrap { height: 100vh; }
 }
 
