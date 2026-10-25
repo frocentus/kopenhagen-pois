@@ -20,6 +20,7 @@ Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **84 kuratierte
 - **„Nur jetzt geöffnet"** – berechnet aus den OSM-Öffnungszeiten in Zeitzone `Europe/Copenhagen`, inkl. Saisonregeln, Nachtöffnung und Feiertagsausnahmen
 - Detailansicht mit Beschreibung, Tipps, Wochen-Öffnungszeiten, Preisen, Bewertung, Website/Speisekarte und Google-Maps-Route
 - **Preisvergleich** als sortierbare Tabelle (Restaurants + Fast Food, Hauptgericht in DKK)
+- **Supermärkte ohne Bewertung**: Filialen von Ketten (Netto, Føtex, Rema 1000, 7-Eleven …) werden bewusst ohne Bewertung geführt – dort erscheint weder eine Zahl noch ein Platzhalter
 - **Transparente Datenlücken**: Orte ohne Bewertung sind sichtbar als „— keine Bewertung" markiert (mit Begründung im Detail, z. B. Kette, abweichende Quellen, kein Profil); Gastro-Orte ohne Online-Karte zeigen „Keine Speisekarte online" samt Erklärung
 - **Mobil**: Bottom-Sheet mit Backdrop, Schließen-Kreuz, 48-px-Touch-Ziel und `env(safe-area-inset-bottom)` (nicht in der iOS-Home-Indicator-Zone)
 - Deep-Links pro Ort (`#gasoline-grill`), Dark Mode

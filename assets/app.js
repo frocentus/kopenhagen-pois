@@ -73,6 +73,15 @@
     );
   }
 
+  /**
+   * Supermärkte werden bewusst ohne Bewertung geführt: Bewertungen von
+   * Filialen einer Kette sind kaum aussagekräftig und unterscheiden sich
+   * je Standort. Deshalb dort auch kein „keine Bewertung"-Platzhalter.
+   */
+  function showsRating(p) {
+    return p.cat !== "supermarket";
+  }
+
   function isGastro(p) {
     return p.cat === "restaurant" || p.cat === "fastfood" || p.cat === "breakfast";
   }
@@ -194,7 +203,7 @@
         "</div>" +
         "<div class='card-meta'>" +
         (p.priceLevel ? priceDots(p.priceLevel) : "") +
-        (p.rating ? ratingHtml(p) : noRatingHtml(p)) +
+        (showsRating(p) ? (p.rating ? ratingHtml(p) : noRatingHtml(p)) : "") +
         (dist ? "<span class='dist'>" + dist + "</span>" : "") +
         "</div>" +
         "<div class='card-hours'><span class='status-dot " + dotClass + "'></span>" +
@@ -293,7 +302,7 @@
       "<div class='popup'>" +
       "<div class='popup-cat'>" + esc(state.catById[p.cat].label) + " · " + esc(p.sub) + "</div>" +
       "<h4>" + esc(p.name) + "</h4>" +
-      "<div class='popup-meta'>" + priceDots(p.priceLevel) + (p.rating ? ratingHtml(p) : noRatingHtml(p)) + "</div>" +
+      "<div class='popup-meta'>" + priceDots(p.priceLevel) + (showsRating(p) ? (p.rating ? ratingHtml(p) : noRatingHtml(p)) : "") + "</div>" +
       "<div class='card-hours'><span class='status-dot " + dot + "'></span>" +
       "<span>" + esc(st.known ? st.text : "Zeiten unbekannt") + "</span></div>" +
       "<button type='button' class='popup-more' data-id='" + p.id + "'>Details ansehen →</button>" +
@@ -401,14 +410,16 @@
 
       "<div class='drawer-facts'>" +
       (p.priceText ? "<div class='fact'><span class='fact-k'>" + (p.cat === "attraction" ? "Eintritt" : p.cat === "supermarket" || p.cat === "mall" ? "Preisniveau" : "Preis") + "</span><span class='fact-v'>" + esc(p.priceText) + "</span></div>" : "") +
-      (p.rating
-        ? "<div class='fact'><span class='fact-k'>Bewertung</span><span class='fact-v'>" +
-          ratingHtml(p) + " <small class='src-tag'>" + esc(p.ratingSource || "Google") + "</small></span></div>"
-        : "<div class='fact'><span class='fact-k'>Bewertung</span><span class='fact-v muted'>Keine Bewertung verfügbar</span></div>") +
+      (showsRating(p)
+        ? (p.rating
+            ? "<div class='fact'><span class='fact-k'>Bewertung</span><span class='fact-v'>" +
+              ratingHtml(p) + " <small class='src-tag'>" + esc(p.ratingSource || "Google") + "</small></span></div>"
+            : "<div class='fact'><span class='fact-k'>Bewertung</span><span class='fact-v muted'>Keine Bewertung verfügbar</span></div>")
+        : "") +
       "<div class='fact'><span class='fact-k'>Status</span><span class='fact-v'><span class='status-dot " + dot + "'></span> " + esc(st.text) + "</span></div>" +
       "</div>" +
 
-      (p.rating ? "" : (p.ratingNote ? "<p class='note note-quiet'>" + esc(p.ratingNote) + "</p>" : "")) +
+      (showsRating(p) && !p.rating && p.ratingNote ? "<p class='note note-quiet'>" + esc(p.ratingNote) + "</p>" : "") +
       "<p class='drawer-desc'>" + esc(p.desc) + "</p>" +
 
       (p.tips && p.tips.length

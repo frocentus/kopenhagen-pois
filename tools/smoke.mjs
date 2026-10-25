@@ -192,16 +192,26 @@ check("Escape schließt Sheet", !doc.body.classList.contains("sidebar-open"));
 
 console.log("\n== Transparenz: fehlende Bewertung / Speisekarte ==");
 const unratedCards = doc.querySelectorAll(".card .no-rating").length;
-check("Karten ohne Bewertung sind markiert", unratedCards >= 26, unratedCards + " Karten");
+check("Karten ohne Bewertung sind markiert", unratedCards === 11, unratedCards + " Karten (ohne Supermärkte)");
 const ratedCards = doc.querySelectorAll(".card .rating").length;
-check("bewertete Orte zeigen Sterne", ratedCards >= 55, ratedCards + " Karten");
+check("bewertete Orte zeigen Sterne", ratedCards === 57, ratedCards + " Karten");
 
-// Ort ohne Bewertung öffnen (Netto Nørre Voldgade hat nur ratingNote)
+// Supermärkte: weder Sterne noch Platzhalter
 doc.querySelector(".card[data-id='netto-noerre-voldgade']").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
 await new Promise((r) => setTimeout(r, 50));
 const drawerHtml = () => $("drawer").innerHTML;
+check("Supermarkt-Drawer ohne Bewertungszeile", !drawerHtml().includes("Bewertung</span>"));
+check("Supermarkt-Karte ohne Bewertungsmarker",
+  !doc.querySelector(".card[data-id='netto-noerre-voldgade'] .rating") &&
+  !doc.querySelector(".card[data-id='netto-noerre-voldgade'] .no-rating"));
+check("Supermarkt behält Öffnungszeiten", drawerHtml().includes("hours-table"));
+$("drawerClose").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+
+// Ort ohne Bewertung (Nicht-Supermarkt): Atelier September hat widersprüchliche Quellen
+doc.querySelector(".card[data-id='atelier-september']").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+await new Promise((r) => setTimeout(r, 50));
 check("Drawer sagt 'Keine Bewertung verfügbar'", drawerHtml().includes("Keine Bewertung verfügbar"));
-check("Drawer nennt den Grund", /Kette – Bewertung/.test(drawerHtml()));
+check("Drawer nennt den Grund", /Quellen weichen ab/.test(drawerHtml()));
 $("drawerClose").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
 
 // Gastro ohne Menü: Figaro hat weder Website noch Karte
