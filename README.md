@@ -2,12 +2,13 @@
 
 **Live:** https://frocentus.github.io/kopenhagen-pois/  ·  **Repo:** https://github.com/frocentus/kopenhagen-pois
 
-Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **114 kuratierten Orten**:
+Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **125 kuratierten Orten**:
 
 | Kategorie | Anzahl | Inhalte |
 |---|---|---|
 | 🏛 Sehenswürdigkeiten | 22 | Eintrittspreise, Öffnungszeiten, Tipps |
 | 🎫 Touren & Rundfahrten | 8 | Hop-On-Hop-Off-Busse, Kanaltouren, Stadt- und Radführungen |
+| 🚏 Haltestellen | 11 | Einstiegspunkte der Hop-On-Hop-Off-Busse |
 | 🥐 Frühstück & Brunch | 8 | Cafés, Brunch-Spots |
 | ☕ Kaffee & Bäckerei | 12 | Specialty Coffee, Sauerteig, Kardamom-Schnecken |
 | 🍽 Restaurants | 26 | Smørrebrød bis 3-Michelin-Sterne, Preisvergleich |
@@ -26,7 +27,8 @@ Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **114 kuratiert
 - Detailansicht mit Beschreibung, Tipps, Wochen-Öffnungszeiten, Preisen, Bewertung, Website/Speisekarte und Google-Maps-Route
 - **Fotos** aus Wikipedia/Wikimedia Commons in der Detailansicht – mit Autor, Lizenz und Link zur Dateiseite; nur wo ein Artikelbild eindeutig zum Ort gehört (siehe unten)
 - **Preisvergleich** als sortierbare Tabelle (Restaurants + Fast Food, Hauptgericht in DKK)
-- **Touren & Rundfahrten**: Hop-On-Hop-Off-Busse, Kanaltouren (vom 80-DKK-Nettobåd bis zur privaten Bootstour), Stadtführung und Radtour – mit Preisen, Ablegepunkt und Abfahrtshinweisen. Touren haben keine Öffnungszeiten; statt „Zeiten unbekannt“ steht dort „Abfahrtszeiten laut Anbieter“ plus der konkrete Hinweis im Detail
+- **Touren & Rundfahrten**: Hop-On-Hop-Off-Busse, Kanaltouren (vom 80-DKK-Nettobåd bis zur privaten Bootstour), Stadtführung und Radtour – mit Preisen und allgemeinen Betriebszeiten. Wo keine belastbaren Zeiten vorliegen, steht statt „Zeiten unbekannt“ „Abfahrtszeiten laut Anbieter“ plus der konkrete Hinweis im Detail
+- **Hop-On-Hop-Off-Haltestellen**: 11 Einstiegspunkte als eigene, abschaltbare Kategorie – jeweils mit der Stoppnummer des Anbieters (Stromma bzw. Red Sightseeing) und dem nächsten Ziel. So ist sichtbar, wo man tatsächlich einsteigen kann, statt nur einen Marker am Rathausplatz
 - **Supermärkte ohne Bewertung**: Filialen von Ketten (Netto, Føtex, Rema 1000, 7-Eleven …) werden bewusst ohne Bewertung geführt – dort erscheint weder eine Zahl noch ein Platzhalter
 - **Transparente Datenlücken**: Orte ohne Bewertung sind sichtbar als „— keine Bewertung" markiert (mit Begründung im Detail, z. B. Kette, abweichende Quellen, kein Profil); Gastro-Orte ohne Online-Karte zeigen „Keine Speisekarte online" samt Erklärung
 - **Mobil**: Bottom-Sheet mit Backdrop, Schließen-Kreuz, 48-px-Touch-Ziel und `env(safe-area-inset-bottom)` (nicht in der iOS-Home-Indicator-Zone)
@@ -87,7 +89,7 @@ Alle Inhalte stehen in `data/places.json`. Ein Eintrag:
 {
   "id": "gasoline-grill",          // eindeutig, wird zum Deep-Link
   "name": "Gasoline Grill",
-  "cat": "fastfood",               // attraction | tour | breakfast | cafe | restaurant | fastfood | supermarket | mall | services
+  "cat": "fastfood",               // attraction | tour | hoho | breakfast | cafe | restaurant | fastfood | supermarket | mall | services
   "sub": "Burger in alter Tankstelle",
   "lat": 55.68324, "lon": 12.58517,
   "area": "Indre By / Landgreven", // Viertel, wird in Liste und Detail angezeigt
@@ -197,6 +199,13 @@ abdunkelt. Ein reiner DOM-Test hätte den z-index-Bug unten nicht gefunden.
   Hinweis landet in `hoursNote`, weil eine geratene Abfahrtszeit schlimmer ist als keine.
   (3) **Bewertungen** nur als echte, zuordenbare Google-Werte – Plattformbewertungen von
   Buchungsportalen stehen als Begründung in `ratingNote`, nicht als Zahl.
+- **Haltestellen**: Stopplisten von redsightseeing.com (vollständig, Stopps 1–18) und stromma.com
+  (Stopps 1, 2, 5, 9, 12 aus der GPS-Karte). Nicht aufgenommen sind reine Hotel-/Terminalhalte
+  (Wake Up/Tivoli Hotel, Marriott, Ocean Pier), Halte am Stadtrand (Indiakaj, Zoo) und Halte wenige
+  Meter neben einem bereits erfassten. Die Marker stehen auf der jeweiligen Sehenswürdigkeit – die
+  Haltestelle liegt an der Straße daneben; das steht in jedem Eintrag, damit der Marker keine
+  Präzision vortäuscht, die er nicht hat. Betriebszeiten sind bewusst als Spanne hinterlegt
+  (Red 09:00–16:00, Stromma 09:30–16:00 bzw. 10:00–16:00 ab Ved Stranden), nicht als Fahrplan.
 
 Preise, Öffnungszeiten und Bewertungen ändern sich. Die Seite zeigt bewusst die Quelle pro Eintrag an;
 vor dem Besuch lohnt ein Blick auf die offizielle Website (im Detail-Panel verlinkt).

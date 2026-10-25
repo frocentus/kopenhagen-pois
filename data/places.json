@@ -27,6 +27,13 @@
       "icon": "🎫"
     },
     {
+      "id": "hoho",
+      "label": "Hop-On-Hop-Off Haltestellen",
+      "short": "Haltestellen",
+      "color": "#4d7c0f",
+      "icon": "🚏"
+    },
+    {
       "id": "breakfast",
       "label": "Frühstück & Brunch",
       "short": "Frühstück",
@@ -3296,8 +3303,8 @@
       "ratingSource": "Google",
       "priceLevel": 2,
       "priceText": "24 Std. ab 279 DKK · 48/72 Std. gegen Aufpreis · Kinder reduziert",
-      "hours": null,
-      "hoursNote": "Abfahrten ca. alle 30 Min., Betriebszeiten sind saisonabhängig (im Winter deutlich kürzer). Die Laufzeit beginnt mit der ersten Fahrt und gilt 24, 48 oder 72 Std.",
+      "hours": "Mo-Su 09:30-16:00",
+      "hoursNote": "Erste Abfahrt ab Tivoli 09:30, ab Ved Stranden 10:00; letzte volle Runde 15:35 bzw. 16:00. Takt ca. alle 30 Min., im Winter kürzer. Sofort ab der ersten Fahrt gültig für 24/48/72 Std. – genaue Zeiten tagesaktuell beim Anbieter.",
       "desc": "Drei Linien mit einem Ticket: „Classic Copenhagen“ (rot) zu den Klassikern, „Colorful Copenhagen“ (lila) nach Nørrebro und Christianshavn sowie „Home of Carlsberg“ (grün) zur Brauerei. Audioguide in 11 Sprachen, Auf- und Abstieg an jedem Stopp beliebig oft. Wird unter dem Namen „City Sightseeing Copenhagen“ identisch verkauft – es sind dieselben Busse.",
       "tips": [
         "Ticket erst am ersten Tag aktivieren – die Laufzeit startet mit der ersten Fahrt.",
@@ -3325,8 +3332,8 @@
       "ratingNote": "Für die Kopenhagener Linie gibt es keine eindeutig zuordenbare Einzelbewertung; Aggregatoren nennen 4,0 – bezogen auf den Anbieter insgesamt, nicht auf diesen Einstieg.",
       "priceLevel": 2,
       "priceText": "24 Std. ab ca. 220 DKK (30 EUR) · 48 Std. gegen Aufpreis",
-      "hours": null,
-      "hoursNote": "Eine Runde dauert ca. 90 Min., Frequenz und Saisonzeiten variieren (im Winter eingeschränkt).",
+      "hours": "Mo-Su 09:00-16:00",
+      "hoursNote": "Erste Abfahrt 09:00, letzte Abfahrt ab Central Station/Tivoli 16:00, Takt 30–60 Min. Eine Runde dauert ca. 90 Min. Genaue Zeiten tagesaktuell beim Anbieter.",
       "desc": "Roter Doppeldecker mit 22 Stopps, Audio-Guide in mehreren Sprachen und kostenlosem WLAN – die günstigere Alternative zu Stromma, mit etwas älteren Bussen. Das Kombi-Ticket Bus + Boot enthält zusätzlich eine 60-minütige Kanaltour.",
       "tips": [
         "Das Kombi-Ticket Bus + Boot deckt beide Klassiker ab und ist günstiger als zwei Einzeltickets.",
@@ -3515,6 +3522,262 @@
         "Reservieren"
       ],
       "src": "bookaguide.dk · copenhagen-trip.com · GetYourGuide (Okt 2026)"
+    },
+    {
+      "id": "hoho-raadhuspladsen",
+      "name": "Rådhuspladsen / Tivoli",
+      "cat": "hoho",
+      "sub": "Haltestelle · Stromma + Red",
+      "lat": 55.6758,
+      "lon": 12.5691,
+      "area": "Indre By / Rådhuspladsen",
+      "desc": "Wichtigster Einstiegspunkt für beide Anbieter, zwischen Rathaus, Tivoli und Hauptbahnhof. Stromma hält hier als Stopp 12 („Tivoli“), Red Sightseeing als Stopp 1 (Central Station/Tivoli Gardens) und Stopp 17 (Latin Quarter/City Hall Square). Wer nur eine Runde fahren will, steigt hier ein und wieder aus. Der Marker steht am zugehörigen Ziel; die Haltestelle liegt an der Straße direkt daneben.",
+      "tips": [
+        "Beide Anbieter halten hier – zum Vergleichen der Busse ideal.",
+        "Von der Bahnhofsseite kommend liegt der Einstieg direkt am Tivoli-Haupteingang.",
+        "Erste Abfahrt morgens bzw. letzte Rückkehr hier nachfragen: ab diesem Stopp fährt der Bus zuletzt."
+      ],
+      "website": "https://www.stromma.com/en-dk/copenhagen/sightseeing/sightseeing-by-bus/hop-on-hop-off/",
+      "tags": [
+        "Bus",
+        "Haltestelle",
+        "Zentral"
+      ],
+      "src": "stromma.com · redsightseeing.com (Okt 2026)",
+      "hours": "Mo-Su 09:00-16:00",
+      "hoursNote": "Stromma: erste Abfahrt ab Tivoli 09:30, ab Ved Stranden 10:00; letzte volle Runde 15:35 bzw. 16:00. Red Sightseeing fährt ab 09:00, letzte Abfahrt 16:00. Zeiten tagesaktuell prüfen."
+    },
+    {
+      "id": "hoho-ved-stranden",
+      "name": "Ved Stranden / Strøget",
+      "cat": "hoho",
+      "sub": "Haltestelle · Stromma (Stopp 1)",
+      "lat": 55.67759,
+      "lon": 12.58048,
+      "area": "Indre By / Ved Stranden",
+      "desc": "Startpunkt der Stromma-Runde am Kanal, zwischen Strøget und Schloss Christiansborg – derselbe Platz, an dem auch die Kanaltouren ablegen. Wer vom Zentrum aus startet, spart sich den Weg zum Rathausplatz. Der Marker steht am zugehörigen Ziel; die Haltestelle liegt an der Straße direkt daneben.",
+      "tips": [
+        "Kombi aus Bus und Kanaltour lässt sich hier ohne Wechsel des Platzes machen.",
+        "Erste Abfahrt erst 10:00 – morgens ist am Rathausplatz mehr los."
+      ],
+      "website": "https://www.stromma.com/en-dk/copenhagen/sightseeing/sightseeing-by-bus/hop-on-hop-off/",
+      "tags": [
+        "Bus",
+        "Haltestelle",
+        "Zentral"
+      ],
+      "src": "stromma.com (Okt 2026)",
+      "hours": "Mo-Su 10:00-16:00",
+      "hoursNote": "Stromma: erste Abfahrt 10:00, letzte volle Runde 16:00. Takt und Saisonzeiten tagesaktuell beim Anbieter prüfen."
+    },
+    {
+      "id": "hoho-nyhavn",
+      "name": "Nyhavn",
+      "cat": "hoho",
+      "sub": "Haltestelle · Stromma + Red",
+      "lat": 55.67962,
+      "lon": 12.59042,
+      "area": "Nyhavn",
+      "desc": "Halt an der Nordseite des Nyhavn: Stromma Stopp 2, Red Sightseeing Stopp 8. Von hier sind es wenige Minuten zu Fuß zu Kongens Nytorv, zum Schloss Amalienborg und zu den Kanaltouren. Der Marker steht am zugehörigen Ziel; die Haltestelle liegt an der Straße direkt daneben.",
+      "tips": [
+        "Vor 10 Uhr ist der Nyhavn noch leer – früher Halt lohnt für Fotos ohne Menschen.",
+        "Der Übergang zu den Kanaltouren ist hier am kürzesten."
+      ],
+      "website": "https://www.stromma.com/en-dk/copenhagen/sightseeing/sightseeing-by-bus/hop-on-hop-off/",
+      "tags": [
+        "Bus",
+        "Haltestelle",
+        "Zentral",
+        "Nyhavn"
+      ],
+      "src": "stromma.com · redsightseeing.com (Okt 2026)",
+      "hours": "Mo-Su 09:00-16:00",
+      "hoursNote": "Stromma: erste Abfahrt ab Tivoli 09:30, ab Ved Stranden 10:00; letzte volle Runde 15:35 bzw. 16:00. Red Sightseeing fährt ab 09:00, letzte Abfahrt 16:00. Zeiten tagesaktuell prüfen."
+    },
+    {
+      "id": "hoho-amalienborg",
+      "name": "Amalienborg",
+      "cat": "hoho",
+      "sub": "Haltestelle · Red (Stopp 9)",
+      "lat": 55.6832,
+      "lon": 12.58939,
+      "area": "Frederiksstaden",
+      "desc": "Red Sightseeing Stopp 9 direkt am Schlossplatz von Amalienborg. Wer die Wachablösung (täglich Mittag) sehen will, steigt hier aus – der Platz ist nur wenige Meter entfernt. Der Marker steht am zugehörigen Ziel; die Haltestelle liegt an der Straße direkt daneben.",
+      "tips": [
+        "Die Wachablösung startet gegen 11:30 am Schloss Rosenborg und erreicht Amalienborg um 12:00.",
+        "Von hier ist es ein kurzer Spaziergang weiter zur Marmorkirche."
+      ],
+      "website": "https://www.redsightseeing.com/copenhagen/our-tours/hop-on-hop-off-bus/",
+      "tags": [
+        "Bus",
+        "Haltestelle",
+        "Königlich"
+      ],
+      "src": "redsightseeing.com (Okt 2026)",
+      "hours": "Mo-Su 09:00-16:00",
+      "hoursNote": "Red Sightseeing: erste Abfahrt 09:00, letzte Abfahrt ab Central Station/Tivoli 16:00, Takt 30–60 Min. Genaue Zeiten tagesaktuell beim Anbieter."
+    },
+    {
+      "id": "hoho-havfrue",
+      "name": "Den lille Havfrue",
+      "cat": "hoho",
+      "sub": "Haltestelle · Stromma + Red",
+      "lat": 55.69287,
+      "lon": 12.59929,
+      "area": "Langelinie / Østerbro",
+      "desc": "Halt an der Kleinen Meerjungfrau: Stromma Stopp 5, Red Sightseeing Stopp 12. Achtung – bei Red Sightseeing ist dieser Halt nicht beschildert; den Ausstiegspunkt vorher in der App prüfen. Der Marker steht am zugehörigen Ziel; die Haltestelle liegt an der Straße direkt daneben.",
+      "tips": [
+        "Der Weg über Kastellet und Langelinie ist schöner als der direkte Weg zur Statue.",
+        "Morgens stehen hier noch keine Reisebusse."
+      ],
+      "website": "https://www.stromma.com/en-dk/copenhagen/sightseeing/sightseeing-by-bus/hop-on-hop-off/",
+      "tags": [
+        "Bus",
+        "Haltestelle",
+        "Gratis"
+      ],
+      "src": "stromma.com · redsightseeing.com (Okt 2026)",
+      "hours": "Mo-Su 09:00-16:00",
+      "hoursNote": "Stromma: erste Abfahrt ab Tivoli 09:30, ab Ved Stranden 10:00; letzte volle Runde 15:35 bzw. 16:00. Red Sightseeing fährt ab 09:00, letzte Abfahrt 16:00. Zeiten tagesaktuell prüfen."
+    },
+    {
+      "id": "hoho-rosenborg",
+      "name": "Rosenborg / Botanisk Have",
+      "cat": "hoho",
+      "sub": "Haltestelle · Stromma + Red",
+      "lat": 55.68569,
+      "lon": 12.57743,
+      "area": "Indre By / Kongens Have",
+      "desc": "Halt am Schloss Rosenborg: Stromma Stopp 9 („Rosenborg Castle/SMK“), Red Sightseeing Stopp 16 (Rosenborg Castle/Botanical Gardens/National Art Gallery). Von hier sind Kongens Have, Botanisk Have und das SMK in wenigen Minuten erreichbar. Der Marker steht am zugehörigen Ziel; die Haltestelle liegt an der Straße direkt daneben.",
+      "tips": [
+        "Der Ausgang durch Kongens Have Richtung Nørreport ist der angenehmste Weg zurück.",
+        "Für SMK und die Nationalgalerie ist dieser Halt der nächstgelegene."
+      ],
+      "website": "https://www.stromma.com/en-dk/copenhagen/sightseeing/sightseeing-by-bus/hop-on-hop-off/",
+      "tags": [
+        "Bus",
+        "Haltestelle",
+        "Museum"
+      ],
+      "src": "stromma.com · redsightseeing.com (Okt 2026)",
+      "hours": "Mo-Su 09:00-16:00",
+      "hoursNote": "Stromma: erste Abfahrt ab Tivoli 09:30, ab Ved Stranden 10:00; letzte volle Runde 15:35 bzw. 16:00. Red Sightseeing fährt ab 09:00, letzte Abfahrt 16:00. Zeiten tagesaktuell prüfen."
+    },
+    {
+      "id": "hoho-christiansborg",
+      "name": "Christiansborg / Holmens Kirke",
+      "cat": "hoho",
+      "sub": "Haltestelle · Red (Stopp 7)",
+      "lat": 55.67565,
+      "lon": 12.57906,
+      "area": "Slotsholmen / Indre By",
+      "desc": "Red Sightseeing Stopp 7 am Schloss Christiansborg, direkt neben der Holmens Kirke. Der Ausstieg für Schloss, Folketing, Børsen und den Turm von Christiansborg. Der Marker steht am zugehörigen Ziel; die Haltestelle liegt an der Straße direkt daneben.",
+      "tips": [
+        "Der Schlossturm ist kostenlos und hat die beste Aussicht der Innenstadt.",
+        "Von hier sind es zwei Minuten zur Børsen mit ihrem Drachenturm."
+      ],
+      "website": "https://www.redsightseeing.com/copenhagen/our-tours/hop-on-hop-off-bus/",
+      "tags": [
+        "Bus",
+        "Haltestelle",
+        "Zentral"
+      ],
+      "src": "redsightseeing.com (Okt 2026)",
+      "hours": "Mo-Su 09:00-16:00",
+      "hoursNote": "Red Sightseeing: erste Abfahrt 09:00, letzte Abfahrt ab Central Station/Tivoli 16:00, Takt 30–60 Min. Genaue Zeiten tagesaktuell beim Anbieter."
+    },
+    {
+      "id": "hoho-glyptoteket",
+      "name": "Glyptoteket / Nationalmuseum",
+      "cat": "hoho",
+      "sub": "Haltestelle · Red (Stopp 2)",
+      "lat": 55.67253,
+      "lon": 12.57193,
+      "area": "Indre By / Rådhuspladsen",
+      "desc": "Red Sightseeing Stopp 2 an der Ny Carlsberg Glyptotek, zwischen Nationalmuseum und Københavns Museum. Der Halt für alle drei Museen – und für den Wintergarten im Glyptotek mit Kuppel und Palmen. Der Marker steht am zugehörigen Ziel; die Haltestelle liegt an der Straße direkt daneben.",
+      "tips": [
+        "Dienstags ist der Eintritt ins Glyptotek frei.",
+        "Der Innenhof des Glyptotek ist auch ohne Ticket einen Blick wert."
+      ],
+      "website": "https://www.redsightseeing.com/copenhagen/our-tours/hop-on-hop-off-bus/",
+      "tags": [
+        "Bus",
+        "Haltestelle",
+        "Museum"
+      ],
+      "src": "redsightseeing.com (Okt 2026)",
+      "hours": "Mo-Su 09:00-16:00",
+      "hoursNote": "Red Sightseeing: erste Abfahrt 09:00, letzte Abfahrt ab Central Station/Tivoli 16:00, Takt 30–60 Min. Genaue Zeiten tagesaktuell beim Anbieter."
+    },
+    {
+      "id": "hoho-islands-brygge",
+      "name": "Islands Brygge",
+      "cat": "hoho",
+      "sub": "Haltestelle · Red (Stopp 5)",
+      "lat": 55.66712,
+      "lon": 12.58624,
+      "area": "Islands Brygge",
+      "desc": "Red Sightseeing Stopp 5 am Radisson Blu Scandinavia Hotel. Von hier ist es ein kurzer Weg zum Hafenbad Islands Brygge und zur Bryggebroen, über die man zu Fuß nach Vesterbro zurückläuft. Der Marker steht am zugehörigen Ziel; die Haltestelle liegt an der Straße direkt daneben.",
+      "tips": [
+        "Das Hafenbad ist im Sommer kostenlos – Badezeug mitnehmen.",
+        "Über die Bryggebroen lässt sich der Rückweg nach Vesterbro zu Fuß machen."
+      ],
+      "website": "https://www.redsightseeing.com/copenhagen/our-tours/hop-on-hop-off-bus/",
+      "tags": [
+        "Bus",
+        "Haltestelle",
+        "Draußen"
+      ],
+      "src": "redsightseeing.com (Okt 2026)",
+      "hours": "Mo-Su 09:00-16:00",
+      "hoursNote": "Red Sightseeing: erste Abfahrt 09:00, letzte Abfahrt ab Central Station/Tivoli 16:00, Takt 30–60 Min. Genaue Zeiten tagesaktuell beim Anbieter."
+    },
+    {
+      "id": "hoho-christianshavn",
+      "name": "Christianshavn / Christiania",
+      "cat": "hoho",
+      "sub": "Haltestelle · Red (Stopp 6)",
+      "lat": 55.67206,
+      "lon": 12.5914,
+      "area": "Christianshavn",
+      "desc": "Red Sightseeing Stopp 6 am Christianshavns Torv – der Ausstieg für Christiania, den Christianshavn-Kanal und den Turm der Erlöserkirche. Der Marker steht am zugehörigen Ziel; die Haltestelle liegt an der Straße direkt daneben.",
+      "tips": [
+        "Zum Turm der Vor Frelsers Kirke sind es etwa zehn Minuten zu Fuß.",
+        "Fotografieren ist in Christiania auf der Pusher Street nicht erlaubt."
+      ],
+      "website": "https://www.redsightseeing.com/copenhagen/our-tours/hop-on-hop-off-bus/",
+      "tags": [
+        "Bus",
+        "Haltestelle",
+        "Christianshavn"
+      ],
+      "src": "redsightseeing.com (Okt 2026)",
+      "hours": "Mo-Su 09:00-16:00",
+      "hoursNote": "Red Sightseeing: erste Abfahrt 09:00, letzte Abfahrt ab Central Station/Tivoli 16:00, Takt 30–60 Min. Genaue Zeiten tagesaktuell beim Anbieter."
+    },
+    {
+      "id": "hoho-kastellet",
+      "name": "Gefion-Brunnen / Kastellet",
+      "cat": "hoho",
+      "sub": "Haltestelle · Red (Stopp 10)",
+      "lat": 55.68926,
+      "lon": 12.59757,
+      "area": "Kastellet / Østerbro",
+      "desc": "Red Sightseeing Stopp 10 („Gefion Waterfountain/Design Museum/The Citadel“) am Gefion-Brunnen, dem größten Springbrunnen der Stadt. Von hier geht man durch die Kastellet-Wallanlagen weiter zur Kleinen Meerjungfrau. Der Marker steht am zugehörigen Ziel; die Haltestelle liegt an der Straße direkt daneben.",
+      "tips": [
+        "Der Spaziergang durch Kastellet bis zur Meerjungfrau dauert etwa 15 Minuten.",
+        "Das Designmuseum liegt auf der anderen Seite der Straße."
+      ],
+      "website": "https://www.redsightseeing.com/copenhagen/our-tours/hop-on-hop-off-bus/",
+      "tags": [
+        "Bus",
+        "Haltestelle",
+        "Draußen",
+        "Gratis"
+      ],
+      "src": "redsightseeing.com (Okt 2026)",
+      "hours": "Mo-Su 09:00-16:00",
+      "hoursNote": "Red Sightseeing: erste Abfahrt 09:00, letzte Abfahrt ab Central Station/Tivoli 16:00, Takt 30–60 Min. Genaue Zeiten tagesaktuell beim Anbieter."
     }
   ]
 }

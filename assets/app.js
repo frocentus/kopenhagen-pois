@@ -77,12 +77,14 @@
   }
 
   /**
-   * Supermärkte werden bewusst ohne Bewertung geführt: Bewertungen von
-   * Filialen einer Kette sind kaum aussagekräftig und unterscheiden sich
-   * je Standort. Deshalb dort auch kein „keine Bewertung"-Platzhalter.
+   * Nicht jeder Ort ist bewertbar.
+   * - Supermärkte: Bewertungen von Filialen einer Kette sind kaum aussagekräftig
+   *   und unterscheiden sich je Standort.
+   * - Hop-On-Hop-Off-Haltestellen: Infrastruktur, kein Gastronomiebetrieb – ein
+   *   Platzhalter „keine Bewertung“ wäre an 11 Karten nur Rauschen.
    */
   function showsRating(p) {
-    return p.cat !== "supermarket";
+    return p.cat !== "supermarket" && p.cat !== "hoho";
   }
 
   function isGastro(p) {

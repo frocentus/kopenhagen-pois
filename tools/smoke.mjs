@@ -90,14 +90,38 @@ function check(name, cond, extra = "") {
 // der Test bei jeder Datenpflege, ohne etwas über einen echten Fehler zu sagen.
 const TOTAL = data.places.length;
 const CATS = data.categories.length;
-const RATED = data.places.filter((p) => p.cat !== "supermarket" && p.rating).length;
-const UNRATED = data.places.filter((p) => p.cat !== "supermarket" && !p.rating).length;
+// Spiegelt showsRating() in assets/app.js: Supermärkte und Haltestellen werden
+// ohne Bewertung geführt und zeigen deshalb auch keinen Platzhalter.
+const RATING_CATS = (p) => p.cat !== "supermarket" && p.cat !== "hoho";
+const RATED = data.places.filter((p) => RATING_CATS(p) && p.rating).length;
+const UNRATED = data.places.filter((p) => RATING_CATS(p) && !p.rating).length;
 const cards = () => doc.querySelectorAll(".card").length;
 const openCard = (id) => {
   const el = doc.querySelector(".card[data-id='" + id + "'] .card-btn");
   el.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
   return el;
 };
+
+// Kategorie-Chips werden bei jedem Klick neu gerendert (renderChips ersetzt das
+// innerHTML). Eine vorab eingesammelte NodeList zeigt danach auf abgehängte
+// Knoten – deshalb wird vor jedem Klick frisch gesucht.
+function setCat(id, on) {
+  const chip = doc.querySelector(".chip[data-cat='" + id + "']");
+  if (!chip) return;
+  if ((chip.getAttribute("aria-pressed") === "true") !== on) chip.click();
+}
+const onlyCat = (id) => data.categories.forEach((c) => setCat(c.id, c.id === id));
+const allCats = () => data.categories.forEach((c) => setCat(c.id, true));
+
+function dist(a, b) {
+  const R = 6371000;
+  const dLat = ((b.lat - a.lat) * Math.PI) / 180;
+  const dLon = ((b.lon - a.lon) * Math.PI) / 180;
+  const la1 = (a.lat * Math.PI) / 180;
+  const la2 = (b.lat * Math.PI) / 180;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(la1) * Math.cos(la2) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
 
 console.log("== Initiales Rendern ==");
 check(CATS + " Kategorie-Chips", doc.querySelectorAll(".chip").length === CATS, String(doc.querySelectorAll(".chip").length));
@@ -234,6 +258,47 @@ for (const c of doc.querySelectorAll(".chip")) if (c.dataset.cat !== "tour") c.c
 await new Promise((r) => setTimeout(r, 40));
 check("alle Kategorien wieder aktiv", cards() === TOTAL, String(cards()));
 
+console.log("\n== Hop-On-Hop-Off-Haltestellen ==");
+const stops = data.places.filter((p) => p.cat === "hoho");
+const stopChip = doc.querySelector(".chip[data-cat='hoho']");
+check("Kategorie Haltestellen existiert", !!stopChip && stops.length > 0, stops.length + " Einträge");
+
+for (const c of data.categories) if (c.id !== "hoho") setCat(c.id, false);
+await new Promise((r) => setTimeout(r, 40));
+check("Filter zeigt nur Haltestellen", cards() === stops.length, String(cards()));
+
+// Eine Haltestelle ist Infrastruktur – kein Bewertungs-Platzhalter, kein Preis.
+check("Haltestellen ohne Bewertungs-Platzhalter", doc.querySelectorAll(".card .no-rating").length === 0 && doc.querySelectorAll(".card .rating").length === 0);
+check("Haltestellen nennen den Anbieter", stops.every((s) => /Stromma|Red/.test(s.sub)), stops.map((s) => s.sub).slice(0, 2).join(" / "));
+check("Haltestellen haben Betriebszeiten", stops.every((s) => !!s.hours), stops.filter((s) => !s.hours).length + " ohne");
+
+const both = stops.filter((s) => /Stromma \+ Red/.test(s.sub));
+check("Haltestellen mit beiden Anbietern", both.length >= 3, both.map((s) => s.name).join(", "));
+
+// Kein Duplikat und keine Haltestelle außerhalb des Kartenbereichs.
+// (Ein Abstandstest zu anderen Orten wäre hier falsch: Islands Brygge und der
+// Gefion-Brunnen liegen legitim weit weg vom nächsten erfassten Eintrag.)
+const BOUNDS = { minLat: 55.64, maxLat: 55.72, minLon: 12.51, maxLon: 12.63 };
+const outside = stops.filter(
+  (s) => s.lat < BOUNDS.minLat || s.lat > BOUNDS.maxLat || s.lon < BOUNDS.minLon || s.lon > BOUNDS.maxLon,
+);
+check("Haltestellen liegen im Kartenbereich", outside.length === 0, outside.map((s) => s.name).join(", ") || "alle innerhalb");
+
+let tooClose = null;
+for (let i = 0; i < stops.length && !tooClose; i++) {
+  for (let j = i + 1; j < stops.length; j++) {
+    if (dist(stops[i], stops[j]) < 150) {
+      tooClose = stops[i].name + " / " + stops[j].name + " (" + Math.round(dist(stops[i], stops[j])) + " m)";
+      break;
+    }
+  }
+}
+check("keine zwei Haltestellen unter 150 m (keine Doppel-Einträge)", !tooClose, tooClose || "ok");
+
+allCats();
+await new Promise((r) => setTimeout(r, 40));
+check("alle Kategorien wieder aktiv (nach Haltestellen)", cards() === TOTAL, String(cards()));
+
 console.log("\n== Preisvergleich ==");
 $("compare").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
 await new Promise((r) => setTimeout(r, 40));
@@ -297,7 +362,7 @@ check("Escape schließt Sheet", !doc.body.classList.contains("sidebar-open"));
 
 console.log("\n== Transparenz: fehlende Bewertung / Speisekarte ==");
 const unratedCards = doc.querySelectorAll(".card .no-rating").length;
-check("Karten ohne Bewertung sind markiert", unratedCards === UNRATED, unratedCards + " von " + UNRATED + " (ohne Supermärkte)");
+check("Karten ohne Bewertung sind markiert", unratedCards === UNRATED, unratedCards + " von " + UNRATED + " (ohne Supermärkte/Haltestellen)");
 const ratedCards = doc.querySelectorAll(".card .rating").length;
 check("bewertete Orte zeigen Sterne", ratedCards === RATED, ratedCards + " von " + RATED + " Karten");
 
