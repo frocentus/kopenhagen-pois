@@ -95,6 +95,16 @@
     var parsed = window.CPHHours.parse(p.hours, refDate());
     return window.CPHHours.status(parsed);
   }
+
+  /**
+   * Beschriftung für den Zeitstatus. Touren haben keine Öffnungszeiten, sondern
+   * Abfahrtszeiten – „Zeiten unbekannt“ wäre dort schlicht falsch, weil die
+   * Abfahrten im hoursNote des Eintrags stehen.
+   */
+  function hoursLabel(p, st) {
+    if (st.known) return st.text;
+    return p.cat === "tour" ? "Abfahrtszeiten laut Anbieter" : "Zeiten unbekannt";
+  }
   function refDate() { return new Date(); }
 
   // ---------------------------------------------------------------- Rendering
@@ -344,7 +354,7 @@
         (dist ? "<span class='dist'>" + dist + "</span>" : "") +
         "</span>" +
         "<span class='card-hours'><span class='status-dot " + dotClass + "'></span>" +
-        "<span>" + esc(st.known ? st.text : "Zeiten unbekannt") + "</span></span>" +
+        "<span>" + esc(hoursLabel(p, st)) + "</span></span>" +
         "</button>" +
         "<button class='card-fav" + (state.favs[p.id] ? " is-on" : "") + "' type='button' " +
         "data-fav='" + p.id + "' aria-pressed='" + (state.favs[p.id] ? "true" : "false") + "' " +
@@ -447,7 +457,7 @@
       "<h4>" + esc(p.name) + "</h4>" +
       "<div class='popup-meta'>" + priceDots(p.priceLevel) + (showsRating(p) ? (p.rating ? ratingHtml(p) : noRatingHtml(p)) : "") + "</div>" +
       "<div class='card-hours'><span class='status-dot " + dot + "'></span>" +
-      "<span>" + esc(st.known ? st.text : "Zeiten unbekannt") + "</span></div>" +
+      "<span>" + esc(hoursLabel(p, st)) + "</span></div>" +
       "<button type='button' class='popup-more' data-id='" + p.id + "'>Details ansehen →</button>" +
       "</div>"
     );
@@ -574,7 +584,7 @@
               ratingHtml(p) + " <small class='src-tag'>" + esc(p.ratingSource || "Google") + "</small></span></div>"
             : "<div class='fact'><span class='fact-k'>Bewertung</span><span class='fact-v muted'>Keine Bewertung verfügbar</span></div>")
         : "") +
-      "<div class='fact'><span class='fact-k'>Status</span><span class='fact-v'><span class='status-dot " + dot + "'></span> " + esc(st.text) + "</span></div>" +
+      "<div class='fact'><span class='fact-k'>Status</span><span class='fact-v'><span class='status-dot " + dot + "'></span> " + esc(hoursLabel(p, st)) + "</span></div>" +
       "</div>" +
 
       (showsRating(p) && !p.rating && p.ratingNote ? "<p class='note note-quiet'>" + esc(p.ratingNote) + "</p>" : "") +

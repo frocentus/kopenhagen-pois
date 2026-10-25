@@ -196,12 +196,52 @@ if (noPhoto) {
   $("drawerClose").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
 }
 
+console.log("\n== Touren ==");
+const tours = data.places.filter((p) => p.cat === "tour");
+const tourChip = doc.querySelector(".chip[data-cat='tour']");
+check("Kategorie Touren existiert", !!tourChip && tours.length > 0, tours.length + " Einträge");
+
+// Nur Touren anzeigen
+for (const c of doc.querySelectorAll(".chip")) if (c.dataset.cat !== "tour") c.click();
+await new Promise((r) => setTimeout(r, 40));
+check("Kategorie-Filter zeigt nur Touren", cards() === tours.length, String(cards()));
+
+// Touren ohne Öffnungszeiten müssen anders beschriftet sein als Orte ohne Zeiten.
+// Eine geratene Abfahrtszeit wäre schlimmer als keine, deshalb sagt die Karte das.
+const noHoursTour = tours.find((t) => !t.hours);
+const withHoursTour = tours.find((t) => t.hours);
+if (noHoursTour) {
+  const label = doc.querySelector(".card[data-id='" + noHoursTour.id + "'] .card-hours span:last-child").textContent;
+  check("Tour ohne Zeiten: 'Abfahrtszeiten laut Anbieter'", label === "Abfahrtszeiten laut Anbieter", label);
+  openCard(noHoursTour.id);
+  await new Promise((r) => setTimeout(r, 40));
+  check("Tour ohne Zeiten nennt den Grund im Hinweis", !!$("drawer").querySelector(".note"), noHoursTour.id);
+  $("drawerClose").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+}
+if (withHoursTour) {
+  openCard(withHoursTour.id);
+  await new Promise((r) => setTimeout(r, 40));
+  check("Tour mit dokumentierten Zeiten zeigt Wochentabelle", $("drawer").querySelectorAll(".hours-table tr").length > 0, withHoursTour.id);
+  $("drawerClose").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+}
+
+// City Sightseeing ist der Franchise-Name derselben Stromma-Busse -> ein Eintrag
+check("kein doppelter Eintrag für City Sightseeing", !data.places.some((p) => /city sightseeing/i.test(p.name)), "Stromma-Eintrag nennt den Namen in der Beschreibung");
+check("City Sightseeing wird in der Stromma-Beschreibung erklärt", /City Sightseeing/.test((data.places.find((p) => p.id === "hop-on-hop-off-stromma") || {}).desc || ""));
+
+// Alle Kategorien wieder einschalten
+for (const c of doc.querySelectorAll(".chip")) if (c.dataset.cat !== "tour") c.click();
+await new Promise((r) => setTimeout(r, 40));
+check("alle Kategorien wieder aktiv", cards() === TOTAL, String(cards()));
+
 console.log("\n== Preisvergleich ==");
 $("compare").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
 await new Promise((r) => setTimeout(r, 40));
 const rows = doc.querySelectorAll(".price-table tbody tr");
 check("Modal offen", !$("modal").hidden);
 check("Preis-Tabelle gefüllt", rows.length >= 25, String(rows.length));
+// Touren haben Preise, gehören aber nicht in den Gastro-Preisvergleich.
+check("Touren nicht im Preisvergleich", rows.length === data.places.filter((p) => p.cat === "restaurant" || p.cat === "fastfood").length, rows.length + " Zeilen");
 const firstPrice = rows[0].querySelector("td.num b");
 check("günstigster Eintrag zuerst", firstPrice && parseInt(firstPrice.textContent, 10) <= 60, firstPrice && firstPrice.textContent);
 $("modalClose").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));

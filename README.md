@@ -2,24 +2,31 @@
 
 **Live:** https://frocentus.github.io/kopenhagen-pois/  ·  **Repo:** https://github.com/frocentus/kopenhagen-pois
 
-Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **84 kuratierten Orten**:
+Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **114 kuratierten Orten**:
 
 | Kategorie | Anzahl | Inhalte |
 |---|---|---|
 | 🏛 Sehenswürdigkeiten | 22 | Eintrittspreise, Öffnungszeiten, Tipps |
-| 🥐 Frühstück & Brunch | 11 | Cafés, Bäckereien, Brunch-Spots |
-| 🍽 Restaurants | 22 | Smørrebrød bis Michelin, Preisvergleich |
-| 🍔 Fast Food | 9 | Burger, Fritten, Pizza, Streetfood |
+| 🎫 Touren & Rundfahrten | 8 | Hop-On-Hop-Off-Busse, Kanaltouren, Stadt- und Radführungen |
+| 🥐 Frühstück & Brunch | 8 | Cafés, Brunch-Spots |
+| ☕ Kaffee & Bäckerei | 12 | Specialty Coffee, Sauerteig, Kardamom-Schnecken |
+| 🍽 Restaurants | 26 | Smørrebrød bis 3-Michelin-Sterne, Preisvergleich |
+| 🍔 Fast Food | 10 | Burger, Fritten, Pizza, Streetfood |
 | 🛒 Supermärkte | 16 | inkl. 4× 7-Eleven, echte Öffnungszeiten |
 | 🛍 Einkaufszentren | 4 | Kaufhäuser & Malls |
+| ℹ️ Praktisches | 8 | Toiletten, Apotheken, Bahnhöfe, Metro |
 
 **Features**
 
 - Leaflet-Karte mit OpenStreetMap-Kacheln (ohne API-Key), Marker-Clustering und Layer-Umschalter (Karte / Rad & Wandern)
-- Filter nach Kategorie, Volltextsuche, Sortierung (Empfehlung, Name, Bewertung, Preis, Entfernung)
+- Filter nach Kategorie, **Themenfilter** (Tags wie „Boot“, „Gratis“, „Familie“ – UND-verknüpft), Volltextsuche, Sortierung (Empfehlung, Name, Bewertung, Preis, Entfernung)
+- **Favoriten**: Orte per Stern merken, „Nur gemerkte“-Filter; rein lokal im `localStorage`, kein Konto, kein Server
+- **Teilen**: ein Klick kopiert den Deep-Link des Ortes (mit Fallback für unsichere Kontexte)
 - **„Nur jetzt geöffnet"** – berechnet aus den OSM-Öffnungszeiten in Zeitzone `Europe/Copenhagen`, inkl. Saisonregeln, Nachtöffnung und Feiertagsausnahmen
 - Detailansicht mit Beschreibung, Tipps, Wochen-Öffnungszeiten, Preisen, Bewertung, Website/Speisekarte und Google-Maps-Route
+- **Fotos** aus Wikipedia/Wikimedia Commons in der Detailansicht – mit Autor, Lizenz und Link zur Dateiseite; nur wo ein Artikelbild eindeutig zum Ort gehört (siehe unten)
 - **Preisvergleich** als sortierbare Tabelle (Restaurants + Fast Food, Hauptgericht in DKK)
+- **Touren & Rundfahrten**: Hop-On-Hop-Off-Busse, Kanaltouren (vom 80-DKK-Nettobåd bis zur privaten Bootstour), Stadtführung und Radtour – mit Preisen, Ablegepunkt und Abfahrtshinweisen. Touren haben keine Öffnungszeiten; statt „Zeiten unbekannt“ steht dort „Abfahrtszeiten laut Anbieter“ plus der konkrete Hinweis im Detail
 - **Supermärkte ohne Bewertung**: Filialen von Ketten (Netto, Føtex, Rema 1000, 7-Eleven …) werden bewusst ohne Bewertung geführt – dort erscheint weder eine Zahl noch ein Platzhalter
 - **Transparente Datenlücken**: Orte ohne Bewertung sind sichtbar als „— keine Bewertung" markiert (mit Begründung im Detail, z. B. Kette, abweichende Quellen, kein Profil); Gastro-Orte ohne Online-Karte zeigen „Keine Speisekarte online" samt Erklärung
 - **Mobil**: Bottom-Sheet mit Backdrop, Schließen-Kreuz, 48-px-Touch-Ziel und `env(safe-area-inset-bottom)` (nicht in der iOS-Home-Indicator-Zone)
@@ -80,7 +87,7 @@ Alle Inhalte stehen in `data/places.json`. Ein Eintrag:
 {
   "id": "gasoline-grill",          // eindeutig, wird zum Deep-Link
   "name": "Gasoline Grill",
-  "cat": "fastfood",               // attraction | breakfast | restaurant | fastfood | supermarket | mall
+  "cat": "fastfood",               // attraction | tour | breakfast | cafe | restaurant | fastfood | supermarket | mall | services
   "sub": "Burger in alter Tankstelle",
   "lat": 55.68324, "lon": 12.58517,
   "area": "Indre By / Landgreven", // Viertel, wird in Liste und Detail angezeigt
@@ -134,6 +141,8 @@ Die Skripte in `tools/` sind reine Node-Skripte ohne Abhängigkeiten (Ausnahme: 
 node tools/fetch-osm.mjs      # Koordinaten/Öffnungszeiten/Websites aus Overpass ziehen
 node tools/fetch-shops.mjs    # alle Supermärkte/Malls im Zentrum
 node tools/fetch-photos.mjs   # Fotos aus Wikipedia/Commons holen und Credits setzen
+node tools/add-places.mjs     # einmalig: Kategorien/Orte ergänzen (idempotent)
+node tools/add-tours.mjs      # einmalig: Kategorie Touren + Touren-Einträge (idempotent)
 node tools/linkcheck.mjs      # Website- und Menü-Links auf HTTP-Status prüfen
 node tools/test-hours.mjs     # Parser gegen alle Datensätze prüfen
 node tools/smoke.mjs          # UI-Smoke-Test ohne Browser (npm i jsdom)
@@ -175,10 +184,19 @@ abdunkelt. Ein reiner DOM-Test hätte den z-index-Bug unten nicht gefunden.
   Artikel eine Koordinate besitzt, die innerhalb von 500 m zum Ort liegt. Genau dieser Test wirft die
   mehrdeutigen Artikelnamen aus („Geranium“ = Storchschnabel, „Pluto“ = Zwergplanet, „Alchemist“ = Alchemie,
   „Jagger“ = Katzenrasse) und alle Ketten-Artikel (Føtex, Lidl, 7-Eleven, SuperBrugsen), die keinen konkreten
-  Standort beschreiben. Ergebnis: 31 von 106 Orten haben ein Bild, die übrigen bewusst keines – kein Raten,
+  Standort beschreiben. Ergebnis: 31 von 114 Orten haben ein Bild, die übrigen bewusst keines – kein Raten,
   kein Platzhalter, kein Bild eines anderen Standorts. Autor und Lizenz stehen unter jedem Foto, die
   Dateiseite ist verlinkt. Das Skript schreibt die Liste der Orte ohne Bild nach
   `data/photo-review.json` (Zwischenergebnis, nicht eingecheckt).
+- **Touren**: Preise und Abfahrtsorte von den Betreiberseiten (stromma.com, redsightseeing.com,
+  havnerundfart.dk, heycaptain.dk, goboat.dk, copenhagenfreewalkingtours.dk) sowie Aggregatoren
+  (hop-on-hop-off.net, VisitCopenhagen), Stand Oktober 2026. Drei Dinge sind hier bewusst so gebaut:
+  (1) **„City Sightseeing Copenhagen“ ist kein eigener Anbieter**, sondern der Franchise-Name derselben
+  Stromma-Busse – deshalb ein Eintrag statt zwei. (2) **Abfahrtszeiten stehen nur dort als `hours`**, wo sie
+  dokumentiert sind (Stromma-Ticketverkauf, Nettobådene-Fahrplan); sonst bleibt `hours` leer und der
+  Hinweis landet in `hoursNote`, weil eine geratene Abfahrtszeit schlimmer ist als keine.
+  (3) **Bewertungen** nur als echte, zuordenbare Google-Werte – Plattformbewertungen von
+  Buchungsportalen stehen als Begründung in `ratingNote`, nicht als Zahl.
 
 Preise, Öffnungszeiten und Bewertungen ändern sich. Die Seite zeigt bewusst die Quelle pro Eintrag an;
 vor dem Besuch lohnt ein Blick auf die offizielle Website (im Detail-Panel verlinkt).
