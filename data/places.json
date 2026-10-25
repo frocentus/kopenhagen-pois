@@ -1,0 +1,2400 @@
+{
+  "meta": {
+    "city": "Kopenhagen",
+    "scope": "Stadtzentrum: Indre By, Nyhavn, Christianshavn, Vesterbro, südl. Nørrebro/Østerbro",
+    "generated": "2026-10-25",
+    "note": "Öffnungszeiten aus OpenStreetMap (ODbL), Preise/Bewertungen aus öffentlichen Quellen (VisitCopenhagen, kopenhagen.info, Anbieterseiten, Google-Rezensionen über Exa Places). Preise und Zeiten ändern sich – vor dem Besuch prüfen.",
+    "center": [
+      55.679,
+      12.575
+    ],
+    "zoom": 15
+  },
+  "categories": [
+    {
+      "id": "attraction",
+      "label": "Sehenswürdigkeiten",
+      "short": "Sehenswertes",
+      "color": "#c1121f",
+      "icon": "🏛"
+    },
+    {
+      "id": "breakfast",
+      "label": "Frühstück & Brunch",
+      "short": "Frühstück",
+      "color": "#e07a00",
+      "icon": "🥐"
+    },
+    {
+      "id": "restaurant",
+      "label": "Restaurants",
+      "short": "Restaurants",
+      "color": "#1b7f79",
+      "icon": "🍽"
+    },
+    {
+      "id": "fastfood",
+      "label": "Fast Food",
+      "short": "Fast Food",
+      "color": "#d1495b",
+      "icon": "🍔"
+    },
+    {
+      "id": "supermarket",
+      "label": "Supermärkte",
+      "short": "Supermärkte",
+      "color": "#3a6ea5",
+      "icon": "🛒"
+    },
+    {
+      "id": "mall",
+      "label": "Einkaufszentren",
+      "short": "Shopping",
+      "color": "#7b5ea7",
+      "icon": "🛍"
+    }
+  ],
+  "places": [
+    {
+      "id": "tivoli",
+      "name": "Tivoli",
+      "cat": "attraction",
+      "sub": "Freizeitpark & Gärten",
+      "lat": 55.67343,
+      "lon": 12.56858,
+      "area": "Indre By / Rådhuspladsen",
+      "rating": 4.5,
+      "reviews": "91.800",
+      "priceLevel": 2,
+      "priceText": "145 DKK werktags · 155 DKK Wochenende · 210 DKK Freitagabend (Eintritt ohne Fahrten)",
+      "hours": "Mo-Su 11:00-23:00",
+      "hoursNote": "Saisonbetrieb: meist April bis Ende Dezember, im Winter (Jan–März) geschlossen. Freitags oft länger; zu Halloween und Weihnachten eigene Zeiten.",
+      "desc": "Einer der ältesten Vergnügungsparks der Welt (1843) und Walt Disneys Inspiration: chinesische Pagode, hölzerne Achterbahn von 1914, Teich mit Illumination und Blumenbeete mitten in der Stadt.",
+      "tips": [
+        "Kurz vor Sonnenuntergang kommen – dann gehen die Lichter an und die Atmosphäre kippt komplett.",
+        "Der Eintritt ohne Fahrgeschäfte reicht für einen Rundgang; Fahrten einzeln oder als Multi-Day-Pass.",
+        "Essen im Park ist teuer – vorher in der Vesterbrogade essen."
+      ],
+      "website": "https://www.tivoli.dk/",
+      "menu": null,
+      "tags": [
+        "Highlight",
+        "Familie",
+        "Abends"
+      ],
+      "src": "kopenhagen.info · tivoli.dk (Okt 2026)"
+    },
+    {
+      "id": "nyhavn",
+      "name": "Nyhavn",
+      "cat": "attraction",
+      "sub": "Hafenkanal & Fotomotiv",
+      "lat": 55.67962,
+      "lon": 12.59042,
+      "area": "Nyhavn / Gammelholm",
+      "rating": 4.7,
+      "reviews": "—",
+      "priceLevel": 0,
+      "priceText": "Eintritt frei · Kanalrundfahrt ca. 125–175 DKK",
+      "hours": null,
+      "hoursNote": "Öffentlicher Hafen – jederzeit zugänglich. Restaurants öffnen ab ca. 10–11 Uhr.",
+      "desc": "1673 als Frachthafen angelegt, heute die Postkarte Kopenhagens: farbige Giebelhäuser, alte Segler im Kanal und Hans Christian Andersens drei Wohnadressen (Nr. 18, 20, 67).",
+      "tips": [
+        "Vor 9 Uhr morgens ist es leer und das Licht weich – das klassische Foto ohne Menschenmassen.",
+        "Die Nordseite liegt morgens in der Sonne, die Südseite nachmittags.",
+        "Kanalrundfahrten starten direkt am Nyhavn (Stromma/Nettobådene) – 1 Stunde, netter Überblick."
+      ],
+      "website": "https://www.visitcopenhagen.com/copenhagen/planning/nyhavn-gdk480167",
+      "menu": null,
+      "tags": [
+        "Highlight",
+        "Gratis",
+        "Fotos"
+      ],
+      "src": "VisitCopenhagen (Okt 2026)"
+    },
+    {
+      "id": "havfrue",
+      "name": "Den lille Havfrue",
+      "cat": "attraction",
+      "sub": "Bronzestatue",
+      "lat": 55.69287,
+      "lon": 12.59929,
+      "area": "Langelinie / Østerbro",
+      "rating": 4.1,
+      "reviews": "37.700",
+      "priceLevel": 0,
+      "priceText": "Eintritt frei",
+      "hours": null,
+      "hoursNote": "Jederzeit zugänglich.",
+      "desc": "Edvard Eriksens Bronzestatue von 1913 nach Hans Christian Andersens Märchen – nur 1,25 m groß und deutlich kleiner, als die meisten erwarten.",
+      "tips": [
+        "Nicht nur die Statue ansehen: der Weg über Kastellet und Langelinie ist das eigentliche Highlight.",
+        "Morgens sind die Reisebusse noch nicht da – ab 10 Uhr wird es eng.",
+        "Direkt daneben liegt der Kastellet-Park mit Wallanlagen und Windmühle."
+      ],
+      "website": "https://www.visitcopenhagen.com/copenhagen/planning/little-mermaid-gdk586973",
+      "menu": null,
+      "tags": [
+        "Gratis",
+        "Kinder"
+      ],
+      "src": "Google-Rezensionen via Exa Places (Okt 2026)"
+    },
+    {
+      "id": "amalienborg",
+      "name": "Amalienborg",
+      "cat": "attraction",
+      "sub": "Königsresidenz & Museum",
+      "lat": 55.6832,
+      "lon": 12.58939,
+      "area": "Frederiksstaden",
+      "rating": 4.5,
+      "reviews": "32.000",
+      "priceLevel": 1,
+      "priceText": "Schlossplatz frei · Museum 125 DKK online / 135 DKK Kasse",
+      "hours": "Mo-Su 10:00-17:00",
+      "hoursNote": "Museum in Christian VIII's Palais; Platz und Wachwechsel ganzjährig frei.",
+      "desc": "Vier Rokoko-Paläste um einen oktogonalen Platz – die Residenz der dänischen Königsfamilie. Der Wachwechsel der Königlichen Leibgarde ist das tägliche Spektakel.",
+      "tips": [
+        "Wachwechsel täglich 12:00 (bei schönem Wetter mit Musikkorps) – 10 Minuten vorher am Platz sein.",
+        "Vom Platz blickt man direkt auf die Marmorkirche – beide in einem Rutsch machen.",
+        "Der Platz ist frei; nur das Museum kostet Eintritt."
+      ],
+      "website": "https://denkongeligesamling.dk/en/amalienborg-museum/",
+      "menu": null,
+      "tags": [
+        "Highlight",
+        "Königlich"
+      ],
+      "src": "kopenhagen.info · denkongeligesamling.dk (Okt 2026)"
+    },
+    {
+      "id": "rosenborg",
+      "name": "Rosenborg Slot",
+      "cat": "attraction",
+      "sub": "Renaissanceschloss & Kronjuwelen",
+      "lat": 55.68569,
+      "lon": 12.57743,
+      "area": "Indre By / Kongens Have",
+      "rating": 4.6,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "140 DKK online / 150 DKK Kasse · Kinder unter 18 frei",
+      "hours": "Mo-Su 10:00-17:00",
+      "hoursNote": "Hochsommer ab 9:00, im Winter Di–So 10:00–16:00. Tickets nur mit Zeitfenster (alle 10 Min.) – vorab buchen.",
+      "desc": "Christian IV.s Lustschloss (1606–34) mit 400 Jahren Königsgeschichte, silbernen Löwen im Rittersaal und den dänischen Kronjuwelen im Kellergewölbe.",
+      "tips": [
+        "Zeitfenster-Ticket unbedingt vorher kaufen – in der Hochsaison sind alle Slots weg.",
+        "Mit dem Schlossticket kostenlos durch den Kongens Have spazieren.",
+        "Fotografieren drinnen ist erlaubt, Stativ nicht."
+      ],
+      "website": "https://denkongeligesamling.dk/en/rosenborg-castle/",
+      "menu": null,
+      "tags": [
+        "Highlight",
+        "Museum"
+      ],
+      "src": "kopenhagen.info · denkongeligesamling.dk (Okt 2026)"
+    },
+    {
+      "id": "rundetaarn",
+      "name": "Rundetårn",
+      "cat": "attraction",
+      "sub": "Aussichtsturm & Observatorium",
+      "lat": 55.68136,
+      "lon": 12.57579,
+      "area": "Indre By / Købmagergade",
+      "rating": 4.5,
+      "reviews": "27.800",
+      "priceLevel": 1,
+      "priceText": "60 DKK · Studierende 40 DKK · unter 18 frei",
+      "hours": "May 01-Sep 30; Mo-Su 10:00-20:00; Oct 01-Apr 30; Mo,Th-Su 10:00-18:00; Tu,We 10:00-21:00",
+      "hoursNote": "Winter: Di & Mi bis 21 Uhr inkl. Observatorium (18–21 Uhr). Geschlossen 24./25.12. und 1.1.",
+      "desc": "Der runde Turm von 1642 hat keine Treppe, sondern einen 209 m langen Ziegelspiralgang – oben wartet das Observatorium und eine der besten Aussichten auf die Altstadt.",
+      "tips": [
+        "Der Spiralgang ist auch bei Regen ein guter Programmpunkt – überdacht bis oben.",
+        "Dienstags im Winter hoch: dann ist das Teleskop besetzt (Wetter abhängig).",
+        "Ticket am Eingang – online gibt es keinen Vorteil."
+      ],
+      "website": "https://www.rundetaarn.dk/en/visit-us/",
+      "menu": null,
+      "tags": [
+        "Aussicht",
+        "Regenwetter"
+      ],
+      "src": "rundetaarn.dk · kopenhagen.info (Okt 2026)"
+    },
+    {
+      "id": "christiansborg",
+      "name": "Christiansborg Slot",
+      "cat": "attraction",
+      "sub": "Parlament, Schloss & Turm",
+      "lat": 55.67565,
+      "lon": 12.57906,
+      "area": "Slotsholmen / Indre By",
+      "rating": 4.6,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Kombiticket 215 DKK · Aussichtsturm kostenlos",
+      "hours": "Mo-Su 10:00-17:00",
+      "hoursNote": "Turm: Di–Sa 11–21 Uhr, So 11–17:30, Mo geschlossen. Parlamentssitzungen für Besucher offen.",
+      "desc": "Der einzige Ort der Welt, an dem Parlament, Regierung und Oberstes Gericht unter einem Dach sitzen – plus königliche Repräsentationsräume und die Ruinen der mittelalterlichen Burg darunter.",
+      "tips": [
+        "Die Turmauffahrt ist gratis und die beste kostenlose Aussicht der Stadt (106 m).",
+        "Ruinen und Küchen im Keller sind im Kombiticket enthalten und oft leerer als oben.",
+        "Montags ist der Turm zu – für den Rest der Woche einplanen."
+      ],
+      "website": "https://denkongeligesamling.dk/en/christiansborg-palace/",
+      "menu": null,
+      "tags": [
+        "Aussicht",
+        "Gratis-Teil",
+        "Museum"
+      ],
+      "src": "kopenhagen.info · denkongeligesamling.dk (Okt 2026)"
+    },
+    {
+      "id": "nationalmuseet",
+      "name": "Nationalmuseet",
+      "cat": "attraction",
+      "sub": "Dänisches Nationalmuseum",
+      "lat": 55.67471,
+      "lon": 12.5748,
+      "area": "Indre By",
+      "rating": 4.5,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "135 DKK online / 150 DKK Kasse · unter 18 frei",
+      "hours": "Apr-Oct Mo-Su,PH 10:00-17:00; Nov-Mar Mo closed, Tu-Su,PH 10:00-17:00; Dec 24,25,31 off",
+      "hoursNote": "Nov–März montags geschlossen.",
+      "desc": "Von der Steinzeit über die Wikinger bis zum modernen Dänemark – inklusive der Sonnenwagen von Trundholm und den Moorleichen. Das große Regen- und Schlechtwetter-Museum.",
+      "tips": [
+        "Der Wikingersaal und die Moorleiche sind der Kern – 2 Stunden reichen für den Rest.",
+        "Kinder: die Kinderabteilung im Erdgeschoss ist wirklich gut gemacht.",
+        "Direkt nebenan liegt die Glyptoteket – beide an einem Tag schaffbar."
+      ],
+      "website": "https://nationalmuseet.dk/en",
+      "menu": null,
+      "tags": [
+        "Museum",
+        "Regenwetter",
+        "Familie"
+      ],
+      "src": "kopenhagen.info · nationalmuseet.dk (Okt 2026)"
+    },
+    {
+      "id": "glyptoteket",
+      "name": "Ny Carlsberg Glyptotek",
+      "cat": "attraction",
+      "sub": "Kunstmuseum & Wintergarten",
+      "lat": 55.67253,
+      "lon": 12.57193,
+      "area": "Indre By / Tivoli",
+      "rating": 4.6,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "135 DKK online / 150 DKK Kasse · gratis am letzten Mittwoch im Monat",
+      "hours": "Tu-We, Fr-Su 10:00-17:00; Th 10:00-21:00",
+      "hoursNote": "Montags geschlossen. Der Wintergarten mit Palmen und Café ist im Ticket enthalten.",
+      "desc": "Carl Jacobsens Sammlung: römische Marmorskulpturen, französische Impressionisten – und ein glasüberdachter Wintergarten mit Palmen, Teich und Kuppel, der selbst bei Regen glücklich macht.",
+      "tips": [
+        "Der Dachgarten ist frei zugänglich und hat einen der schönsten Blicke über Tivoli.",
+        "Donnerstagabend (bis 21) ist es ruhiger als am Wochenende.",
+        "Café im Wintergarten: Kuchen lohnt sich mehr als das Mittagsmenü."
+      ],
+      "website": "https://glyptoteket.dk/",
+      "menu": null,
+      "tags": [
+        "Museum",
+        "Regenwetter",
+        "Highlight"
+      ],
+      "src": "kopenhagen.info · glyptoteket.dk (Okt 2026)"
+    },
+    {
+      "id": "smk",
+      "name": "SMK – Statens Museum for Kunst",
+      "cat": "attraction",
+      "sub": "Nationalgalerie",
+      "lat": 55.68875,
+      "lon": 12.57837,
+      "area": "Indre By / Østre Anlæg",
+      "rating": 4.4,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "ca. 140 DKK",
+      "hours": "Tu, Th-Su 10:00-18:00; We 10:00-20:00",
+      "hoursNote": "Montags geschlossen.",
+      "desc": "Dänemarks größte Kunstsammlung: Matisse, Munch, Kirchner und die dänischen Goldene-Zeitalter-Maler. Der moderne Anbau von 1998 mit dem spektakulären Glasgang ist allein den Besuch wert.",
+      "tips": [
+        "Direkt hinter dem Museum liegt Østre Anlæg – perfekt für einen Spaziergang nach dem Rundgang.",
+        "Mittwochs bis 20 Uhr – danach in der Nørrebro-Nachbarschaft essen.",
+        "Kinderworkshop im Untergeschoss, meist ohne Anmeldung."
+      ],
+      "website": "https://www.smk.dk/en/",
+      "menu": null,
+      "tags": [
+        "Museum",
+        "Regenwetter"
+      ],
+      "src": "kopenhagen.info (Okt 2026)"
+    },
+    {
+      "id": "designmuseum",
+      "name": "Designmuseum Danmark",
+      "cat": "attraction",
+      "sub": "Design- und Kunstgewerbemuseum",
+      "lat": 55.68637,
+      "lon": 12.59354,
+      "area": "Frederiksstaden",
+      "rating": 4.4,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "140 DKK",
+      "hours": "Tu-We, Fr-Su 10:00-18:00; Th 10:00-20:00",
+      "hoursNote": "Montags geschlossen.",
+      "desc": "Dänisches Design von den Stuhlklassikern Wegner, Jacobsen und Klint bis zur Gegenwart – in einem ehemaligen Krankenhaus am Bredgade, mitten im Designviertel.",
+      "tips": [
+        "Thursdays bis 20 Uhr und dann die Designläden in der Bredgade abklappern.",
+        "Der Museumsshop ist einer der besten der Stadt (aber teuer).",
+        "Marmorkirche und Amalienborg sind 5 Minuten zu Fuß entfernt – gut kombinierbar."
+      ],
+      "website": "https://designmuseum.dk/en/",
+      "menu": null,
+      "tags": [
+        "Museum",
+        "Design"
+      ],
+      "src": "kopenhagen.info · designmuseum.dk (Okt 2026)"
+    },
+    {
+      "id": "kongenshave",
+      "name": "Kongens Have",
+      "cat": "attraction",
+      "sub": "Schlosspark",
+      "lat": 55.68509,
+      "lon": 12.57986,
+      "area": "Indre By",
+      "rating": 4.6,
+      "reviews": "—",
+      "priceLevel": 0,
+      "priceText": "Eintritt frei",
+      "hours": "07:00-17:00; Mar 07:00-19:00; Apr 07:00-21:00; May-Aug 07:00-22:00; Sep 07:00-21:00; Oct 07:00-19:00",
+      "hoursNote": "Schließt saisonal gestaffelt; im Winter früher.",
+      "desc": "Der älteste Park Kopenhagens (1606) direkt am Rosenborg-Schloss: breite Alleen, Blumenbeete, Kaffee-Pavillon und im Sommer Marionettentheater.",
+      "tips": [
+        "Der Park ist der perfekte Ort für ein Picknick aus dem Supermarkt – deutlich günstiger als jedes Café.",
+        "Die Rosenblüte im Juni/Juli ist der Höhepunkt.",
+        "Im Sommer gibt es kostenlose Konzerte und ein Puppentheater für Kinder."
+      ],
+      "website": "https://www.parkmuseerne.dk/parker/kongens-have",
+      "menu": null,
+      "tags": [
+        "Gratis",
+        "Pause",
+        "Familie"
+      ],
+      "src": "OpenStreetMap · parkmuseerne.dk (Okt 2026)"
+    },
+    {
+      "id": "botanisk",
+      "name": "Botanisk Have",
+      "cat": "attraction",
+      "sub": "Botanischer Garten",
+      "lat": 55.68694,
+      "lon": 12.574,
+      "area": "Indre By",
+      "rating": 4.5,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Park frei · Palmenhaus ca. 70 DKK",
+      "hours": "Apr-Sep: 08:30-18:00, Oct-Mar: 08:30-16:00",
+      "hoursNote": "Der Garten ist gratis, nur die Gewächshäuser kosten Eintritt.",
+      "desc": "Der Garten der Universität mit über 13.000 Pflanzenarten, Seerosenteich, Schmetterlingshaus und historischen Gewächshäusern von 1874.",
+      "tips": [
+        "Der freie Teil mit dem Seerosenteich reicht für eine halbe Stunde Ruhe.",
+        "Das Palmenhaus ist bei Regen die beste Option – warm und trocken.",
+        "Direkt neben dem SMK und dem Rosenborg-Park – gut in einen Spaziergang einzubauen."
+      ],
+      "website": "https://snm.dk/en/botanical-garden",
+      "menu": null,
+      "tags": [
+        "Gratis-Teil",
+        "Natur",
+        "Regenwetter"
+      ],
+      "src": "kopenhagen.info · snm.dk (Okt 2026)"
+    },
+    {
+      "id": "marmorkirken",
+      "name": "Marmorkirken (Frederiks Kirke)",
+      "cat": "attraction",
+      "sub": "Kirche & Kuppel",
+      "lat": 55.68512,
+      "lon": 12.58906,
+      "area": "Frederiksstaden",
+      "rating": 4.5,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Kirche frei · Kuppelaufstieg 50 DKK",
+      "hours": null,
+      "hoursNote": "Kirche meist Mo–Do 10–17, Fr ab 12, Sa/So nach Gottesdienst. Kuppel nur Sa/So 13:30 mit max. 15 Personen, Tickets nur vor Ort.",
+      "desc": "Die größte Kuppel Skandinaviens (31 m), 1894 fertiggestellt – innen grün-golden ausgemalt und deutlich leerer als der Rest des Viertels.",
+      "tips": [
+        "Kuppelaufstieg: samstags oder sonntags 13:30, Tickets gibt es nur an der Tür – früh da sein.",
+        "Der Blick von der Kuppel geht direkt auf Amalienborg und über den Hafen.",
+        "Am Eingang ist es ruhig – gut für eine Pause zwischen zwei Museen."
+      ],
+      "website": "https://www.marmorkirken.dk/",
+      "menu": null,
+      "tags": [
+        "Aussicht",
+        "Gratis-Teil"
+      ],
+      "src": "kopenhagen.info · marmorkirken.dk (Okt 2026)"
+    },
+    {
+      "id": "vorfrue",
+      "name": "Vor Frue Kirke (Domkirche)",
+      "cat": "attraction",
+      "sub": "Kathedrale",
+      "lat": 55.67938,
+      "lon": 12.57273,
+      "area": "Indre By",
+      "rating": 4.5,
+      "reviews": "—",
+      "priceLevel": 0,
+      "priceText": "Eintritt frei",
+      "hours": "Mo-Sa 08:00-17:00",
+      "hoursNote": "Sonntags nur zu Gottesdiensten.",
+      "desc": "Klassizistische Domkirche mit Thorvaldsens berühmten Christus- und Apostelstatuen – der Christus gilt als das bekannteste Kunstwerk Dänemarks.",
+      "tips": [
+        "Der Thorvaldsen-Christus steht im Altarraum – 5 Minuten, aber ein Pflichtstopp.",
+        "Gegenüber liegt die Universitätsbibliothek mit dem Garten – ruhiger Zwischenstopp.",
+        "Kostenlos und zentral: ideal als Regenunterbrechung."
+      ],
+      "website": "https://www.domkirken.dk/",
+      "menu": null,
+      "tags": [
+        "Gratis",
+        "Kunst"
+      ],
+      "src": "kopenhagen.info (Okt 2026)"
+    },
+    {
+      "id": "vorfrelser",
+      "name": "Vor Frelsers Kirke",
+      "cat": "attraction",
+      "sub": "Kirche mit Außentreppe",
+      "lat": 55.67291,
+      "lon": 12.59425,
+      "area": "Christianshavn",
+      "rating": 4.6,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Kirche frei · Turmaufstieg 70 DKK",
+      "hours": "Mo-Su 11:00-15:30",
+      "hoursNote": "Turm nur bei trockenem Wetter; Kasse schließt früher.",
+      "desc": "Barockkirche mit vergoldeter Wendeltreppe, die außen um den Turmspitz läuft – die spektakulärste Aussicht Kopenhagens, wenn man schwindelfrei ist.",
+      "tips": [
+        "Die letzten Meter gehen außen um die Spitze – bei Nässe oder Wind geschlossen.",
+        "Mit dem Boot oder zu Fuß über die Knippelsbro rüber und Christianshavn mitnehmen.",
+        "Schlange einplanen: am Wochenende 20–30 Minuten."
+      ],
+      "website": "https://www.vorfrelserskirke.dk/",
+      "menu": null,
+      "tags": [
+        "Aussicht",
+        "Highlight",
+        "Abenteuer"
+      ],
+      "src": "kopenhagen.info (Okt 2026)"
+    },
+    {
+      "id": "kastellet",
+      "name": "Kastellet",
+      "cat": "attraction",
+      "sub": "Festungsanlage & Park",
+      "lat": 55.69155,
+      "lon": 12.58856,
+      "area": "Østerbro / Langelinie",
+      "rating": 4.6,
+      "reviews": "—",
+      "priceLevel": 0,
+      "priceText": "Eintritt frei",
+      "hours": null,
+      "hoursNote": "Täglich zugänglich; Teile sind militärisches Sperrgebiet.",
+      "desc": "Die sternförmige Festung von 1662 ist heute ein ruhiger Park mit Wallanlagen, Graben, Windmühle und Blick auf den Hafen – der Weg zur Kleinen Meerjungfrau führt mitten durch.",
+      "tips": [
+        "Perfekter Umweg zwischen Innenstadt und Den lille Havfrue – statt Straße durch den Park.",
+        "Die Windmühle auf dem Wall ist ein unerwartetes Fotomotiv.",
+        "Morgens joggen hier die Kopenhagener – sehr entspannt vor 9 Uhr."
+      ],
+      "website": "https://www.visitcopenhagen.com/copenhagen/planning/kastellet-gdk411317",
+      "menu": null,
+      "tags": [
+        "Gratis",
+        "Natur",
+        "Spaziergang"
+      ],
+      "src": "kopenhagen.info (Okt 2026)"
+    },
+    {
+      "id": "torvehallerne",
+      "name": "Torvehallerne",
+      "cat": "attraction",
+      "sub": "Markthalle & Streetfood",
+      "lat": 55.68388,
+      "lon": 12.56957,
+      "area": "Indre By / Nørreport",
+      "rating": 4.5,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Eintritt frei · Gerichte ca. 60–120 DKK",
+      "hours": "Mo-Th 10:00-19:00; Fr 10:00-20:00; Sa 10:00-18:00; Su 11:00-17:00",
+      "hoursNote": "Einzelne Stände öffnen später bzw. schließen früher.",
+      "desc": "Zwei Glashallen mit rund 60 Ständen: Smørrebrød, Kaffee, Käse, frische Pasta, Fisch und die beste Gelegenheit, dänische Spezialitäten in kleinen Portionen zu probieren.",
+      "tips": [
+        "Perfekt für gemischte Gruppen – jeder sucht sich einen Stand, man trifft sich am Stehtisch.",
+        "Kaffee bei Coffee Collective und Pasta bei Il Mattarello sind die Klassiker.",
+        "Sonntags erst ab 11 Uhr und spürbar voller."
+      ],
+      "website": "https://torvehallernekbh.dk/",
+      "menu": null,
+      "tags": [
+        "Essen",
+        "Regenwetter",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap · torvehallernekbh.dk (Okt 2026)"
+    },
+    {
+      "id": "stroeget",
+      "name": "Strøget",
+      "cat": "attraction",
+      "sub": "Fußgängerzone",
+      "lat": 55.67835,
+      "lon": 12.57716,
+      "area": "Indre By",
+      "rating": 4.2,
+      "reviews": "—",
+      "priceLevel": 0,
+      "priceText": "Eintritt frei",
+      "hours": null,
+      "hoursNote": "Geschäfte meist Mo–Sa 10–19/20, So 10–18.",
+      "desc": "Einer der längsten Fußgängerzonen Europas, von der Rådhuspladsen bis zum Kongens Nytorv – 1,1 km mit Flagship-Stores, Straßenmusik und Abzweigungen in die schöneren Nebenstraßen.",
+      "tips": [
+        "Die Nebenstraßen (Købmagergade, Kronprinsensgade, Jægersborggade-Ecke) sind interessanter als die Hauptachse.",
+        "Für Design: Bredgade und Kronprinsessegade statt Strøget.",
+        "Abends ist die Zone angenehm leer – gut zum Bummeln."
+      ],
+      "website": "https://www.visitcopenhagen.com/copenhagen/planning/stroget-gdk479229",
+      "menu": null,
+      "tags": [
+        "Shopping",
+        "Gratis"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "diamant",
+      "name": "Den Sorte Diamant",
+      "cat": "attraction",
+      "sub": "Königliche Bibliothek",
+      "lat": 55.67356,
+      "lon": 12.58318,
+      "area": "Slotsholmen / Havnegade",
+      "rating": 4.4,
+      "reviews": "—",
+      "priceLevel": 0,
+      "priceText": "Gebäude & Dauerausstellung frei · Sonderausstellungen kosten",
+      "hours": "Mo-Fr 08:00-19:00; Sa 10:00-17:00",
+      "hoursNote": "Sonderausstellungen haben eigene Zeiten.",
+      "desc": "Der schwarze Granitbau von 1999 am Hafenkai – Bibliothek, Ausstellungsraum und eines der fotogensten Gebäude der Stadt, mit Cafeteria direkt am Wasser.",
+      "tips": [
+        "Einfach in die Eingangshalle und die Freitreppe – kostenlos und fotogen.",
+        "Der Innenhof-Blick auf den Hafen ist bei Sonne ein guter Kaffeestopp.",
+        "Direkt neben Christiansborg – gut kombinierbar."
+      ],
+      "website": "https://www.kb.dk/en",
+      "menu": null,
+      "tags": [
+        "Gratis",
+        "Architektur"
+      ],
+      "src": "kopenhagen.info (Okt 2026)"
+    },
+    {
+      "id": "raadhus",
+      "name": "Københavns Rådhus",
+      "cat": "attraction",
+      "sub": "Rathaus & Rådhuspladsen",
+      "lat": 55.67527,
+      "lon": 12.57032,
+      "area": "Indre By / Rådhuspladsen",
+      "rating": 4.4,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Innenhof frei · Turmführung kostenpflichtig (Zeiten am Empfang)",
+      "hours": "Mo-Fr 09:00-16:00; Sa 09:00-13:00",
+      "hoursNote": "Turmbesteigung nur im Rahmen einer Führung, meist vormittags.",
+      "desc": "Das Backsteinrathaus von 1905 mit dem 105 m hohen Turm, der astronomischen Uhr von Jens Olsen und dem Innenhof – Startpunkt für Strøget und Tivoli.",
+      "tips": [
+        "Die astronomische Uhr im Eingangsbereich ist frei zu sehen.",
+        "Vor dem Rathaus steht die Statue von Hans Christian Andersen – beliebter Treffpunkt.",
+        "Turmbesteigung vorab am Empfang erfragen, Plätze sind limitiert."
+      ],
+      "website": "https://www.kk.dk/om-kommunen/raadhuset",
+      "menu": null,
+      "tags": [
+        "Architektur",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "boersen",
+      "name": "Børsen",
+      "cat": "attraction",
+      "sub": "Alte Börse (im Wiederaufbau)",
+      "lat": 55.67552,
+      "lon": 12.58403,
+      "area": "Slotsholmen",
+      "rating": 4.3,
+      "reviews": "—",
+      "priceLevel": 0,
+      "priceText": "Nur von außen",
+      "hours": null,
+      "hoursNote": "Nach dem Brand vom April 2024 gesperrt und im Wiederaufbau – kein Zutritt.",
+      "desc": "Die Börse von 1625 mit dem berühmten Drachenspitzen-Turm, dessen Spitze beim Brand 2024 einstürzte. Aktuell eine Baustelle – aber ein Stück Stadtgeschichte, das man gesehen haben sollte.",
+      "tips": [
+        "Vom Vorplatz an der Børsgade hat man den besten Blick auf die Fassade.",
+        "Mit Christiansborg und dem Sorte Diamant zu einem Slotsholmen-Rundgang verbinden.",
+        "Nicht auf Zutritt hoffen – das Gebäude bleibt bis mindestens 2027 gesperrt."
+      ],
+      "website": null,
+      "menu": null,
+      "tags": [
+        "Gratis",
+        "Geschichte"
+      ],
+      "src": "OpenStreetMap · Presseberichte (Okt 2026)"
+    },
+    {
+      "id": "atelier-september",
+      "name": "Atelier September",
+      "cat": "breakfast",
+      "sub": "Design-Café",
+      "lat": 55.68741,
+      "lon": 12.58498,
+      "area": "Indre By / Kronprinsessegade",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Frühstück ca. 60–110 DKK",
+      "hours": "07:30-18:00; Sa-Su 09:00-17:00",
+      "hoursNote": "Beliebt bei Einheimischen und entsprechend voll zwischen 9 und 11 Uhr.",
+      "desc": "Das meistfotografierte Frühstück der Stadt: Avocado auf Vollkorntoast, Joghurt mit Granola, Zucchini-Marmelade und Filterkaffee in einem hellen, entspannten Raum von Frederik Bille Brahe.",
+      "tips": [
+        "Unter der Woche um 8 Uhr ist es ruhig und man bekommt problemlos einen Tisch.",
+        "Vegetarisch geprägt – Fleisch sucht man hier vergebens.",
+        "Der Joghurt mit Granola ist das Gericht, für das die Leute kommen."
+      ],
+      "website": "https://cafeatelierseptember.com/",
+      "menu": null,
+      "tags": [
+        "Frühstück",
+        "Vegetarisch",
+        "Hip"
+      ],
+      "src": "thenordicnomad · tablejourney (Okt 2026)"
+    },
+    {
+      "id": "sonny",
+      "name": "Sonny",
+      "cat": "breakfast",
+      "sub": "Café",
+      "lat": 55.67693,
+      "lon": 12.57427,
+      "area": "Indre By / Rådhusstræde",
+      "rating": 4.3,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Frühstück ca. 55–95 DKK",
+      "hours": "Mo 07:30-16:00; Tu-Fr 07:30-18:00; Sa 09:00-18:00; Su 09:00-16:00",
+      "hoursNote": "Klein und schnell voll – Wochentage morgens sind entspannter.",
+      "desc": "Helles Café direkt hinter dem Nytorv mit La-Cabra-Kaffee, Porridge, Yuzu-Varianten und einem winzigen Hinterhof. Frühstück, Mittag und Kuchen laufen hier den ganzen Tag.",
+      "tips": [
+        "Für Kaffee und ein Gericht kommen, nicht für ein langes Menü – die Karte ist kompakt.",
+        "Der Hinterhof ist bei gutem Wetter der beste Platz.",
+        "Sonny hat weitere Filialen (Frederiksberg, Østerbro), falls die Stadtmitte voll ist."
+      ],
+      "website": "https://www.sonnycph.dk/",
+      "menu": null,
+      "tags": [
+        "Frühstück",
+        "Kaffee"
+      ],
+      "src": "Google-Rezensionen via Exa Places · filternotes (Okt 2026)"
+    },
+    {
+      "id": "democratic-coffee",
+      "name": "Democratic Coffee",
+      "cat": "breakfast",
+      "sub": "Café in der Bibliothek",
+      "lat": 55.68084,
+      "lon": 12.57342,
+      "area": "Indre By / Krystalgade",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Kaffee 35–50 DKK · Croissant 30 DKK",
+      "hours": "Mo-Fr 07:30-17:00; Sa,Su 09:00-16:00",
+      "hoursNote": "Liegt im Eingangsbereich der Zentralbibliothek – der Eingang sieht unscheinbar aus.",
+      "desc": "Verstecktes Café in der Kopenhagener Zentralbibliothek: sehr guter Espresso, Croissants und Zimtschnecken, dazu Tische zwischen Bücherregalen und Studenten.",
+      "tips": [
+        "Der eigene Röstkaffee ist einer der besten der Stadt – Bohnen gibt es auch zum Mitnehmen.",
+        "Perfekter Regenstopp: drinnen sitzen, draußen fällt der Regen.",
+        "Direkt neben dem Rundetårn – ideal vor dem Turmaufstieg."
+      ],
+      "website": "https://www.democraticcoffee.dk/",
+      "menu": null,
+      "tags": [
+        "Frühstück",
+        "Kaffee",
+        "Regenwetter"
+      ],
+      "src": "trippersterminal · OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "kafbar",
+      "name": "Kaf' Bar",
+      "cat": "breakfast",
+      "sub": "Café & Brunch",
+      "lat": 55.68043,
+      "lon": 12.58125,
+      "area": "Indre By / Kongens Nytorv",
+      "rating": 4.9,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Brunch ca. 85–140 DKK",
+      "hours": "Mo-Fr 08:00-17:00; Sa 10:00-17:00",
+      "hoursNote": "Sonntags geschlossen.",
+      "desc": "Kleines Café nahe Kongens Nytorv mit äußerst gut bewertetem Brunch, Pancakes und Sandwiches – unaufgeregt, freundlich, mit hoher Stammgastquote.",
+      "tips": [
+        "Die 4,9-Bewertung kommt von der Beständigkeit – keine Show, sondern verlässlich gutes Frühstück.",
+        "Reservierung am Wochenende sinnvoll, der Raum ist klein.",
+        "Fußweg zu Nyhavn: 5 Minuten."
+      ],
+      "website": "https://kaf-bar.dk/",
+      "menu": null,
+      "tags": [
+        "Frühstück",
+        "Brunch"
+      ],
+      "src": "Google-Rezensionen via Exa Places (Okt 2026)"
+    },
+    {
+      "id": "dyrehaven",
+      "name": "Café Dyrehaven",
+      "cat": "breakfast",
+      "sub": "Café & Bar",
+      "lat": 55.66563,
+      "lon": 12.54959,
+      "area": "Vesterbro / Sønder Boulevard",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Frühstück ca. 70–120 DKK",
+      "hours": "Mo 07:30-18:00; Tu-We 07:30-24:00; Th 07:30-01:00; Fr 07:30-02:00; Sa 10:00-02:00; Su 10:00-24:00",
+      "hoursNote": "Morgens Café, abends Bar – die Stimmung wechselt deutlich.",
+      "desc": "Klassiker am Sønder Boulevard: morgens Frühstück und Kaffee, abends Bier und Wein. Dunkles Holz, weiße Fliesen, sehr Vesterbro.",
+      "tips": [
+        "Für ein ruhiges Frühstück unter der Woche kommen – am Wochenende ist Brunch-Zeit.",
+        "Der Boulevard selbst lohnt einen Spaziergang mit mehreren Cafés.",
+        "Abends als Bar eine der entspanntesten Optionen im Viertel."
+      ],
+      "website": "https://www.dyrehavenkbh.dk",
+      "menu": null,
+      "tags": [
+        "Frühstück",
+        "Vesterbro"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "mad-og-kaffe",
+      "name": "Mad & Kaffe",
+      "cat": "breakfast",
+      "sub": "Brunch-Brett",
+      "lat": 55.66592,
+      "lon": 12.55038,
+      "area": "Vesterbro / Sønder Boulevard",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Brunch-Brett ca. 145–195 DKK",
+      "hours": "08:30-20:00",
+      "hoursNote": "Täglich; am Wochenende Warteschlange einplanen.",
+      "desc": "Der Erfinder des Kopenhagener Brunch-Bretts: man kreuzt auf der Karte kleine Gerichte an, die dann als Tablett mit vielen Schälchen kommen – süß, salzig, alles gleichzeitig.",
+      "tips": [
+        "Pro Person 4–6 Kreuze sind reichlich – die Schälchen täuschen.",
+        "Wer Schlangen hasst: unter der Woche um 9 Uhr ist es leer.",
+        "Sehr gut für Familien, weil jeder selbst zusammenstellen kann."
+      ],
+      "website": "https://madogkaffe.dk/en/",
+      "menu": "https://madogkaffe.dk/en/menu/",
+      "tags": [
+        "Frühstück",
+        "Brunch",
+        "Familie"
+      ],
+      "src": "tablejourney · OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "lagkagehuset",
+      "name": "Lagkagehuset",
+      "cat": "breakfast",
+      "sub": "Bäckerei-Kette",
+      "lat": 55.68296,
+      "lon": 12.57353,
+      "area": "Indre By / Nørreport",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Gebäck 25–45 DKK · Kaffee 40 DKK",
+      "hours": "Mo-Fr 06:00-19:30; Sa 07:30-19:30; Su 07:30-19:00",
+      "hoursNote": "Filialen in der ganzen Stadt – diese liegt am Nørreport.",
+      "desc": "Die bekannteste Bäckereikette Dänemarks: Zimtschnecken (kanelsnegl), Spandauer und das berühmte „Kopenhagener Gebäck“ – schnell, verlässlich, überall.",
+      "tips": [
+        "Praktisch für ein Frühstück unter 60 DKK oder für unterwegs zum Bahnhof.",
+        "Die Zimtschnecke ist frisch am besten – morgens backen sie nach.",
+        "Viele Filialen haben bis 19:30 offen – gut für einen späten Snack."
+      ],
+      "website": "https://lagkagehuset.dk/",
+      "menu": null,
+      "tags": [
+        "Frühstück",
+        "Günstig",
+        "Schnell"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "sankt-peders",
+      "name": "Sankt Peders Bageri",
+      "cat": "breakfast",
+      "sub": "Traditionsbäckerei",
+      "lat": 55.67913,
+      "lon": 12.56914,
+      "area": "Indre By / Sankt Peders Stræde",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Zimtschnecke ca. 35 DKK",
+      "hours": "Mo-Fr 07:30-17:00; Sa 08:00-16:00",
+      "hoursNote": "Sonntags geschlossen. Mittwochs gibt es die berühmte „onsdagssnegl“.",
+      "desc": "Die älteste Bäckerei der Stadt (1652) – und die mit der berühmtesten Zimtschnecke: mittwochs wird die „onsdagssnegl“ in riesigen Mengen gebacken und ist oft mittags ausverkauft.",
+      "tips": [
+        "Mittwoch ist Zimtschnecken-Tag – früh kommen, sonst ausverkauft.",
+        "Es gibt kaum Sitzplätze, die meisten nehmen mit.",
+        "Drei Minuten vom Rundetårn – idealer Start in den Tag."
+      ],
+      "website": null,
+      "menu": null,
+      "tags": [
+        "Frühstück",
+        "Günstig",
+        "Tradition"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "lille-fugl",
+      "name": "Lille Fugl",
+      "cat": "breakfast",
+      "sub": "Café im Kunstverein",
+      "lat": 55.67756,
+      "lon": 12.57766,
+      "area": "Indre By / Gammel Strand",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Frühstück ca. 60–110 DKK",
+      "hours": null,
+      "hoursNote": "Öffnungszeiten richten sich nach den Ausstellungen im Kunstverein – vorher auf der Website prüfen.",
+      "desc": "Kleines Café im Kunstverein Gammel Strand mit Blick auf den Kanal: saisonale Kleinigkeiten zum Frühstück, La-Cabra-Kaffee und preisgekröntes Gebäck.",
+      "tips": [
+        "Der Balkon über dem Kanal ist der eigentliche Grund für einen Besuch.",
+        "Gebäck kann man vorab online bestellen.",
+        "Mit dem Christiansborg-Rundgang kombinieren – 3 Minuten zu Fuß."
+      ],
+      "website": "https://www.flerefugle.dk/en/lille-fugl",
+      "menu": null,
+      "tags": [
+        "Frühstück",
+        "Aussicht"
+      ],
+      "src": "flerefugle.dk (Okt 2026)"
+    },
+    {
+      "id": "emmerys",
+      "name": "Emmerys",
+      "cat": "breakfast",
+      "sub": "Bio-Bäckerei",
+      "lat": 55.68688,
+      "lon": 12.58973,
+      "area": "Frederiksstaden / Store Kongensgade",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Gebäck 25–45 DKK · Frühstück ca. 60–90 DKK",
+      "hours": "07:00-17:00; Sa-Su 07:00-16:00",
+      "hoursNote": "Mehrere Filialen in der Stadt.",
+      "desc": "Bio-Bäckerei mit Sauerteigbroten, dänischem Gebäck und gutem Kaffee – etwas ruhiger und weniger touristisch als die Ketten am Strøget.",
+      "tips": [
+        "Guter Stopp auf dem Weg zur Marmorkirche oder zum Designmuseum.",
+        "Das Sauerteigbrot ist der beste Mitbringsel-Kandidat.",
+        "Frühstücksangebot ist günstiger als in den Café-Restaurants der Gegend."
+      ],
+      "website": "https://emmerys.dk/",
+      "menu": null,
+      "tags": [
+        "Frühstück",
+        "Bio",
+        "Günstig"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "frenchy",
+      "name": "Frenchy",
+      "cat": "breakfast",
+      "sub": "Französisches Café",
+      "lat": 55.68497,
+      "lon": 12.58809,
+      "area": "Frederiksstaden",
+      "rating": 4.3,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Frühstück ca. 70–120 DKK",
+      "hours": "09:00-21:00",
+      "hoursNote": "Im Sommer kürzer (bis 19 Uhr).",
+      "desc": "Französisch angehauchtes Café mit Croissants, Croque Madame und Eiergerichten – eine willkommene Abwechslung zum nordischen Frühstück.",
+      "tips": [
+        "Gute Alternative, wenn man nach einer Woche Smørrebrød etwas anderes will.",
+        "Nahe Amalienborg und der Marmorkirche – gut vor dem Wachwechsel.",
+        "Am Wochenende Brunch-Zeit, dann ist es voll."
+      ],
+      "website": "https://www.frenchy.dk/",
+      "menu": null,
+      "tags": [
+        "Frühstück",
+        "Französisch"
+      ],
+      "src": "Google-Rezensionen via Exa Places (Okt 2026)"
+    },
+    {
+      "id": "hoest",
+      "name": "Høst",
+      "cat": "restaurant",
+      "sub": "New Nordic",
+      "lat": 55.68328,
+      "lon": 12.5661,
+      "area": "Indre By / Nørre Farimagsgade",
+      "rating": 4.6,
+      "reviews": "—",
+      "priceLevel": 3,
+      "mainDKK": 225,
+      "priceText": "Hauptgericht ca. 225 DKK · 3-Gänge-Menü ca. 475 DKK",
+      "hours": "17:30-24:00",
+      "hoursNote": "Küche bis ca. 21:30. Sehr beliebt – rechtzeitig reservieren.",
+      "desc": "Cofocos Vorzeige-Restaurant: neue nordische Küche in einem begrünten Innenhof-Raum mit skandinavischem Design. Preis-Leistung gilt als eine der besten der Stadt für gehobene Küche.",
+      "tips": [
+        "Das 3-Gänge-Menü ist deutlich günstiger als à la carte – und meist die bessere Wahl.",
+        "Innenhof-Platz bei gutem Wetter reservieren.",
+        "Für ein günstigeres Cofoco-Erlebnis: Vækst (gleiche Gruppe, ähnliches Konzept)."
+      ],
+      "website": "https://cofoco.dk/en/restaurant/hoest",
+      "menu": null,
+      "tags": [
+        "Nordisch",
+        "Menü",
+        "Reservieren"
+      ],
+      "src": "Google-Rezensionen via Exa Places (Okt 2026)"
+    },
+    {
+      "id": "vaekst",
+      "name": "Vækst",
+      "cat": "restaurant",
+      "sub": "New Nordic im Gewächshaus",
+      "lat": 55.6788,
+      "lon": 12.56715,
+      "area": "Indre By / Sankt Peders Stræde",
+      "rating": 4.6,
+      "reviews": "—",
+      "priceLevel": 3,
+      "mainDKK": 225,
+      "priceText": "Hauptgericht ca. 225 DKK · 3-Gänge-Menü ca. 450 DKK",
+      "hours": "Mo-Sa 12:00-17:00,17:30-22:00; Su 17:30-22:00",
+      "hoursNote": "Mittagstisch 12–17 Uhr, abends Menü.",
+      "desc": "Gewächshaus-Atmosphäre mit Rankpflanzen an den Wänden: saisonale nordische Küche mit Gemüse im Zentrum, mitten im Zentrum und trotzdem entspannt.",
+      "tips": [
+        "Der Mittagstisch ist die günstigste Art, Cofoco-Küche zu testen.",
+        "Für Romantik einen Tisch unter den rankenden Pflanzen verlangen.",
+        "Sehr zentral – 5 Minuten von Tivoli und Rådhuspladsen."
+      ],
+      "website": "https://cofoco.dk/en/restaurant/vaekst",
+      "menu": null,
+      "tags": [
+        "Nordisch",
+        "Menü",
+        "Vegetarisch"
+      ],
+      "src": "Google-Rezensionen via Exa Places (Okt 2026)"
+    },
+    {
+      "id": "schonnemann",
+      "name": "Schønnemann",
+      "cat": "restaurant",
+      "sub": "Smørrebrød seit 1877",
+      "lat": 55.68281,
+      "lon": 12.57602,
+      "area": "Indre By / Hauser Plads",
+      "rating": 4.8,
+      "reviews": "—",
+      "priceLevel": 2,
+      "mainDKK": 120,
+      "priceText": "Smørrebrød 95–165 DKK pro Stück · Mittag ca. 250–350 DKK",
+      "hours": "Mo-Su 11:30-17:00",
+      "hoursNote": "Nur Mittag – abends geschlossen. Reservierung dringend empfohlen.",
+      "desc": "Das Institutionellste, was Kopenhagen an Smørrebrød zu bieten hat: seit 1877, über 100 belegte Brote, 140 Sorten Schnaps und ein Gastraum, in dem es laut und fröhlich zugeht.",
+      "tips": [
+        "Reservieren – ohne Buchung geht mittags fast nichts.",
+        "2–3 Stück pro Person reichen; die Brote sind großzügig belegt.",
+        "Ein Schnaps gehört dazu – die Karte erklärt die Sorten."
+      ],
+      "website": "https://www.restaurantschonnemann.dk/",
+      "menu": "https://www.restaurantschonnemann.dk/menu/",
+      "tags": [
+        "Smørrebrød",
+        "Tradition",
+        "Mittag"
+      ],
+      "src": "Google-Rezensionen via Exa Places · tablejourney (Okt 2026)"
+    },
+    {
+      "id": "husmanns",
+      "name": "Husmanns Vinstue",
+      "cat": "restaurant",
+      "sub": "Dänische Weinstube",
+      "lat": 55.67781,
+      "lon": 12.57014,
+      "area": "Indre By",
+      "rating": 4.7,
+      "reviews": "—",
+      "priceLevel": 2,
+      "mainDKK": 110,
+      "priceText": "Smørrebrød 60–120 DKK · Mittag ca. 200–280 DKK",
+      "hours": "Mo-Fr 11:30-16:00; Sa 12:00-16:00",
+      "hoursNote": "Sonntags und an Feiertagen geschlossen.",
+      "desc": "Weinstube von 1898 mit dunklem Holz, Kellner in Weste und klassischem Smørrebrød – die unaufgeregte Alternative zu den berühmten Touristen-Adressen.",
+      "tips": [
+        "Sehr günstig für die Qualität – hier essen auch Einheimische mittags.",
+        "Nur bis 16 Uhr geöffnet, also als Mittagessen einplanen.",
+        "Bier und Schnaps sind Teil des Rituals."
+      ],
+      "website": "https://husmannsvinstue.dk/",
+      "menu": "https://husmannsvinstue.dk/menukort/",
+      "tags": [
+        "Smørrebrød",
+        "Tradition",
+        "Mittag"
+      ],
+      "src": "Google-Rezensionen via Exa Places (Okt 2026)"
+    },
+    {
+      "id": "palaegade",
+      "name": "Restaurant Palægade",
+      "cat": "restaurant",
+      "sub": "Smørrebrød, gehoben",
+      "lat": 55.6823,
+      "lon": 12.58641,
+      "area": "Indre By / Nyhavn",
+      "rating": 4.6,
+      "reviews": "—",
+      "priceLevel": 2,
+      "mainDKK": 135,
+      "priceText": "Smørrebrød 85–175 DKK · Mittag ca. 250–400 DKK",
+      "hours": null,
+      "hoursNote": "Mittags- und Abendservice; Zeiten auf der Website prüfen (Gruppe Formel B).",
+      "desc": "Moderne, sehr präzise gemachte Smørrebrød-Variante nahe Nyhavn – optisch elegant, geschmacklich klassisch, mit guter Weinbegleitung.",
+      "tips": [
+        "Die schönere Alternative zu den Nyhavn-Restaurants mit Touristenmenüs.",
+        "Für Abends reservieren – der Raum ist klein.",
+        "Fußweg zum Nyhavn: 4 Minuten."
+      ],
+      "website": "https://formelbgroup.dk/palaegade/",
+      "menu": null,
+      "tags": [
+        "Smørrebrød",
+        "Gehoben"
+      ],
+      "src": "Google-Rezensionen via Exa Places (Okt 2026)"
+    },
+    {
+      "id": "pluto",
+      "name": "Pluto",
+      "cat": "restaurant",
+      "sub": "Bib Gourmand",
+      "lat": 55.68347,
+      "lon": 12.58526,
+      "area": "Indre By / Borgergade",
+      "rating": 4.3,
+      "reviews": "—",
+      "priceLevel": 3,
+      "mainDKK": 275,
+      "priceText": "Gerichte 175–325 DKK · Menü ca. 550 DKK",
+      "hours": "Mo-Th 17:30-24:00, Fr-Sa 17:30-02:00, Su 17:30-23:00",
+      "hoursNote": "Nur abends.",
+      "desc": "Michelin-Bib-Gourmand mit lärmend-fröhlicher Atmosphäre: viele kleine Gerichte zum Teilen, kreativ, nordisch-mediterran – vom Team hinter Kadeau.",
+      "tips": [
+        "Family-Style bestellen: 4–6 Gerichte für zwei Personen teilen.",
+        "Laut und lebendig – nicht das richtige Restaurant für ein ruhiges Gespräch.",
+        "Später am Abend wird daraus fast eine Bar."
+      ],
+      "website": "https://www.restaurantpluto.dk/",
+      "menu": "https://www.restaurantpluto.dk/menukort",
+      "tags": [
+        "Teilen",
+        "Bib Gourmand",
+        "Lebhaft"
+      ],
+      "src": "VisitCopenhagen · Google-Rezensionen via Exa Places (Okt 2026)"
+    },
+    {
+      "id": "marv-og-ben",
+      "name": "Marv & Ben",
+      "cat": "restaurant",
+      "sub": "Nordisches Bistro",
+      "lat": 55.67728,
+      "lon": 12.57695,
+      "area": "Indre By / Snaregade",
+      "rating": 4.7,
+      "reviews": "—",
+      "priceLevel": 3,
+      "mainDKK": 275,
+      "priceText": "Menü ca. 450–650 DKK",
+      "hours": "Tu-Sa 18:00-24:00",
+      "hoursNote": "Sonntag und Montag geschlossen.",
+      "desc": "Kleines Bistro in der Snaregade mit offener Küche, Marktmenü und einer der besten Bewertungen der Innenstadt – unkompliziert, warm, sehr gut gemacht.",
+      "tips": [
+        "Das saisonale Menü ist der Kern – à la carte wechselt oft.",
+        "Reservierung einige Tage vorher, das Lokal ist klein.",
+        "Sehr zentral zwischen Strøget und Gammel Strand."
+      ],
+      "website": "https://www.marvogben.dk/",
+      "menu": "https://www.marvogben.dk/menu",
+      "tags": [
+        "Nordisch",
+        "Bistro",
+        "Reservieren"
+      ],
+      "src": "Google-Rezensionen via Exa Places (Okt 2026)"
+    },
+    {
+      "id": "norrlyst",
+      "name": "Norrlyst",
+      "cat": "restaurant",
+      "sub": "Nordisch, Bib Gourmand 2026",
+      "lat": 55.67759,
+      "lon": 12.57626,
+      "area": "Indre By / Kompagnistræde",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 3,
+      "mainDKK": 280,
+      "priceText": "Menü ca. 450–600 DKK",
+      "hours": "Mo-Su 11:30-16:00, Mo-Su 17:00-23:00",
+      "hoursNote": "Mittags und abends geöffnet.",
+      "desc": "Bib Gourmand 2026: nordische Küche von einem ehemaligen Kadeau-Koch, in einem entspannten Lokal in der Kompagnistræde – eines der besten Preis-Leistungs-Verhältnisse der Stadt.",
+      "tips": [
+        "Mittags deutlich günstiger als abends.",
+        "Der Michelin-Bib-Gourmand-Plakette nach: Qualität ohne Sternepreise.",
+        "Kompagnistræde ist eine der schönsten kleinen Straßen der Altstadt."
+      ],
+      "website": "https://norrlyst.dk/",
+      "menu": null,
+      "tags": [
+        "Nordisch",
+        "Bib Gourmand",
+        "Menü"
+      ],
+      "src": "earlybird.dk · Michelin Guide 2026 (Okt 2026)"
+    },
+    {
+      "id": "bistro-boheme",
+      "name": "Bistro Boheme",
+      "cat": "restaurant",
+      "sub": "Französisches Bistro",
+      "lat": 55.68732,
+      "lon": 12.59126,
+      "area": "Frederiksstaden / Esplanaden",
+      "rating": 4.5,
+      "reviews": "—",
+      "priceLevel": 4,
+      "mainDKK": 320,
+      "priceText": "Hauptgerichte 250–420 DKK",
+      "hours": "11:30-00:30; Su off",
+      "hoursNote": "Sonntags geschlossen.",
+      "desc": "Klassisches französisches Bistro mit weißen Tischdecken, Steak frites, Austern und einer sehr gut sortierten Weinkarte – die Adresse für einen traditionellen Abend.",
+      "tips": [
+        "Die Bar ist eine gute Option ohne Reservierung.",
+        "Steak frites und Austern sind die Klassiker.",
+        "Direkt an der Esplanade, 5 Minuten vom Kastellet."
+      ],
+      "website": "https://bistroboheme.dk/",
+      "menu": "https://bistroboheme.dk/menu/",
+      "tags": [
+        "Französisch",
+        "Klassiker",
+        "Wein"
+      ],
+      "src": "Google-Rezensionen via Exa Places (Okt 2026)"
+    },
+    {
+      "id": "marchal",
+      "name": "Marchal",
+      "cat": "restaurant",
+      "sub": "Fine Dining (Hotel d'Angleterre)",
+      "lat": 55.68038,
+      "lon": 12.58473,
+      "area": "Kongens Nytorv",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 4,
+      "mainDKK": 375,
+      "priceText": "Hauptgerichte 295–495 DKK · Menü ab ca. 900 DKK",
+      "hours": "Mo-Th 07:30-10:00,12:00-16:30,18:00-22:00; Fr-Sa 07:30-10:00,12:00-16:30,18:00-23:00; Su 07:30-10:00,12:00-16:30,18:00-22:00",
+      "hoursNote": "Frühstück nur für Hotelgäste.",
+      "desc": "Das Restaurant im Hotel d'Angleterre am Kongens Nytorv: klassische französisch-nordische Küche, sehr formeller Service, Michelin-Erwähnung – der Ort für einen besonderen Abend.",
+      "tips": [
+        "Dresscode: smart casual, keine Shorts.",
+        "Das Mittagsangebot ist deutlich günstiger als das Abendmenü.",
+        "Bar und Wintergarten sind auch ohne Reservierung einen Besuch wert."
+      ],
+      "website": "https://www.marchal.dk/",
+      "menu": null,
+      "tags": [
+        "Fine Dining",
+        "Besonderer Abend"
+      ],
+      "src": "OpenStreetMap · marchal.dk (Okt 2026)"
+    },
+    {
+      "id": "aoc",
+      "name": "AOC",
+      "cat": "restaurant",
+      "sub": "2 Michelin-Sterne",
+      "lat": 55.68328,
+      "lon": 12.58885,
+      "area": "Frederiksstaden",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 4,
+      "mainDKK": null,
+      "priceText": "Nur Menüs, ca. 2.500 DKK+ (mit Wein deutlich mehr)",
+      "hours": "Tu-Sa 18:00-01:00",
+      "hoursNote": "Reservierung Monate im Voraus; nur Menü, kein à la carte.",
+      "desc": "Zwei Michelin-Sterne, Küche von Søren Selin: sensorisch ausgelegte Menüs in einem Kellergewölbe an der Dronningens Tværgade. Die höchste Kategorie – nichts für ein schnelles Abendessen.",
+      "tips": [
+        "Allein wegen des Preises ein Planungsprojekt – Monate vorher buchen.",
+        "Das Wechselmenü ist der eigentliche Grund für den Besuch.",
+        "Für ein Sternerlebnis mit kleinerem Budget: Kong Hans Kælder mittags."
+      ],
+      "website": "https://restaurantaoc.dk/",
+      "menu": "https://restaurantaoc.dk/menu",
+      "tags": [
+        "Michelin",
+        "Fine Dining",
+        "Luxus"
+      ],
+      "src": "restaurantaoc.dk · Michelin Guide (Okt 2026)"
+    },
+    {
+      "id": "konghans",
+      "name": "Kong Hans Kælder",
+      "cat": "restaurant",
+      "sub": "Michelin, mittelalterliches Gewölbe",
+      "lat": 55.67876,
+      "lon": 12.58404,
+      "area": "Indre By / Vingårdstræde",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 4,
+      "mainDKK": 700,
+      "priceText": "Menü ab ca. 1.400 DKK · Mittagsmenü günstiger",
+      "hours": "Tu-Sa 18:00-24:00",
+      "hoursNote": "Nur abends; Mittagsangebot saisonal.",
+      "desc": "Das älteste Gourmetrestaurant Dänemarks (1976), in einem mittelalterlichen Kellergewölbe – französische Klassik mit dänischen Zutaten, ein Michelin-Stern.",
+      "tips": [
+        "Das Mittagsangebot ist der günstigste Weg in ein Sternerestaurant der Stadt.",
+        "Der Raum ist historisch – auch für Nicht-Weintrinker beeindruckend.",
+        "Reservierung Wochen im Voraus."
+      ],
+      "website": "https://konghans.dk/",
+      "menu": "https://konghans.dk/the-signature-menu/",
+      "tags": [
+        "Michelin",
+        "Fine Dining"
+      ],
+      "src": "konghans.dk (Okt 2026)"
+    },
+    {
+      "id": "krebsegaarden",
+      "name": "Krebsegaarden",
+      "cat": "restaurant",
+      "sub": "Kleine Küche, große Bewertung",
+      "lat": 55.67888,
+      "lon": 12.56997,
+      "area": "Indre By / Studiestræde",
+      "rating": 4.9,
+      "reviews": "—",
+      "priceLevel": 4,
+      "mainDKK": 330,
+      "priceText": "Menü ca. 500–700 DKK",
+      "hours": null,
+      "hoursNote": "Meist abends, Mo–Sa – Zeiten vorab prüfen.",
+      "desc": "Winziges Restaurant in der Studiestræde mit einer der höchsten Bewertungen der Innenstadt: saisonale Gerichte, Weinbegleitung, der Chef kocht und erklärt selbst.",
+      "tips": [
+        "Unbedingt reservieren – nur wenige Tische.",
+        "Die Weinbegleitung wird von Gästen fast immer gelobt.",
+        "Als „besondere Nacht“ einplanen, nicht als schnelles Abendessen."
+      ],
+      "website": null,
+      "menu": null,
+      "tags": [
+        "Klein",
+        "Reservieren",
+        "Besonders"
+      ],
+      "src": "Google-Rezensionen via Exa Places (Okt 2026)"
+    },
+    {
+      "id": "fiskebar",
+      "name": "Kødbyens Fiskebar",
+      "cat": "restaurant",
+      "sub": "Fisch & Meeresfrüchte",
+      "lat": 55.66785,
+      "lon": 12.55927,
+      "area": "Vesterbro / Kødbyen",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 3,
+      "mainDKK": 275,
+      "priceText": "Hauptgerichte 195–350 DKK · Austern ab 45 DKK",
+      "hours": "Su-Th 11:30-24:00, Fr,Sa 11:30-01:00",
+      "hoursNote": "Küche schließt früher als die Bar.",
+      "desc": "Fischrestaurant im ehemaligen Schlachthofviertel Kødbyen: rohe Austern, Fischgerichte, offene Küche und eine Bar, die bis spät läuft – der Inbegriff des neuen Vesterbro.",
+      "tips": [
+        "Austern an der Bar sind der beste Einstieg, günstiger als das Menü.",
+        "Kødbyen selbst lohnt danach – viele Bars auf engem Raum.",
+        "Reservierung am Wochenende nötig."
+      ],
+      "website": "https://fiskebaren.dk/en/",
+      "menu": null,
+      "tags": [
+        "Fisch",
+        "Vesterbro",
+        "Abends"
+      ],
+      "src": "OpenStreetMap · fiskebaren.dk (Okt 2026)"
+    },
+    {
+      "id": "baest",
+      "name": "Bæst",
+      "cat": "restaurant",
+      "sub": "Pizza & eigene Mozzarella",
+      "lat": 55.69222,
+      "lon": 12.55591,
+      "area": "Nørrebro / Guldbergsgade",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "mainDKK": 165,
+      "priceText": "Pizza 140–190 DKK · Vorspeisen 80–120 DKK",
+      "hours": "Tu-Su 17:00-22:30",
+      "hoursNote": "Montags geschlossen.",
+      "desc": "Bio-Pizza aus dem Holzofen, Mozzarella und Charcuterie aus eigener Herstellung – eines der besten Pizza-Restaurants Nordeuropas, mitten in Nørrebro.",
+      "tips": [
+        "Reservierung empfohlen, besonders Do–Sa.",
+        "Der eigene Mozzarella und die Salami sind der Unterschied zu normaler Pizza.",
+        "Nørrebro danach: Jægersborggade und Assistens Kirkegård sind um die Ecke."
+      ],
+      "website": "https://www.baest.dk/",
+      "menu": "https://www.baest.dk/menu",
+      "tags": [
+        "Pizza",
+        "Bio",
+        "Nørrebro"
+      ],
+      "src": "OpenStreetMap · baest.dk (Okt 2026)"
+    },
+    {
+      "id": "mangia",
+      "name": "Mangia",
+      "cat": "restaurant",
+      "sub": "Italienisch",
+      "lat": 55.67326,
+      "lon": 12.5544,
+      "area": "Vesterbro",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "mainDKK": 175,
+      "priceText": "Pasta/Hauptgerichte 150–220 DKK",
+      "hours": null,
+      "hoursNote": "Zeiten auf der Website prüfen.",
+      "desc": "Unkompliziertes italienisches Restaurant in Vesterbro mit Pasta, Antipasti und solider Weinauswahl – eine der günstigeren guten Optionen im Viertel.",
+      "tips": [
+        "Pasta statt Hauptgerichte bestellen: günstiger und meist besser.",
+        "Gut für Gruppen ohne Reservierungsstress unter der Woche.",
+        "10 Minuten zu Fuß von Tivoli."
+      ],
+      "website": "https://mangia.dk/",
+      "menu": "https://mangia.dk/menu/",
+      "tags": [
+        "Italienisch",
+        "Günstig"
+      ],
+      "src": "OpenStreetMap · mangia.dk (Okt 2026)"
+    },
+    {
+      "id": "cap-horn",
+      "name": "Cap Horn",
+      "cat": "restaurant",
+      "sub": "Nyhavn-Klassiker",
+      "lat": 55.68041,
+      "lon": 12.58952,
+      "area": "Nyhavn",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 3,
+      "mainDKK": 200,
+      "priceText": "Hauptgerichte 175–295 DKK",
+      "hours": "09:00-24:00",
+      "hoursNote": "Durchgehend geöffnet, Küche den ganzen Tag.",
+      "desc": "Eines der ältesten Lokale am Nyhavn: dänisch-französische Küche, Terrasse direkt am Kanal und eine lange Geschichte als Künstlerkneipe.",
+      "tips": [
+        "Nur die Terrasse ist am Nyhavn wirklich reizvoll – drinnen ist es eng.",
+        "Preise am Nyhavn sind generell touristisch – hier noch im Rahmen.",
+        "Frühstück ab 9 Uhr am Kanal ist ein guter Start."
+      ],
+      "website": "https://tholstrup.dk/cap-horn/",
+      "menu": null,
+      "tags": [
+        "Nyhavn",
+        "Terrasse",
+        "Dänisch"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "nyhavn17",
+      "name": "Nyhavn 17",
+      "cat": "restaurant",
+      "sub": "Dänisch am Kanal",
+      "lat": 55.68052,
+      "lon": 12.58913,
+      "area": "Nyhavn",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 3,
+      "mainDKK": 230,
+      "priceText": "Hauptgerichte 195–320 DKK",
+      "hours": "Su-Th 10:00-01:00, Fr-Sa 10:00-02:00",
+      "hoursNote": "Küche bis ca. 22 Uhr, danach Bar.",
+      "desc": "Dänische Küche im historischen Haus am Nyhavn – Frikadellen, Steak, Smørrebrød – mit Blick auf die Boote und die farbigen Giebel.",
+      "tips": [
+        "Für den Kanalblick reservieren und ausdrücklich einen Fenstertisch verlangen.",
+        "Später am Abend eher Bar als Restaurant.",
+        "Als Kombination mit einer Kanalrundfahrt praktisch – Anleger direkt daneben."
+      ],
+      "website": "https://www.nyhavn17.dk/",
+      "menu": "https://www.nyhavn17.dk/menu",
+      "tags": [
+        "Nyhavn",
+        "Dänisch",
+        "Aussicht"
+      ],
+      "src": "OpenStreetMap · nyhavn17.dk (Okt 2026)"
+    },
+    {
+      "id": "kanalen",
+      "name": "Restaurant Kanalen",
+      "cat": "restaurant",
+      "sub": "Dänisch am Christianshavn-Kanal",
+      "lat": 55.67556,
+      "lon": 12.59314,
+      "area": "Christianshavn",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 3,
+      "mainDKK": 230,
+      "priceText": "Hauptgerichte 195–295 DKK · Mittag günstiger",
+      "hours": "Mo-Sa 11:30-16:00,17:30-24:00",
+      "hoursNote": "Sonntags geschlossen.",
+      "desc": "Klassisches dänisches Restaurant direkt am Christianshavn-Kanal mit Blick auf Boote und Hausboote – Smørrebrød mittags, warme Küche abends.",
+      "tips": [
+        "Mittags Smørrebrød am Fenster – deutlich günstiger als abends.",
+        "Von hier sind Vor Frelsers Kirke und Christiania in 8 Minuten erreichbar.",
+        "Sonntags zu, also nicht als Sonntagsoption planen."
+      ],
+      "website": "https://restaurant-kanalen.dk/",
+      "menu": "https://restaurant-kanalen.dk/menu/",
+      "tags": [
+        "Dänisch",
+        "Kanal",
+        "Mittag"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "skipperkroen",
+      "name": "Skipperkroen",
+      "cat": "restaurant",
+      "sub": "Smørrebrød am Nyhavn",
+      "lat": 55.68031,
+      "lon": 12.58989,
+      "area": "Nyhavn",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "mainDKK": 130,
+      "priceText": "Smørrebrød 80–165 DKK",
+      "hours": null,
+      "hoursNote": "Meist täglich ab ca. 11 Uhr – Zeiten vor Ort prüfen.",
+      "desc": "Kleine, alte Smørrebrød-Kneipe am Nyhavn mit maritimer Einrichtung – deutlich authentischer als die großen Terrassen daneben.",
+      "tips": [
+        "Für klassisches Smørrebrød zum Mittag, nicht für ein Abendessen.",
+        "Wenige Plätze – außerhalb der Stoßzeit kommen.",
+        "Die Hering-Varianten sind die richtige Wahl."
+      ],
+      "website": null,
+      "menu": null,
+      "tags": [
+        "Smørrebrød",
+        "Nyhavn",
+        "Mittag"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "figaro",
+      "name": "Figaro",
+      "cat": "restaurant",
+      "sub": "Italienisch, Weinbar",
+      "lat": 55.67344,
+      "lon": 12.56725,
+      "area": "Vesterbro / Indre By",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "mainDKK": 180,
+      "priceText": "Hauptgerichte 160–240 DKK",
+      "hours": null,
+      "hoursNote": "Zeiten auf der Website prüfen.",
+      "desc": "Italienisches Bistro mit Weinbar-Charakter nahe Tivoli – Antipasti, Pasta und eine Auswahl an offenen Weinen, entspannt und ohne Dresscode.",
+      "tips": [
+        "Gute Option vor oder nach einem Tivoli-Besuch.",
+        "An der Bar kann man oft ohne Reservierung essen.",
+        "Wein nach Glas statt Flasche – die Karte ist breit."
+      ],
+      "website": null,
+      "menu": null,
+      "tags": [
+        "Italienisch",
+        "Wein",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "les-trois-cochons",
+      "name": "Les Trois Cochons",
+      "cat": "restaurant",
+      "sub": "Französisches Bistro",
+      "lat": 55.67272,
+      "lon": 12.55086,
+      "area": "Vesterbro / Værnedamsvej",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 3,
+      "mainDKK": 240,
+      "priceText": "Hauptgerichte 195–320 DKK",
+      "hours": null,
+      "hoursNote": "Meist ab 17:30, Sa/So auch mittags – Zeiten prüfen.",
+      "desc": "Französisches Bistro auf der Værnedamsvej, der kleinen „Pariser Straße“ Vesterbros: Ente, Steak frites, Zwiebelsuppe – klassisch und beliebt.",
+      "tips": [
+        "Værnedamsvej selbst ist einen Bummel wert (Feinkost, Blumen, Cafés).",
+        "Reservierung am Wochenende nötig.",
+        "Kombinierbar mit einem Spaziergang über den Sønder Boulevard."
+      ],
+      "website": null,
+      "menu": null,
+      "tags": [
+        "Französisch",
+        "Bistro",
+        "Vesterbro"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "gasoline-grill",
+      "name": "Gasoline Grill",
+      "cat": "fastfood",
+      "sub": "Burger in alter Tankstelle",
+      "lat": 55.68324,
+      "lon": 12.58517,
+      "area": "Indre By / Landgreven",
+      "rating": 4.5,
+      "reviews": "—",
+      "priceLevel": 1,
+      "mainDKK": 85,
+      "priceText": "Burger ca. 85 DKK · Menü mit Pommes ca. 125 DKK",
+      "hours": "Mo-Su 11:00-22:00",
+      "hoursNote": "Bei Andrang Warteschlange; abends oft 20–30 Minuten.",
+      "desc": "Der Burger, der Kopenhagen verändert hat: 2016 in einer noch betriebenen Tankstelle eröffnet, von Bloomberg unter die besten Burger der Welt gewählt. Einfache Karte, Bio-Rind, weiche Kartoffelbrötchen.",
+      "tips": [
+        "Die Karte ist winzig – Cheeseburger, Pommes, Limonade. Das ist der Punkt.",
+        "Vor 12 oder nach 20 Uhr kommen, sonst Schlange.",
+        "Weitere Standorte: Vesterport, Broens Gadekøkken, Carlsberg Byen."
+      ],
+      "website": "https://www.gasolinegrill.com/",
+      "menu": "https://www.gasolinegrill.com/menu",
+      "tags": [
+        "Burger",
+        "Kult",
+        "Schnell"
+      ],
+      "src": "Google-Rezensionen via Exa Places · VisitCopenhagen (Okt 2026)"
+    },
+    {
+      "id": "dandelion-burger",
+      "name": "Dandelion Burger",
+      "cat": "fastfood",
+      "sub": "Burger mit Mark",
+      "lat": 55.68449,
+      "lon": 12.58799,
+      "area": "Indre By / Store Kongensgade",
+      "rating": 4.6,
+      "reviews": "—",
+      "priceLevel": 2,
+      "mainDKK": 95,
+      "priceText": "Burger ca. 95 DKK · Menü ca. 145 DKK",
+      "hours": "Mo-Su 11:00-21:00",
+      "hoursNote": "Auch zum Mitnehmen.",
+      "desc": "Burger mit 15–20 % Knochenmark in der Pattie – der Gourmet-Gegenentwurf zu Gasoline Grill, mehrfach für „Byens Bedste“ nominiert, mit knusprigen Pommes.",
+      "tips": [
+        "Für den Vergleich: Dandelion ist aromatischer/fettiger, Gasoline klassischer.",
+        "Pommes mit Trüffelmayo bestellen.",
+        "Weniger Andrang als bei Gasoline."
+      ],
+      "website": "https://www.dandelionburger.com/",
+      "menu": null,
+      "tags": [
+        "Burger",
+        "Gehoben"
+      ],
+      "src": "Google-Rezensionen via Exa Places · Berlingske (Okt 2026)"
+    },
+    {
+      "id": "tommijs",
+      "name": "Tommi's Burger Joint",
+      "cat": "fastfood",
+      "sub": "Burger",
+      "lat": 55.66823,
+      "lon": 12.55808,
+      "area": "Vesterbro / Kødbyen",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 1,
+      "mainDKK": 85,
+      "priceText": "Burger ca. 85 DKK · Menü ca. 120 DKK",
+      "hours": "Su-Th 11:00-21:00; Fr-Sa 11:00-22:00",
+      "hoursNote": "Filialen u. a. in Vesterbro und Nørrebro.",
+      "desc": "Isländisch inspirierte Burger-Kette mit frischen Zutaten, knusprigen Pommes und lockerer Atmosphäre – zuverlässig und schnell, ohne Kultstatus-Anstehen.",
+      "tips": [
+        "Gute Option nach einem Abend in Kødbyen.",
+        "Pommes sind hier besser als bei den großen Ketten.",
+        "Auch als Take-away für unterwegs."
+      ],
+      "website": "https://burgerjoint.dk/",
+      "menu": "https://burgerjoint.dk/menu/",
+      "tags": [
+        "Burger",
+        "Schnell"
+      ],
+      "src": "OpenStreetMap · burgerjoint.dk (Okt 2026)"
+    },
+    {
+      "id": "jagger",
+      "name": "Jagger",
+      "cat": "fastfood",
+      "sub": "Burger & Pommes",
+      "lat": 55.66976,
+      "lon": 12.55487,
+      "area": "Vesterbro",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 1,
+      "mainDKK": 60,
+      "priceText": "Burger ab ca. 55 DKK · Menü ca. 95 DKK",
+      "hours": "Mo-Su 11:00-22:00",
+      "hoursNote": "Mehrere Filialen in der Stadt.",
+      "desc": "Dänische Burgerkette mit dem besten Preis-Leistungs-Verhältnis: frische Burger, gute Pommes, schnelle Bedienung – kein Touristenpreis.",
+      "tips": [
+        "Die günstigste gute Burger-Option der Stadt.",
+        "Für Familien und schnelle Mahlzeiten ideal.",
+        "Filialen auch direkt im Zentrum – App zeigt Standorte."
+      ],
+      "website": "https://jagger.dk/",
+      "menu": "https://jagger.dk/menu/",
+      "tags": [
+        "Burger",
+        "Günstig",
+        "Schnell"
+      ],
+      "src": "OpenStreetMap · jagger.dk (Okt 2026)"
+    },
+    {
+      "id": "sunset-boulevard",
+      "name": "Sunset Boulevard",
+      "cat": "fastfood",
+      "sub": "Burger & Fritten",
+      "lat": 55.67667,
+      "lon": 12.56997,
+      "area": "Indre By / Frederiksberggade",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 1,
+      "mainDKK": 65,
+      "priceText": "Burger ca. 65 DKK · Menü ca. 100 DKK",
+      "hours": "10:00-22:00, Fr-Sa 10:00-05:00",
+      "hoursNote": "Nachts geöffnet – die klassische Spätoption am Strøget.",
+      "desc": "Dänische Burgerkette mit Fokus auf Burger und Fritten, direkt am Strøget – die verlässliche Option, wenn nach Mitternacht noch etwas offen sein muss.",
+      "tips": [
+        "Eine der wenigen Optionen, die nachts noch warmes Essen haben.",
+        "Fritten mit Dip sind der eigentliche Grund für den Besuch.",
+        "Sehr zentral, direkt an der Fußgängerzone."
+      ],
+      "website": "https://sunset-boulevard.dk/",
+      "menu": "https://sunset-boulevard.dk/menukort/",
+      "tags": [
+        "Burger",
+        "Fritten",
+        "Spät"
+      ],
+      "src": "OpenStreetMap · sunset-boulevard.dk (Okt 2026)"
+    },
+    {
+      "id": "mcdonalds-nyhavn",
+      "name": "McDonald's Kongens Nytorv",
+      "cat": "fastfood",
+      "sub": "Burger-Kette, 24 h",
+      "lat": 55.67961,
+      "lon": 12.5848,
+      "area": "Kongens Nytorv",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 1,
+      "mainDKK": 55,
+      "priceText": "Menü ca. 60–90 DKK",
+      "hours": "24/7",
+      "hoursNote": "Durchgehend geöffnet, auch nachts.",
+      "desc": "Der zentralste 24-Stunden-McDonald's der Stadt, direkt am Kongens Nytorv und damit 3 Minuten von Nyhavn – praktisch, wenn alles andere zu hat.",
+      "tips": [
+        "Für die Toilette und eine warme Mahlzeit nach 23 Uhr.",
+        "In Dänemark gibt es deutlich mehr vegetarische Optionen als in Deutschland.",
+        "Bestellterminals statt Schlange – funktioniert auch auf Englisch."
+      ],
+      "website": "https://www.mcdonalds.com/dk/da-dk.html",
+      "menu": null,
+      "tags": [
+        "Burger",
+        "24h",
+        "Günstig"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "burger-king-stroget",
+      "name": "Burger King Strøget",
+      "cat": "fastfood",
+      "sub": "Burger-Kette, 24 h",
+      "lat": 55.67647,
+      "lon": 12.56955,
+      "area": "Indre By / Strøget",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 1,
+      "mainDKK": 55,
+      "priceText": "Menü ca. 55–85 DKK",
+      "hours": "24/7",
+      "hoursNote": "Durchgehend geöffnet.",
+      "desc": "24-Stunden-Burger-King mitten auf dem Strøget nahe Rådhuspladsen – die günstige, immer verfügbare Option im Zentrum.",
+      "tips": [
+        "Günstiger als die meisten Alternativen im Zentrum.",
+        "Filiale ist groß, meist findet sich ein Platz.",
+        "2 Minuten vom Tivoli-Eingang."
+      ],
+      "website": "https://www.burgerking.dk/",
+      "menu": null,
+      "tags": [
+        "Burger",
+        "24h",
+        "Günstig"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "broens-gadekoekken",
+      "name": "Broens Gadekøkken",
+      "cat": "fastfood",
+      "sub": "Streetfood-Markt",
+      "lat": 55.67783,
+      "lon": 12.59702,
+      "area": "Christianshavn / Inderhavnsbroen",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "mainDKK": 85,
+      "priceText": "Gerichte ca. 75–120 DKK",
+      "hours": null,
+      "hoursNote": "Saisonal, meist April–September/Oktober; Winterpause möglich.",
+      "desc": "Streetfood-Markt direkt an der Inderhavnsbrücke – Stände mit Burger, Tacos, Fisch und dänischen Klassikern, dazu Bierbänke mit Blick auf den Hafen.",
+      "tips": [
+        "Gut für gemischte Gruppen: jeder sucht sich einen Stand.",
+        "Draußen sitzen – bei gutem Wetter einer der schönsten Orte der Stadt.",
+        "Von Nyhavn in 7 Minuten zu Fuß über die Brücke."
+      ],
+      "website": "https://broensstreetfood.dk/",
+      "menu": null,
+      "tags": [
+        "Streetfood",
+        "Draußen",
+        "Gruppen"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "dominos-christianshavn",
+      "name": "Domino's Christianshavn",
+      "cat": "fastfood",
+      "sub": "Pizza zum Mitnehmen",
+      "lat": 55.66513,
+      "lon": 12.59948,
+      "area": "Christianshavn",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 1,
+      "mainDKK": 80,
+      "priceText": "Pizza ca. 70–110 DKK",
+      "hours": "11:00-23:00",
+      "hoursNote": "Lieferung und Abholung.",
+      "desc": "Pizza-Lieferdienst in Christianshavn – die pragmatische Option für einen Abend im Apartment oder am Hausboot.",
+      "tips": [
+        "Gut für späte Abende und Lieferung in Christianshavn.",
+        "Dänische Domino's-Pizzen sind deutlich besser als der deutsche Ruf.",
+        "Alternativ: die Pizzerien am Christianshavns Torv sind authentischer."
+      ],
+      "website": "https://www.dominos.dk/",
+      "menu": null,
+      "tags": [
+        "Pizza",
+        "Lieferung",
+        "Günstig"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "netto-noerre-voldgade",
+      "name": "Netto – Nørre Voldgade",
+      "cat": "supermarket",
+      "sub": "Discounter",
+      "lat": 55.68331,
+      "lon": 12.57107,
+      "area": "Indre By / Nørreport",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Günstigster Supermarkt-Typ der Stadt",
+      "hours": "07:00-22:00",
+      "hoursNote": "Täglich, auch sonntags.",
+      "desc": "Dänemarks größte Discounter-Kette: Brot, Käse, Aufschnitt, Wasser und Snacks deutlich günstiger als in den Innenstadt-Läden. Direkt am Nørreport.",
+      "tips": [
+        "Perfekt für ein Picknick im Kongens Have (2 Minuten entfernt).",
+        "Sonntags geöffnet – in Dänemark nicht selbstverständlich.",
+        "Pfand: Dosen und Flaschen an der Automaten zurückgeben."
+      ],
+      "website": "https://netto.dk/",
+      "menu": null,
+      "tags": [
+        "Günstig",
+        "Picknick"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "netto-kongens-nytorv",
+      "name": "Netto – Kongens Nytorv",
+      "cat": "supermarket",
+      "sub": "Discounter",
+      "lat": 55.68305,
+      "lon": 12.58307,
+      "area": "Indre By / Kongens Nytorv",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Günstigster Supermarkt-Typ der Stadt",
+      "hours": "Mo-Su 08:00-22:00",
+      "hoursNote": "Täglich geöffnet.",
+      "desc": "Kleiner Netto mitten im Zentrum, zwischen Kongens Nytorv und Nyhavn – der schnellste Weg zu Wasser, Obst und Snacks.",
+      "tips": [
+        "Praktisch vor einer Kanalrundfahrt oder einem Nyhavn-Spaziergang.",
+        "Kleine Filiale – Sortiment ist begrenzt, für Grundnahrungsmittel reicht es.",
+        "Geöffnet, wenn die meisten Cafés schon zu haben."
+      ],
+      "website": "https://netto.dk/",
+      "menu": null,
+      "tags": [
+        "Günstig",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "netto-vesterbro",
+      "name": "Netto – Vesterbrogade",
+      "cat": "supermarket",
+      "sub": "Discounter, lange Öffnungszeiten",
+      "lat": 55.67675,
+      "lon": 12.56882,
+      "area": "Vesterbro / Rådhuspladsen",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Günstigster Supermarkt-Typ der Stadt",
+      "hours": "Mo-Su 07:00-00:00",
+      "hoursNote": "Täglich bis Mitternacht.",
+      "desc": "Netto nahe dem Hauptbahnhof und der Rådhuspladsen, täglich bis Mitternacht geöffnet – die zuverlässige Spätoption für Snacks und Getränke.",
+      "tips": [
+        "Bis 24 Uhr offen – ideal nach einem späten Tivoli-Besuch.",
+        "Direkt an der Route zwischen Bahnhof und Innenstadt.",
+        "Bier und Wasser sind hier deutlich günstiger als im Kiosk."
+      ],
+      "website": "https://netto.dk/",
+      "menu": null,
+      "tags": [
+        "Günstig",
+        "Spät"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "foetex-city",
+      "name": "Føtex Food – Vesterbrogade",
+      "cat": "supermarket",
+      "sub": "Supermarkt",
+      "lat": 55.67528,
+      "lon": 12.56734,
+      "area": "Indre By / Rådhuspladsen",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Mittleres Preisniveau, großes Sortiment",
+      "hours": "07:00-22:00",
+      "hoursNote": "Täglich geöffnet.",
+      "desc": "Großer Supermarkt mit Bäckerei, Delikatessentheke und deutlich mehr Auswahl als die Discounter – direkt zwischen Tivoli und Hauptbahnhof.",
+      "tips": [
+        "Beste Adresse für ein schnelles Frühstück zum Mitnehmen (Bäckerei im Markt).",
+        "Fertige Smørrebrød und Salate für ein günstiges Mittagessen.",
+        "Große Auswahl an dänischer Schokolade und Lakritz als Mitbringsel."
+      ],
+      "website": "https://www.foetex.dk/",
+      "menu": null,
+      "tags": [
+        "Sortiment",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "foetex-st-kongensgade",
+      "name": "Føtex Food – St. Kongensgade",
+      "cat": "supermarket",
+      "sub": "Supermarkt, lange Öffnungszeiten",
+      "lat": 55.68355,
+      "lon": 12.58685,
+      "area": "Frederiksstaden",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Mittleres Preisniveau",
+      "hours": "07:00-24:00",
+      "hoursNote": "Täglich bis Mitternacht.",
+      "desc": "Føtex Food im Designviertel, täglich bis 24 Uhr – praktisch für alle, die in Frederiksstaden (Amalienborg, Designmuseum, Marmorkirche) unterwegs sind.",
+      "tips": [
+        "Bis Mitternacht geöffnet – selten für einen Supermarkt im Zentrum.",
+        "Frische Theke und Salatbar für ein Mittagessen to go.",
+        "5 Minuten von Amalienborg und der Marmorkirche."
+      ],
+      "website": "https://www.foetex.dk/",
+      "menu": null,
+      "tags": [
+        "Spät",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "rema-gothersgade",
+      "name": "Rema 1000 – Gothersgade",
+      "cat": "supermarket",
+      "sub": "Discounter",
+      "lat": 55.68258,
+      "lon": 12.58186,
+      "area": "Indre By / Gothersgade",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Günstig",
+      "hours": "07:00-21:45",
+      "hoursNote": "Täglich geöffnet.",
+      "desc": "Norwegischer Discounter direkt an der Gothersgade, 3 Minuten vom Kongens Nytorv – gute Preise, ordentliches Sortiment an frischem Obst und Brot.",
+      "tips": [
+        "Bekannt für gute Preise bei frischen Zutaten.",
+        "Für Picknick im Kongens Have: 6 Minuten zu Fuß.",
+        "Die Eigenmarken sind qualitativ in Ordnung."
+      ],
+      "website": "https://rema1000.dk/",
+      "menu": null,
+      "tags": [
+        "Günstig",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "rema-vesterport",
+      "name": "Rema 1000 Vesterport",
+      "cat": "supermarket",
+      "sub": "Discounter am Bahnhof",
+      "lat": 55.67538,
+      "lon": 12.56332,
+      "area": "Vesterbro / Vesterport",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Günstig",
+      "hours": "Mo-Su 07:00-21:45",
+      "hoursNote": "Täglich geöffnet.",
+      "desc": "Rema 1000 direkt an der Station Vesterport – der praktischste Einkauf, wenn man mit dem Zug ankommt oder zum Flughafen fährt.",
+      "tips": [
+        "Zum Mitnehmen für die Zugfahrt zum Flughafen.",
+        "Direkt an der S-Bahn-Station Vesterport.",
+        "Gute Auswahl an dänischen Snacks für unterwegs."
+      ],
+      "website": "https://rema1000.dk/",
+      "menu": null,
+      "tags": [
+        "Günstig",
+        "Verkehr"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "discount-365-noerre",
+      "name": "365discount – Nørre Farimagsgade",
+      "cat": "supermarket",
+      "sub": "Discounter",
+      "lat": 55.68295,
+      "lon": 12.57193,
+      "area": "Indre By / Nørreport",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Günstigster Supermarkt-Typ der Stadt",
+      "hours": "Mo-Su 07:00-22:00",
+      "hoursNote": "Täglich geöffnet.",
+      "desc": "Coops Discount-Kette (früher Fakta) mit sehr niedrigen Preisen – Grundnahrungsmittel, Getränke und Snacks nahe Nørreport.",
+      "tips": [
+        "Eine der günstigsten Optionen im Zentrum.",
+        "Kleines Sortiment – für ein Picknick reicht es.",
+        "Neben Torvehallerne, falls dort alles zu teuer ist."
+      ],
+      "website": "https://365discount.coop.dk/",
+      "menu": null,
+      "tags": [
+        "Günstig",
+        "Picknick"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "superbrugsen-nyhavn",
+      "name": "SuperBrugsen – Nyhavn",
+      "cat": "supermarket",
+      "sub": "Supermarkt",
+      "lat": 55.68518,
+      "lon": 12.58661,
+      "area": "Frederiksstaden / Nyhavn",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Mittleres Preisniveau",
+      "hours": "Mo-Su 08:00-21:45",
+      "hoursNote": "Täglich geöffnet.",
+      "desc": "Vollsortimenter nahe Nyhavn und Amalienborg mit Bäckerei und frischer Theke – größer als die Discounter und bis spät geöffnet.",
+      "tips": [
+        "Der nächste größere Supermarkt für Nyhavn und Frederiksstaden.",
+        "Fertige Smørrebrød für ein günstiges Mittagessen.",
+        "Bäckerabteilung morgens am besten sortiert."
+      ],
+      "website": "https://superbrugsen.coop.dk/",
+      "menu": null,
+      "tags": [
+        "Sortiment",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "superbrugsen-farimags",
+      "name": "SuperBrugsen – Nørre Farimagsgade",
+      "cat": "supermarket",
+      "sub": "Supermarkt",
+      "lat": 55.68488,
+      "lon": 12.56892,
+      "area": "Indre By / Nørreport",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Mittleres Preisniveau",
+      "hours": "Mo-Su 08:00-22:00",
+      "hoursNote": "Täglich geöffnet.",
+      "desc": "Großer Supermarkt direkt neben Torvehallerne – die richtige Adresse für einen vollständigen Einkauf im Zentrum.",
+      "tips": [
+        "Direkt an der Markthalle – gut kombinierbar.",
+        "Größte Auswahl an dänischen Milchprodukten und Brot in der Gegend.",
+        "Lange Öffnungszeiten bis 22 Uhr."
+      ],
+      "website": "https://superbrugsen.coop.dk/",
+      "menu": null,
+      "tags": [
+        "Sortiment",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "meny-illum",
+      "name": "MENY im Illum",
+      "cat": "supermarket",
+      "sub": "Feinkost-Supermarkt",
+      "lat": 55.67935,
+      "lon": 12.58072,
+      "area": "Indre By / Illum",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 3,
+      "priceText": "Gehoben, teurer als Discounter",
+      "hours": "Mo-Su 10:00-20:00",
+      "hoursNote": "Im Kaufhaus Illum – Öffnungszeiten des Kaufhauses.",
+      "desc": "Feinkost-Supermarkt im Untergeschoss des Illum: Delikatessen, frisches Brot, Salate und ein gutes Sortiment an dänischen Spezialitäten.",
+      "tips": [
+        "Beste Adresse für hochwertige Mitbringsel (Schokolade, Lakritz, Käse).",
+        "Fertige Mahlzeiten für ein Picknick im Kongens Have.",
+        "Teurer als Netto, aber deutlich angenehmer als ein Discounter."
+      ],
+      "website": "https://meny.dk/",
+      "menu": null,
+      "tags": [
+        "Feinkost",
+        "Mitbringsel"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "lidl-vesterbro",
+      "name": "Lidl – Vesterbrogade",
+      "cat": "supermarket",
+      "sub": "Discounter",
+      "lat": 55.67293,
+      "lon": 12.55945,
+      "area": "Vesterbro",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 1,
+      "priceText": "Günstig",
+      "hours": "Mo-Su 07:00-21:30",
+      "hoursNote": "Täglich geöffnet.",
+      "desc": "Lidl mitten in Vesterbro – bekannte Eigenmarken, Backstation und sehr niedrige Preise für Wasser und Snacks.",
+      "tips": [
+        "Die günstigste Option für Getränke und Grundnahrungsmittel.",
+        "Backstation morgens – frisches Brötchen für unter 5 DKK.",
+        "5 Minuten vom Tivoli."
+      ],
+      "website": "https://www.lidl.dk/",
+      "menu": null,
+      "tags": [
+        "Günstig"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "seven-eleven",
+      "name": "7-Eleven",
+      "cat": "supermarket",
+      "sub": "Convenience / Kiosk",
+      "lat": 55.68093,
+      "lon": 12.57975,
+      "area": "Indre By / Amagertorv",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Teurer als Supermarkt",
+      "hours": null,
+      "hoursNote": "Filialen im Zentrum meist 24 h; Sortiment begrenzt.",
+      "desc": "Dichte Kette von Convenience-Stores in der ganzen Innenstadt – für Wasser, Kaffee, Snacks und Fahrkarten zu jeder Tages- und Nachtzeit.",
+      "tips": [
+        "Die zuverlässigste Option nach 22 Uhr.",
+        "Kaffee-Automat ist günstiger als im Café.",
+        "Fahrkarten für Metro und Bus gibt es hier ebenfalls."
+      ],
+      "website": "https://7-eleven.dk/",
+      "menu": null,
+      "tags": [
+        "24h",
+        "Kiosk"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "illum",
+      "name": "Illum",
+      "cat": "mall",
+      "sub": "Kaufhaus",
+      "lat": 55.67957,
+      "lon": 12.58024,
+      "area": "Indre By / Amagertorv",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 3,
+      "priceText": "Gehobenes Kaufhaus",
+      "hours": "Mo-Su 10:00-20:00",
+      "hoursNote": "Auch sonntags geöffnet.",
+      "desc": "Das traditionsreichste Kaufhaus Kopenhagens (1891) am Amagertorv: Design, Mode, Kosmetik und im Untergeschoss der Feinkostmarkt MENY.",
+      "tips": [
+        "Die Dachterrasse im 4. Stock ist frei zugänglich: Restaurants, Bars und Blick über Strøget und die Dächer (Küche ca. 11–20 Uhr).",
+        "Skandinavische Designmarken sind hier vollständig versammelt.",
+        "Sonntags geöffnet, während viele kleine Läden zu sind."
+      ],
+      "website": "https://illum.dk/",
+      "menu": null,
+      "tags": [
+        "Shopping",
+        "Design",
+        "Aussicht"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "magasin",
+      "name": "Magasin du Nord",
+      "cat": "mall",
+      "sub": "Kaufhaus",
+      "lat": 55.6792,
+      "lon": 12.58389,
+      "area": "Kongens Nytorv",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 3,
+      "priceText": "Gehobenes Kaufhaus",
+      "hours": "10:00-20:00",
+      "hoursNote": "Meist Mo–Sa, So kürzer – Zeiten prüfen.",
+      "desc": "Das große Kaufhaus am Kongens Nytorv, seit 1868: Mode, Design, Lebensmittel und eines der schönsten historischen Kaufhaus-Interieurs der Stadt.",
+      "tips": [
+        "Im Untergeschoss gibt es dänische Spezialitäten als Mitbringsel.",
+        "Direkt an Metro Kongens Nytorv – gut als Treffpunkt.",
+        "Bei Regen: Verbindungstunnel zur Metro nutzen."
+      ],
+      "website": "https://www.magasin.dk/",
+      "menu": null,
+      "tags": [
+        "Shopping",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "fisketorvet",
+      "name": "Fisketorvet",
+      "cat": "mall",
+      "sub": "Einkaufszentrum",
+      "lat": 55.66198,
+      "lon": 12.56134,
+      "area": "Vesterbro / Havneholmen",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Mittleres Preisniveau",
+      "hours": "Mo-Su 10:00-20:00",
+      "hoursNote": "Auch sonntags geöffnet.",
+      "desc": "Das größte Einkaufszentrum der Innenstadt direkt am Hafen: über 60 Läden, Kino, Food Court und Supermärkte – alles unter einem Dach.",
+      "tips": [
+        "Praktisch bei Regen – komplett überdacht.",
+        "Der Food Court ist günstiger als die Innenstadt-Gastronomie.",
+        "10 Minuten zu Fuß vom Hauptbahnhof, oder Bus 30."
+      ],
+      "website": "https://www.westfield.com/da/denmark/fisketorvet",
+      "menu": null,
+      "tags": [
+        "Shopping",
+        "Regenwetter",
+        "Familie"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "frederiksberg-centret",
+      "name": "Frederiksberg Centret",
+      "cat": "mall",
+      "sub": "Einkaufszentrum",
+      "lat": 55.68174,
+      "lon": 12.53261,
+      "area": "Frederiksberg",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Mittleres Preisniveau",
+      "hours": "Mo-Fr 10:00-19:00; Sa-Su 10:00-17:00",
+      "hoursNote": "Sonntags nur bis 17 Uhr.",
+      "desc": "Einkaufszentrum im Zentrum von Frederiksberg mit rund 70 Läden – etwas außerhalb der Innenstadt, dafür ruhiger und mit vielen einheimischen Besuchern.",
+      "tips": [
+        "Mit der Metro (M3) bis Frederiksberg, dann 2 Minuten.",
+        "Gute Option für einen Regentag abseits der Touristenzone.",
+        "Direkt an der Frederiksberg Allé – eine der schönsten Straßen der Stadt."
+      ],
+      "website": "https://frbc-shopping.dk/",
+      "menu": null,
+      "tags": [
+        "Shopping",
+        "Regenwetter"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    }
+  ]
+}

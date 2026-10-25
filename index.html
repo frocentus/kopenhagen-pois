@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kopenhagen Stadtplan – Sehenswürdigkeiten, Essen, Supermärkte</title>
+<meta name="description" content="Interaktive Karte für Kopenhagens Stadtzentrum: Sehenswürdigkeiten mit Eintrittspreisen, Frühstückscafés, Restaurants mit Preisvergleich, Fast Food, Supermärkte und Einkaufszentren – mit echten Öffnungszeiten.">
+<meta name="author" content="Kopenhagen Stadtplan">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0f6b66">
+<meta property="og:title" content="Kopenhagen Stadtplan">
+<meta property="og:description" content="81 Orte im Stadtzentrum: Sehenswürdigkeiten, Frühstück, Restaurants, Fast Food, Supermärkte, Malls – mit Öffnungszeiten und Preisen.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">🧭</span>
+    <span class="brand-text">
+      <strong>Kopenhagen</strong>
+      <small>Stadtzentrum · Sehenswertes, Essen &amp; Einkaufen</small>
+    </span>
+  </div>
+
+  <div class="search-wrap">
+    <span class="search-ico" aria-hidden="true">🔍</span>
+    <input id="search" type="search" placeholder="Suchen: Smørrebrød, Nyhavn, Supermarkt …" autocomplete="off" aria-label="Orte durchsuchen">
+  </div>
+
+  <div class="topbar-actions">
+    <button id="compare" class="btn btn-soft" type="button">💸 Preisvergleich</button>
+    <button id="themeBtn" class="icon-btn" type="button" aria-label="Design wechseln">◐</button>
+  </div>
+</header>
+
+<main class="app">
+  <aside class="sidebar" aria-label="Ortsliste und Filter">
+    <div class="controls">
+      <div class="chips" id="chips" role="group" aria-label="Kategorien"></div>
+
+      <div class="control-row">
+        <label class="switch">
+          <input type="checkbox" id="openOnly">
+          <span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span>
+          <span class="switch-label">Nur jetzt geöffnet</span>
+        </label>
+
+        <label class="select-wrap">
+          <span class="sr-only">Sortierung</span>
+          <select id="sort">
+            <option value="empfohlen">Empfehlung</option>
+            <option value="name">Name A–Z</option>
+            <option value="rating">Bewertung</option>
+            <option value="price">Preis aufsteigend</option>
+            <option value="distance">Entfernung</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="control-row">
+        <button id="locateBtn" class="btn btn-ghost btn-sm" type="button">📍 In meiner Nähe</button>
+        <span class="hint" id="count"></span>
+      </div>
+    </div>
+
+    <ul class="list" id="list" aria-live="polite"></ul>
+
+    <footer class="sidebar-foot">
+      <span id="dataStamp">Datenstand: –</span>
+      <span>Öffnungszeiten: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> (ODbL) · Preise &amp; Bewertungen: öffentliche Quellen · alles ohne Gewähr</span>
+    </footer>
+  </aside>
+
+  <div class="map-wrap">
+    <div id="map" role="application" aria-label="Karte von Kopenhagen"></div>
+    <button id="sidebarToggle" class="sidebar-toggle" type="button" aria-expanded="false" aria-controls="list">☰ Liste</button>
+    <button id="locateFloat" class="locate-float" type="button" aria-label="Eigenen Standort anzeigen">◎</button>
+    <noscript><p class="noscript">Für die Karte wird JavaScript benötigt.</p></noscript>
+  </div>
+</main>
+
+<aside class="drawer" id="drawer" hidden aria-label="Details" role="dialog" aria-modal="false"></aside>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h2 id="modalTitle">Preisvergleich Restaurants &amp; Fast Food</h2>
+      <button id="modalClose" class="icon-btn" type="button" aria-label="Schließen">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="assets/hours.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

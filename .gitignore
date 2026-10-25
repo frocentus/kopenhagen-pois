@@ -1,0 +1,11 @@
+node_modules/
+package-lock.json
+package.json
+.DS_Store
+Thumbs.db
+*.log
+
+# Zwischenergebnisse der Daten-Recherche (nicht für die Seite nötig)
+data/osm-raw.json
+data/osm-shops.json
+data/linkcheck.json
