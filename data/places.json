@@ -20,6 +20,13 @@
       "icon": "🏛"
     },
     {
+      "id": "swim",
+      "label": "Hafenbäder & Baden",
+      "short": "Baden",
+      "color": "#0891b2",
+      "icon": "🏊"
+    },
+    {
       "id": "tour",
       "label": "Touren & Rundfahrten",
       "short": "Touren",
@@ -77,8 +84,8 @@
     },
     {
       "id": "transit",
-      "label": "Metro & S-Bahn",
-      "short": "Metro & S",
+      "label": "Metro, S-Bahn & Hafenbus",
+      "short": "Nahverkehr",
       "color": "#1e3a8a",
       "icon": "🚇",
       "defaultOff": true
@@ -1146,7 +1153,8 @@
       "menu": null,
       "tags": [
         "Frühstück",
-        "Vesterbro"
+        "Vesterbro",
+        "Außenplätze"
       ],
       "src": "OpenStreetMap (Okt 2026)",
       "ratingSource": "Google",
@@ -1177,7 +1185,8 @@
       "tags": [
         "Frühstück",
         "Brunch",
-        "Familie"
+        "Familie",
+        "Außenplätze"
       ],
       "src": "tablejourney · OpenStreetMap (Okt 2026)",
       "ratingSource": "Google"
@@ -1267,7 +1276,8 @@
       "menu": "https://cdn.sanity.io/files/uov2y1es/production/0a91527adf8cbf1526caf8241c497098e7098c07.pdf",
       "tags": [
         "Frühstück",
-        "Aussicht"
+        "Aussicht",
+        "Außenplätze"
       ],
       "src": "flerefugle.dk (Okt 2026)",
       "ratingSource": "Google"
@@ -1507,7 +1517,8 @@
       "tags": [
         "Teilen",
         "Bib Gourmand",
-        "Lebhaft"
+        "Lebhaft",
+        "Außenplätze"
       ],
       "src": "VisitCopenhagen · Google-Rezensionen via Exa Places (Okt 2026)"
     },
@@ -1567,7 +1578,8 @@
       "tags": [
         "Nordisch",
         "Bib Gourmand",
-        "Menü"
+        "Menü",
+        "Außenplätze"
       ],
       "src": "earlybird.dk · Michelin Guide 2026 (Okt 2026)",
       "ratingSource": "Google",
@@ -1599,7 +1611,8 @@
       "tags": [
         "Französisch",
         "Klassiker",
-        "Wein"
+        "Wein",
+        "Außenplätze"
       ],
       "src": "Google-Rezensionen via Exa Places (Okt 2026)"
     },
@@ -1765,7 +1778,8 @@
       "tags": [
         "Fisch",
         "Vesterbro",
-        "Abends"
+        "Abends",
+        "Außenplätze"
       ],
       "src": "OpenStreetMap · fiskebaren.dk (Okt 2026)",
       "ratingSource": "Google",
@@ -1797,7 +1811,8 @@
       "tags": [
         "Pizza",
         "Bio",
-        "Nørrebro"
+        "Nørrebro",
+        "Außenplätze"
       ],
       "src": "OpenStreetMap · baest.dk (Okt 2026)",
       "ratingSource": "Google"
@@ -1827,7 +1842,8 @@
       "menu": "https://mangia.dk/menu/",
       "tags": [
         "Italienisch",
-        "Günstig"
+        "Günstig",
+        "Außenplätze"
       ],
       "src": "OpenStreetMap · mangia.dk (Okt 2026)",
       "ratingSource": "Google"
@@ -1858,7 +1874,8 @@
       "tags": [
         "Nyhavn",
         "Terrasse",
-        "Dänisch"
+        "Dänisch",
+        "Außenplätze"
       ],
       "src": "OpenStreetMap (Okt 2026)",
       "ratingSource": "Google",
@@ -1890,7 +1907,8 @@
       "tags": [
         "Nyhavn",
         "Dänisch",
-        "Aussicht"
+        "Aussicht",
+        "Außenplätze"
       ],
       "src": "OpenStreetMap · nyhavn17.dk (Okt 2026)",
       "ratingSource": "Google",
@@ -1929,7 +1947,8 @@
       "tags": [
         "Dänisch",
         "Kanal",
-        "Mittag"
+        "Mittag",
+        "Außenplätze"
       ],
       "src": "OpenStreetMap (Okt 2026)",
       "ratingSource": "Tripadvisor"
@@ -1960,7 +1979,8 @@
       "tags": [
         "Smørrebrød",
         "Nyhavn",
-        "Mittag"
+        "Mittag",
+        "Außenplätze"
       ],
       "src": "OpenStreetMap (Okt 2026)",
       "ratingSource": "Google"
@@ -1991,7 +2011,8 @@
       "tags": [
         "Italienisch",
         "Wein",
-        "Zentral"
+        "Zentral",
+        "Außenplätze"
       ],
       "src": "OpenStreetMap (Okt 2026)",
       "ratingNote": "Kein Online-Profil mit belastbarer Bewertung gefunden.",
@@ -2084,7 +2105,8 @@
       "menu": null,
       "tags": [
         "Burger",
-        "Gehoben"
+        "Gehoben",
+        "Außenplätze"
       ],
       "src": "Google-Rezensionen via Exa Places · Berlingske (Okt 2026)",
       "menuNote": "Karte auf der Startseite der Website (keine eigene Menü-URL)."
@@ -2207,7 +2229,8 @@
       "tags": [
         "Burger",
         "24h",
-        "Günstig"
+        "Günstig",
+        "Außenplätze"
       ],
       "src": "OpenStreetMap (Okt 2026)",
       "ratingNote": "Kette – Bewertung unterscheidet sich je Filiale.",
@@ -2889,7 +2912,8 @@
         "Kaffee",
         "Highlight",
         "Frühstück",
-        "Mitbringsel"
+        "Mitbringsel",
+        "Außenplätze"
       ],
       "src": "coffeecollective.dk · OpenStreetMap (Okt 2026)"
     },
@@ -2915,7 +2939,8 @@
       "tags": [
         "Kaffee",
         "Vesterbro",
-        "Hip"
+        "Hip",
+        "Außenplätze"
       ],
       "src": "prologcoffee.com · OpenStreetMap (Okt 2026)"
     },
@@ -2967,7 +2992,8 @@
       "tags": [
         "Kaffee",
         "Zentral",
-        "Schnell"
+        "Schnell",
+        "Außenplätze"
       ],
       "src": "OpenStreetMap · instagram.com/roastcoffee (Okt 2026)"
     },
@@ -3256,7 +3282,8 @@
         "Draußen",
         "Familie",
         "Lebhaft",
-        "Aussicht"
+        "Aussicht",
+        "Außenplätze"
       ],
       "src": "reffen.dk · OpenStreetMap (Okt 2026)"
     },
@@ -4430,6 +4457,436 @@
       "src": "OpenStreetMap (Metro-Relationen) · Wikipedia/DSB (S-tog-Linien) (Okt 2026)",
       "hours": "Mo-Su 05:00-24:00",
       "hoursNote": "S-tog: ca. 05:00–00:30, keine Nachtfahrten unter der Woche. Live-Zeiten: dsb.dk oder rejseplanen.dk."
+    },
+    {
+      "id": "swim-islands-brygge",
+      "name": "Havnebadet Islands Brygge",
+      "cat": "swim",
+      "sub": "Hafenbad · 5 Becken",
+      "lat": 55.66859,
+      "lon": 12.57766,
+      "area": "Islands Brygge",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Badesaison der Hafenbäder ist etwa Juni bis Ende August; außerhalb wird nicht gebadet. Schwimmen nur, wenn die grüne Flagge steht – bei Regen und kurz danach ist die Wasserqualität unsicher. Wassertemperatur und Qualität: badevand.dk.",
+      "desc": "Das bekannteste Hafenbad der Stadt: fünf Becken unterschiedlicher Tiefe direkt im Hafenbecken, dazu Liegewiesen, Springtürme und eine lange Holzterrasse. Im Sommer der Treffpunkt schlechthin – und kostenlos.",
+      "tips": [
+        "Morgens zwischen 7 und 9 Uhr ist es fast leer.",
+        "Es gibt einen abgetrennten Bereich für Kleinkinder – der Sprungturm ist ein eigener Bereich.",
+        "Bei Regen wird das Baden oft für 24 Stunden ausgesetzt: Flagge beachten."
+      ],
+      "website": "https://www.kk.dk/brug-byen/vandet-i-byen/badevandskvalitet",
+      "tags": [
+        "Baden",
+        "Gratis",
+        "Draußen",
+        "Familie"
+      ],
+      "src": "OpenStreetMap · Københavns Kommune (Okt 2026)"
+    },
+    {
+      "id": "swim-kalvebod-bolge",
+      "name": "Kalvebod Bølge",
+      "cat": "swim",
+      "sub": "Badezone am Hafenrand",
+      "lat": 55.66895,
+      "lon": 12.57575,
+      "area": "Kalvebod Brygge",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Badesaison der Hafenbäder ist etwa Juni bis Ende August; außerhalb wird nicht gebadet. Schwimmen nur, wenn die grüne Flagge steht – bei Regen und kurz danach ist die Wasserqualität unsicher.",
+      "desc": "Künstlich angelegte Wellenlandschaft am Kalvebod Brygge, die gleichzeitig als Badestelle und Sitzstufe dient. Direkt hinter dem Einkaufszentrum Fisketorvet, mit Blick über den Hafen.",
+      "tips": [
+        "Der Einstieg ist flach und unauffällig – Badeschuhe sind hier keine schlechte Idee.",
+        "Perfekt für eine Pause nach dem Einkauf im Fisketorvet.",
+        "Abends liegt die Fläche in der Abendsonne."
+      ],
+      "website": "https://www.kk.dk/brug-byen/vandet-i-byen/badevandskvalitet",
+      "tags": [
+        "Baden",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap · Københavns Kommune (Okt 2026)"
+    },
+    {
+      "id": "swim-halfdansgade",
+      "name": "Halfdansgade Badezone",
+      "cat": "swim",
+      "sub": "Badezone im Christianshavn-Kanal",
+      "lat": 55.66592,
+      "lon": 12.57421,
+      "area": "Islands Brygge / Christianshavn",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Badesaison der Hafenbäder ist etwa Juni bis Ende August; außerhalb wird nicht gebadet. Schwimmen nur, wenn die grüne Flagge steht – bei Regen und kurz danach ist die Wasserqualität unsicher.",
+      "desc": "Kleine, wenig bekannte Badezone am Kanal zwischen Islands Brygge und Christianshavn. Wer das Gedränge im großen Hafenbad vermeiden will, ist hier oft allein im Wasser.",
+      "tips": [
+        "Deutlich ruhiger als das Havnebadet Islands Brygge.",
+        "Der Einstieg ist steil – für unsichere Schwimmer nicht ideal."
+      ],
+      "website": "https://www.kk.dk/brug-byen/vandet-i-byen/badevandskvalitet",
+      "tags": [
+        "Baden",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "swim-fisketorvet",
+      "name": "Havnebadet Fisketorvet",
+      "cat": "swim",
+      "sub": "Hafenbad",
+      "lat": 55.66294,
+      "lon": 12.56422,
+      "area": "Vesterbro / Fisketorvet",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Badesaison der Hafenbäder ist etwa Juni bis Ende August; außerhalb wird nicht gebadet. Schwimmen nur, wenn die grüne Flagge steht – bei Regen und kurz danach ist die Wasserqualität unsicher.",
+      "desc": "Hafenbad auf der Vesterbro-Seite, direkt am Fisketorvet. Kleiner als Islands Brygge, dadurch überschaubarer – praktisch für alle, die in Vesterbro wohnen oder dort einkaufen.",
+      "tips": [
+        "Deutlich weniger voll als Islands Brygge.",
+        "Über die Bryggebroen ist Islands Brygge zu Fuß in 15 Minuten erreichbar."
+      ],
+      "website": "https://www.kk.dk/brug-byen/vandet-i-byen/badevandskvalitet",
+      "tags": [
+        "Baden",
+        "Gratis",
+        "Draußen",
+        "Familie"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "swim-sluseholmen",
+      "name": "Sluseholmen Havnebad",
+      "cat": "swim",
+      "sub": "Hafenbad im Sydhavn",
+      "lat": 55.6466,
+      "lon": 12.55394,
+      "area": "Sydhavn / Sluseholmen",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Geöffnet nur 15. Mai bis 15. September; außerhalb ist das Bad geschlossen. Schwimmen nur bei grüner Flagge.",
+      "desc": "Hafenbad im neuen Canal-Viertel Sluseholmen, zwischen den Kanälen und den bunten Reihenhäusern. Wegen der Architektur rundherum eines der fotogensten Bäder der Stadt.",
+      "tips": [
+        "Die Kanäle von Sluseholmen sind selbst einen Spaziergang wert.",
+        "Nur in der Saison geöffnet – im Frühjahr steht man vor verschlossener Tür."
+      ],
+      "website": "https://www.kk.dk/brug-byen/vandet-i-byen/badevandskvalitet",
+      "tags": [
+        "Baden",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap · Københavns Kommune (Okt 2026)"
+    },
+    {
+      "id": "swim-teglholm",
+      "name": "Badezone Teglholm Brygge",
+      "cat": "swim",
+      "sub": "Badezone",
+      "lat": 55.65124,
+      "lon": 12.54553,
+      "area": "Sydhavn / Teglholm",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Badesaison der Hafenbäder ist etwa Juni bis Ende August; außerhalb wird nicht gebadet. Schwimmen nur, wenn die grüne Flagge steht – bei Regen und kurz danach ist die Wasserqualität unsicher.",
+      "desc": "Kleine Badezone an der Teglholm Brygge im Sydhavn, an der Kante zwischen Kanal und Hafen. Unaufgeregt, mit Banken und Blick auf die Brücken.",
+      "tips": [
+        "Für einen ruhigen Bade-Stopp abseits der großen Becken."
+      ],
+      "website": "https://www.kk.dk/brug-byen/vandet-i-byen/badevandskvalitet",
+      "tags": [
+        "Baden",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "swim-vandtrappen",
+      "name": "Vandtrappen Badezone",
+      "cat": "swim",
+      "sub": "Badezone · Wassertreppe",
+      "lat": 55.64802,
+      "lon": 12.54681,
+      "area": "Sydhavn",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Badesaison der Hafenbäder ist etwa Juni bis Ende August; außerhalb wird nicht gebadet. Schwimmen nur, wenn die grüne Flagge steht – bei Regen und kurz danach ist die Wasserqualität unsicher.",
+      "desc": "Wörtlich „die Wassertreppe“: eine breite Steintreppe, die ins Hafenbecken führt und im Sommer als Badestelle und Tribüne gleichzeitig funktioniert.",
+      "tips": [
+        "Zum Sonnen und Sitzen oft besser geeignet als zum Schwimmen.",
+        "Abends ein guter Platz für den Sonnenuntergang."
+      ],
+      "website": "https://www.kk.dk/brug-byen/vandet-i-byen/badevandskvalitet",
+      "tags": [
+        "Baden",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "swim-refshalebassin",
+      "name": "Søndre Refshalebassin Badezone",
+      "cat": "swim",
+      "sub": "Badezone auf Refshaleøen",
+      "lat": 55.69008,
+      "lon": 12.60962,
+      "area": "Refshaleøen",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Badesaison der Hafenbäder ist etwa Juni bis Ende August; außerhalb wird nicht gebadet. Schwimmen nur, wenn die grüne Flagge steht – bei Regen und kurz danach ist die Wasserqualität unsicher.",
+      "desc": "Badezone im südlichen Hafenbecken von Refshaleøen, gleich neben den Streetfood-Ständen von Reffen. Kombination aus Schwimmen und Mittagessen ist hier wörtlich möglich.",
+      "tips": [
+        "Lässt sich ideal mit Reffen verbinden – erst baden, dann essen.",
+        "Kein Rettungsschwimmer, keine Absperrung: nur bei grüner Flagge ins Wasser."
+      ],
+      "website": "https://www.kk.dk/brug-byen/vandet-i-byen/badevandskvalitet",
+      "tags": [
+        "Baden",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap · Københavns Kommune (Okt 2026)"
+    },
+    {
+      "id": "swim-la-banchina",
+      "name": "La Banchina Badezone",
+      "cat": "swim",
+      "sub": "Badezone am Restaurant",
+      "lat": 55.68942,
+      "lon": 12.61054,
+      "area": "Refshaleøen",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Badesaison der Hafenbäder ist etwa Juni bis Ende August; außerhalb wird nicht gebadet. Schwimmen nur, wenn die grüne Flagge steht – bei Regen und kurz danach ist die Wasserqualität unsicher.",
+      "desc": "Badestelle direkt an La Banchina, dem kleinen Restaurant mit Holzsteg auf Refshaleøen. Sauna und Sprung ins Hafenbecken gehören hier zum Konzept – der Steg ist aber auch ohne Restaurantbesuch zugänglich.",
+      "tips": [
+        "Die Sauna von La Banchina muss man separat buchen und ist schnell ausgebucht.",
+        "Der Holzsteg ist der beste Platz zum Sonnenbaden auf Refshaleøen."
+      ],
+      "website": "https://www.labanchina.dk/",
+      "tags": [
+        "Baden",
+        "Gratis",
+        "Draußen"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "swim-sandkaj",
+      "name": "Badezone Sandkaj",
+      "cat": "swim",
+      "sub": "Badezone in Nordhavn",
+      "lat": 55.70625,
+      "lon": 12.59716,
+      "area": "Nordhavn",
+      "priceLevel": 0,
+      "priceText": "Kostenlos",
+      "hours": null,
+      "hoursNote": "Badesaison der Hafenbäder ist etwa Juni bis Ende August; außerhalb wird nicht gebadet. Schwimmen nur, wenn die grüne Flagge steht – bei Regen und kurz danach ist die Wasserqualität unsicher.",
+      "desc": "Badezone im neuen Hafenviertel Nordhavn (Århusgadekvarteret), zwischen den neuen Wohnblocks und dem Kai. Mit dem Hafenbus oder der Metro M4 gut erreichbar.",
+      "tips": [
+        "Der künstliche Sandstrand ist bei Familien beliebt.",
+        "Mit der Metro M4 bis Nordhavn, dann wenige Minuten zu Fuß."
+      ],
+      "website": "https://www.kk.dk/brug-byen/vandet-i-byen/badevandskvalitet",
+      "tags": [
+        "Baden",
+        "Gratis",
+        "Draußen",
+        "Familie"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "hb-refshaleoen",
+      "name": "Refshaleøen (Hafenbus)",
+      "cat": "transit",
+      "sub": "Hafenbus 991/992 · Anleger",
+      "lat": 55.69092,
+      "lon": 12.60713,
+      "area": "Refshaleøen",
+      "desc": "Anleger am Ende der Linie, direkt bei Reffen und den alten Werfthallen. Von hier kommt man ohne Auto auf die Halbinsel – mit dem Bus wäre es ein langer Umweg.",
+      "tips": [
+        "Für Reffen und die Streetfood-Stände der praktischste Weg vom Zentrum.",
+        "Endstation: der Bus bleibt hier meist einige Minuten stehen."
+      ],
+      "website": "https://www.moviatrafik.dk/",
+      "tags": [
+        "Verkehr",
+        "Hafenbus"
+      ],
+      "src": "OpenStreetMap (Fährrelationen 991/992, Movia) (Okt 2026)",
+      "hours": null,
+      "hoursNote": "Hafenbus 991/992 (Movia): tagsüber ca. alle 20–30 Min., abends seltener. Ein normales ÖPNV-Ticket gilt – Fahrplan und Abfahrten: rejseplanen.dk."
+    },
+    {
+      "id": "hb-nordre-toldbod",
+      "name": "Nordre Toldbod (Hafenbus)",
+      "cat": "transit",
+      "sub": "Hafenbus 991/992 · Anleger",
+      "lat": 55.68817,
+      "lon": 12.59963,
+      "area": "Langelinie / Østerbro",
+      "desc": "Anleger am Nordre Toldbod, wenige Minuten von der Kleinen Meerjungfrau und vom Kastell. Der kürzeste Bootsweg zwischen Langelinie und der Innenstadt.",
+      "tips": [
+        "Für die Kleine Meerjungfrau hier aussteigen – kürzer als über Nyhavn.",
+        "Direkt neben der Anlegestelle liegen die Anleger der Kanaltouren."
+      ],
+      "website": "https://www.moviatrafik.dk/",
+      "tags": [
+        "Verkehr",
+        "Hafenbus"
+      ],
+      "src": "OpenStreetMap (Fährrelationen 991/992, Movia) (Okt 2026)",
+      "hours": null,
+      "hoursNote": "Hafenbus 991/992 (Movia): tagsüber ca. alle 20–30 Min., abends seltener. Ein normales ÖPNV-Ticket gilt – Fahrplan und Abfahrten: rejseplanen.dk."
+    },
+    {
+      "id": "hb-operaen",
+      "name": "Operaen (Hafenbus)",
+      "cat": "transit",
+      "sub": "Hafenbus 991/992 · Anleger",
+      "lat": 55.68151,
+      "lon": 12.59906,
+      "area": "Holmen / Operaen",
+      "desc": "Anleger direkt an der Königlichen Oper auf Holmen. Von hier sind es wenige Minuten zur Oper und zum Architekturviertel Forbrændingen.",
+      "tips": [
+        "Die Oper ist auch von außen sehenswert – Führungen lohnen sich.",
+        "Über die Inderhavnsbroen ist Nyhavn zu Fuß in 10 Minuten erreichbar."
+      ],
+      "website": "https://www.moviatrafik.dk/",
+      "tags": [
+        "Verkehr",
+        "Hafenbus"
+      ],
+      "src": "OpenStreetMap (Fährrelationen 991/992, Movia) (Okt 2026)",
+      "hours": null,
+      "hoursNote": "Hafenbus 991/992 (Movia): tagsüber ca. alle 20–30 Min., abends seltener. Ein normales ÖPNV-Ticket gilt – Fahrplan und Abfahrten: rejseplanen.dk."
+    },
+    {
+      "id": "hb-nyhavn",
+      "name": "Nyhavn (Hafenbus)",
+      "cat": "transit",
+      "sub": "Hafenbus 991/992 · Anleger",
+      "lat": 55.67913,
+      "lon": 12.59432,
+      "area": "Nyhavn",
+      "desc": "Der zentralste Anleger: mitten am Nyhavn, an der Nordseite des Kanals. Von hier fährt der Hafenbus nach Refshaleøen und in Richtung Sydhavn.",
+      "tips": [
+        "Achtung: nicht mit den Kanaltour-Booten verwechseln – der Hafenbus ist gelb.",
+        "Für den Nyhavn selbst ist dieser Anleger der kürzeste Weg vom Wasser."
+      ],
+      "website": "https://www.moviatrafik.dk/",
+      "tags": [
+        "Verkehr",
+        "Hafenbus"
+      ],
+      "src": "OpenStreetMap (Fährrelationen 991/992, Movia) (Okt 2026)",
+      "hours": null,
+      "hoursNote": "Hafenbus 991/992 (Movia): tagsüber ca. alle 20–30 Min., abends seltener. Ein normales ÖPNV-Ticket gilt – Fahrplan und Abfahrten: rejseplanen.dk."
+    },
+    {
+      "id": "hb-knippelsbro",
+      "name": "Knippelsbro (Hafenbus)",
+      "cat": "transit",
+      "sub": "Hafenbus 991/992 · Anleger",
+      "lat": 55.67418,
+      "lon": 12.58702,
+      "area": "Slotsholmen / Knippelsbro",
+      "desc": "Anleger an der Knippelsbro, zwischen Innenstadt und Christianshavn. Praktisch für den Weg zur Børsen, zum Schloss Christiansborg und nach Christianshavn.",
+      "tips": [
+        "Von der Brücke selbst hat man den besten Blick auf den Hafen.",
+        "Zum Schloss Christiansborg sind es fünf Minuten zu Fuß."
+      ],
+      "website": "https://www.moviatrafik.dk/",
+      "tags": [
+        "Verkehr",
+        "Hafenbus"
+      ],
+      "src": "OpenStreetMap (Fährrelationen 991/992, Movia) (Okt 2026)",
+      "hours": null,
+      "hoursNote": "Hafenbus 991/992 (Movia): tagsüber ca. alle 20–30 Min., abends seltener. Ein normales ÖPNV-Ticket gilt – Fahrplan und Abfahrten: rejseplanen.dk."
+    },
+    {
+      "id": "hb-royal-library",
+      "name": "Det Kongelige Bibliotek (Hafenbus)",
+      "cat": "transit",
+      "sub": "Hafenbus 991/992 · Anleger",
+      "lat": 55.67223,
+      "lon": 12.58071,
+      "area": "Slotsholmen",
+      "desc": "Anleger am Schwarzen Diamanten, dem gläsernen Anbau der Königlichen Bibliothek. Der fotogenste Halt der Linie – das Gebäude spiegelt sich direkt im Wasser.",
+      "tips": [
+        "Der Schwarze Diamant ist frei zugänglich, die Wechselausstellungen kosten Eintritt.",
+        "Das Café im Gebäude liegt direkt am Wasser."
+      ],
+      "website": "https://www.moviatrafik.dk/",
+      "tags": [
+        "Verkehr",
+        "Hafenbus"
+      ],
+      "src": "OpenStreetMap (Fährrelationen 991/992, Movia) (Okt 2026)",
+      "hours": null,
+      "hoursNote": "Hafenbus 991/992 (Movia): tagsüber ca. alle 20–30 Min., abends seltener. Ein normales ÖPNV-Ticket gilt – Fahrplan und Abfahrten: rejseplanen.dk."
+    },
+    {
+      "id": "hb-bryggebroen",
+      "name": "Bryggebroen (Hafenbus)",
+      "cat": "transit",
+      "sub": "Hafenbus 991/992 · Anleger",
+      "lat": 55.66193,
+      "lon": 12.56889,
+      "area": "Islands Brygge / Vesterbro",
+      "desc": "Anleger an der Bryggebroen, der Fußgänger- und Fahrradbrücke zwischen Vesterbro und Islands Brygge. Von hier ist es ein kurzer Weg zum Hafenbad Islands Brygge.",
+      "tips": [
+        "Für das Havnebadet Islands Brygge hier aussteigen.",
+        "Die Bryggebroen selbst ist einen Spaziergang wert."
+      ],
+      "website": "https://www.moviatrafik.dk/",
+      "tags": [
+        "Verkehr",
+        "Hafenbus"
+      ],
+      "src": "OpenStreetMap (Fährrelationen 991/992, Movia) (Okt 2026)",
+      "hours": null,
+      "hoursNote": "Hafenbus 991/992 (Movia): tagsüber ca. alle 20–30 Min., abends seltener. Ein normales ÖPNV-Ticket gilt – Fahrplan und Abfahrten: rejseplanen.dk."
+    },
+    {
+      "id": "hb-teglholmen",
+      "name": "Teglholmen (Hafenbus)",
+      "cat": "transit",
+      "sub": "Hafenbus 991/992 · Anleger",
+      "lat": 55.64792,
+      "lon": 12.55132,
+      "area": "Sydhavn / Teglholmen",
+      "desc": "Südlicher Endpunkt im neuen Hafenviertel Sydhavn. Von hier sind es wenige Minuten zu den Kanälen von Sluseholmen und zur Badezone Teglholm Brygge.",
+      "tips": [
+        "Für Sluseholmen und die Badezonen im Sydhavn hier aussteigen.",
+        "Die Strecke dorthin führt an den alten Werften vorbei."
+      ],
+      "website": "https://www.moviatrafik.dk/",
+      "tags": [
+        "Verkehr",
+        "Hafenbus"
+      ],
+      "src": "OpenStreetMap (Fährrelationen 991/992, Movia) (Okt 2026)",
+      "hours": null,
+      "hoursNote": "Hafenbus 991/992 (Movia): tagsüber ca. alle 20–30 Min., abends seltener. Ein normales ÖPNV-Ticket gilt – Fahrplan und Abfahrten: rejseplanen.dk."
     }
   ]
 }

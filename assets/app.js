@@ -85,7 +85,7 @@
    *   Dutzenden Karten nur Rauschen.
    */
   function showsRating(p) {
-    return p.cat !== "supermarket" && p.cat !== "hoho" && p.cat !== "transit";
+    return p.cat !== "supermarket" && p.cat !== "hoho" && p.cat !== "transit" && p.cat !== "swim";
   }
 
   function isGastro(p) {
@@ -106,7 +106,10 @@
    */
   function hoursLabel(p, st) {
     if (st.known) return st.text;
-    return p.cat === "tour" ? "Abfahrtszeiten laut Anbieter" : "Zeiten unbekannt";
+    if (p.cat === "tour") return "Abfahrtszeiten laut Anbieter";
+    // Badezonen haben keine Öffnungszeiten, sondern eine Saison.
+    if (p.cat === "swim") return "Badesaison beachten";
+    return "Zeiten unbekannt";
   }
   function refDate() { return new Date(); }
 
@@ -149,21 +152,39 @@
   /**
    * Tags als Filter nutzbar machen: nur Tags, die in den gerade aktiven
    * Kategorien mindestens zweimal vorkommen (ein Einzelfall lohnt keinen Chip).
-   * Höchstens 12, absteigend nach Häufigkeit.
+   *
+   * Wichtig: aktive Tags werden IMMER mit aufgenommen, auch wenn sie aus den
+   * Top-Werten herausfallen. Sonst verschwindet ein gesetzter Filter lautlos,
+   * sobald neue Tags dazukommen – der Nutzer sieht dann alle Orte und keinen
+   * Grund dafür.
    */
+  var TAG_LIMIT = 16;
+
   function availableTags() {
     var counts = {};
     state.places.forEach(function (p) {
       if (!state.active[p.cat]) return;
       (p.tags || []).forEach(function (t) { counts[t] = (counts[t] || 0) + 1; });
     });
-    return Object.keys(counts)
+
+    var ranked = Object.keys(counts)
       .filter(function (t) { return counts[t] >= 2; })
+      .sort(function (a, b) { return counts[b] - counts[a] || a.localeCompare(b, "de"); })
+      .slice(0, TAG_LIMIT);
+
+    var active = Object.keys(state.tags).filter(function (t) {
+      return state.tags[t] && counts[t] > 0 && ranked.indexOf(t) === -1;
+    });
+
+    return ranked
+      .concat(active)
+      .map(function (t) { return { tag: t, count: counts[t] }; })
       .sort(function (a, b) {
-        return counts[b] - counts[a] || a.localeCompare(b, "de");
-      })
-      .slice(0, 12)
-      .map(function (t) { return { tag: t, count: counts[t] }; });
+        // gesetzte Filter oben, danach nach Häufigkeit
+        var onA = state.tags[a.tag] ? 1 : 0, onB = state.tags[b.tag] ? 1 : 0;
+        if (onA !== onB) return onB - onA;
+        return b.count - a.count || a.tag.localeCompare(b.tag, "de");
+      });
   }
 
   function renderTags() {
@@ -249,6 +270,14 @@
     btn.setAttribute("aria-pressed", state.favOnly ? "true" : "false");
     btn.disabled = n === 0 && !state.favOnly;
     btn.title = n ? "Nur gemerkte Orte (" + n + ")" : "Noch nichts gemerkt";
+
+    var gpx = $("gpxBtn");
+    if (gpx) {
+      gpx.disabled = n === 0;
+      gpx.title = n
+        ? "Gemerkte Orte als GPX exportieren (" + n + ") – für Komoot, Garmin, OsmAnd"
+        : "Erst Orte merken, dann exportieren";
+    }
   }
 
   function toggleFav(id) {
@@ -260,6 +289,74 @@
     syncMarkers();
     var d = els.drawer.querySelector(".fav-toggle");
     if (d) syncDrawerFav(d, id);
+  }
+
+  // -------------------------------------------------------------- GPX-Export
+  // Die gemerkte Liste als GPX-Datei: öffnet in Komoot, Garmin, OsmAnd und auf
+  // vielen Smartwatches. Rein im Browser erzeugt, kein Server, keine Kopie der
+  // Daten verlässt das Gerät.
+  function xmlEsc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&apos;");
+  }
+
+  function buildGpx(list) {
+    var parts = [
+      '<?xml version="1.0" encoding="UTF-8"?>',
+      '<gpx version="1.1" creator="Kopenhagen Stadtplan" xmlns="http://www.topografix.com/GPX/1/1">',
+      "  <metadata>",
+      "    <name>Kopenhagen – gemerkte Orte</name>",
+      "    <desc>" + list.length + " Orte aus dem Kopenhagen Stadtplan</desc>",
+      "    <time>" + new Date().toISOString() + "</time>",
+      "  </metadata>",
+    ];
+    list.forEach(function (p) {
+      parts.push(
+        '  <wpt lat="' + p.lat.toFixed(6) + '" lon="' + p.lon.toFixed(6) + '">',
+        "    <name>" + xmlEsc(p.name) + "</name>",
+        "    <desc>" + xmlEsc([p.sub, p.area, p.priceText].filter(Boolean).join(" · ")) + "</desc>",
+        "    <type>" + xmlEsc(state.catById[p.cat] ? state.catById[p.cat].label : p.cat) + "</type>",
+        "    <sym>Flag, Blue</sym>",
+        "  </wpt>",
+      );
+    });
+    parts.push("</gpx>");
+    return parts.join("\n");
+  }
+
+  function exportGpx() {
+    var list = state.places.filter(function (p) { return state.favs[p.id]; });
+    if (!list.length) return;
+
+    // Kategorien-Reihenfolge beibehalten, innerhalb der Kategorie die
+    // kuratierte Reihenfolge – so ist die Datei auch in der Liste sinnvoll.
+    var order = state.categories.map(function (c) { return c.id; });
+    list.sort(function (a, b) {
+      var d = order.indexOf(a.cat) - order.indexOf(b.cat);
+      return d !== 0 ? d : (a._idx || 0) - (b._idx || 0);
+    });
+
+    var blob = new Blob([buildGpx(list)], { type: "application/gpx+xml" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "kopenhagen-gemerkte-orte.gpx";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    // Freigeben, sobald der Browser den Download gestartet hat
+    setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+
+    var btn = $("gpxBtn");
+    if (btn) {
+      var old = btn.textContent;
+      btn.textContent = "✓ " + list.length + " Orte exportiert";
+      setTimeout(function () { btn.textContent = old; }, 2200);
+    }
   }
 
   function syncDrawerFav(btn, id) {
@@ -804,14 +901,13 @@
   }
 
   function showRainPlaces(btn) {
-    // Der Tag muss in der aktuellen Themenauswahl verfügbar sein; wenn nicht,
-    // alle Kategorien aktivieren, damit er auftaucht.
-    var avail = availableTags().map(function (a) { return a.tag; });
-    if (avail.indexOf("Regenwetter") === -1) {
-      state.categories.forEach(function (c) { state.active[c.id] = true; });
-      renderChips();
-    }
-    state.tags = { Regenwetter: true };
+    // Alle Kategorien aktivieren, damit die Tag-Zählung das volle Bild hat, dann
+    // den Filter setzen. renderTags() behält aktive Tags auch außerhalb der
+    // Top-Liste (siehe availableTags), der Filter kann also nicht verschwinden.
+    state.categories.forEach(function (c) { state.active[c.id] = true; });
+    state.tags = {};
+    state.tags["Regenwetter"] = true;
+    renderChips();
     renderTags();
     renderList();
     syncMarkers();
@@ -1005,6 +1101,9 @@
         syncMarkers();
       });
     }
+
+    var gpxBtn = $("gpxBtn");
+    if (gpxBtn) gpxBtn.addEventListener("click", exportGpx);
 
     els.compare.addEventListener("click", openPrices);
     els.locate.addEventListener("click", locate);

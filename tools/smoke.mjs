@@ -137,7 +137,7 @@ const DEFAULT_VISIBLE = data.places.filter((p) => {
 }).length;
 // Spiegelt showsRating() in assets/app.js: Supermärkte und Haltestellen werden
 // ohne Bewertung geführt und zeigen deshalb auch keinen Platzhalter.
-const RATING_CATS = (p) => !["supermarket", "hoho", "transit"].includes(p.cat);
+const RATING_CATS = (p) => !["supermarket", "hoho", "transit", "swim"].includes(p.cat);
 const RATED = data.places.filter((p) => RATING_CATS(p) && p.rating).length;
 const UNRATED = data.places.filter((p) => RATING_CATS(p) && !p.rating).length;
 const cards = () => doc.querySelectorAll(".card").length;
@@ -355,8 +355,9 @@ const stations = data.places.filter((p) => p.cat === "transit");
 const transitCat = data.categories.find((c) => c.id === "transit");
 check("Kategorie Metro & S-Bahn existiert", !!transitCat && stations.length > 0, stations.length + " Stationen");
 check("Kategorie startet ausgeschaltet", transitCat.defaultOff === true);
-check("Stationen nennen ihre Linien", stations.every((s) => /Metro|S-tog/.test(s.sub)), stations[0].sub);
-check("Stationen haben Betriebszeiten", stations.every((s) => !!s.hours), stations.filter((s) => !s.hours).length + " ohne");
+check("Stationen nennen ihre Linien", stations.every((s) => /Metro|S-tog|Hafenbus/.test(s.sub)), stations[0].sub);
+const railStations = stations.filter((s) => /Metro|S-tog/.test(s.sub));
+check("Metro-/S-tog-Stationen haben Betriebszeiten", railStations.every((s) => !!s.hours), railStations.filter((s) => !s.hours).length + " ohne");
 check("Stationen ohne Bewertungs-Platzhalter", stations.every((s) => s.rating == null));
 
 // Beide Netze am selben Ort: Nørreport und København H müssen Metro UND S-tog zeigen
@@ -379,6 +380,58 @@ const withoutTransit = cards();
 setCat("transit", true);
 await new Promise((r) => setTimeout(r, 40));
 check("Zuschalten erhöht die Trefferzahl um die Stationen", cards() === withoutTransit + stations.length, withoutTransit + " → " + cards());
+
+console.log("\n== Hafenbäder ==");
+const swim = data.places.filter((p) => p.cat === "swim");
+check("Kategorie Baden existiert", !!doc.querySelector(".chip[data-cat='swim']") && swim.length > 0, swim.length + " Stellen");
+check("Badestellen sind kostenlos", swim.every((s) => /Kostenlos/i.test(s.priceText || "")), swim.filter((s) => !/Kostenlos/i.test(s.priceText || "")).length + " ohne");
+check("Badestellen nennen Saison und Flaggenregel", swim.every((s) => /Saison|geöffnet/i.test(s.hoursNote || "")), swim.filter((s) => !/Saison|geöffnet/i.test(s.hoursNote || "")).length + " ohne");
+check("Badestellen ohne Bewertungs-Platzhalter", swim.every((s) => s.rating == null));
+check("Badestellen haben Koordinaten im Wasserbereich", swim.every((s) => Math.abs(s.lat - 55.676) < 0.05), "ok");
+
+const swimLabel = doc.querySelector(".card[data-id='" + swim[0].id + "'] .card-hours span:last-child")?.textContent;
+check("Badestelle zeigt 'Badesaison beachten'", swimLabel === "Badesaison beachten", swimLabel);
+
+console.log("\n== Hafenbus ==");
+const hb = data.places.filter((p) => p.cat === "transit" && /Hafenbus/.test(p.sub));
+check("8 Hafenbus-Anleger", hb.length === 8, String(hb.length));
+check("Anleger nennen die Linie 991/992", hb.every((s) => /991\/992/.test(s.sub)));
+check("Anleger nennen den Ticketvorteil", hb.every((s) => /ÖPNV-Ticket|Ticket/i.test(s.hoursNote || "")), "ok");
+check("Nahverkehr-Kategorie heißt passend", /Hafenbus/.test(data.categories.find((c) => c.id === "transit").label), data.categories.find((c) => c.id === "transit").label);
+
+console.log("\n== Außenplätze ==");
+const outdoor = data.places.filter((p) => (p.tags || []).includes("Außenplätze"));
+check("Tag 'Außenplätze' vergeben", outdoor.length >= 2, outdoor.length + " Orte");
+const outdoorBtn = doc.querySelector("#tagbar .tag[data-tag='Außenplätze']");
+check("Tag erscheint im Themenfilter", !!outdoorBtn);
+if (outdoorBtn) {
+  outdoorBtn.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+  await new Promise((r) => setTimeout(r, 50));
+  check("Filter zeigt nur Orte mit Außenplätzen", cards() === outdoor.length, cards() + " vs " + outdoor.length);
+  doc.querySelector("#tagbar .tag-clear").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+  await new Promise((r) => setTimeout(r, 40));
+}
+
+console.log("\n== GPX-Export ==");
+const gpxBtn = $("gpxBtn");
+check("GPX-Knopf existiert", !!gpxBtn);
+check("ohne Favoriten deaktiviert", !!gpxBtn && gpxBtn.disabled === true);
+
+doc.querySelector(".card-fav").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+await new Promise((r) => setTimeout(r, 40));
+check("mit Favorit aktiviert", !!gpxBtn && gpxBtn.disabled === false);
+
+let captured = null;
+window.URL.createObjectURL = (blob) => { captured = blob; return "blob:test"; };
+window.URL.revokeObjectURL = () => {};
+gpxBtn.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+await new Promise((r) => setTimeout(r, 80));
+
+check("Export erzeugt eine Datei", !!captured);
+const gpxText = captured && captured.text ? await captured.text() : "";
+check("GPX ist wohlgeformt", /<gpx[^>]*version="1\.1"/.test(gpxText) && /<\/gpx>\s*$/.test(gpxText), gpxText.length + " Zeichen");
+check("GPX enthält genau einen Wegpunkt", (gpxText.match(/<wpt /g) || []).length === 1, String((gpxText.match(/<wpt /g) || []).length));
+check("Wegpunkt hat Koordinaten und Namen", /<wpt lat="55\.\d+" lon="12\.\d+">/.test(gpxText) && /<name>[^<]+<\/name>/.test(gpxText));
 
 console.log("\n== Preisvergleich ==");
 $("compare").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));

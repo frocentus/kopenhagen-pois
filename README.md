@@ -2,11 +2,12 @@
 
 **Live:** https://frocentus.github.io/kopenhagen-pois/  ·  **Repo:** https://github.com/frocentus/kopenhagen-pois
 
-Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **148 kuratierten Orten**:
+Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **166 kuratierten Orten**:
 
 | Kategorie | Anzahl | Inhalte |
 |---|---|---|
 | 🏛 Sehenswürdigkeiten | 22 | Eintrittspreise, Öffnungszeiten, Tipps |
+| 🏊 Hafenbäder & Baden | 10 | Hafenbäder und Badezonen, kostenlos |
 | 🎫 Touren & Rundfahrten | 8 | Hop-On-Hop-Off-Busse, Kanaltouren, Stadt- und Radführungen |
 | 🚏 Haltestellen | 11 | Einstiegspunkte der Hop-On-Hop-Off-Busse |
 | 🥐 Frühstück & Brunch | 8 | Cafés, Brunch-Spots |
@@ -15,7 +16,7 @@ Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **148 kuratiert
 | 🍔 Fast Food | 10 | Burger, Fritten, Pizza, Streetfood |
 | 🛒 Supermärkte | 16 | inkl. 4× 7-Eleven, echte Öffnungszeiten |
 | 🛍 Einkaufszentren | 4 | Kaufhäuser & Malls |
-| 🚇 Metro & S-Bahn | 26 | Stationen mit Linien und Umstiegsinfo (startet ausgeschaltet) |
+| 🚇 Metro, S-Bahn & Hafenbus | 34 | Stationen und Anleger mit Linien (startet ausgeschaltet) |
 | ℹ️ Praktisches | 5 | Toiletten, Apotheken |
 
 **Features**
@@ -23,6 +24,9 @@ Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **148 kuratiert
 - Leaflet-Karte mit OpenStreetMap-Kacheln (ohne API-Key), Marker-Clustering und Layer-Umschalter (Karte / Rad & Wandern)
 - Filter nach Kategorie, **Themenfilter** (Tags wie „Boot“, „Gratis“, „Familie“ – UND-verknüpft), Volltextsuche, Sortierung (Empfehlung, Name, Bewertung, Preis, Entfernung)
 - **Favoriten**: Orte per Stern merken, „Nur gemerkte“-Filter; rein lokal im `localStorage`, kein Konto, kein Server
+- **GPX-Export**: die gemerkte Liste als `.gpx`-Datei – direkt im Browser erzeugt, ohne Server. Öffnet in Komoot, Garmin, OsmAnd und auf vielen Smartwatches; der Knopf ist ohne Favoriten deaktiviert
+- **Außenplätze**: 20 Gastro-Orte sind mit dem Tag „Außenplätze“ markiert, wo OSM `outdoor_seating=yes` für genau diesen Betrieb kennt – als Themenfilter „Außenplätze“ nutzbar. Namensabgleich statt Umkreis, sonst landet man beim Nachbarn
+- **Hafenbäder & Baden**: 10 kostenlose Hafenbäder und Badezonen mit Saison- und Flaggenhinweis, ohne geratene Wassertemperatur (es gibt dafür keine offene API)
 - **Teilen**: ein Klick kopiert den Deep-Link des Ortes (mit Fallback für unsichere Kontexte)
 - **„Nur jetzt geöffnet"** – berechnet aus den OSM-Öffnungszeiten in Zeitzone `Europe/Copenhagen`, inkl. Saisonregeln, Nachtöffnung und Feiertagsausnahmen
 - Detailansicht mit Beschreibung, Tipps, Wochen-Öffnungszeiten, Preisen, Bewertung, Website/Speisekarte und Google-Maps-Route
@@ -30,7 +34,7 @@ Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **148 kuratiert
 - **Preisvergleich** als sortierbare Tabelle (Restaurants + Fast Food, Hauptgericht in DKK)
 - **Touren & Rundfahrten**: Hop-On-Hop-Off-Busse, Kanaltouren (vom 80-DKK-Nettobåd bis zur privaten Bootstour), Stadtführung und Radtour – mit Preisen und allgemeinen Betriebszeiten. Wo keine belastbaren Zeiten vorliegen, steht statt „Zeiten unbekannt“ „Abfahrtszeiten laut Anbieter“ plus der konkrete Hinweis im Detail
 - **Hop-On-Hop-Off-Haltestellen**: 11 Einstiegspunkte als eigene, abschaltbare Kategorie – jeweils mit der Stoppnummer des Anbieters (Stromma bzw. Red Sightseeing) und dem nächsten Ziel. So ist sichtbar, wo man tatsächlich einsteigen kann, statt nur einen Marker am Rathausplatz
-- **Metro & S-Bahn**: 26 Stationen im Innenstadtbereich mit den Linien (M1–M4 bzw. A–H), Umstiegsmöglichkeiten und allgemeinen Betriebszeiten. Diese Kategorie ist **standardmäßig ausgeschaltet** (`defaultOff`) – sonst würden 26 Stationsmarker die Sehenswürdigkeiten überdecken; der Chip steht sichtbar daneben und schaltet sie mit einem Klick dazu
+- **Metro, S-Bahn & Hafenbus**: 34 Halte mit den Linien (M1–M4, A–H, Hafenbus 991/992). Diese Kategorie ist **standardmäßig ausgeschaltet** (`defaultOff`) – sonst würden die Stationsmarker die Sehenswürdigkeiten überdecken; der Chip steht sichtbar daneben und schaltet sie mit einem Klick dazu. Der Hafenbus ist regulärer ÖPNV: Ein normales Ticket gilt, was ihn zur günstigsten Hafenrundfahrt macht
 - **Supermärkte ohne Bewertung**: Filialen von Ketten (Netto, Føtex, Rema 1000, 7-Eleven …) werden bewusst ohne Bewertung geführt – dort erscheint weder eine Zahl noch ein Platzhalter
 - **Transparente Datenlücken**: Orte ohne Bewertung sind sichtbar als „— keine Bewertung" markiert (mit Begründung im Detail, z. B. Kette, abweichende Quellen, kein Profil); Gastro-Orte ohne Online-Karte zeigen „Keine Speisekarte online" samt Erklärung
 - **Mobil**: Bottom-Sheet mit Backdrop, Schließen-Kreuz, 48-px-Touch-Ziel und `env(safe-area-inset-bottom)` (nicht in der iOS-Home-Indicator-Zone)
@@ -95,7 +99,7 @@ Alle Inhalte stehen in `data/places.json`. Ein Eintrag:
 {
   "id": "gasoline-grill",          // eindeutig, wird zum Deep-Link
   "name": "Gasoline Grill",
-  "cat": "fastfood",               // attraction | tour | hoho | transit | breakfast | cafe | restaurant | fastfood | supermarket | mall | services
+  "cat": "fastfood",               // attraction | swim | tour | hoho | transit | breakfast | cafe | restaurant | fastfood | supermarket | mall | services
   "sub": "Burger in alter Tankstelle",
   "lat": 55.68324, "lon": 12.58517,
   "area": "Indre By / Landgreven", // Viertel, wird in Liste und Detail angezeigt
@@ -161,6 +165,9 @@ node tools/fetch-extracts.mjs # Wikipedia-Einleitungen (koordinatenverifiziert) 
 node tools/add-places.mjs     # einmalig: Kategorien/Orte ergänzen (idempotent)
 node tools/add-tours.mjs      # einmalig: Kategorie Touren + Touren-Einträge (idempotent)
 node tools/add-transit.mjs    # einmalig: Kategorie Metro & S-Bahn (idempotent)
+node tools/add-swim.mjs       # einmalig: Kategorie Hafenbäder & Baden (idempotent)
+node tools/add-harbourbus.mjs # einmalig: Hafenbus-Anleger in "Nahverkehr" (idempotent)
+node tools/add-outdoor.mjs    # Tag "Außenplätze" aus OSM outdoor_seating (Netz nötig)
 node tools/linkcheck.mjs      # Website- und Menü-Links auf HTTP-Status prüfen
 node tools/test-hours.mjs     # Parser gegen alle Datensätze prüfen
 node tools/smoke.mjs          # UI-Smoke-Test ohne Browser (npm i jsdom)
@@ -221,6 +228,7 @@ abdunkelt. Ein reiner DOM-Test hätte den z-index-Bug unten nicht gefunden.
   Meter neben einem bereits erfassten. Die Marker stehen auf der jeweiligen Sehenswürdigkeit – die
   Haltestelle liegt an der Straße daneben; das steht in jedem Eintrag, damit der Marker keine
   Präzision vortäuscht, die er nicht hat. Betriebszeiten sind bewusst als Spanne hinterlegt
+  (Red 09:00–16:00, Stromma 09:30–16:00 bzw. 10:00–16:00 ab Ved Stranden), nicht als Fahrplan.
 - **Wikipedia-Auszüge**: `tools/fetch-extracts.mjs` übernimmt die Einleitung des deutschen Artikels –
   aber nur nach demselben Koordinatentest wie bei den Fotos. Zusätzlich muss bei Suchtreffern ein
   Namensbestandteil im Artikeltitel stecken, sonst gewinnt die Umgebung: „Rundetårn“ liegt direkt an
@@ -237,7 +245,17 @@ abdunkelt. Ein reiner DOM-Test hätte den z-index-Bug unten nicht gefunden.
   aus dem Gedächtnis geschrieben: Nørreport und København H führen Metro **und** S-tog, Kongens Nytorv ist
   die einzige Station mit M1–M4. **Keine Ticketpreise** – die Preisliste von DOT war nicht abrufbar, und
   eine geratene Zahl wäre schlechter als keine.
-  (Red 09:00–16:00, Stromma 09:30–16:00 bzw. 10:00–16:00 ab Ved Stranden), nicht als Fahrplan.
+- **Hafenbus**: Die acht Anleger stammen aus den OSM-Fährrelationen `route=ferry` mit `ref=991`/`992` und
+  `operator=Movia` – beide Linien bedienen dieselben Halte in entgegengesetzter Richtung. Damit ist belegt,
+  dass es regulärer ÖPNV ist und ein normales Ticket gilt.
+- **Hafenbäder**: `amenity=public_bath` und benannte `leisure=swimming_area` aus OSM, Koordinaten von dort.
+  Die Saison steht im Hinweistext, nicht in `hours` – ein Hafenbad ist im Winter nicht „geschlossen“, es
+  wird nur nicht gebadet, und ein 24/7-Eintrag wäre irreführend. **Keine Wassertemperatur**: dafür gibt es
+  keine offene API ohne Key; verlinkt sind badevand.dk und die Wasserqualitätsseite der Kommune.
+- **Außenplätze**: `tools/add-outdoor.mjs` fragt OSM nach `outdoor_seating=yes` und ordnet die Treffer über
+  den **Namen** zu, nicht über die Entfernung. Eine reine Umkreissuche liefert plausible Falschtreffer –
+  „Gasoline Grill“ liegt 26 m von „Pluto“, „Democratic Coffee“ 26 m von „Sanku Mini Hot Pot“. Ergebnis: 20
+  von 56 Gastro-Orten; alle übrigen bekommen den Tag bewusst nicht.
 
 Preise, Öffnungszeiten und Bewertungen ändern sich. Die Seite zeigt bewusst die Quelle pro Eintrag an;
 vor dem Besuch lohnt ein Blick auf die offizielle Website (im Detail-Panel verlinkt).
@@ -261,6 +279,20 @@ Backend, keine Secrets im Public Repo). Damit sie nicht immer wieder auftauchen,
 - **Leaflet Routing Machine**: Braucht einen OSRM-Server; der öffentliche Demo-Server ist gedrosselt und
   nicht für Produktion gedacht. Zusätzlich fehlt die Routengeometrie – ich habe Stopplisten, keine
   Straßenverläufe. Eine Linie quer über die Dächer wäre eine Lüge.
+- **Fahrradpumpen und -verleiher als Kategorie**: OSM kennt 85 Einträge mit `service:bicycle:pump` und 17
+  `bicycle_rental` – das sind aber fast ausschließlich **Fahrradläden**, keine öffentlichen Pumpen. Als
+  POI-Liste wäre das ein Branchenverzeichnis, nicht das, was der Wunsch meinte. Die zwei bekannten
+  Radbrücken (Cykelslangen, Inderhavnsbroen) sind sehenswert, rechtfertigen aber keine eigene Kategorie.
+- **Trinkwasserbrunnen als Kategorie**: 74 Treffer in OSM, davon praktisch alle **ohne Namen**. Eine Liste
+  aus „Trinkwasserbrunnen, Trinkwasserbrunnen, …“ hilft niemandem; als Layer mit 74 namenlosen Punkten
+  wäre er nur Rauschen. Sobald OSM-Namen oder Adressen dranhängen, ist das eine lohnende Ergänzung.
+- **PWA/Offline-Modus**: technisch machbar (Manifest + Service Worker), aber der Kartenteil bleibt ohne
+  Netz grau: Die OSM-Kachelserver untersagen Offline- und Massenabruf, Kacheln dürfen also nicht
+  vorgehalten werden. Eine „Offline-App“, die nur Liste und Details zeigt, aber keine Karte, verspricht
+  mehr als sie hält – deshalb bewusst nicht gebaut.
+- **Kuratierte Routen mit Linien**: siehe Routing Machine – ohne echte Geometrie nur eine Wunschlinie.
+- **Bäckerei- und Gratis-Filter**: existieren bereits und brauchen keinen neuen Code. Bäckereien sind die
+  Kategorie „Kaffee & Bäckerei“, kostenlose Orte der Themenfilter „Gratis“.
 
 ## Lizenz
 
