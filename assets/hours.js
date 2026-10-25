@@ -142,6 +142,10 @@
 
     var days = [[], [], [], [], [], [], []];
     var closedDays = [false, false, false, false, false, false, false];
+    // Merkt sich, ob die Intervalle eines Tages aus einer Regel ohne Wochentag stammen.
+    // Eine spätere Regel mit expliziten Tagen überschreibt diese (z. B.
+    // "05:00-24:00; Sa-Su 06:00-24:00" -> Wochenende beginnt um 6).
+    var fromDefault = [false, false, false, false, false, false, false];
     var marker = null; // saisonaler Marker, gilt für folgende Chunks
 
     text.split(";").forEach(function (chunkRaw) {
@@ -226,9 +230,16 @@
           return;
         }
 
+        var explicit = !!(dayList || dset);
         var applyTo = union(dayList, dset) || ALL_DAYS;
         Object.keys(applyTo).forEach(function (k) {
-          times.forEach(function (t) { days[k].push({ s: t.s, e: t.e }); });
+          var idx = +k;
+          if (explicit && fromDefault[idx]) {
+            days[idx] = [];
+            fromDefault[idx] = false;
+          }
+          times.forEach(function (t) { days[idx].push({ s: t.s, e: t.e }); });
+          if (!explicit) fromDefault[idx] = true;
         });
         dayList = dset ? union(dayList, dset) : null;
       });

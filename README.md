@@ -2,7 +2,7 @@
 
 **Live:** https://frocentus.github.io/kopenhagen-pois/  ·  **Repo:** https://github.com/frocentus/kopenhagen-pois
 
-Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **81 kuratierten Orten**:
+Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **84 kuratierten Orten**:
 
 | Kategorie | Anzahl | Inhalte |
 |---|---|---|
@@ -10,7 +10,7 @@ Statische Karte (GitHub Pages) für Kopenhagens Stadtzentrum mit **81 kuratierte
 | 🥐 Frühstück & Brunch | 11 | Cafés, Bäckereien, Brunch-Spots |
 | 🍽 Restaurants | 22 | Smørrebrød bis Michelin, Preisvergleich |
 | 🍔 Fast Food | 9 | Burger, Fritten, Pizza, Streetfood |
-| 🛒 Supermärkte | 13 | echte Öffnungszeiten, Preisniveau |
+| 🛒 Supermärkte | 16 | inkl. 4× 7-Eleven, echte Öffnungszeiten |
 | 🛍 Einkaufszentren | 4 | Kaufhäuser & Malls |
 
 **Features**

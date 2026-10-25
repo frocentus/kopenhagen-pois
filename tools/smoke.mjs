@@ -88,9 +88,9 @@ function check(name, cond, extra = "") {
 
 console.log("== Initiales Rendern ==");
 check("6 Kategorie-Chips", doc.querySelectorAll(".chip").length === 6, String(doc.querySelectorAll(".chip").length));
-check("81 Karten in der Liste", doc.querySelectorAll(".card").length === 81, String(doc.querySelectorAll(".card").length));
+check("84 Karten in der Liste", doc.querySelectorAll(".card").length === 84, String(doc.querySelectorAll(".card").length));
 check("Gruppen-Header vorhanden", doc.querySelectorAll(".list .group").length >= 6);
-check("Zähler gesetzt", /81 von 81/.test($("count").textContent), $("count").textContent);
+check("Zähler gesetzt", /84 von 84/.test($("count").textContent), $("count").textContent);
 check("Datenstand gesetzt", /25\.10\.2026/.test($("dataStamp").textContent), $("dataStamp").textContent);
 check("Öffnungszeiten-Status gerendert", doc.querySelectorAll(".status-dot").length > 50);
 check("keine JS-Fehler", errors.length === 0, errors.join(" / "));
@@ -98,9 +98,9 @@ check("keine JS-Fehler", errors.length === 0, errors.join(" / "));
 console.log("\n== Filter ==");
 const restChip = doc.querySelector(".chip[data-cat='restaurant']");
 restChip.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
-check("Restaurants abschaltbar", doc.querySelectorAll(".card").length < 81, String(doc.querySelectorAll(".card").length));
+check("Restaurants abschaltbar", doc.querySelectorAll(".card").length < 84, String(doc.querySelectorAll(".card").length));
 restChip.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
-check("wieder 82 Karten", doc.querySelectorAll(".card").length === 81);
+check("wieder 84 Karten", doc.querySelectorAll(".card").length === 84);
 
 const search = $("search");
 search.value = "smørrebrød";
@@ -152,7 +152,7 @@ console.log("\n== Sortierung ==");
 const sort = $("sort");
 sort.value = "price";
 sort.dispatchEvent(new window.Event("change", { bubbles: true }));
-check("Sortierung nach Preis läuft", doc.querySelectorAll(".card").length === 81);
+check("Sortierung nach Preis läuft", doc.querySelectorAll(".card").length === 84);
 check("keine Gruppen-Header bei Preissortierung", doc.querySelectorAll(".list .group").length === 0);
 
 console.log("\n== Kartenkacheln ==");

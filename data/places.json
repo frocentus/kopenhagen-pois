@@ -2255,30 +2255,118 @@
       "src": "OpenStreetMap (Okt 2026)"
     },
     {
-      "id": "seven-eleven",
-      "name": "7-Eleven",
+      "id": "seven-eleven-raadhuspladsen",
+      "name": "7-Eleven – Rådhuspladsen",
       "cat": "supermarket",
-      "sub": "Convenience / Kiosk",
-      "lat": 55.68093,
-      "lon": 12.57975,
-      "area": "Indre By / Amagertorv",
+      "sub": "Convenience Store, 24 h",
+      "lat": 55.67655,
+      "lon": 12.56934,
+      "area": "Indre By / Rådhuspladsen",
       "rating": null,
       "reviews": "—",
       "priceLevel": 2,
-      "priceText": "Teurer als Supermarkt",
-      "hours": null,
-      "hoursNote": "Filialen im Zentrum meist 24 h; Sortiment begrenzt.",
-      "desc": "Dichte Kette von Convenience-Stores in der ganzen Innenstadt – für Wasser, Kaffee, Snacks und Fahrkarten zu jeder Tages- und Nachtzeit.",
+      "priceText": "Kiosk-Preise – deutlich teurer als Supermarkt",
+      "hours": "24/7",
+      "hoursNote": "Durchgehend geöffnet, auch nachts und sonntags.",
+      "desc": "Rund um die Uhr geöffneter Kiosk an der Rådhuspladsen, genau zwischen Tivoli-Eingang und dem Beginn des Strøget – die zuverlässigste Adresse für Wasser, Kaffee und Snacks zu jeder Uhrzeit.",
       "tips": [
-        "Die zuverlässigste Option nach 22 Uhr.",
-        "Kaffee-Automat ist günstiger als im Café.",
-        "Fahrkarten für Metro und Bus gibt es hier ebenfalls."
+        "Nach 22 Uhr die sicherste Option im Zentrum – dann haben alle Supermärkte geschlossen.",
+        "Kaffeeautomat, belegte Brote (stykker) und heiße Würstchen an der Theke.",
+        "Fahrkarten für Metro und Bus gibt es an der Kasse."
       ],
       "website": "https://7-eleven.dk/",
       "menu": null,
       "tags": [
         "24h",
-        "Kiosk"
+        "Kiosk",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "seven-eleven-noerreport",
+      "name": "7-Eleven – Nørreport",
+      "cat": "supermarket",
+      "sub": "Convenience Store am Bahnhof",
+      "lat": 55.6833,
+      "lon": 12.57188,
+      "area": "Indre By / Nørreport",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Kiosk-Preise – teurer als Supermarkt",
+      "hours": "05:00-24:00; Sa-Su 06:00-24:00",
+      "hoursNote": "Am Verkehrsknoten Nørreport (Metro, S-Bahn, Regionalzüge); nachts geschlossen.",
+      "desc": "Filiale direkt am Knoten Nørreport, zwischen Metro, S-Bahn und Torvehallerne: Snacks, Getränke, Fahrkarten – der praktischste Stopp vor oder nach einer Zugfahrt.",
+      "tips": [
+        "Direkt am Metro-Ausgang – gut für Proviant vor der Fahrt zum Flughafen.",
+        "Öffnet morgens um 5 Uhr, ist aber nachts geschlossen.",
+        "Zwei Minuten zu Torvehallerne und zum SuperBrugsen an der Nørre Farimagsgade."
+      ],
+      "website": "https://7-eleven.dk/",
+      "menu": null,
+      "tags": [
+        "Kiosk",
+        "Verkehr",
+        "Zentral"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "seven-eleven-store-kongensgade",
+      "name": "7-Eleven – Store Kongensgade",
+      "cat": "supermarket",
+      "sub": "Convenience Store, 24 h",
+      "lat": 55.68507,
+      "lon": 12.58852,
+      "area": "Frederiksstaden / Nyhavn",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Kiosk-Preise – teurer als Supermarkt",
+      "hours": "24/7",
+      "hoursNote": "Durchgehend geöffnet.",
+      "desc": "24-Stunden-Filiale in Frederiksstaden, wenige Minuten von Nyhavn, Amalienborg und der Marmorkirche – die nächstgelegene durchgehend offene Option für dieses Viertel.",
+      "tips": [
+        "Für Nyhavn-Besuche die nächste 24-h-Adresse.",
+        "Kaffee und Gebäck für den Weg zur Kleinen Meerjungfrau mitnehmen.",
+        "Nachts die einzige Option zwischen Kongens Nytorv und Kastellet."
+      ],
+      "website": "https://7-eleven.dk/",
+      "menu": null,
+      "tags": [
+        "24h",
+        "Kiosk",
+        "Nyhavn"
+      ],
+      "src": "OpenStreetMap (Okt 2026)"
+    },
+    {
+      "id": "seven-eleven-christianshavn",
+      "name": "7-Eleven – Christianshavn",
+      "cat": "supermarket",
+      "sub": "Convenience Store, 24 h",
+      "lat": 55.67211,
+      "lon": 12.59236,
+      "area": "Christianshavn",
+      "rating": null,
+      "reviews": "—",
+      "priceLevel": 2,
+      "priceText": "Kiosk-Preise – teurer als Supermarkt",
+      "hours": "24/7",
+      "hoursNote": "Durchgehend geöffnet.",
+      "desc": "Rund um die Uhr geöffneter Kiosk am Christianshavns Torv, fünf Minuten von der Vor Frelsers Kirke – praktisch für den Christianshavn-Tag oder den Weg zum Opernhaus.",
+      "tips": [
+        "Die einzige 24-h-Option östlich des Kanals.",
+        "Getränke für den Spaziergang am Kanal mitnehmen.",
+        "Vor Frelsers Kirke und Christiania sind von hier zu Fuß erreichbar."
+      ],
+      "website": "https://7-eleven.dk/",
+      "menu": null,
+      "tags": [
+        "24h",
+        "Kiosk",
+        "Christianshavn"
       ],
       "src": "OpenStreetMap (Okt 2026)"
     },
